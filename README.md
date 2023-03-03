@@ -1,4 +1,4 @@
-# Grupo-7
+# Hemera-Tech
 
 Reuniões
  Dia e Horário
