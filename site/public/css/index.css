@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+
+
+* {
+    padding: 0;
+    margin: 0%;
+}
+
+
+body {
+    font-family: Poppins;
+    background-color: #F3EBFA;
+    background-image: url(../assets/background_sobre_nos.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 92vh;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+
+}
+
+header {
+    display: flex;
+    background-color: #D8C4EC;
+    box-shadow: 0 0 3px;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    display: flex;
+}
+
+ul a:nth-child(1) {
+    text-decoration: underline;
+}
+
+ul a {
+    text-decoration: none;
+    color: black;
+}
+
+
+ul a:hover {
+    color: #812FCD;
+
+}
+
+ul li {
+    list-style: none;
+}
+
+
+.bnt-nav {
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #812FCD;
+    transition: .1s;
+}
+
+.bnt-nav-login {
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px;
+    border-style: groove;
+    border-color: #812FCD;
+    transition: .1s;
+}
+
+
+.bnt-nav:hover {
+    background-color: #ca9ef7d0;
+}
+
+
+.container1 p {
+    margin-top: 30px;
+    font-size: 20px;
+
+}
+
+.container1 b {
+    margin-top: 100px;
+    font-size: 40px;
+    text-align: center;
+
+}
+
+.container1 {
+    display: flex;
+    margin-top: 0px;
+    padding: 50px;
+    color: #000;
+    justify-content: flex-start;
+    height: 70vh;
+
+}
+
+
+.container1 button {
+    background-color: #812FCD;
+    padding: 10px;
+    border-radius: 5px;
+    transition: .1s;
+    font-family: poppins;
+    font-size: large;
+    border-color: #812FCD;
+    color: #fff;
+}
+
