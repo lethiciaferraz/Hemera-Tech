@@ -1,0 +1,252 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #F3EBFA;
+    margin: 0%;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+header {
+    display: flex;
+    background-color: #D8C4EC;
+    box-shadow: 0 0 3px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    display: flex;
+}
+
+ul a:nth-child(1) {
+    text-decoration: underline;
+}
+
+ul a {
+    text-decoration: none;
+    color: black;
+}
+
+ul a:hover {
+    color: #812FCD;
+}
+
+ul li {
+    list-style: none;
+}
+
+.bnt-nav {
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #812FCD;
+    transition: .1s;
+}
+
+.bnt-nav-login {
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px;
+    border-style: groove;
+    border-color: #812FCD;
+    transition: .1s;
+}
+
+.bnt-nav:hover {
+    background-color: #ca9ef7d0;
+}
+
+
+/* QUEM SOMOS */
+
+#div_quem_somos {
+    background-image: url(../assets/background_sobre_nos.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container1 p {
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.container1 b {
+    margin-top: 100px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.container1 {
+    display: flex;
+    margin-top: 0px;
+    padding: 50px;
+    color: #000;
+    justify-content: flex-start;
+    height: 70vh;
+}
+
+.container1 button {
+    background-color: #812FCD;
+    padding: 10px;
+    border-radius: 5px;
+    transition: .1s;
+    font-family: poppins;
+    font-size: large;
+    border-color: #812FCD;
+    color: #fff;
+}
+
+
+/* SERVIÇOS */
+
+#div_servicos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0%;
+}
+
+#div_destaque_txt_servicos {
+    font-size: 35px;
+    letter-spacing: 0.3em;
+    font-weight: 600;
+    text-align: center;
+}
+
+#div_txt_servicos {
+    line-height: 30px;
+    font-size: 18px;
+    max-width: 75vw;
+    margin: 1vh 12vw 1vh 12vw;
+    font-weight: 400;
+    text-align: center;
+}
+
+#div_cards_servicos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1vh 9vw 1vh 9vw;
+    font-size: 3vh;
+    font-weight: 200;
+    text-align: center;
+}
+
+.card {
+    margin: 2vh;
+    padding: 5vh;
+    width: 16vw;
+    max-height: 80vh;
+    border-radius: 0.3vh;
+    box-shadow: 2px 2px 10px #bdb0cc;
+    background-color: #E9DEF4;
+}
+
+.img_card img {
+    height: 14vh;
+    margin: 2vh;
+}
+
+.txt_card {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+    #div_destaque_txt_servicos {
+        font-size: max(25px, 2vh);
+        font-weight: 600;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+    #div_txt_servicos {
+        line-height: 2.9vh;
+        font-size: max(14px, 2vh);
+        font-weight: 400;
+        text-align: center;
+        margin: 1vh 12vw 1vh 12vw;
+    }
+    .img_card img {
+        height: 9vh;
+        margin: 2vh;
+    }
+    .txt_card {
+        font-weight: 300;
+        font-size: max(12px, 2vh);
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #div_cards_servicos {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        margin: 0 auto;
+    }
+    .card {
+        padding: 5vh;
+        width: 50vw;
+        border-radius: 0.1vw;
+        box-shadow: 2px 2px 10px #bdb0cc;
+        background-color: #E9DEF4;
+    }
+}
+
+
+/* COMO FUNCIONA */
+
+#div_funciona {
+    background-image: url(../assets/background_como_funciona.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#div_img_funciona img {
+    margin-top: 25vh;
+    width: 40vw;
+}
+
+#div_bloco_funciona {
+    flex-direction: column;
+    margin-top: 20vh;
+}
+
+#div_destaque_txt_funciona {
+    font-size: 35px;
+    font-weight: 600;
+    text-align: left;
+}
+
+#container_passos {
+    display: flex;
+    flex-direction: row;
+}
+
+#div_img_numeros img {
+    margin: 2vh 1vw 0vh 1vh;
+    width: 5vw;
+}
+
+.passo {
+    max-width: 30vw;
+    margin-top: 1.6vh;
+    padding: 1vh 2vw 1vh 2vw;
+    background-color: #E4CBFD;
+    border-radius: 0.4vw;
+}
+
+.destaque_txt_2 b {
+    color: #6B0CC5;
+}
