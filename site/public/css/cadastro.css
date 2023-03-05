@@ -20,7 +20,6 @@ header {
 .img_logo {
     display: flex;
     height: 95px;
-    padding: -15%;
     margin-left: 25%;
     margin-top: -8%;
 }
