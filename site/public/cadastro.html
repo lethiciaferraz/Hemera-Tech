@@ -2,10 +2,16 @@
 <html lang="pt_br">
 
 <head>
+    <link rel="stylesheet" href="../public/css/servicos.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - Hemera Tech</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
+    
 </head>
 
 <!-- QUEM QUISER MUDAR OS NOMES DOS BAGULHO FICA A VONTADE -->
@@ -14,57 +20,98 @@
     <header>
         <div id="div_img_logo">
             <!-- Aqui vai aquela img do Hemera -->
+            <img class="img_logo" src="../public/assets/HEMERA_logo.png" alt="Hemera-logo">
+
         </div>
+
         <div id="div_navbar">
             <!-- Aqui vão as pag de navegação -->
             <div id="div_nav_paginas">
-                <!-- Lista de paginas "quem somos""servoços" e pah -->
+                <ul>
+                    <li> <a href="">Sobre Nós</a></li>
+                    <li>|</li>
+                    <li> <a href="">Serviços</a></li>
+                    <li>|</li>
+                    <li> <a href="">Contato</a></li>
+                </ul>
             </div>
+
             <div class="botoes" id="div_nav_botoes">
                 <!-- Login cadastro -->
             </div>
         </div>
+
+
     </header>
 
 
     <div class="corpo" id="div_principal_cadastro">
         <div class="moldura" id="div_moldura_cadastro">
             <div class="destque_txt" id="div_destaque_txt_cadastro">
-                <!-- Cadastro -->
+              
+                <span>Cadastre-se:</span>
+                
             </div>
             <div id="div_campos">
-                <div class="coluna" id="div_coluna1_cadastro">
+                <div class="coluna1" id="div_coluna1_cadastro">
                     <div class="campo" id="campo1_coluna1_cadastro">
-
+                        
+                        <label for="nomeEmpresa">Nome da Empresa:</label>
+                        <input type="text">
+                        <br><br>
+                    
                     </div>
                     <div class="campo" id="campo2_coluna1_cadastro">
+                        
+                        <label for="emailUsuario">E-mail:</label>
+                        <input type="email">
+                        <br><br>
 
                     </div>
-                    <div class="campo" id="campo3_coluna1_cadastro">
 
+                    <div class="campo" id="campo3_coluna1_cadastro">
+                        
+                        <label for="senhaUsuario">Senha:</label>
+                        <input  type="password">
+                        <br><br>
+                    
                     </div>
                 </div>
 
-                <div class="coluna" id="div_coluna2_cadastro">
-                    <div class="campo" id="campo1_coluna2_cadastro">
+                <div class="coluna2" id="div_coluna2_cadastro">
+                                       <div class="campo" id="campo2_coluna2_cadastro">
 
-                    </div>
-                    <div class="campo" id="campo2_coluna2_cadastro">
+                        <label for="cnpjUsuario">CNPJ:</label>
+                        <input type="text">
+                        <br><br>
 
                     </div>
                     <div class="campo" id="campo3_coluna2_cadastro">
 
+                        <label for="confimaEmail">Confirmação de e-mail:</label>
+                        <input type="email">
+                        <br><br>
+
                     </div>
+                    
+                    <div class="campo" id="campo1_coluna2_cadastro">
+                        
+                        <label for="confirmaSenha">Confirmação de senha:</label>
+                        <input type="password">
+                        <br><br>
+
+                    </div>
+
                 </div>
             </div>
             <div class="botoes" id="div_botao_cadastro">
-
+                <button onclick="cadastrar()">Cadastre-se</button>
             </div>
         </div>
     </div>
 
     <footer>
-        <!-- Nao sei oq colocar aqui ainda ent se virem :) -->
+        <h3>&copy; Hemera Tech,2023.</h3>        
     </footer>
 
 </body>

@@ -1,0 +1,181 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;}
+
+header {
+    padding: 1.5% 0%;
+    background-color: hwb(272 71% 2%);
+    border-bottom: solid #6B0CC5 1px;
+}
+
+#div_img_logo {
+    margin: 0;
+    padding: 0%;
+    width: 15%;
+}
+
+.img_logo {
+    display: flex;
+    height: 95px;
+    padding: -15%;
+    margin-left: 25%;
+    margin-top: -8%;
+}
+
+#div_navbar {
+    padding: 2% 14%;
+    /* background-color: aqua; */
+    width: 50%;
+    margin-top: -8%;
+    margin-left: 20%;
+
+}
+
+#div_nav_paginas {
+    /* background-color: blue; */
+    padding: 2% 10%;
+    width: 30%;
+    margin-left: 3%;
+
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    margin: -40%;
+    margin-top: 2%;
+
+}
+
+#div_navbar li a {
+    text-decoration: none;
+}
+
+#div_navbar li {
+    font-size: 140%;
+}
+
+
+.corpo {
+    background-color: #EEDDFD;
+    padding: 17%;
+    margin: 0;
+}
+
+.moldura{
+background-color: #DAB6FA;
+position: absolute;
+padding: 1%  12%;
+margin-top: -15%;
+margin-left: 7%;
+border-radius: 2%;
+box-shadow: 0px 0px 20px -3px #6B0CC5;
+
+}
+
+.destque_txt{
+    /* background-color: aqua; */
+    /* padding: 0% %; */
+    width: 50%;
+    margin-left: 23.5%;
+    margin-top: 0%;
+}
+
+.destque_txt span{
+    font-size: 190%;
+    font-weight: 450;
+}
+
+#div_campos{
+    /* background-color: aqua; */
+    padding: 0% 50%;
+    width: 45%;
+    margin-left: -22%; 
+    margin-top: 2%;
+}
+
+.coluna1{
+    /* background-color: yellow; */
+    padding: 0% 38%;
+    margin-left: -135%;
+    margin-top: -0%;
+    width: 130%;
+    display: flex;
+    justify-content: space-around;
+    align-items:center ;
+    flex-direction: column;
+        
+}
+
+.coluna1 input {
+    margin-left: -28%;
+    padding: 3% 0%;
+    width: 130%;
+    border-radius: 10px;
+    border: transparent;
+    /* outline: 0; */
+    outline-color: #6B0CC5;
+}
+
+
+
+.coluna1 label{
+    margin-left: -28%;
+    font-size: 20px;
+}
+
+.coluna2{
+     /* background-color: tomato; */
+    padding: 0% 35%; 
+    margin-left: 60%;
+    margin-top: -146%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items:center ;
+    flex-direction: column;
+        
+}
+
+.coluna2 input {
+    margin-left: -32%;
+    padding: 4% 0%;
+    width: 165%;
+    border-radius: 10px;
+    border: transparent;
+    outline-color: #6B0CC5;
+}
+
+
+
+.coluna2 label{
+    margin-left: -32%;
+    font-size: 20px;
+}
+
+.moldura button{
+    background-color: #6B0CC5;
+    color: white;
+    margin-left: 37%;
+    border: transparent;
+    padding: 10px 9px;
+    border-radius: 18px;
+    cursor: pointer;
+}
+
+footer{
+    background-color: #DAB6FA;
+    padding: 2%;
+    margin-top: -1.5%;
+}
+
+footer h3{
+    font-size: 100%;
+    margin-left: 43%;
+    font-weight: 450;
+}
