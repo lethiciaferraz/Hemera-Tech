@@ -5,16 +5,17 @@ body {
     margin-top: 9vh;
 }
 
-header{
+#div_header {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     justify-content: space-around;
-    
+
     position: fixed;
     top: 0;
-    padding: 2vh 1vw 2vh 2vw;
+    padding: 2vh 0vw 2vh 0vw;
+
 
     background-color: #d8c4ec;
     /* background-color: hwb(272 71% 2%); */
@@ -23,21 +24,54 @@ header{
     width: 100%;
 }
 
-#navbar_conteudo nav ul{
+#div_img_logo {
+    margin-left: 5vw;
+}
+
+#navbar_botoes{
+    margin-right: 5vw;
+}
+#navbar_conteudo nav ul {
     display: flex;
+    padding: 0%;
 }
 
 
-#navbar_botoes ul{
+#navbar_botoes ul {
     display: flex;
+    justify-content: center;
+    padding: 0%;
 }
 
-li{
-    list-style: none;   
-    margin: 1vh 1vw 1vh 1vw ;
+#div_header li {
+    list-style: none;
+    margin: 1vh 1vw 1vh 1vw;
+
 }
 
-a{
+#navbar_conteudo nav ul a li:hover {
+    transform: scale(1.08);
+    transition: 0.8s;
+
+    color: #6B0CC5;
+}
+
+/* efeito tracinho da header */
+#navbar_conteudo nav ul a li::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #6B0CC5;
+    margin: auto;
+    display: block;
+}
+
+#navbar_conteudo nav ul a li:hover::after {
+    width: 100%;
+    transition: width 0.3s linear;
+}
+
+#div_header a {
     text-decoration: none;
     font-weight: 500;
     font-size: max(12px, 2.5vh);
@@ -45,15 +79,16 @@ a{
     color: #000;
 }
 
-#btn-nav-login{
+#btn-nav-login {
     color: #812FCD;
     padding: 10px;
-    width: 5vw;
+    min-width: 5vw;
     border-radius: 5px;
     border: 2px;
     border-style: groove;
     border-color: #812FCD;
-    transition: .1s;
+
+    margin-right: 2vw;
     text-align: center;
 }
 
@@ -63,7 +98,7 @@ a{
     transition: 0.8s;
 }
 
-#btn-nav-cadastro{
+#btn-nav-cadastro {
     background-color: #812FCD;
     color: #fff;
     padding: 10px;
@@ -72,7 +107,8 @@ a{
     border: 2px;
     border-style: groove;
     border-color: #812FCD;
-    transition: .1s;
+    margin-right: 2vw;
+
     text-align: center;
 }
 
@@ -82,8 +118,102 @@ a{
     transition: 0.8s;
 }
 
+#navbar_botao_mobile img {
+    width: min(40px, 30vh);
+    margin-right: 6vw;
+
+}
+
+#navbar_botao_mobile {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    margin-top: 7vh;
+
+}
+
+@media only screen and (max-width: 800px) {
+    #div_header {
+        justify-content: space-between;
+    }
+
+    #navbar_conteudo {
+        display: none;
+    }
+
+    #navbar_botoes {
+        display: none;
+    }
+
+    #navbar_botao_mobile {
+        display: block;
+    
+    }
+
+    #navbar_conteudo_mobile{
+        background-color: #d8c4ec;
+        width: 100%;
+        text-align: center;
+    }
+    
+    ul{
+        padding: 0;
+    }
+
+    #navbar_conteudo_mobile nav ul li {
+        list-style: none;
+        margin-top: 1vh;
+    }
+
+    #navbar_botoes_mobile ul li {
+        list-style: none;
+    }
+    
+    #navbar_conteudo_mobile nav ul li a {
+        text-decoration: none;
+    }
+    
+    #navbar_botoes_mobile ul li a {
+        text-decoration: none;
+    }
+
+    #btn-nav-login_mobile {
+        color: #812FCD;
+        padding: 5px;
+        width: auto;
+        margin: 1vh 10vw 1vh 10vw;
+        border-radius: 5px;
+        border: 2px;
+        border-style: groove;
+        border-color: #812FCD;
+        
+    }
+
+    #btn-nav-cadastro_mobile {
+        color: #812FCD;
+        padding: 5px;
+        width: auto;
+        margin: 1vh 10vw 1vh 10vw;
+
+        border-radius: 5px;
+        border: 2px;
+        border-style: groove;
+        border-color: #812FCD;
+
+    }
+
+    .open {
+        display: block;
+    }
+
+
+}
+
 /* QUEM SOMOS */
-#div_quem_somos{
+#div_quem_somos {
     background-image: url(../assets/background_sobre_nos.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -96,7 +226,10 @@ a{
     /* margin-top: 20vh; */
     width: 45vw;
 }
+
 .container1 p {
+    font-weight: 400;
+    
     margin-top: 30px;
     font-size: 20px;
     
@@ -106,7 +239,7 @@ a{
     margin-top: 100px;
     font-size: 40px;
     text-align: center;
-    
+
 }
 
 .container1 {
@@ -119,17 +252,60 @@ a{
 
 }
 
-
-.container1 button {
-    background-color: #812FCD;
-    padding: 10px;
+#div_botoes_quem_somos button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
     border-radius: 5px;
-    transition: .1s;
-    font-family: poppins;
-    font-size: large;
-    border-color: #812FCD;
-    color: #fff;
+
+    font-size: max(12px, 2.5vh);
+
+    margin-left: 1vw;
 }
+
+#btn_saiba {
+    background-color: #812FCD;
+    color: #fff;
+    padding: 10px;
+    min-width: 10vw;
+    border-radius: 5px;
+    border: 2px;
+    border-style: groove;
+    border-color: #812FCD;
+
+    text-align: center;
+}
+
+#btn_saiba:hover {
+    cursor: pointer;
+
+    background-color: #812fcd00;
+    color: #812FCD;
+
+    /* transform: scale(1.08); */
+    transition: 0.8s;
+}
+
+#btn_fale {
+    background-color: #EEDDFD;
+    color: #812FCD;
+    padding: 10px;
+    min-width: 10vw;
+    border-radius: 5px;
+    border: 2px;
+    border-style: groove;
+    border-color: #812FCD;
+
+    text-align: center;
+}
+
+#btn_fale:hover {
+    cursor: pointer;
+    background-color: #8e4fc9;
+    color: aliceblue;
+    /* transform: scale(1.08); */
+    transition: 0.8s;
+}
+
 
 
 /* SERVIÇOS */
@@ -149,12 +325,12 @@ a{
     text-align: center;
 }
 
-#div_txt_servicos {
+#div_txt_servicos p{
     line-height: 30px;
     font-size: 18px;
 
     max-width: 75vw;
-    margin: 1vh 12vw 1vh 12vw;
+    margin: 3vh 12vw 1vh 12vw;
     font-weight: 400;
     text-align: center;
 }
@@ -187,57 +363,10 @@ a{
 
 .txt_card {
     font-weight: 200;
-    line-height: 3.5vh;
-    font-size: max(11px, 2.3vh);
+    line-height: max(20px,3.5vh);
+    font-size: max(11px, 2vh);
 }
 
- @media only screen and (max-width: 600px) {
-    #div_destaque_txt_servicos{
-        font-size: max(25px, 2vh);
-        font-weight: 600;
-        text-align: center;
-        letter-spacing: 1px;
-    }
-    
-     #div_txt_servicos{
-        line-height: 2.9vh;
-        font-size: max(14px, 2vh);
-        font-weight: 400;
-        text-align: center;   
-        margin: 1vh 12vw 1vh 12vw;
-    } 
-
-    .img_card img {
-        height: 9vh;
-        margin: 2vh;
-    }
-
-    .txt_card {
-        font-weight: 300;
-        font-size: max(11px, 2vh);
-    }
-
-    
-} 
-
-@media only screen and (max-width: 900px) {
-
-    #div_cards_servicos {
-        display: flex;
-        flex-direction: column;
-        justify-items: center;
-        margin: 0 auto;
-    }
-
-    .card {
-        padding: 5vh;
-        width: 50vw;
-        border-radius: 0.1vw;
-        box-shadow: 2px 2px 10px #bdb0cc;
-        background-color: #E9DEF4;
-    }
-
-}
 
 /* COMO FUNCIONA */
 
@@ -259,26 +388,27 @@ a{
 
 #div_bloco_funciona {
     flex-direction: column;
-    margin-top: 20vh;
+    margin-top: 10vh;
+    align-items: center;
 }
 
-#div_destaque_txt_funciona {
+#div_destaque_txt_funciona b {
     font-size: 35px;
 
     font-weight: 600;
     text-align: left;
 }
 
-#container_passos{
+#container_passos {
     display: flex;
     flex-direction: row;
 }
 
-#div_img_numeros img{
+#div_img_numeros img {
     margin: 2vh 1vw 0vh 1vh;
-
     width: 5vw;
 }
+
 .passo {
     max-width: 30vw;
     margin-top: 1.6vh;
@@ -290,4 +420,73 @@ a{
 .destaque_txt_2 b {
     color: #6B0CC5;
 
+}
+
+
+@media only screen and (max-width: 600px) {
+    #div_destaque_txt_servicos {
+        font-size: max(25px, 2vh);
+        font-weight: 600;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    #div_txt_servicos p{
+        line-height: 2.9vh;
+        font-size: max(14px, 2vh);
+        font-weight: 400;
+        text-align: center;
+
+    }
+
+    #div_destaque_txt_quem_somos b{
+        font-size: max(25px, 1vh);
+    }
+
+    #div_txt_quem_somos p {
+        line-height: 2.9vh;
+        font-size: max(14px, 2vh);
+        font-weight: 400;
+    }
+
+    #div_destaque_txt_funciona b{
+        font-size: max(25px, 1vh);
+    }
+
+    .img_card img {
+        height: 9vh;
+        margin: 2vh;
+    }
+
+
+}
+
+@media only screen and (max-width: 900px) {
+    #div_quem_somos {
+        flex-direction: column;
+    }
+
+    #div_cards_servicos {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        margin: 0 auto;
+    }
+
+
+    .card {
+        padding: 5vh;
+        width: 50vw;
+        border-radius: 0.1vw;
+        box-shadow: 2px 2px 10px #bdb0cc;
+        background-color: #E9DEF4;
+    }
+
+    #div_funciona {
+        flex-direction: column;
+    }
+
+    #div_img_funciona{
+        display: none;
+    }
 }

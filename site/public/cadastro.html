@@ -15,6 +15,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
     
+    
+    <!--  função menu-->
+    <script src="js/menuLateral.js"></script>
 </head>
 
 <!-- QUEM QUISER MUDAR OS NOMES DOS BAGULHO FICA A VONTADE -->
@@ -22,19 +25,22 @@
 <body>
 
     <header>
-        <div id="div_img_logo">
-            <img src="./assets/HEMERA.png" alt="" width=150vw>
-        </div>
 
-        <div id="navbar_conteudo">
-            <nav>
+        <div id="div_header">
+
+            <div id="div_img_logo">
+                <img src="./assets/HEMERA.png" alt="" width=150vw>
+            </div>
+
+            <div id="navbar_conteudo">
+                <nav>
                     <ul>
-                        <a href="index.html.#div_quem_somos">
+                        <a href="index.html">
                             <li>Sobre nós</li>
                         </a>
 
                         <li>|</li>
-                        <a href="index.html.#div_servicos">
+                        <a href="index.html">
                             <li>Serviços</li>
                         </a>
 
@@ -44,21 +50,61 @@
                             <li>Contato</li>
                         </a>
                     </ul>
+            </div>
             </nav>
+
+
+            <div id="navbar_botoes">
+                <ul>
+                    <a href="login.html">
+                        <li id="btn-nav-login">Login</li>
+                    </a>
+
+                    <a href="cadastro.html">
+                        <li id="btn-nav-cadastro">Cadastre-se</li>
+                    </a>
+                </ul>
+
+            </div>
+
+            <!-- -------------MOBILE MENU ------>
+            <div id="navbar_botao_mobile">
+                <span onclick="MostrarMenu()">
+                    <img src="assets/icone_menu.png">
+                </span>
+
+            </div>
         </div>
 
+        <div class="mobile-menu" id="navbar_conteudo_mobile">
+            <nav>
+                <ul>
+                    <li><a href="index.html">
+                            Sobre nós
+                        </a></li>
 
-        <div id="navbar_botoes">
-            <ul>
-                <a href="login.html">
-                    <li id="btn-nav-login">Login</li>
-                </a>
+                    <li><a href="index.html">
+                            Serviços
+                        </a></li>
 
-                <a href="cadastro.html">
-                    <li id="btn-nav-cadastro">Cadastre-se</li>
-                </a>
-            </ul>
+                    <li><a href="index.html">
+                            Contato
+                        </a></li>
+                </ul>
+            </nav>
 
+            <div id="navbar_botoes_mobile">
+                <ul>
+                    <li id="btn-nav-login_mobile"> <a href="login.html">
+                            Login
+                        </a></li>
+
+                    <li id="btn-nav-cadastro_mobile"><a href="cadastro.html">
+                            Cadastre-se</li>
+                    </a></li>
+                </ul>
+
+            </div>
         </div>
 
     </header>
