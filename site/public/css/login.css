@@ -2,5 +2,12 @@
 
 .corpo {
     display: flex;
-    height: ;
+    /* talvez precise mudar */
+    padding-top: 5rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#div_img_login {
+    width: 40vw;
 }

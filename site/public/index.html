@@ -12,11 +12,15 @@
     <link rel="shortcut icon" href="./assets/artificial-intelligence (1).png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!--  função menu-->
+    <script src="js/menuLateral.js"></script>
 </head>
 
 <!-- QUEM QUISER MUDAR OS NOMES DOS BAGULHO FICA A VONTADE -->
 
 <body>
+<<<<<<< HEAD
 
     <header>
         <a href="./index.html">
@@ -34,53 +38,135 @@
                     <a href="#div_servicos">
                         <li>Serviços</li>
                     </a>
+=======
+
+    <header>
+
+        <div id="div_header">
+
+            <div id="div_img_logo">
+                <img src="./assets/HEMERA.png" alt="" width=150vw>
+            </div>
+
+            <div id="navbar_conteudo">
+                <nav>
+                    <ul>
+                        <a href="#div_quem_somos">
+                            <li>Sobre nós</li>
+                        </a>
+
+                        <li>|</li>
+                        <a href="#imagem_fundo1">
+                            <li>Serviços</li>
+                        </a>
+>>>>>>> 54b560503018b9dd3a97dde0d9cd9f3321a27d9f
 
                     <li>|</li>
 
+<<<<<<< HEAD
                     <a href="">
                         <li>Contato</li>
                     </a>
                 </ul>
+=======
+                        <a href="">
+                            <li>Contato</li>
+                        </a>
+                    </ul>
+            </div>
+>>>>>>> 54b560503018b9dd3a97dde0d9cd9f3321a27d9f
             </nav>
+
+
+            <div id="navbar_botoes">
+                <ul>
+                    <a href="login.html">
+                        <li id="btn-nav-login">Login</li>
+                    </a>
+
+                    <a href="cadastro.html">
+                        <li id="btn-nav-cadastro">Cadastre-se</li>
+                    </a>
+                </ul>
+
+            </div>
+
+            <!-- -------------MOBILE MENU ------>
+            <div id="navbar_botao_mobile">
+                <span onclick="MostrarMenu()">
+                    <img src="assets/icone_menu.png">
+                </span>
+
+            </div>
         </div>
 
+        <div class="mobile-menu" id="navbar_conteudo_mobile">
+            <nav>
+                <ul>
+                    <li><a href="#div_quem_somos">
+                            Sobre nós
+                        </a></li>
 
-        <div id="navbar_botoes">
-            <ul>
-                <a href="login.html">
-                    <li id="btn-nav-login">Login</li>
-                </a>
+                    <li><a href="#div_servicos">
+                            Serviços
+                        </a></li>
 
-                <a href="cadastro.html">
-                    <li id="btn-nav-cadastro">Cadastre-se</li>
-                </a>
-            </ul>
+                    <li><a href="">
+                            Contato
+                        </a></li>
+                </ul>
+            </nav>
 
+            <div id="navbar_botoes_mobile">
+                <ul>
+                    <li id="btn-nav-login_mobile"> <a href="login.html">
+                            Login
+                        </a></li>
+
+                    <li id="btn-nav-cadastro_mobile"><a href="cadastro.html">
+                            Cadastre-se</li>
+                    </a></li>
+                </ul>
+
+            </div>
         </div>
 
     </header>
 
     <!-- ------SOBRE NOS-------- -->
     <div class="container1" id="div_quem_somos">
+<<<<<<< HEAD
 
         <div id="div_img_quem_somos">
             <img src="./assets/imagem_sobre_nos.png">
         </div>
 
+=======
+        <div id="div_img_quem_somos">
+            <img src="./assets/imagem_sobre_nos.png">
+        </div>
+>>>>>>> 54b560503018b9dd3a97dde0d9cd9f3321a27d9f
         <div id="div_bloco_txt">
 
             <div class="destque_txt" id="div_destaque_txt_quem_somos">
-                <b><b style="color: #6B0CC5">Monitoramos </b>o sistema do seu consultório.</b>
+                <b><b style="color: #6B0CC5">Monitoramos </b>o sistema do <b style="color: #6B0CC5;">seu</b>
+                    consultório.</b>
             </div>
 
             <div class="txt" id="div_txt_quem_somos">
+<<<<<<< HEAD
                 <p>Cuidar de um consultório é díficil neh? Com o nosso sistema de monitoramento do servidor tudo pode ficar mais fácil!! Deixe a dor de cabeça pra lá, contrate nossos serviços!
+=======
+                <p>Cuidar de um consultório é díficil neh? Com o nosso sistema de monitoramento do servidor tudo pode
+                    ficar
+                    mais fácil!! Deixe a dor de cabeça pra lá, contrate nossos serviços!
+>>>>>>> 54b560503018b9dd3a97dde0d9cd9f3321a27d9f
                 </p>
             </div>
 
             <div class="botoes" id="div_botoes_quem_somos">
-                <button id="saiba">Saiba mais</button>
-                <button id="">Fale com a gente</button>
+                <button id="btn_saiba">Saiba mais</button>
+                <button id="btn_fale">Fale com a gente</button>
             </div>
 
         </div>
@@ -88,7 +174,12 @@
 
 
     <!-- ----------------------------------SERVIÇOS-------------------------------------- -->
+
     <div class="corpo" id="div_servicos">
+
+        <div id="imagem_fundo1">
+            <img src="../public/assets/background_como_funciona_emcima.png">
+        </div>
 
         <div class="destaque_txt " id="div_destaque_txt_servicos">
             <b>O que <b style="color: #6B0CC5">fazemos</b>?</b>
@@ -138,6 +229,10 @@
 
     </div>
 
+    <div id="imagem_fundo2">
+        <img src="../public/assets/background_como_funciona_embaixo.png" alt="">
+    </div>
+
     <!-------------------------------COMO FUNCIONA--------------------------------------------- -->
 
     <div class="corpo" id="div_funciona">
@@ -169,8 +264,8 @@
                             <b>Faça seu cadastro</b>
                         </div>
 
-                        <div class="txt" id="div_texto_passo1">
-                            <p>Preencha os campos abaixo</p>
+                        <div class="txt" id="div_texto_passo">
+                            <p>Preencha os campos com os dados da sua empresa e faça login.</p>
                         </div>
                     </div>
 
@@ -179,7 +274,7 @@
                         <div class="destaque_txt_2">
                             <b>Registre seus computadores</b>
                         </div>
-                        <div class="txt" id="div_texto_passo2">
+                        <div class="txt" id="div_texto_passo">
                             <p>Ao efetuar login registre seus computadores na página de controle.</p>
                         </div>
                     </div>
@@ -188,8 +283,14 @@
                         <div class="destaque_txt_2">
                             <b>Acompanhe o monitoramento</b>
                         </div>
+<<<<<<< HEAD
                         <div class="txt" id="div_texto_passo3">
                             <p>A partir deste momento você ira receber notificações caso haja algo de errado com o seu servidor.</p>
+=======
+                        <div class="txt" id="div_texto_passo">
+                            <p>A partir deste momento você ira receber notificações caso haja algo de errado com o
+                                seu servidor.</p>
+>>>>>>> 54b560503018b9dd3a97dde0d9cd9f3321a27d9f
                         </div>
                     </div>
                 </div>
@@ -201,12 +302,43 @@
     </div>
 
     <!-- ------------------CONTATO ------------- -->
+    <div class="corpo" id="div_contato">
 
-    <footer>
-        <!-- Nao sei oq colocar aqui ainda ent se virem :) -->
-    </footer>
+        <div id="div_bloco_contato">
+
+            <div class="div_destaque_txt_contato" id="div_destaque_txt_contato">
+                <b><b>Quer <b style="color: #6B0CC5;"> falar</b> com</b><b style="color:#6B0CC5;"> a gente</b>?<b></b>
+            </div>
+
+            <div class="txt" id="div_txt_contato">
+                <p>Se você ainda não se decidiu ou ficou com dúvidas entre em contato pelos seguintes canais.</p>
+            </div>
+            <div id="container_contato">
+
+              
+                <div class="txt" id="div_txt_cards">
+                    <div id="email">
+                        <div id="div_img_contato">
+                            <img src="assets/icone-email.png">
+                        </div>
+                        <b style="color:#6B0CC5">E-mail</b>
+                        <p>Alguma dúvida?</p>
+                        <p>Hemera@sptech.school</p>
+
+                    </div>
+                    <div id="div_telefone">
+                        <div id="div_img_contato">
+                            <img src="assets/icone-telefone.png"></div>
+                        <b style="color: #6B0CC5">Telefone</b>
+                        <p>Ligue a qualquer hora</p>
+                        <p>11 9 7777-7777</p>
 
 
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
 </body>
 
