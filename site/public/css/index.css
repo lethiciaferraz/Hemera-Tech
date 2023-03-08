@@ -23,11 +23,11 @@ body {
     margin-left: 2vw;
 }
 
-#div_img_logo img{
+#div_img_logo img {
     width: min(150px, 100vh);
 }
 
-#navbar_botoes{
+#navbar_botoes {
     margin-right: 2vw;
 }
 
@@ -129,6 +129,8 @@ body {
     top: 14vh;
 }
 
+
+
 @media only screen and (max-width: 912px) {
     #div_header {
         justify-content: space-between;
@@ -143,16 +145,16 @@ body {
     }
 
     #navbar_botao_mobile {
-        display: block;  
+        display: block;
     }
 
-    #navbar_conteudo_mobile{
+    #navbar_conteudo_mobile {
         background-color: #d8c4ec;
         width: 100%;
         text-align: center;
     }
-    
-    ul{
+
+    ul {
         padding: 0;
     }
 
@@ -164,12 +166,12 @@ body {
     #navbar_botoes_mobile ul li {
         list-style: none;
     }
-    
+
     #navbar_conteudo_mobile nav ul li a {
         text-decoration: none;
         color: #6B0CC5;
     }
-    
+
     #navbar_botoes_mobile ul li a {
         text-decoration: none;
     }
@@ -182,7 +184,7 @@ body {
         border-radius: 5px;
         border: 2px;
         border-style: groove;
-        border-color: #812FCD;      
+        border-color: #812FCD;
     }
 
     #btn-nav-cadastro_mobile {
@@ -284,10 +286,11 @@ body {
 
 /* SERVIÇOS */
 
-#imagem_fundo{
+#imagem_fundo {
     background-color: #6B0CC5;
 }
-#imagem_fundo1 img{
+
+#imagem_fundo1 img {
     width: 100%;
 }
 
@@ -297,7 +300,7 @@ body {
     flex-direction: column;
     justify-content: center;
     margin-bottom: 0%;
-    
+
 }
 
 #div_destaque_txt_servicos {
@@ -307,7 +310,7 @@ body {
     text-align: center;
 }
 
-#div_txt_servicos p{
+#div_txt_servicos p {
     line-height: 30px;
     font-size: 18px;
 
@@ -345,11 +348,11 @@ body {
 
 .txt_card {
     font-weight: 200;
-    line-height: max(20px,3.5vh);
+    line-height: max(20px, 3.5vh);
     font-size: max(11px, 2vh);
 }
 
-#imagem_fundo2 img{
+#imagem_fundo2 img {
     width: 100%;
 }
 
@@ -383,17 +386,18 @@ body {
     margin-left: 1.5vw;
 }
 
-#div_destaque_txt_funciona b b{
+#div_destaque_txt_funciona b b {
     margin-left: 0vw;
 }
 
-#div_txt_funciona p{
+#div_txt_funciona p {
     font-size: min(20px, 30vh);
 
     font-weight: 400;
 
     margin-left: 1.5vw;
 }
+
 #container_passos {
     display: flex;
     flex-direction: row;
@@ -406,9 +410,9 @@ body {
     height: 80%;
 }
 
-#div_texto_passo p{
+#div_texto_passo p {
     font-weight: 200;
-    line-height: max(5px,3.5vh);
+    line-height: max(5px, 3.5vh);
     font-size: max(11px, 2vh);
 
 }
@@ -426,6 +430,72 @@ body {
 
 }
 
+/* CONTATO */
+
+
+#div_contato {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#div_img_contato{
+    height: 14vh;
+    margin: 2vh;
+    margin-right: 2vh;
+
+}
+
+#div_destaque_txt_contato b {
+    font-size: min(45px, 20vh);
+    font-weight: 600;
+    margin-left: 1.5vw;
+}
+
+#div_destaque_txt_contato b b {
+    margin-left: 0vw;
+}
+
+#div_txt_contato p {
+    font-size: min(20px, 30vh);
+
+    font-weight: 400;
+
+    margin-left: 1.5vw;
+}
+
+#div_img_contato {
+    display: flex;
+    justify-content: space-around;
+}
+
+#div_txt_cards {
+    display: flex;
+    justify-content: space-around;
+    font-size: large;
+    padding: 3vh;
+}
+
+#div_txt_cards b{
+ font-size: min(25px, 20vh);
+    font-weight: 600;
+    margin-left: 1.5vw;
+    text-align: center;
+}
+
+#div_txt_cards p{
+    font-size: min(20px, 30vh);
+
+    font-weight: 400;
+
+    margin-left: 1.5vw;
+}
+
+/* FOOOTER*/
+
+
 
 @media only screen and (max-width: 600px) {
     #div_destaque_txt_servicos {
@@ -435,7 +505,7 @@ body {
         letter-spacing: 1px;
     }
 
-    #div_txt_servicos p{
+    #div_txt_servicos p {
         line-height: 2.9vh;
         font-size: max(14px, 2vh);
         font-weight: 400;
@@ -443,7 +513,7 @@ body {
 
     }
 
-    #div_destaque_txt_quem_somos b{
+    #div_destaque_txt_quem_somos b {
         font-size: max(25px, 1vh);
     }
 
@@ -453,11 +523,11 @@ body {
         font-weight: 400;
     }
 
-    #div_destaque_txt_funciona b{
+    #div_destaque_txt_funciona b {
         font-size: max(25px, 1vh);
     }
 
-    #div_txt_funciona p{
+    #div_txt_funciona p {
         font-size: max(14px, 2vh);
     }
 
@@ -466,11 +536,11 @@ body {
         margin: 2vh;
     }
 
-    #div_passos b{
+    #div_passos b {
         font-size: max(16px, 1vh);
     }
 
-    #div_texto_passo p{
+    #div_texto_passo p {
         font-size: min(14px, 20vh);
     }
 
@@ -503,7 +573,7 @@ body {
         flex-direction: column;
     }
 
-    #div_img_funciona{
+    #div_img_funciona {
         display: none;
     }
 
