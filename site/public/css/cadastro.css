@@ -15,8 +15,8 @@
     background-color: #DAB6FA;
     padding: 0.5% 0%;
     width: 63%;
-    margin-top: -0.3%;
-    margin-left: 18%;
+    margin-top: -4.5%;
+    margin-left: 19%;
     border-radius: 2%;
     box-shadow: 0px 0px 20px -3px #6B0CC5;
 
@@ -61,8 +61,8 @@
     width: 250%;
     border-radius: 10px;
     border: transparent;
-    /* outline: 0; */
-    outline-color: #6B0CC5;
+    outline: 0;
+    
 }
 
 .coluna1 label {
@@ -86,19 +86,19 @@
 }
 
 .coluna2 input {
-    margin-left: -73%;
+    margin-left: -75%;
     padding: 7% 0%;
     width: 250%;
     border-radius: 10px;
     border: transparent;
-    outline-color: #6B0CC5;
+    outline: 0;
 }
 
 
 
 .coluna2 label {
     /* background-color: yellow; */
-    margin-left: -75%;
+    margin-left: -78%;
     font-size: 20px;
 }
 
@@ -117,7 +117,7 @@
 footer {
     background-color: #DAB6FA;
     padding: 2%;
-    margin-top: -5.04%;
+    margin-top: -4.2%;
 }
 
 footer h3 {
