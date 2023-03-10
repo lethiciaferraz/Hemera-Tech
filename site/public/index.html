@@ -13,8 +13,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-   <!--  função menu-->
-   <script src="js/menuLateral.js"></script>
+    <!--  função menu-->
+    <script src="js/menuLateral.js"></script>
 </head>
 
 <!-- QUEM QUISER MUDAR OS NOMES DOS BAGULHO FICA A VONTADE -->
@@ -37,7 +37,7 @@
                         </a>
 
                         <li>|</li>
-                        <a href="#div_servicos">
+                        <a href="#imagem_fundo1">
                             <li>Serviços</li>
                         </a>
 
@@ -108,11 +108,9 @@
 
     <!-- ------SOBRE NOS-------- -->
     <div class="container1" id="div_quem_somos">
-
         <div id="div_img_quem_somos">
             <img src="./assets/imagem_sobre_nos.png">
         </div>
-
         <div id="div_bloco_txt">
 
             <div class="destque_txt" id="div_destaque_txt_quem_somos">
@@ -137,7 +135,12 @@
 
 
     <!-- ----------------------------------SERVIÇOS-------------------------------------- -->
+
     <div class="corpo" id="div_servicos">
+
+        <div id="imagem_fundo1">
+            <img src="../public/assets/background_como_funciona_emcima.png">
+        </div>
 
         <div class="destaque_txt " id="div_destaque_txt_servicos">
             <b>O que <b style="color: #6B0CC5">fazemos</b>?</b>
@@ -189,6 +192,10 @@
 
     </div>
 
+    <div id="imagem_fundo2">
+        <img src="../public/assets/background_como_funciona_embaixo.png" alt="">
+    </div>
+
     <!-------------------------------COMO FUNCIONA--------------------------------------------- -->
 
     <div class="corpo" id="div_funciona">
@@ -220,8 +227,8 @@
                             <b>Faça seu cadastro</b>
                         </div>
 
-                        <div class="txt" id="div_texto_passo1">
-                            <p>Preencha os campos abaixo</p>
+                        <div class="txt" id="div_texto_passo">
+                            <p>Preencha os campos com os dados da sua empresa e faça login.</p>
                         </div>
                     </div>
 
@@ -230,7 +237,7 @@
                         <div class="destaque_txt_2">
                             <b>Registre seus computadores</b>
                         </div>
-                        <div class="txt" id="div_texto_passo2">
+                        <div class="txt" id="div_texto_passo">
                             <p>Ao efetuar login registre seus computadores na página de controle.</p>
                         </div>
                     </div>
@@ -239,7 +246,7 @@
                         <div class="destaque_txt_2">
                             <b>Acompanhe o monitoramento</b>
                         </div>
-                        <div class="txt" id="div_texto_passo3">
+                        <div class="txt" id="div_texto_passo">
                             <p>A partir deste momento você ira receber notificações caso haja algo de errado com o
                                 seu servidor.</p>
                         </div>
@@ -253,12 +260,46 @@
     </div>
 
     <!-- ------------------CONTATO ------------- -->
+    <div class="corpo" id="div_contato">
 
-    <footer>
-        <!-- Nao sei oq colocar aqui ainda ent se virem :) -->
-    </footer>
+        <div id="div_bloco_contato">
 
+            <div class="div_destaque_txt_contato" id="div_destaque_txt_contato">
+                <b>Quer <b style="color: #6B0CC5;"> falar</b> com<b style="color:#6B0CC5;"> a gente</b>?</b>
+            </div>
 
+            <div class="txt" id="div_txt_contato">
+                <p>Se você ainda não se decidiu ou ficou com dúvidas entre em contato pelos seguintes canais.</p>
+            </div>
+
+            <div id="container_contato">
+                <div class="txt" id="div_txt_cards">
+
+                    <div id="email">
+                        <div id="div_img_contato">
+                            <img src="assets/icone-email.png">
+                        </div>
+                        <b style="color:#6B0CC5">E-mail</b>
+                        <p>Alguma dúvida?</p>
+                        <p>Hemera@sptech.school</p>
+                    </div>
+
+                    <div id="div_telefone">
+                        <div id="div_img_contato">
+                            <img src="assets/icone-telefone.png">
+                        </div>
+                        <b style="color: #6B0CC5">Telefone</b>
+                        <p>Ligue a qualquer hora</p>
+                        <p>11 9 7777-7777</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </body>
 
