@@ -8,10 +8,13 @@
     <title>Hemera Tech</title>
     <link rel="stylesheet" href="./css/index.css">
 
-    <!-- FONTE POPPINS -->
+    <!-- ICONE -->
     <link rel="shortcut icon" href="./assets/artificial-intelligence (1).png" type="image/x-icon">
+
+    <!-- FONTE POPPINS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap"rel="stylesheet">
 
     <!--  função menu-->
     <script src="js/menuLateral.js"></script>
@@ -32,7 +35,7 @@
             <div id="navbar_conteudo">
                 <nav>
                     <ul>
-                        <a href="#div_quem_somos">
+                        <a href="index.html">
                             <li>Sobre nós</li>
                         </a>
 
@@ -43,7 +46,7 @@
 
                         <li>|</li>
 
-                        <a href="">
+                        <a href="#div_contato">
                             <li>Contato</li>
                         </a>
                     </ul>
@@ -84,7 +87,7 @@
                             Serviços
                         </a></li>
 
-                    <li><a href="">
+                    <li><a href="#div_contato">
                             Contato
                         </a></li>
                 </ul>
@@ -107,6 +110,7 @@
     </header>
 
     <!-- ------SOBRE NOS-------- -->
+ 
     <div class="container1" id="div_quem_somos">
         <div id="div_img_quem_somos">
             <img src="./assets/imagem_sobre_nos.png">
@@ -126,8 +130,8 @@
             </div>
 
             <div class="botoes" id="div_botoes_quem_somos">
-                <button id="btn_saiba">Saiba mais</button>
-                <button id="btn_fale">Fale com a gente</button>
+                <button id="btn_saiba" onclick="ir_como_funciona()">Saiba mais</button>
+                <button id="btn_fale" onclick="ir_contato()">Fale com a gente</button>
             </div>
 
         </div>
@@ -197,7 +201,9 @@
     </div>
 
     <!-------------------------------COMO FUNCIONA--------------------------------------------- -->
-
+<div id="como_funciona">
+    <br>
+</div>
     <div class="corpo" id="div_funciona">
 
         <div id="div_img_funciona">
@@ -300,6 +306,10 @@
         </div>
 
     </div>
+
+    <footer>
+        <p>© Hemera Tech, 2023</p>
+    </footer>
 
 </body>
 

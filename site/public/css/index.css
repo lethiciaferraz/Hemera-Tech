@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Poppins", sans-serif;
     background-color: #EEDDFD;
@@ -10,25 +14,22 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     position: fixed;
     top: 0;
-    padding: 1.5vh 0vw 1vh 0vw;
+    padding: 1vh 0vw 1vh 0vw;
     background-color: #d8c4ec;
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
     width: 100%;
 }
 
-#div_img_logo {
-    margin-left: 2vw;
-}
-
 #div_img_logo img {
     width: min(150px, 100vh);
+    margin-left: 4vw;
 }
 
 #navbar_botoes {
-    margin-right: 2vw;
+    margin-right: 4vw;
 }
 
 #navbar_conteudo nav ul {
@@ -71,8 +72,7 @@ body {
 #div_header a {
     text-decoration: none;
     font-weight: 500;
-    font-size: max(14px, 2.5vh);
-    font-family: "Poppins", sans-serif;
+    font-size: max(16px, 2.2vh);
     color: #000;
 }
 
@@ -202,7 +202,6 @@ body {
         display: block;
     }
 
-
 }
 
 /* --------------QUEM SOMOS--------------------- */
@@ -223,24 +222,21 @@ body {
 }
 
 .container1 b {
-    margin-top: 100px;
-    font-size: min(43px, 20vh);
-    text-align: center;
+    font-size: min(36px, 19vh);
+    text-align: right;
 }
 
 .container1 p {
     font-weight: 400;
-    /* max-width: 50vw; */
-    margin-top: 30px;
-    font-size: min(21px, 300vh);
+    font-size: min(18px, 30vh);
 }
 
 #div_botoes_quem_somos button {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     border-radius: 5px;
-    margin: 1vh 1vw;
-    font-size: max(20px, 2.5vh);
+    margin: 1vh 0.5vw 1vh 0.5vw;
+    font-size: min(18px, 30vh);
 }
 
 #btn_saiba {
@@ -272,8 +268,6 @@ body {
     border: 2px;
     border-style: groove;
     border-color: #812FCD;
-    margin: 1vh 1vw;
-
     text-align: center;
 }
 
@@ -286,10 +280,6 @@ body {
 
 /* SERVIÇOS */
 
-#imagem_fundo {
-    background-color: #6B0CC5;
-}
-
 #imagem_fundo1 img {
     width: 100%;
 }
@@ -300,22 +290,20 @@ body {
     flex-direction: column;
     justify-content: center;
     margin-bottom: 0%;
-
 }
 
 #div_destaque_txt_servicos {
-    font-size: 35px;
+    font-size: min(32px, 19vh);
     letter-spacing: 0.3em;
     font-weight: 600;
     text-align: center;
 }
 
 #div_txt_servicos p {
-    line-height: 30px;
-    font-size: 18px;
-
-    max-width: 75vw;
-    margin: 3vh 12vw 1vh 12vw;
+    line-height: 33px;
+    font-size: min(16px, 30vh);
+    max-width: 70vw;
+    margin: 3vh 12vw 3vh 16vw;
     font-weight: 400;
     text-align: center;
 }
@@ -325,14 +313,14 @@ body {
     flex-direction: row;
     justify-content: center;
     margin: 1vh 9vw 1vh 9vw;
-    font-size: 3vh;
-    font-weight: 200;
+    /* font-size: min(12px, 4vh);
+    font-weight: 300; */
     text-align: center;
 }
 
 .card {
     margin: 2vh;
-    padding: 5vh;
+    padding: 2.5vh;
     width: 16vw;
     max-height: 80vh;
     border-radius: 0.3vh;
@@ -341,15 +329,16 @@ body {
 }
 
 .img_card img {
-    height: 14vh;
+    width: min(100px, 90vw);
     margin: 2vh;
 }
 
 
 .txt_card {
-    font-weight: 200;
-    line-height: max(20px, 3.5vh);
-    font-size: max(11px, 2vh);
+    font-weight: 300;
+    line-height: 29px;
+    font-size: min(14px, 30vh);
+
 }
 
 #imagem_fundo2 img {
@@ -361,7 +350,6 @@ body {
 #div_funciona {
     display: flex;
     flex-direction: row;
-    /* align-items: center; */
     justify-content: center;
     margin-top: 0;
 }
@@ -373,16 +361,14 @@ body {
 
 #div_bloco_funciona {
     flex-direction: column;
-    margin: 2vh 10vw 2vh 4vw;
+    margin: 0vh 10vw 2vh 4vw;
     align-items: center;
 }
 
 #div_destaque_txt_funciona b {
-    font-size: min(45px, 20vh);
-
+    font-size: min(32px, 19vh);
     font-weight: 600;
     text-align: left;
-
     margin-left: 1.5vw;
 }
 
@@ -391,17 +377,14 @@ body {
 }
 
 #div_txt_funciona p {
-    font-size: min(20px, 30vh);
-
+    font-size: min(16px, 30vh);
     font-weight: 400;
-
     margin-left: 1.5vw;
 }
 
 #container_passos {
     display: flex;
     flex-direction: row;
-    /* justify-content: end; */
 }
 
 #div_img_numeros img {
@@ -410,48 +393,44 @@ body {
     height: 80%;
 }
 
-#div_texto_passo p {
-    font-weight: 200;
-    line-height: max(5px, 3.5vh);
-    font-size: max(11px, 2vh);
+.destaque_txt_2 b {
+    color: #6B0CC5;
+    font-size: min(18px, 30vh);
+}
 
+#div_texto_passo p {
+    font-weight: 300;
+    font-size: min(15px, 30vh);
 }
 
 .passo {
     /* max-width: 30vw; */
-    margin-top: 1.6vh;
+    margin-top: 9px;
     padding: 1.9vh 2vw 1vh 2vw;
     background-color: #E4CBFD;
     border-radius: 0.4vw;
-}
-
-.destaque_txt_2 b {
-    color: #6B0CC5;
-
 }
 
 /* CONTATO */
 
 
 #div_contato {
+    background-color: #F3EBFA;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     text-align: center;
+    box-shadow: 0 -5px 5px -5px  rgba(0, 0, 0, 0.5);
 }
 
-#div_img_contato{
-    height: 14vh;
-    margin: 2vh;
-    margin-right: 2vh;
-
+#div_bloco_contato {
+    margin: 8vh 4vw 5vh 4vw;
 }
 
 #div_destaque_txt_contato b {
-    font-size: min(45px, 20vh);
+    font-size: min(32px, 19vh);
     font-weight: 600;
-    margin-left: 1.5vw;
 }
 
 #div_destaque_txt_contato b b {
@@ -459,93 +438,42 @@ body {
 }
 
 #div_txt_contato p {
-    font-size: min(20px, 30vh);
-
+    font-size: min(16px, 30vh);
     font-weight: 400;
-
-    margin-left: 1.5vw;
-}
-
-#div_img_contato {
-    display: flex;
-    justify-content: space-around;
 }
 
 #div_txt_cards {
     display: flex;
     justify-content: space-around;
-    font-size: large;
     padding: 3vh;
 }
 
-#div_txt_cards b{
- font-size: min(25px, 20vh);
+#div_img_contato img {
+    width: 5vw;
+    margin: 2vh;
+    margin-right: 2vh;
+}
+
+#div_txt_cards b {
+    font-size: min(17px, 20vh);
+    margin: 4px 0px 10px 0px;
     font-weight: 600;
-    margin-left: 1.5vw;
     text-align: center;
 }
 
-#div_txt_cards p{
-    font-size: min(20px, 30vh);
-
+#div_txt_cards p {
+    font-size: min(15px, 30vh);
     font-weight: 400;
-
-    margin-left: 1.5vw;
+    margin-top: 2px;
+    margin-bottom: 4px;
 }
+
 
 /* FOOOTER*/
-
-
-
-@media only screen and (max-width: 600px) {
-    #div_destaque_txt_servicos {
-        font-size: max(25px, 2vh);
-        font-weight: 600;
-        text-align: center;
-        letter-spacing: 1px;
-    }
-
-    #div_txt_servicos p {
-        line-height: 2.9vh;
-        font-size: max(14px, 2vh);
-        font-weight: 400;
-        text-align: center;
-
-    }
-
-    #div_destaque_txt_quem_somos b {
-        font-size: max(25px, 1vh);
-    }
-
-    #div_txt_quem_somos p {
-        line-height: 2.9vh;
-        font-size: max(15px, 2vh);
-        font-weight: 400;
-    }
-
-    #div_destaque_txt_funciona b {
-        font-size: max(25px, 1vh);
-    }
-
-    #div_txt_funciona p {
-        font-size: max(14px, 2vh);
-    }
-
-    .img_card img {
-        height: 9vh;
-        margin: 2vh;
-    }
-
-    #div_passos b {
-        font-size: max(16px, 1vh);
-    }
-
-    #div_texto_passo p {
-        font-size: min(14px, 20vh);
-    }
-
-
+footer {
+    text-align: center;
 }
+
 
 @media only screen and (max-width: 912px) {
     #div_quem_somos {
@@ -584,10 +512,17 @@ body {
     }
 
     .passo {
-        /* width: 30vw; */
         margin-top: 1.6vh;
         padding: 2vh 4vw 2vh 4vw;
         background-color: #E4CBFD;
         border-radius: 0.4vw;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    #div_txt_cards {
+        display: flex;
+        flex-direction: column;
+        padding: 0vh;
     }
 }
