@@ -44,7 +44,7 @@
 }
 
 .coluna1 {
-        /* background-color: yellow; */
+    /* background-color: yellow; */
     padding: 0% 35%;
     margin-left: -60%;
     margin-top: -4%;
@@ -62,7 +62,7 @@
     border-radius: 10px;
     border: transparent;
     outline: 0;
-    
+
 }
 
 .coluna1 label {
@@ -105,7 +105,7 @@
 .moldura button {
     background-color: #6B0CC5;
     color: white;
-    margin-top:  0%;
+    margin-top: 0%;
     margin-left: 42.5%;
     border: transparent;
     padding: 13px 10px;
@@ -132,14 +132,14 @@ footer h3 {
 
 
     .corpo {
-        padding: 100% 0%;
+        padding: 10% 0%;
     }
 
 
     .moldura {
         padding: 1% 0%;
         width: 80%;
-        margin-top: -79.5%;
+        margin-top: -6.5%;
         margin-left: 10%;
     }
 
@@ -149,53 +149,79 @@ footer h3 {
 
     }
 
+    #div_campos {
+        /* background-color: aqua; */
+        padding: 0% 25%;
+        width: 40%;
+        margin-left: 5%;
+        margin-top: 2%;
+    }
+
     .coluna1 {
         /* background-color: yellow; */
-        padding: 0% 40%;
+        padding: 0% 90%;
+        width: 80%;
         margin-left: -55%;
         margin-top: -5%;
     }
 
     .coluna1 input {
-        margin: -21%;
-        margin-left: -15%;
+        margin-left: -100%;
+        padding: 6% 0%;
     }
 
     .coluna1 label {
         /* background-color: tomato; */
-        margin-left: -13%;
+        margin-left: -110%;
+        /* padding: 0% 100% 0% 0%; */
     }
 
 
 
     .coluna2 {
         /* background-color: tomato; */
-        padding: 0% 60%;
+        padding: 0% 90%;
+        width: 80%;
         margin-left: -55%;
-        margin-top: -10%;
+        margin-top: 0%;
     }
 
+
+
     .coluna2 input {
-        margin: -21%;
-        margin-left: -40%;
+        margin-left: -102%;
+        padding: 6% 0%;
+        /* width: 150%; */
+
     }
 
     .coluna2 label {
         /* background-color: yellow; */
-        margin-left: -38%;
-        display: flex;
-        text-align: start;
-        width: 190%;
+        margin-left: -110%;
+
+    }
+
+    .coluna2 .editacaoInputMobile {
+        padding: 6% 0%;
+        margin-left: -73%;
+        width: 200%;
+    }
+
+    .coluna2 .editacaoLabelMobile {
+        margin-left: -84%;
+        font-size: 110%;
+        
+        /* background-color: yellow; */
     }
 
     .botoes {
-        margin-top: -2%;
-        margin-left: -5%;
+        margin-top: -5%;
+        margin-left: -20%;
     }
 
     footer {
-        position: fixed;
-        margin-top: -22%;
+        /* position: fixed; */
+        margin-top: -5%;
         width: 100%;
     }
 
