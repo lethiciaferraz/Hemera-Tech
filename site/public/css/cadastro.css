@@ -166,13 +166,13 @@ footer h3 {
     }
 
     .coluna1 input {
-        margin-left: -100%;
+        margin-left: -105%;
         padding: 6% 0%;
     }
 
     .coluna1 label {
         /* background-color: tomato; */
-        margin-left: -110%;
+        margin-left: -115%;
         /* padding: 0% 100% 0% 0%; */
     }
 
@@ -189,7 +189,7 @@ footer h3 {
 
 
     .coluna2 input {
-        margin-left: -102%;
+        margin-left: -105%;
         padding: 6% 0%;
         /* width: 150%; */
 
