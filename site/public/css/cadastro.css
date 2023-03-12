@@ -1,118 +1,91 @@
 
 
 .corpo {
-    background-color: #EEDDFD;
-    width: 100%;
-    margin: 0;
-}
-
-.moldura {
-    background-color: #DAB6FA;
-    padding: 0.5% 0%;
-    width: 63%;
-    margin-top: 10%;
-    margin-left: 19%;
-    border-radius: 2%;
-    box-shadow: 0px 0px 20px -3px #6B0CC5;
+    display: flex;
+    justify-content: center;
+    font-family: poppins;
+    align-items: center;
+    margin-top: 25vh;
+    margin-bottom: 60px;
 
 }
 
-.destque_txt {
-    /* background-color: aqua; */
-    /* padding: 0% %; */
-    width: 50%;
-    margin-left: 38%;
-    margin-top: 0%;
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60vh;
+    height: 40vh;
+    padding: 2rem 4rem;
+    background-color: #D8C4EC;
+    border-radius: 2vh;
+    box-shadow: 2px 2px 10px #ab8ccf;
+
+
 }
 
-.destque_txt span {
+.destaque_txt {
     font-size: 190%;
     font-weight: 450;
+    margin-bottom: 1.5rem;
 }
 
-#div_campos {
-    /* background-color: aqua; */
-    padding: 0% 50%;
-    width: 40%;
-    margin-left: -22%;
-    margin-top: 2%;
-}
 
-.coluna1 {
-    /* background-color: yellow; */
-    padding: 0% 35%;
-    margin-left: -60%;
-    margin-top: -4%;
-    width: 40%;
+.caixa-formulario {
     display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-
-}
-
-.coluna1 input {
-    margin-left: -75%;
-    padding: 7% 0%;
-    width: 250%;
-    border-radius: 10px;
-    border: transparent;
-    outline: 0;
-
-}
-
-.coluna1 label {
-    width: 80%;
-    margin-left: -72%;
-    font-size: 20px;
-    /* background-color: tomato; */
-}
-
-.coluna2 {
-    /* background-color: tomato; */
-    padding: 0% 35%;
-    margin-left: 50%;
-    margin-top: -82.2%;
-    width: 40%;
-    display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+
+
+}
+
+
+.campo {
+    display: flex;
     flex-direction: column;
+    padding: 10px;
+
+
 
 }
 
-.coluna2 input {
-    margin-left: -75%;
-    padding: 7% 0%;
-    width: 250%;
-    border-radius: 10px;
-    border: transparent;
-    outline: 0;
+.campo input {
+    padding: 10px;
+    border-radius: 1vh;
+    outline: 0 solid transparent;
+    border: 0;
+    width: 20vw;
 }
 
-
-
-.coluna2 label {
-    /* background-color: yellow; */
-    margin-left: -78%;
-    font-size: 20px;
+#bt_cadastrar {
+    background-color: #812FCD;
+    color: #fff;
+    padding: 10px;
+    min-width: 10vw;
+    border-radius: 5px;
+    border: 2px;
+    border-style: groove;
+    border-color: #812FCD;
+    text-align: center;
+    margin-top: 2vh;
 }
 
-.moldura button {
-    background-color: #6B0CC5;
-    color: white;
-    margin-top: 0%;
-    margin-left: 42.5%;
-    border: transparent;
-    padding: 13px 10px;
-    border-radius: 18px;
+#bt_cadastrar:hover {
     cursor: pointer;
-    font-size: 14px;
+    background-color: #812fcd00;
+    color: #812FCD;
+    transition: 0.8s;
 }
 
 footer {
-    background-color: #DAB6FA;
-    padding: 2%;
-    margin-top: 2.9%;
+    background-color: #D8C4EC;
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    position: fixed;
+    width: 100%;
+
 }
 
 footer h3 {
@@ -123,108 +96,80 @@ footer h3 {
 
 
 
-@media only screen and (max-width: 800px) {
-
-
+@media only screen and (max-width: 912px) {
     .corpo {
-        padding: 10% 0%;
-    }
-
-
-    .moldura {
-        padding: 1% 0%;
-        width: 80%;
-        margin-top: -6.5%;
-        margin-left: 10%;
-    }
-
-    .destque_txt {
-        margin-left: 15%;
-        width: 80%;
+        justify-content: center;
 
     }
 
-    #div_campos {
-        /* background-color: aqua; */
-        padding: 0% 25%;
-        width: 40%;
-        margin-left: 5%;
-        margin-top: 2%;
-    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+        min-width: 10vh;
+        height: 60vh;
+        padding: 2rem 2rem;
+        background-color: #D8C4EC;
+        border-radius: 2vh;
+        box-shadow: 2px 2px 10px #ab8ccf;
 
-    .coluna1 {
-        /* background-color: yellow; */
-        padding: 0% 90%;
-        width: 80%;
-        margin-left: -55%;
-        margin-top: -5%;
-    }
-
-    .coluna1 input {
-        margin-left: -105%;
-        padding: 6% 0%;
-    }
-
-    .coluna1 label {
-        /* background-color: tomato; */
-        margin-left: -115%;
-        /* padding: 0% 100% 0% 0%; */
-    }
-
-
-
-    .coluna2 {
-        /* background-color: tomato; */
-        padding: 0% 90%;
-        width: 80%;
-        margin-left: -55%;
-        margin-top: 0%;
-    }
-
-
-
-    .coluna2 input {
-        margin-left: -105%;
-        padding: 6% 0%;
-        /* width: 150%; */
 
     }
 
-    .coluna2 label {
-        /* background-color: yellow; */
-        margin-left: -110%;
+    .destaque_txt {
+        font-size: 190%;
+        font-weight: 440;
+        margin-bottom: 1.0rem;
+    }
+
+
+    .caixa-formulario {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
 
     }
 
-    .coluna2 .editacaoInputMobile {
-        padding: 6% 0%;
-        margin-left: -73%;
-        width: 200%;
+
+    .campo {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
     }
 
-    .coluna2 .editacaoLabelMobile {
-        margin-left: -84%;
-        font-size: 110%;
-        
-        /* background-color: yellow; */
+    .campo input {
+        padding: 10px;
+        border-radius: 1vh;
+        outline: 0 solid transparent;
+        border: 0;
+        width: 60vw;
     }
 
-    .botoes {
-        margin-top: -5%;
-        margin-left: -20%;
-    }
+    #bt_cadastrar {
+        background-color: #812FCD;
+        color: #fff;
+        padding: 10px;
+        min-width: 30vw;
 
+    }
+    
     footer {
-        /* position: fixed; */
-        margin-top: -5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #D8C4EC;
+        bottom: 0;
+        left: 0;
+        height: 70px;
         width: 100%;
+        position: relative;
+    
     }
-
-
-
+    
     footer h3 {
-        font-size: 15px;
-        margin-left: 25%;
+        font-size: 100%;
+        margin-left: 43%;
+        font-weight: 450;
     }
-
 }
