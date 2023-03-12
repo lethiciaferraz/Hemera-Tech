@@ -6,7 +6,6 @@ body {
     font-family: "Poppins", sans-serif;
     background-color: #EEDDFD;
     margin: 0%;
-    margin-top: 16vh;
 }
 
 #div_header {
@@ -21,6 +20,7 @@ body {
     background-color: #d8c4ec;
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
     width: 100%;
+    z-index: 1000;
 }
 
 #div_img_logo img {
@@ -202,9 +202,16 @@ body {
         display: block;
     }
 
+    #navbar_conteudo_mobile{
+        z-index: 1000;
+    }
 }
 
 /* --------------QUEM SOMOS--------------------- */
+#quem_somos{
+    height: 16vh;
+}
+
 #div_quem_somos {
     display: flex;
     align-items: center;
@@ -212,6 +219,10 @@ body {
 
 #div_img_quem_somos img {
     width: min(665px, 70vw);
+}
+
+#div_bloco_txt{
+    margin-bottom: 10px;
 }
 
 .container1 {
@@ -229,17 +240,19 @@ body {
 .container1 p {
     font-weight: 400;
     font-size: min(18px, 30vh);
+    margin-bottom: 35px;
 }
 
-#div_botoes_quem_somos button {
+#div_botoes_quem_somos span {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     border-radius: 5px;
-    margin: 1vh 0.5vw 1vh 0.5vw;
+    margin: 1vh 0.5vw 5vh 0.5vw;
     font-size: min(18px, 30vh);
 }
 
-#btn_saiba {
+#btn_saiba a{
+    text-decoration: none;
     background-color: #812FCD;
     color: #fff;
     padding: 10px;
@@ -251,7 +264,7 @@ body {
     text-align: center;
 }
 
-#btn_saiba:hover {
+#btn_saiba a:hover {
     cursor: pointer;
 
     background-color: #812fcd00;
@@ -259,11 +272,12 @@ body {
     transition: 0.8s;
 }
 
-#btn_fale {
+#btn_fale a{
+    text-decoration: none;
     background-color: #EEDDFD;
     color: #812FCD;
     padding: 10px;
-    min-width: 10vw;
+    min-width: 14vw;
     border-radius: 5px;
     border: 2px;
     border-style: groove;
@@ -271,7 +285,7 @@ body {
     text-align: center;
 }
 
-#btn_fale:hover {
+#btn_fale a:hover {
     cursor: pointer;
     background-color: #8e4fc9;
     color: aliceblue;
@@ -312,9 +326,8 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 1vh 9vw 1vh 9vw;
-    /* font-size: min(12px, 4vh);
-    font-weight: 300; */
+    margin: auto;
+ 
     text-align: center;
 }
 
@@ -341,16 +354,17 @@ body {
 
 }
 
-#imagem_fundo2 img {
+/* COMO FUNCIONA */
+
+#como_funciona img {
     width: 100%;
 }
-
-/* COMO FUNCIONA */
 
 #div_funciona {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     margin-top: 0;
 }
 
@@ -385,11 +399,11 @@ body {
 #container_passos {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 #div_img_numeros img {
     margin: 2vh 1vw 0vh 1vh;
-    /* width: 10vh; */
     height: 80%;
 }
 
@@ -445,7 +459,7 @@ body {
 #div_txt_cards {
     display: flex;
     justify-content: space-around;
-    padding: 3vh;
+    padding: 3vh 5vw 3vh 5vw;
 }
 
 #div_img_contato img {
@@ -470,22 +484,112 @@ body {
 
 
 /* FOOOTER*/
-footer {
+footer{
+    background-color: #d8c4ec;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
 }
 
+footer p {
+    margin: 0;
+}
 
-@media only screen and (max-width: 912px) {
+
+@media only screen and (max-width: 1160px){
     #div_quem_somos {
         flex-direction: column;
+    }    
+}
+
+@media only screen and (max-width: 1145px){
+    #div_img_funciona {
+        display: none;
+    }    
+}
+
+
+@media only screen and (max-width: 600px) {
+
+
+    #div_destaque_txt_quem_somos b{
+        font-size: max(25px, 1vh);
     }
+
+    #div_txt_quem_somos p {
+        line-height: 20px;
+        font-size: max(14px, 2vh);
+    }
+
+    #div_botoes_quem_somos span{
+        font-size: max(10px, 2vh);
+    }
+
+    #div_destaque_txt_servicos b{
+        font-size: max(25px, 1vh);
+    }
+
+    #div_txt_servicos p{
+        font-size: max(14px, 2vh);
+        text-align: center;
+        line-height: 25px;
+
+        margin: 3vh 12vw 3vh 12vw;
+    }
+
+
+    #div_destaque_txt_funciona b{
+        font-size: max(25px, 1vh);
+    }
+
+    #div_txt_funciona p {
+        line-height: 20px;
+        font-size: max(14px, 2vh);
+    }
+
+    .destaque_txt_2 b{
+        font-size: max(15px, 1vh);
+    }
+
+    #div_texto_passo p{
+        font-size: max(13px, 1vh);
+    }
+
+
+    #div_img_numeros img{
+        width: auto
+    }
+
+    #div_destaque_txt_contato b{
+        font-size: max(25px, 1vh);
+    }
+
+    #div_txt_contato p {
+        line-height: 20px;
+        font-size: max(14px, 2vh);
+    }
+
+    #div_txt_cards b {
+        font-size: min(14px, 20vh);
+
+    }
+    
+    #div_txt_cards p {
+        font-size: min(13px, 30vh);
+    }
+
+    footer p{
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 912px) {
 
 
     #div_cards_servicos {
         display: flex;
         flex-direction: column;
-        justify-items: center;
-        margin: 0 auto;
+        justify-content: center;
     }
 
 
@@ -499,6 +603,7 @@ footer {
 
     #div_funciona {
         flex-direction: column;
+        margin: 0px 0px 19px 0px;
     }
 
     #div_img_funciona {
@@ -508,7 +613,7 @@ footer {
     #div_bloco_funciona {
         flex-direction: column;
         justify-content: center;
-        margin: 2vh 10vw 2vh 10vw;
+        margin: 2vh 5vw 2vh 5vw;
     }
 
     .passo {
@@ -516,6 +621,10 @@ footer {
         padding: 2vh 4vw 2vh 4vw;
         background-color: #E4CBFD;
         border-radius: 0.4vw;
+    }
+
+    #div_img_contato img {
+        width: 10vw;
     }
 }
 

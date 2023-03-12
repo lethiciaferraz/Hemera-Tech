@@ -8,13 +8,3 @@
         }
     
         }
-
-
-function ir_como_funciona(){
-    
-
-}
-
-function ir_contato(){
-
-}
