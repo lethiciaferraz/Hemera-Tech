@@ -18,8 +18,6 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap"
         rel="stylesheet">
 
-    <!--  função menu-->
-    <script src="js/funcoes.js"></script>
 
     <!-- biblioteca aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -30,7 +28,6 @@
 <!-- QUEM QUISER MUDAR OS NOMES DOS BAGULHO FICA A VONTADE -->
 
 <body>
-
     <header>
 
         <div id="div_header">
@@ -42,23 +39,23 @@
             <div id="navbar_conteudo">
                 <nav>
                     <ul>
-                        <a href="#quem_somos">
+                        <a href="#quem_somos" id="quem_somos_selecao" style="color: #6B0CC5;" >
                             <li>Sobre nós</li>
                         </a>
 
                         <li>|</li>
-                        <a href="#imagem_fundo1">
+                        <a href="#imagem_fundo1" id="servicos_selecao" >
                             <li>Serviços</li>
                         </a>
 
                         <li>|</li>
 
-                        <a href="#div_contato">
+                        <a href="#div_contato" id="contato_selecao">
                             <li>Contato</li>
                         </a>
                     </ul>
+                </nav>
             </div>
-            </nav>
 
 
             <div id="navbar_botoes">
@@ -86,11 +83,11 @@
         <div class="mobile-menu" id="navbar_conteudo_mobile">
             <nav>
                 <ul>
-                    <li><a href="#div_quem_somos">
+                    <li><a href="#quem_somos">
                             Sobre nós
                         </a></li>
 
-                    <li><a href="#div_servicos">
+                    <li><a href="#imagem_fundo1">
                             Serviços
                         </a></li>
 
@@ -342,6 +339,9 @@
 
 </html>
 
+   <!--  funçoes-->
+    <script src="js/funcoes.js"></script>
 <script>
     AOS.init();
+
 </script>

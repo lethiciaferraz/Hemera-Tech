@@ -8,6 +8,11 @@ body {
     margin: 0%;
 }
 
+header{
+    z-index: 1000;
+
+}
+
 #div_header {
     display: flex;
     flex-direction: row;
@@ -62,12 +67,15 @@ body {
     background-color: #6B0CC5;
     margin: auto;
     display: block;
+    
 }
 
 #navbar_conteudo nav ul a li:hover::after {
     width: 100%;
-    transition: width 0.3s linear;
+    transition: all 3s linear;
 }
+
+/* ---------------------------- */
 
 #div_header a {
     text-decoration: none;
