@@ -4,7 +4,7 @@
     font-family: poppins;
     align-items: center;
     margin-top: 25vh;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
 }
 
 .container {
@@ -85,7 +85,6 @@ footer {
     background-color: #D8C4EC;
     bottom: 0;
     left: 0;
-    height: 70px;
     position: fixed;
     width: 100%;
 }
