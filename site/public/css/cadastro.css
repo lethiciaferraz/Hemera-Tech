@@ -1,7 +1,7 @@
 .corpo {
     display: flex;
     justify-content: center;
-    font-family: poppins;
+    font-family: "Poppins", sans-serif;
     align-items: center;
     margin-top: 25vh;
     padding-bottom: 30px;
@@ -21,7 +21,7 @@
 }
 
 .destaque_txt {
-    font-size: 190%;
+    font-size: 150%;
     font-weight: 450;
     margin-bottom: 1.5rem;
 }
