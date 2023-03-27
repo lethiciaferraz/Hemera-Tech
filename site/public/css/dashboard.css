@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+/* VARIAVEIS DE LETRAS */
+:root {
+    --letraMenu: 1rem;
+    --corLetraMenu: black;
+    --corPrincipal: #D8C4EC;
+    --corSecundaria: #F3EBFA;
+    --corForte: #812FCD;
+    --tamanhoIcones: 1.5rem;
+}
+
+body {
+    background-color: var(--corSecundaria);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.menu-lateral {
+    position: relative;
+    width: 100%;
+}
+
+.menu-lateral .navbar {
+    position: fixed;
+    width: 215px;
+    height: 100%;
+    box-shadow: 0px 0px 6px 2px rgba(54, 54, 54, 0.5);
+    background-color: var(--corPrincipal);
+    border-left: 10px solid var(--corPrincipal);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+/* QUANDO CLICA NO MENU SANDUICHE add classe ATIVADO na navbar*/
+.menu-lateral .navbar.ativado {
+    width: 70px;
+}
+
+.menu-lateral .navbar ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.menu-lateral .navbar ul a li {
+    position: relative;
+    display: block;
+    width: 95%;
+    display: flex;
+    list-style: none;
+    border-radius: 10px;
+    /* border-top-left-radius: 15px; */
+}
+
+/* tirando o hover e qualquer tipo de função do nomeUsuario */
+.menu-lateral .navbar ul a:nth-child(1) {
+    margin-bottom: 1000px;
+    pointer-events: none;
+}
+
+
+.menu-lateral .navbar ul a {
+    position: relative;
+    width: 100%;
+    text-decoration: none;
+    color: var(--corLetraMenu);
+    font-weight: 300;
+}
+
+.menu-lateral .navbar ul a:hover,
+.menu-lateral .navbar ul a.hovered {
+    color: var(--corForte);
+}
+
+.menu-lateral .navbar ul a:hover li,
+.menu-lateral .navbar ul a.hovered li {
+    background-color: var(--corSecundaria);
+}
+
+.menu-lateral .navbar ul a li .icone-menu {
+    position: relative;
+    display: block;
+    min-width: 50px;
+    height: 50px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.menu-lateral .navbar ul a li .icone-menu ion-icon {
+    font-size: var(--tamanhoIcones);
+}
+
+.menu-lateral .navbar ul a li .item-menu {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 50px;
+    line-height: 60px;
+    text-align: start;
+}
+
+/* CURVINHA LATERAL direita AO PASSAR O MOUSE no menu before e after */
+/* .menu-lateral .navbar ul a:hover li::before,
+.menu-lateral .navbar ul a.hovered li::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 30%;
+    box-shadow: 35px 35px 0 10px var(--corSecundaria) ;  
+    pointer-events: none;
+}
+
+.menu-lateral .navbar ul a:hover li::after,
+.menu-lateral .navbar ul a.hovered li::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -50px; 
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 30%;
+    box-shadow: 35px -35px 0 10px var(--corSecundaria) ;  
+    pointer-events: none;
+} */
+
+/* CONTEUDO dashboard */
+.conteudo {
+    position: absolute;
+    /* o -215px e 215 é o tamanho do menu lateral */
+    width: calc(100% -215px);
+    left: 215px;
+    min-height: 100vh;
+    transition: 0.5s;
+}
+
+/* QUANDO CLICA NO MENU SANDUICHE add classe ATIVADO no conteudo*/
+.conteudo.ativado {
+    /* o -70px é o tamanho do menu lateral */
+    left: 70px;
+    width: calc(100% -70px);
+}
+
+.conteudo .menu-sanduiche {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+}
+
+.conteudo .menu-sanduiche .abre-fecha-menu {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.dashboard {
+    padding: 10px;
+    /* background-color: aqua; */
+}
+
+.dashboard .caixas {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(199, 156, 104);
+}
+
+.dashboard .caixas #caixa {
+    margin: 10px;
+    background-color: var(--corForte);
+
+}
+
+@media only screen and (max-width: 900px) {
+    .menu-lateral .navbar {
+        left: -215px;
+    }
+
+    .menu-lateral .navbar.ativado {
+        width: 215px;
+        left: 0;
+    }
+
+    .conteudo {
+        width: 100%;
+        left: 0;
+    }
+
+    .conteudo.ativado {
+        left: 215px;
+    }
+
+    .dashboard .caixas {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(199, 156, 104);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    .menu-lateral .navbar{
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+
+    .menu-lateral .navbar.ativado {
+        width: 215px;
+        left: 0;
+    }
+
+    .conteudo .menu-sanduiche .abre-fecha-menu{
+        z-index: 10001;
+    }
+
+    .conteudo.ativado .menu-sanduiche .abre-fecha-menu{
+        color: red;
+    }
+}
