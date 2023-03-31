@@ -176,18 +176,18 @@ header {
     ul {
         padding: 0;
     }
-    #navbar_conteudo_mobile nav ul li {
+    #navbar_conteudo_mobile nav ul a li {
         list-style: none;
         margin-top: 1vh;
     }
-    #navbar_botoes_mobile ul li {
+    #navbar_botoes_mobile ul a li {
         list-style: none;
     }
-    #navbar_conteudo_mobile nav ul li a {
+    #navbar_conteudo_mobile nav ul a {
         text-decoration: none;
         color: #6B0CC5;
     }
-    #navbar_botoes_mobile ul li a {
+    #navbar_botoes_mobile ul a {
         text-decoration: none;
     }
     #btn-nav-login_mobile {

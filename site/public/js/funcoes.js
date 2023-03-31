@@ -1,4 +1,6 @@
-window.onscroll = function() { scrollFunction() };
+
+// função da cor do menu
+window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
     if (document.body.scrollTop > 1400 || document.documentElement.scrollTop > 1400) {
@@ -6,12 +8,12 @@ function scrollFunction() {
         document.getElementById("servicos_selecao").style.color = "#000"
         document.getElementById("contato_selecao").style.color = "#6B0CC5"
 
-    } else if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    } else if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
         document.getElementById("quem_somos_selecao").style.color = "#000"
         document.getElementById("servicos_selecao").style.color = "#6B0CC5"
         document.getElementById("contato_selecao").style.color = "#000"
 
-    } else if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+    } else if(document.body.scrollTop > 0 || document.documentElement.scrollTop > 0){
 
         document.getElementById("quem_somos_selecao").style.color = "#6B0CC5"
         document.getElementById("servicos_selecao").style.color = "#000"
@@ -27,7 +29,6 @@ function MostrarMenu() {
     } else {
         menuMobile.classList.add('open');
     }
-
 }
 
 function ConfirmacaoSenha() {
