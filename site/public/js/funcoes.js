@@ -30,6 +30,39 @@ function MostrarMenu() {
 
 }
 
+function ConfirmacaoSenha() {
+    var senha1 = senha_empresa.value
+    var senha2 = confirmacaoSenha.value
+
+    if (senha1 != senha2) {
+        div_senha.InnerHTML = '<input type="password" id="confirmacaoSenha" placeholder="Confirmação de senha:" onchange="ConfirmacaoSenha()" style="border: 2px solid red;">'
+
+        botao_cadastro.innerHTML = '<button id="bt_cadastrar" >Cadastrar</button>'
+    }
+}
+
+function ConfirmacaoEmail() {
+    var email1 = email_empresa.value
+    var email2 = confirmacaoEmail.value
+
+    if (email1 != email2) {
+        div_email.InnerHTML = '<input type="text" id="confirmacaoEmail" placeholder="Confirmação de E-mail:" onchange="ConfirmacaoEmail()" style="border: 2px solid red;">'
+
+        botao_cadastro.innerHTML = '<button id="bt_cadastrar" >Cadastrar</button>'
+    }
+}
+
 function CadastrarEmpresa() {
+    var nomeVar = nome_empresa.value
+    var emailVar = email_empresa.value
+    var confEmailVar = confirmacaoEmail.value
+    var cnpjVar = cnpj_empresa.value
+    var senhaVar = senha_empresa.value
+    var confSenhaVar = confirmacaoSenha.value
+
+    if (nomeVar == "" || emailVar == "" || confEmailVar == "" || cnpjVar == "" || senhaVar == "" || confSenhaVar == "") {
+        alert("Por favor, preencha todos os campos!")
+    }
+
 
 }

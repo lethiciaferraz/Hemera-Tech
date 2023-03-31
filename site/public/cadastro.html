@@ -24,7 +24,7 @@
 
 
 <body>
-   
+
     <header>
 
         <div id="div_header">
@@ -32,7 +32,7 @@
             <div id="div_img_logo">
                 <img src="./assets/HEMERA.png" alt="" width=150vw>
             </div>
-            
+
             <div id="navbar_conteudo">
                 <nav>
                     <ul>
@@ -122,35 +122,35 @@
                     <div class="campo">
                         <input type="text" id="nome_empresa" placeholder="Nome da empresa:">
                     </div>
-                     
+
                     <div class="campo">
                         <input type="text" id="email_empresa" placeholder="E-mail da empresa:">
                     </div>
-                    
-                    <div class="campo">
-                        <input type="text" id="confirmacaoEmail" placeholder="Confirmação de E-mail:">
+
+                    <div class="campo" id="div_email">
+                        <input type="text" id="confirmacaoEmail" placeholder="Confirmação de E-mail:" onchange="ConfirmacaoEmail()">
                     </div>
                 </div>
                 <div class="coluna2">
-                  
+
                     <div class="campo">
                         <input type="text" id="cnpj_empresa" placeholder="CNPJ:">
                     </div>
                     <div class="campo">
-                        <input type="password" id="senha" placeholder="Senha:">
+                        <input type="password" id="senha_empresa" placeholder="Senha:">
                     </div>
-                    <div class="campo">
-                        <input type="password" id="confirmacaoSenha" placeholder="Confirmação de senha:">
+                    <div class="campo" id="div_senha">
+                        <input type="password" id="confirmacaoSenha" placeholder="Confirmação de senha:" onchange="ConfirmacaoSenha()">
                     </div>
                 </div>
             </div>
 
             <div class="botoes" id="botao_cadastro">
-                
-                <button id="bt_cadastrar">Cadastrar</button>
+
+                <button id="bt_cadastrar" onclick="CadastrarEmpresa()">Cadastrar</button>
             </div>
 
-            <div id="div_tem_conta">Já tem uma conta? <a href="login.html">Faça login</a></div>
+            <div id=" div_tem_conta ">Já tem uma conta? <a href="login.html ">Faça login</a></div>
         </div>
     </div>
 
