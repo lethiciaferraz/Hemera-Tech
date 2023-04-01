@@ -31,7 +31,7 @@ function entrar(req, res) {
     if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
     } else if (senha == undefined) {
-        res.status(400).send("Sua senha está indefinida!");
+        res.status(400).send("Sua senha está undefined!");
     } else {
 
         empresaModel.entrar(email, senha)
@@ -46,7 +46,7 @@ function entrar(req, res) {
                     } else if (resultado.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
                     } else {
-                        res.status(403).send("Mais de um usuário com o mesmo login e senha!");
+                        res.status(403).send("Mais de uma empresa com o mesmo login e senha!");
                     }
                 }
             ).catch(

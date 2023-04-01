@@ -96,9 +96,13 @@
 
             <div id="navbar_botoes_mobile">
                 <ul>
-                    <a href="login.html"><li id="btn-nav-login_mobile"> Login</li></a>
+                    <a href="login.html">
+                        <li id="btn-nav-login_mobile"> Login</li>
+                    </a>
 
-                    <a href="cadastro.html"><li id="btn-nav-cadastro_mobile">Cadastrar-se</li></a>
+                    <a href="cadastro.html">
+                        <li id="btn-nav-cadastro_mobile">Cadastrar-se</li>
+                    </a>
                 </ul>
 
             </div>
@@ -124,7 +128,7 @@
             <div id="div_campos">
                 <div class="campo" id="campo1_login">
                     <!-- <img src="./assets/icone-email.png"> -->
-                    <input type="text" id="ip_login" placeholder="Email ou telefone">
+                    <input type="text" id="ip_email" placeholder="Email">
                 </div>
                 <div class="campo" id="campo2_login">
                     <!-- <img src="./assets/" alt=""> -->
@@ -132,15 +136,15 @@
                 </div>
             </div>
 
-            
+
             <div class="botoes " id="botao_login">
                 <button id="bt_entrar" onclick="entrar()">Entrar</button>
             </div>
-            
+
             <div class="txt_2" onclick="esq_senha()" id="div_esq_senha">
                 <a href=" ">Esqueceu a senha?</a>
             </div>
-            
+
             <div class="txt_2 " id="div_txt_cadastrar">
                 Ainda não é cadastrado?
                 <a href="./cadastro.html ">Cadastre-se</a>
@@ -156,19 +160,6 @@
 
 </html>
 <script>
-    function entrar() {
-        var login = ip_login.value
-        var senha = ip_senha.value
-
-        if (login == 'admin@hemera.tech' && senha == 'adm123') {
-            alert('Login realizado com sucesso!')
-            window.location.href ="dashboard.html"
-
-        } else {
-            alert('Login e/ou senha incorreto(s), tente novamente')
-        }
-    }
-
     function esq_senha() {
         alert('Página em construção...')
     }

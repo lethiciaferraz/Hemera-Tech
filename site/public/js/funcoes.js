@@ -91,6 +91,60 @@ function CadastrarEmpresa() {
         return false;
 
     }
+}
 
+function entrar() {
 
+    var emailVar = ip_email.value;
+    var senhaVar = ip_senha.value;
+
+    if (emailVar == "" || senhaVar == "") {
+        alert('Por favor preencha todos os campos com valores válidos')
+        return false;
+    } else {
+        console.log("FORM EMAIL: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/empresas/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function(resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.ID_EMPRESA = json.idEmpresa;
+                    sessionStorage.NOME_EMPRESA = json.nome;
+
+                    // AQUI É OQ CONTECE DPS DO LOGIN
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    alert(texto)
+                });
+            }
+
+        }).catch(function(erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
 }
