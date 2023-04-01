@@ -1,6 +1,5 @@
-
 // função da cor do menu
-window.onscroll = function () { scrollFunction() };
+window.onscroll = function() { scrollFunction() };
 
 function scrollFunction() {
     if (document.body.scrollTop > 1400 || document.documentElement.scrollTop > 1400) {
@@ -8,12 +7,12 @@ function scrollFunction() {
         document.getElementById("servicos_selecao").style.color = "#000"
         document.getElementById("contato_selecao").style.color = "#6B0CC5"
 
-    } else if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+    } else if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
         document.getElementById("quem_somos_selecao").style.color = "#000"
         document.getElementById("servicos_selecao").style.color = "#6B0CC5"
         document.getElementById("contato_selecao").style.color = "#000"
 
-    } else if(document.body.scrollTop > 0 || document.documentElement.scrollTop > 0){
+    } else if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
 
         document.getElementById("quem_somos_selecao").style.color = "#6B0CC5"
         document.getElementById("servicos_selecao").style.color = "#000"
@@ -31,28 +30,6 @@ function MostrarMenu() {
     }
 }
 
-function ConfirmacaoSenha() {
-    var senha1 = senha_empresa.value
-    var senha2 = confirmacaoSenha.value
-
-    if (senha1 != senha2) {
-        div_senha.InnerHTML = '<input type="password" id="confirmacaoSenha" placeholder="Confirmação de senha:" onchange="ConfirmacaoSenha()" style="border: 2px solid red;">'
-
-        botao_cadastro.innerHTML = '<button id="bt_cadastrar" >Cadastrar</button>'
-    }
-}
-
-function ConfirmacaoEmail() {
-    var email1 = email_empresa.value
-    var email2 = confirmacaoEmail.value
-
-    if (email1 != email2) {
-        div_email.InnerHTML = '<input type="text" id="confirmacaoEmail" placeholder="Confirmação de E-mail:" onchange="ConfirmacaoEmail()" style="border: 2px solid red;">'
-
-        botao_cadastro.innerHTML = '<button id="bt_cadastrar" >Cadastrar</button>'
-    }
-}
-
 function CadastrarEmpresa() {
     var nomeVar = nome_empresa.value
     var emailVar = email_empresa.value
@@ -61,8 +38,58 @@ function CadastrarEmpresa() {
     var senhaVar = senha_empresa.value
     var confSenhaVar = confirmacaoSenha.value
 
-    if (nomeVar == "" || emailVar == "" || confEmailVar == "" || cnpjVar == "" || senhaVar == "" || confSenhaVar == "") {
+    if (emailVar != confEmailVar) {
+        alert('E-mails divergentes')
+        return false;
+
+    } else if (senhaVar != confSenhaVar) {
+        alert('Senhas divergentes')
+        return false;
+
+    } else if (nomeVar == "" || emailVar == "" || confEmailVar == "" || cnpjVar == "" || senhaVar == "" || confSenhaVar == "") {
         alert("Por favor, preencha todos os campos!")
+        return false;
+
+    } else {
+        fetch("/empresas/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/empresa.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                cnpjServer: cnpjVar,
+                senhaServer: senhaVar
+
+            })
+        }).then(function(resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                resposta.json().then(function(response) {
+
+                    dados = response[0]
+                    sessionStorage.ID_EMPRESA = dados[0].idEmpresa
+                    sessionStorage.NOME_EMPRESA = dados[0].nome
+
+                    console.log('DEU BOM');
+                })
+
+                // AQUI VAI OQ ACONTECE DPS DO CADASTRO
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function(resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+
     }
 
 
