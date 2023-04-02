@@ -80,7 +80,7 @@ function CadastrarEmpresa() {
                     console.log('DEU BOM');
                 })
 
-                // AQUI VAI OQ ACONTECE DPS DO CADASTRO
+                window.location.href ="login.html"
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
@@ -127,7 +127,7 @@ function entrar() {
                     sessionStorage.ID_EMPRESA = json.idEmpresa;
                     sessionStorage.NOME_EMPRESA = json.nome;
 
-                    // AQUI É OQ CONTECE DPS DO LOGIN
+                    window.location.href ="dashboard.html"
 
                 });
 
