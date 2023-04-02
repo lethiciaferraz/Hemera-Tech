@@ -138,6 +138,7 @@ footer h3 {
         padding: 10px;
         min-width: 30vw;
     }
+    
     footer {
         display: flex;
         justify-content: center;
@@ -145,13 +146,9 @@ footer h3 {
         background-color: #D8C4EC;
         bottom: 0;
         left: 0;
-        height: 70px;
+        /* height: 70px; */
         width: 100%;
         position: relative;
     }
-    footer h3 {
-        font-size: 100%;
-        margin-left: 43%;
-        font-weight: 450;
-    }
+
 }

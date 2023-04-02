@@ -43,7 +43,7 @@ header {
 }
 
 #div_img_logo img {
-    width: min(150px, 100vh);
+    width: min(130px, 100vh);
     margin-left: 4vw;
 }
 
@@ -89,7 +89,6 @@ header {
     width: 100%;
     transition: all 3s linear;
 }
-
 
 /* ---------------------------- */
 
