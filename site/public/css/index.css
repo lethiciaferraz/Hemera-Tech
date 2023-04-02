@@ -1,5 +1,4 @@
 /*EDITANDO SCROOLLBAR*/
-
 ::-webkit-scrollbar {
     width: 10px;
     transition: all .2s linear;
@@ -35,11 +34,12 @@ header {
     justify-content: space-between;
     position: fixed;
     top: 0;
-    padding: 1vh 0vw 1vh 0vw;
+    padding: 5px 0vw 5px 0vw;
     background-color: #d8c4ec;
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
     width: 100%;
     z-index: 1000;
+    height: 80px;
 }
 
 #div_img_logo img {
@@ -151,7 +151,7 @@ header {
 .mobile-menu {
     display: none;
     position: fixed;
-    top: 14vh;
+    top: 90px;
 }
 
 @media only screen and (max-width: 912px) {

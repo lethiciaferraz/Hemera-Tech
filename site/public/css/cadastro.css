@@ -3,8 +3,7 @@
     justify-content: center;
     font-family: "Poppins", sans-serif;
     align-items: center;
-    margin-top: 25vh;
-    padding-bottom: 30px;
+
 }
 
 .container {
@@ -13,7 +12,6 @@
     flex-direction: column;
     align-items: center;
     min-width: 60vh;
-    /* height: 40vh; */
     padding: 2rem 2rem;
     background-color: #D8C4EC;
     border-radius: 2vh;
@@ -85,20 +83,16 @@ footer {
     background-color: #D8C4EC;
     bottom: 0;
     left: 0;
-    position: fixed;
     width: 100%;
-}
+    position: fixed;
 
-footer h3 {
-    font-size: 100%;
-    margin-left: 43%;
-    font-weight: 450;
 }
 
 @media only screen and (max-width: 912px) {
     .corpo {
         justify-content: center;
     }
+
     .container {
         flex-direction: column;
         align-items: center;
@@ -109,22 +103,26 @@ footer h3 {
         border-radius: 2vh;
         box-shadow: 2px 2px 10px #ab8ccf;
     }
+
     .destaque_txt {
         font-size: 190%;
         font-weight: 440;
         margin-bottom: 1.0rem;
     }
+
     .caixa-formulario {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
     }
+
     .campo {
         display: flex;
         flex-direction: column;
         padding: 10px;
     }
+
     .campo input {
         padding: 10px;
         border-radius: 1vh;
@@ -132,23 +130,25 @@ footer h3 {
         border: 0;
         width: 60vw;
     }
+
     #bt_cadastrar {
         background-color: #812FCD;
         color: #fff;
         padding: 10px;
         min-width: 30vw;
     }
-    
+
+
     footer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #D8C4EC;
-        bottom: 0;
-        left: 0;
-        /* height: 70px; */
-        width: 100%;
         position: relative;
+        background-color: #d8c4ec;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+
+    footer p {
+        margin: 0;
     }
 
 }
