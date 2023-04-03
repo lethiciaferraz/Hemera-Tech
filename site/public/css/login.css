@@ -1,5 +1,14 @@
 /* .header {} */
 
+:root{
+    --bordaCurva : 5px;
+    --roxoEscuro: #812FCD;
+    --roxoClarinho: #D8C4EC;
+    --roxoClaroFundo: #EEDDFD;
+    --tamanhoLetraDestaque: min(32px, 19vh);
+    --letraMedia: min(16px, 30vh);
+}
+
 #div_principal_login {
     display: flex;
     /* talvez precise mudar */
@@ -19,8 +28,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 2vh;
-    box-shadow: 2px 2px 10px#ab8ccf;
+    border-radius: var(--bordaCurva);
+    /* box-shadow: 2px 2px 10px#ab8ccf; */
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
     min-width: 23vw;
     /* justify-content: center; */
 }
@@ -30,8 +40,8 @@
 }
 
 .destaque_txt {
-    font-size: 150%;
-    font-weight: 450;
+    font-size: var(--tamanhoLetraDestaque);
+    font-weight: 100;
     margin-bottom: 1.5rem;
 }
 
@@ -63,7 +73,7 @@
     border-color: #812FCD;
     text-align: center;
     font-family: "Poppins", sans-serif;
-    padding: 10px;
+    padding: 4px;
     font-size: min(16px, 32vh);
     font-weight: 550;
     cursor: pointer;
@@ -76,7 +86,7 @@
 }
 
 .txt_2 {
-    font-size: min(13px, 28vh);
+    font-size: min(15px, 28vh);
     font-weight: 400;
 }
 
@@ -92,7 +102,6 @@
 #div_txt_cadastrar {
     min-width: 20vw;
     font-weight: 400;
-    font-size: min(13px, 30vh);
 }
 
 footer {
@@ -108,30 +117,39 @@ footer {
     #div_img_login img {
         width: min(400px, 70vw);
     }
+
+    #div_principal_login {
+        justify-content: center;
+    }
     
 }
 
 @media only screen and (max-width: 976px) {
+    .destaque_txt {
+        font-size: 25px;
+    }
 
+    #botao_login{
+        font-size: 11px;
+    }
+
+    .txt_2 {
+        font-size:12px;
+    }
     #div_img_login{
         display: none ;
     }
 
-    #div_principal_login {
-        display: flex;
-        /* talvez precise mudar */
-        justify-content: center;
-    }
-
     .campo input {
-        /* box-shadow: 2px 2px 10px #ab8ccf; */
         padding: 10px;
         border-radius: 1vh;
-        outline: 0 solid transparent;
         border: 0;
         width: 50vw;
-        /* background-color: #EEDDFD; */
     }
 
+    #botao_login button {
+        min-width: 30vw;
+        font-size: 11px;
+    }
   
 }

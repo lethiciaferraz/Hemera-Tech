@@ -1,5 +1,5 @@
 // função da cor do menu
-window.onscroll = function() { scrollFunction() };
+window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
     if (document.body.scrollTop > 1400 || document.documentElement.scrollTop > 1400) {
@@ -65,13 +65,13 @@ function CadastrarEmpresa() {
                 senhaServer: senhaVar
 
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
 
-                resposta.json().then(function(response) {
+                resposta.json().then(function (response) {
 
                     dados = response[0]
                     sessionStorage.ID_EMPRESA = dados[0].idEmpresa
@@ -80,17 +80,28 @@ function CadastrarEmpresa() {
                     console.log('DEU BOM');
                 })
 
-                window.location.href ="login.html"
+                // AINDA NAO COLEI O CSS DOS CARD
+                cardErro.style.display = "block";
+                mensagem_erro.innerHTML = "Cadastro da empresa feito com sucesso. Redirecionando para a cadastro de funcionário...";
+
+                setTimeout(() => {
+                    window.location = "cadastroFuncionario.html";
+                }, "2000")
+
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
-        }).catch(function(resposta) {
+        }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
         });
 
         return false;
 
     }
+}
+
+function CadastrarFuncionario() {
+// 
 }
 
 function entrar() {
@@ -114,7 +125,7 @@ function entrar() {
                 emailServer: emailVar,
                 senhaServer: senhaVar
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
 
             if (resposta.ok) {
@@ -127,7 +138,7 @@ function entrar() {
                     sessionStorage.ID_EMPRESA = json.idEmpresa;
                     sessionStorage.NOME_EMPRESA = json.nome;
 
-                    window.location.href ="dashboard.html"
+                    window.location.href = "cadastroFuncionario.html"
 
                 });
 
@@ -141,7 +152,7 @@ function entrar() {
                 });
             }
 
-        }).catch(function(erro) {
+        }).catch(function (erro) {
             console.log(erro);
         })
 

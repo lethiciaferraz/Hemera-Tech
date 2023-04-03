@@ -16,7 +16,9 @@
     <!-- FONTE POPPINS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap"
+        rel="stylesheet">
 
     <!-- função menu -->
     <script src="js/funcoes.js"></script>
@@ -112,48 +114,110 @@
 
     <!-------------------------------CADASTRO--------------------------------------------- -->
 
-    <div id="cadastro" style="margin-top: 140px;"></div>
-
     <div class="corpo">
+        <!-- CARD DA API -->
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+        <!--  -->
         <div class="container">
+
             <div class="destaque_txt" id="div_destaque_txt_login">
-                Cadastre-se </div>
+                <b>Cadastro</b>
+            </div>
+
+
+            <p>Insira os dados da sua empresa para prosseguir com o cadastro</p>
+
+
             <div class="caixa-formulario">
 
-                <div class="coluna1">
-                    <div class="campo">
-                        <input type="text" id="nome_empresa" placeholder="Nome da empresa:">
-                    </div>
+                <div id="dados_principais">
 
-                    <div class="campo">
-                        <input type="text" id="email_empresa" placeholder="E-mail da empresa:">
-                    </div>
+                    <b>Dados principais: </b>
 
-                    <div class="campo" id="div_email">
-                        <input type="text" id="confirmacaoEmail" placeholder="Confirmação de E-mail:">
+                    <div class="campos">
+
+                        <div class="linha">
+                            <div class="campo">
+                                <input type="text" id="nome_empresa" placeholder="Nome">
+                            </div>
+
+                            <div class="campo">
+                                <input type="text" id="cnpj_empresa" placeholder="CNPJ">
+                            </div>
+                        </div>
+
+                        <div class="linha">
+
+                            <div class="campo">
+                                <input type="text" id="email_empresa" placeholder="E-mail">
+                            </div>
+
+                            <div class="campo">
+                                <input type="text" id="telefone_empresa" placeholder="Telefone">
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                <div class="coluna2">
 
-                    <div class="campo">
-                        <input type="text" id="cnpj_empresa" placeholder="CNPJ:">
-                    </div>
-                    <div class="campo">
-                        <input type="password" id="senha_empresa" placeholder="Senha:">
-                    </div>
-                    <div class="campo" id="div_senha">
-                        <input type="password" id="confirmacaoSenha" placeholder="Confirmação de senha:">
+                <div id="endereco">
+                    <b>Endereço:</b>
+
+                    <div class="campos">
+
+                        <div class="linha">
+                            <div class="campo">
+                                <input type="text" id="cidade_empresa" placeholder="Cidade">
+                            </div>
+
+                            <div class="campo">
+                                <input type="text" id="estado_empresa" placeholder="Estado">
+                            </div>
+                        </div>
+
+                        <div class="linha">
+                            <div class="campo">
+                                <input type="text" id="endereco_empresa" placeholder="Endereço">
+                            </div>
+
+                            <div class="campo">
+                                <input type="text" id="numero_empresa" placeholder="Nº">
+                            </div>
+                        </div>
+
+                        <div class="linha">
+                            <div class="campo">
+                                <input type="text" id="endereco_empresa" placeholder="Bairro">
+                            </div>
+
+                            <div class="campo">
+                                <input type="text" id="numero_empresa" placeholder="Complemento">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="botoes" id="botao_cadastro">
 
+            <div class="botoes" id="botao_cadastro">
                 <button id="bt_cadastrar" onclick="CadastrarEmpresa()">Cadastrar</button>
             </div>
 
-            <div id=" div_tem_conta ">Já tem uma conta? <a href="login.html ">Faça login</a></div>
+            <div id="div_tem_conta">
+                Já tem uma conta? <a href="login.html">Faça login</a>
+            </div>
+
+
         </div>
+
+        <!-- CARD API-->
+        <div id="div_erros_login"></div>
+        <!-- --------------- -->
+        
     </div>
 
     <div id="cadastro" style="margin-bottom: 30px;"></div>
@@ -164,3 +228,8 @@
 </body>
 
 </html>
+
+<script>
+    // Coloquei pra desativar a função do scrool nesta pag (gambiarra :))
+    window.onscroll = function () { };
+</script>
