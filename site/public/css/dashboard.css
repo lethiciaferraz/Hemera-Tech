@@ -66,6 +66,20 @@ body {
     pointer-events: none;
 }
 
+.menu-lateral .navbar ul a:nth-child(2) {
+    margin-bottom: 1000px;
+    pointer-events: none;
+}
+
+/* MUDAR CONFORME A PAG */
+.menu-lateral .navbar ul a:nth-child(4) {
+    color: var(--corForte);
+}
+
+.menu-lateral .navbar ul a:nth-child(4) li{
+    background-color: var(--corSecundaria);
+}
+/* --------------------------- */
 
 .menu-lateral .navbar ul a {
     position: relative;
@@ -75,26 +89,24 @@ body {
     font-weight: 300;
 }
 
-.menu-lateral .navbar ul a:hover,
-.menu-lateral .navbar ul a.hovered {
+.menu-lateral .navbar ul a:hover {
     color: var(--corForte);
 }
 
-.menu-lateral .navbar ul a:hover li,
-.menu-lateral .navbar ul a.hovered li {
+/* .menu-lateral .navbar ul a:hover li{
     background-color: var(--corSecundaria);
-}
+} */
 
 .menu-lateral .navbar ul a li .icone-menu {
     position: relative;
     display: block;
     min-width: 50px;
     height: 50px;
-    line-height: 70px;
+    line-height: 60px;
     text-align: center;
 }
 
-.menu-lateral .navbar ul a li .icone-menu ion-icon {
+.menu-lateral .navbar ul a li .icone-menu i {
     font-size: var(--tamanhoIcones);
 }
 
@@ -106,35 +118,6 @@ body {
     line-height: 60px;
     text-align: start;
 }
-
-/* CURVINHA LATERAL direita AO PASSAR O MOUSE no menu before e after */
-/* .menu-lateral .navbar ul a:hover li::before,
-.menu-lateral .navbar ul a.hovered li::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: -50px;
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border-radius: 30%;
-    box-shadow: 35px 35px 0 10px var(--corSecundaria) ;  
-    pointer-events: none;
-}
-
-.menu-lateral .navbar ul a:hover li::after,
-.menu-lateral .navbar ul a.hovered li::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: -50px; 
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border-radius: 30%;
-    box-shadow: 35px -35px 0 10px var(--corSecundaria) ;  
-    pointer-events: none;
-} */
 
 /* CONTEUDO dashboard */
 .conteudo {
