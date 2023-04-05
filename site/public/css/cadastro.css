@@ -88,6 +88,10 @@
     background-color: var(--roxoClaroFundo);
 }
 
+#logradouro_empresa {
+    width: 44.4vw;
+}
+
 #bt_cadastrar {
     background-color: var(--roxoEscuro);
     color: #fff;
@@ -121,47 +125,37 @@
     color: var(--roxoEscuro);
 }
 
-
 @media only screen and (max-width: 912px) {
-
     .linha {
         display: flex;
         flex-direction: column;
     }
-
     /* ------------------------------------------------------ */
     .destaque_txt {
         font-size: 25px;
     }
-
     .container p {
         margin-left: 0px;
         font-size: 14px;
     }
-
     #dados_principais b {
         font-size: 13px;
     }
-
     #endereco b {
         font-size: 13px;
     }
-
     #div_tem_conta {
         font-size: 12px;
     }
     /* ------------------------------------------------------ */
-
     .campo input {
         padding: 10px;
         border-radius: 1vh;
         border: 0;
         width: 60vw;
     }
-
     #bt_cadastrar {
         min-width: 30vw;
         font-size: 11px;
     }
-
 }
