@@ -66,6 +66,9 @@ function cadastrar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
     var cnpj = req.body.cnpjServer;
+    var logradouro = req.body.logradouroServer;
+    var cep = req.body.cepServer;
+    var complemento = req.body.complementoServer;
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -76,10 +79,16 @@ function cadastrar(req, res) {
         res.status(400).send("Sua senha está undefined!");
     } else if (cnpj == undefined) {
         res.status(400).send("Seu cnpj está undefined!");
+    } else if (logradouro == undefined) {
+        res.status(400).send("Seu logradouro está undefined!");
+    } else if (cep == undefined) {
+        res.status(400).send("Seu cep está undefined!");
+    } else if (complemento == undefined) {
+        res.status(400).send("Seu complemento está undefined!");
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo empresaModel.js
-        empresaModel.cadastrar(nome, email, senha, cnpj)
+        empresaModel.cadastrar(nome, email, senha, cnpj, logradouro, cep, complemento)
             .then(
                 function(resultado) {
                     res.json(resultado);

@@ -1,5 +1,5 @@
 // função da cor do menu
-window.onscroll = function () { scrollFunction() };
+window.onscroll = function() { scrollFunction() };
 
 function scrollFunction() {
     if (document.body.scrollTop > 1400 || document.documentElement.scrollTop > 1400) {
@@ -33,20 +33,14 @@ function MostrarMenu() {
 function CadastrarEmpresa() {
     var nomeVar = nome_empresa.value
     var emailVar = email_empresa.value
-    var confEmailVar = confirmacaoEmail.value
     var cnpjVar = cnpj_empresa.value
     var senhaVar = senha_empresa.value
-    var confSenhaVar = confirmacaoSenha.value
+    var logradouroVar = logradouro_empresa.value
+    var cepVar = cep_empresa.value
+    var complementoVar = complemento_empresa.value
 
-    if (emailVar != confEmailVar) {
-        alert('E-mails divergentes')
-        return false;
-
-    } else if (senhaVar != confSenhaVar) {
-        alert('Senhas divergentes')
-        return false;
-
-    } else if (nomeVar == "" || emailVar == "" || confEmailVar == "" || cnpjVar == "" || senhaVar == "" || confSenhaVar == "") {
+    if (nomeVar == "" || emailVar == "" ||
+        cnpjVar == "" || senhaVar == "" || logradouroVar == '' || cepVar == "" || complementoVar == "") {
         alert("Por favor, preencha todos os campos!")
         return false;
 
@@ -62,16 +56,19 @@ function CadastrarEmpresa() {
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 cnpjServer: cnpjVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
+                logradouroServer: logradouroVar,
+                cepServer: cepVar,
+                complementoServer: complementoVar
 
             })
-        }).then(function (resposta) {
+        }).then(function(resposta) {
 
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
 
-                resposta.json().then(function (response) {
+                resposta.json().then(function(response) {
 
                     dados = response[0]
                     sessionStorage.ID_EMPRESA = dados[0].idEmpresa
@@ -91,7 +88,7 @@ function CadastrarEmpresa() {
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
-        }).catch(function (resposta) {
+        }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
         });
 
@@ -101,7 +98,7 @@ function CadastrarEmpresa() {
 }
 
 function CadastrarFuncionario() {
-// 
+    // 
 }
 
 function entrar() {
@@ -125,7 +122,7 @@ function entrar() {
                 emailServer: emailVar,
                 senhaServer: senhaVar
             })
-        }).then(function (resposta) {
+        }).then(function(resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
 
             if (resposta.ok) {
@@ -152,7 +149,7 @@ function entrar() {
                 });
             }
 
-        }).catch(function (erro) {
+        }).catch(function(erro) {
             console.log(erro);
         })
 
