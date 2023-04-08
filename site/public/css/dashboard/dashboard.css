@@ -13,6 +13,13 @@
     --corSecundaria: #F3EBFA;
     --corForte: #812FCD;
     --tamanhoIcones: 1.5rem;
+    --caixa: #FFFFFF;
+
+    /* para usar no font-weigth */
+    --letraLight: 300;
+    --letraRegular: 400;
+    --letraMedia: 500;
+    --letraSemiBold: 600;
 }
 
 body {
@@ -179,21 +186,86 @@ body {
 }
 
 .dashboard {
-    padding: 10px;
+    padding: 10px 10px 10px 40px;
     /* background-color: aqua; */
 }
 
 .dashboard .caixas {
     display: flex;
     flex-direction: row;
-    background-color: rgb(199, 156, 104);
+
 }
 
 .dashboard .caixas #caixa {
-    margin: 10px;
-    background-color: var(--corForte);
+    margin: 5px;
+    background-color: var(--caixa);
+    width: 240px;
+    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
+    padding: 15px;
 
 }
+
+.dashboard .caixas #caixa p{
+    font-weight: var(--letraRegular);
+    font-size: 14px;
+    text-align: center;
+}
+
+.dashboard .caixas #caixa div{
+    margin: 15px 5px;
+    font-weight: var(--letraSemiBold);
+    font-size: 20px;
+    text-align: center;
+}
+
+.dashboard .caixas #caixa button{
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    padding: 4px;
+    font-weight: var(--letraMedia);
+    background-color: var(--corForte);
+    color: var(--caixa);
+    border-radius: 5px;
+    border: 0.04;
+    display: block;
+    margin: 0 auto;
+}
+
+.dashboard .caixas #caixa button:hover{
+    background-color: var(--corForte);
+    color: var(--caixa);
+    cursor: pointer;
+}
+
+.dashboard #caixa_lista{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 30px;
+    background-color: var(--caixa);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.dashboard #caixa_lista #infos_principais{ 
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard #caixa_lista #infos_principais #legenda{  
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard #caixa_lista #infos_principais #legenda #caixinha{  
+    display: flex;
+    flex-direction: row;
+}
+
+.dashboard #caixa_lista #infos_principais h3{
+    color: black;
+    font-weight: var(--letraMedia);
+}
+
 
 @media only screen and (max-width: 900px) {
     .menu-lateral .navbar {
@@ -217,7 +289,6 @@ body {
     .dashboard .caixas {
         display: flex;
         flex-direction: column;
-        background-color: rgb(199, 156, 104);
     }
 }
 
