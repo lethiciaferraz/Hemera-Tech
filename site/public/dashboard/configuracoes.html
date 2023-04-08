@@ -5,9 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Configurações</title>
 
-    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="stylesheet" href="../css/dashboard/dashboard.css">
+
+    <link rel="stylesheet" href="../css/dashboard/configuracoes.css">
+
+    <!-- ICONE -->
+    <link rel="shortcut icon" href="../assets/artificial-intelligence (1).png" type="image/x-icon">
 
     <!-- FONTE POPPINS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,14 +28,14 @@
 </head>
 
 <body>
-
+    <!-- MENU LATERAL -->
     <div class="menu-lateral">
 
         <nav class="navbar">
             <ul>
                 <a href="">
                     <li>
-                        <span class="icone-menu"> <img src="assets/dashboard/icone-logo.png" style="width: 55px;">
+                        <span class="icone-menu"> <img src="../assets/dashboard/icone-logo.png" style="width: 55px;">
                         </span>
                     </li>
                 </a>
@@ -41,32 +47,25 @@
                     </li>
                 </a>
 
-                <a href="">
+                <a href="home.html">
                     <li>
                         <span class="icone-menu"><i class="fa-solid fa-house"></i></span>
                         <span class="item-menu">Home</span>
                     </li>
                 </a>
 
-                <a href="">
+                <a href="dashboard.html">
                     <li>
                         <span class="icone-menu"><i class="fa-solid fa-chart-simple"></i></span>
                         <span class="item-menu">Dashboard</span>
                     </li>
                 </a>
 
-                <a href="">
-                    <li>
-                        <span class="icone-menu"><i class="fa-solid fa-file-lines"></i></span>
-                        <span class="item-menu">Histórico</span>
-                    </li>
-                </a>
 
-
-                <a href="">
+                <a href="configuracoes.html">
                     <li>
-                        <span class="icone-menu"><i class="fa-solid fa-user-gear"></i></span>
-                        <span class="item-menu">Perfil</span>
+                        <span class="icone-menu"><i class="fa-sharp fa-solid fa-gear"></i></span>
+                        <span class="item-menu">Configurações</span>
                     </li>
                 </a>
 
@@ -87,34 +86,17 @@
             </ul>
         </nav>
     </div>
-
-
-
-
+    <!-- FIM MENU LATERAL -->
+    
     <div class="conteudo">
-
+        <!-- icone pra abri o menu -->
         <div class="menu-sanduiche">
             <div class="abre-fecha-menu">
                 <i class="fa-sharp fa-solid fa-bars fa-xs"></i>
             </div>
         </div>
+        <!-- ----------------- -->
 
-        <div class="dashboard">
-            <div class="caixas">
-
-                <div id="caixa">
-                    <p>PENSAR OQ POR AQUI MAS PRA TESTAR TA OK</p>
-                </div>
-                <div id="caixa">
-                    <p>PENSAR OQ POR AQUI MAS PRA TESTAR TA OK 2</p>
-                </div>
-                <div id="caixa">
-                    <p>PENSAR OQ POR AQUI MAS PRA TESTAR TA OK 3</p>
-                </div>
-
-            </div>
-            <div></div>
-        </div>
 
     </div>
 
@@ -122,4 +104,5 @@
 
 </html>
 
-<script src="js/funcoesPlataforma.js"></script>
+
+<script src="../js/funcoesPlataforma.js"></script>

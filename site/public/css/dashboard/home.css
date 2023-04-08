@@ -1,0 +1,39 @@
+/* VARIAVEIS */
+:root {
+    --letraMenu: 1rem;
+    --corLetraMenu: black;
+    --corPrincipal: #D8C4EC;
+    --corSecundaria: #F3EBFA;
+    --corForte: #812FCD;
+    --tamanhoIcones: 1.5rem;
+}
+/* MUDAR CONFORME A PAG */
+.menu-lateral .navbar ul a:nth-child(3) {
+    color: var(--corForte);
+}
+
+.menu-lateral .navbar ul a:nth-child(3) li{
+    background-color: var(--corSecundaria);
+}
+/* ---------------TIRAR A MARCAÇÃO DOS OUTROS------------ */
+
+.menu-lateral .navbar ul a:nth-child(4) {
+    color: var(--corLetraMenu);
+}
+
+.menu-lateral .navbar ul a:nth-child(4) li{
+    background-color: var(--corPrincipal);
+}
+
+.menu-lateral .navbar ul a:nth-child(5) {
+    color: var(--corLetraMenu);
+}
+
+.menu-lateral .navbar ul a:nth-child(5) li{
+    background-color: var(--corPrincipal);
+}
+
+.menu-lateral .navbar ul a:hover {
+    color: var(--corForte);
+}
+/* --------------------------- */
