@@ -8,20 +8,20 @@
     --tamanhoIcones: 1.5rem;
 }
 /* MUDAR CONFORME A PAG */
-.menu-lateral .navbar ul a:nth-child(3) {
+.menu-lateral .navbar ul a:nth-child(4) {
     color: var(--corForte);
 }
 
-.menu-lateral .navbar ul a:nth-child(3) li{
+.menu-lateral .navbar ul a:nth-child(4) li{
     background-color: var(--corSecundaria);
 }
 /* ---------------TIRAR A MARCAÇÃO DOS OUTROS------------ */
 
-.menu-lateral .navbar ul a:nth-child(4) {
+.menu-lateral .navbar ul a:nth-child(3) {
     color: var(--corLetraMenu);
 }
 
-.menu-lateral .navbar ul a:nth-child(4) li{
+.menu-lateral .navbar ul a:nth-child(3) li{
     background-color: var(--corPrincipal);
 }
 

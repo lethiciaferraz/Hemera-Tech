@@ -37,10 +37,35 @@ body {
     overflow: hidden;
 }
 
-/* QUANDO CLICA NO MENU SANDUICHE add classe ATIVADO na navbar*/
+.imagem_logo {
+    width: 190px;
+    transition: all 0.6s;
+}
+
+.menu-lateral .navbar ul a:nth-child(2) li {
+    padding-top: 90px;
+  }
+
+  .menu-lateral .navbar ul a:nth-child(3) li {
+    padding-top: 30px;
+
+  }
+
+  #tracinho{
+    border-bottom: 0.6px solid black;
+    margin-bottom: 20px;
+  }
+
+/* QUANDO CLICA NO MENU SANDUICHE add classe ATIVADO na navbar---------------------*/
 .menu-lateral .navbar.ativado {
     width: 70px;
 }
+.imagem_logo.ativado{
+    width: 55px;   
+}
+.menu-lateral .navbar.ativado ul a:nth-child(2) li {
+    padding-top: 20px;
+  }
 
 .menu-lateral .navbar ul {
     position: absolute;
@@ -72,11 +97,11 @@ body {
 }
 
 /* MUDAR CONFORME A PAG */
-.menu-lateral .navbar ul a:nth-child(4) {
+.menu-lateral .navbar ul a:nth-child(5) {
     color: var(--corForte);
 }
 
-.menu-lateral .navbar ul a:nth-child(4) li{
+.menu-lateral .navbar ul a:nth-child(5) li{
     background-color: var(--corSecundaria);
 }
 /* --------------------------- */
