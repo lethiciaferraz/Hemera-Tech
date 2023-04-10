@@ -7,21 +7,23 @@
     --corForte: #812FCD;
     --tamanhoIcones: 1.5rem;
 }
+
 /* MUDAR CONFORME A PAG */
 .menu-lateral .navbar ul a:nth-child(6) {
     color: var(--corForte);
 }
 
-.menu-lateral .navbar ul a:nth-child(6) li{
+.menu-lateral .navbar ul a:nth-child(6) li {
     background-color: var(--corSecundaria);
 }
+
 /* ---------------TIRAR A MARCAÇÃO DOS OUTROS------------ */
 
 .menu-lateral .navbar ul a:nth-child(4) {
     color: var(--corLetraMenu);
 }
 
-.menu-lateral .navbar ul a:nth-child(4) li{
+.menu-lateral .navbar ul a:nth-child(4) li {
     background-color: var(--corPrincipal);
 }
 
@@ -29,11 +31,72 @@
     color: var(--corLetraMenu);
 }
 
-.menu-lateral .navbar ul a:nth-child(5) li{
+.menu-lateral .navbar ul a:nth-child(5) li {
     background-color: var(--corPrincipal);
 }
 
 .menu-lateral .navbar ul a:hover {
     color: var(--corForte);
 }
+
+.conteudo {
+    background-color: #F3EBFA;
+    width: 100%;
+    margin-left: 0%;
+}
+
+.conteudo h2 {
+    font-weight: 500;
+    margin-left: 1%;
+
+}
+
+div.abas nav a {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: -0.2%;
+    text-decoration: none;
+    font-weight: 500;
+
+}
+
+div.abas nav {
+    margin-top: 2%;
+    padding-left: 20px;
+}
+
+div.abas div {
+    background: white;
+    width: 84%;
+    display: none;
+    border-top: 1px solid #812FCD;
+    margin-top: -1px;
+    height: 512px;
+}
+
+div.abas div:target {
+    display: block;
+
+}
+
+div.abas nav a.focus,
+div.abas nav a:focus {
+    background: white;
+    /* border-bottom: 1px solid; */
+    color: black;
+}
+
+
+#aba2{
+    background: yellow;
+    padding: 1%;
+}
+
+
+
+
+
+
+
+
 /* --------------------------- */

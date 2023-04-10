@@ -35,7 +35,7 @@
             <ul>
                 <a href="">
                     <li>
-                        <span class="icone-menu" ><img class="imagem_logo" src="../assets/HEMERA.png">
+                        <span class="icone-menu"><img class="imagem_logo" src="../assets/HEMERA.png">
                         </span>
                     </li>
                 </a>
@@ -89,7 +89,7 @@
         </nav>
     </div>
     <!-- FIM MENU LATERAL -->
-    
+
     <div class="conteudo">
         <!-- icone pra abri o menu -->
         <div class="menu-sanduiche">
@@ -98,6 +98,48 @@
             </div>
         </div>
         <!-- ----------------- -->
+
+        <h2>Configurações > Funcionarios</h2>
+
+
+        <div class="abas">
+            <nav>
+                <a href="#aba1">Empresa</a>
+                <a href="#aba2">Funcionarios</a>
+                <a href="#aba3">Administradores</a>
+                <a href="#aba4">Computadoes</a>
+            </nav>
+
+            <div id="aba1">
+                <h1>PRIMERIA ABA</h1>
+            </div>
+
+            <div class="class_aba2" id="aba2">
+                <div class="func">
+                    
+                    <div class="lista">
+                        isaias
+                    </div>
+
+                    <div class=" lista">
+                        em
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div id="aba3">
+            
+            </div>
+
+            <div id="aba4">
+                <h1>Quarta aba</h1>
+            </div>
+
+        </div>
+
 
 
     </div>
@@ -108,3 +150,21 @@
 
 
 <script src="../js/funcoesPlataforma.js"></script>
+
+<script>
+    window.addEventListener('load', () => {
+        document.querySelectorAll('.abas nav a').forEach((a)=> {
+            a.addEventListener('click', () => {
+                let f=a.parentNode.querySelector('a.focus')
+                if (f)f.classList.remove('focus')
+                a.classList.add('focus')
+
+            })
+            if (location.hash) {
+                document.querySelector('a[href="' + location.hash + '"]').classList.add('focus')
+            }
+        })
+    })
+
+
+</script>
