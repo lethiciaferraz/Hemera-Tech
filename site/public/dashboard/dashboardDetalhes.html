@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configurações</title>
+    <title>Dashboard Detalhes</title>
 
 
     <link rel="stylesheet" href="../css/dashboard/dashboard.css">
 
-    <link rel="stylesheet" href="../css/dashboard/configuracoes.css">
+    <link rel="stylesheet" href="../css/dashboard/dashboardDetalhes.css">
 
     <!-- ICONE -->
     <link rel="shortcut icon" href="../assets/artificial-intelligence (1).png" type="image/x-icon">
@@ -24,11 +24,9 @@
 
     <!-- ICONES -->
     <script src="https://kit.fontawesome.com/b176690e81.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
-    <!-- MENU LATERAL -->
     <div class="menu-lateral">
 
         <nav class="navbar">
@@ -88,81 +86,62 @@
             </ul>
         </nav>
     </div>
-    <!-- FIM MENU LATERAL -->
 
     <div class="conteudo">
-        <!-- icone pra abri o menu -->
         <div class="menu-sanduiche">
             <div class="abre-fecha-menu">
                 <i class="fa-sharp fa-solid fa-bars fa-xs"></i>
             </div>
         </div>
-        <!-- ----------------- -->
-        <div class="configuracoes">
 
-            <div class="titulo">
-                <h3>Configurações> Funcionários</h3>
+
+        <div class="dashboard_detalhes">
+            <div>
+                <h3>Dashboard> Geral> Detalhes</h3>
                 <div id="tracinho"></div>
             </div>
 
-            <div class="abas">
-                <nav>
-                    <a href="#aba2">Funcionarios</a>
-                    <a href="#aba3">Administradores</a>
-                    <a href="#aba4">Computadoes</a>
-                </nav>
+            <div class="caixas">
+                <div id="caixa">
+                    <p>Computador</p>
+                    <div id="tracinho" style="margin-top: 0px; margin-bottom: 3px;"></div>
 
-                <div class="class_aba2" id="aba2">
-                    <div class="func">
-
-                        <div class="lista">
-                            isaias
-                        </div>
-
-                        <div class=" lista">
-                            em
-                        </div>
-
-
-
-                    </div>
+                    <div id="dado_idcomputador">DADO</div>
                 </div>
 
-                <div id="aba3">
+                <div id="caixa">
+                    <p>HostName</p>
+                    <div id="tracinho" style="margin-top: 0px; margin-bottom: 3px;"></div>
 
+                    <div id="dado_hostName">DADO</div>
                 </div>
 
-                <div id="aba4">
-                    <h1>Quarta aba</h1>
+                <div id="caixa">
+                    <p>Setor/Local</p>
+                    <div id="tracinho" style="margin-top: 0px; margin-bottom: 3px;"></div>
+                    <div id="dado_setor_local">DADO</div>
                 </div>
+
+
+                <div id="caixa">
+                    <p>Status</p>
+                    <div id="tracinho" style="margin-top: 0px; margin-bottom: 3px;"></div>
+                    <div id="dado_status">
+                        <div style="background-color: #77D33E; height: 20px; width: 30px; margin-right: 6px;"> </div>
+                         ótimo</div>
+                </div>
+
 
             </div>
 
-        </div>
+            <div class="graficos">
 
+                
+            </div>
+
+        </div>
     </div>
 
 </body>
 
 </html>
-
-
-<script src="../js/funcoesPlataforma.js"></script>
-
-<script>
-    window.addEventListener('load', () => {
-        document.querySelectorAll('.abas nav a').forEach((a) => {
-            a.addEventListener('click', () => {
-                let f = a.parentNode.querySelector('a.focus')
-                if (f) f.classList.remove('focus')
-                a.classList.add('focus')
-
-            })
-            if (location.hash) {
-                document.querySelector('a[href="' + location.hash + '"]').classList.add('focus')
-            }
-        })
-    })
-
-
-</script>

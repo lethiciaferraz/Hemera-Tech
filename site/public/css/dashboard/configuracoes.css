@@ -38,6 +38,12 @@
 .menu-lateral .navbar ul a:hover {
     color: var(--corForte);
 }
+/* --------------------------- */
+
+.titulo {
+    padding: 10px 10px 0px 40px;
+    /* background-color: aqua; */
+}
 
 .conteudo {
     background-color: #F3EBFA;
@@ -67,7 +73,7 @@ div.abas nav {
 
 div.abas div {
     background: white;
-    width: 84%;
+    /* width: 84%; */
     display: none;
     border-top: 1px solid #812FCD;
     margin-top: -1px;
