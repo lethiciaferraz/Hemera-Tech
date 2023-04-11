@@ -280,6 +280,7 @@ body {
 
 .dashboard #caixa_lista #linha{ 
     display: flex;
+    flex-direction: row;
 }
 
 .dashboard #caixa_lista #linha #titulo { 
