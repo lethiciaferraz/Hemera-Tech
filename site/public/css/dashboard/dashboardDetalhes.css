@@ -55,3 +55,16 @@
     font-size: 20px;
     text-align: center;
 }
+
+.dashboard_detalhes .graficos{
+    display: flex;
+    flex-direction: row;
+}
+.dashboard_detalhes .graficos .caixa_grafico{
+    background-color: var(--caixa);
+    width: 400px;
+    margin: 20px 5px 5px 5px;
+    padding: 20px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+
+}

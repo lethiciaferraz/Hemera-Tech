@@ -24,6 +24,11 @@
 
     <!-- ICONES -->
     <script src="https://kit.fontawesome.com/b176690e81.js" crossorigin="anonymous"></script>
+
+
+    <!-- GRAFICOS CHART JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
@@ -128,15 +133,30 @@
                     <div id="tracinho" style="margin-top: 0px; margin-bottom: 3px;"></div>
                     <div id="dado_status">
                         <div style="background-color: #77D33E; height: 20px; width: 30px; margin-right: 6px;"> </div>
-                         ótimo</div>
+                        ótimo
+                    </div>
                 </div>
 
 
             </div>
 
             <div class="graficos">
+                <div class="caixa_grafico">
+                    <p>CPU</p>
+                    <canvas id="myChart1"> </canvas>
+                </div>
 
-                
+                <div class="caixa_grafico">
+                    <p>memoria</p>
+
+                    <canvas id="myChart2"> </canvas>
+                </div>
+
+                <div class="caixa_grafico">
+                    <p>Disco</p>
+                    <canvas id="myChart3"> </canvas>
+                </div>
+
             </div>
 
         </div>
@@ -144,4 +164,74 @@
 
 </body>
 
+<script>
+    const ctx1 = document.getElementById('myChart1');
+
+    new Chart(ctx1, {
+        type: 'line',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // GRAFICO 2
+    const ctx2 = document.getElementById('myChart2');
+
+    new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // GRAFICO 3
+    const ctx3 = document.getElementById('myChart3');
+
+    new Chart(ctx3, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+
 </html>
+
+<script src="../js/funcoesPlataforma.js"></script>
