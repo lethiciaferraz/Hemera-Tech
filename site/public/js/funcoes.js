@@ -34,13 +34,14 @@ function CadastrarEmpresa() {
     var nomeVar = nome_empresa.value
     var emailVar = email_empresa.value
     var cnpjVar = cnpj_empresa.value
-    var senhaVar = senha_empresa.value
+    var dddVar = 11
+    var telefoneVar = Number(telefone_empresa.value)
     var logradouroVar = logradouro_empresa.value
     var cepVar = cep_empresa.value
     var complementoVar = complemento_empresa.value
 
     if (nomeVar == "" || emailVar == "" ||
-        cnpjVar == "" || senhaVar == "" || logradouroVar == '' || cepVar == "" || complementoVar == "") {
+        cnpjVar == "" || dddVar == null || telefoneVar == null || logradouroVar == '' || cepVar == "" || complementoVar == "") {
         alert("Por favor, preencha todos os campos!")
         return false;
 
@@ -56,7 +57,8 @@ function CadastrarEmpresa() {
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 cnpjServer: cnpjVar,
-                senhaServer: senhaVar,
+                dddServer: dddVar,
+                telefoneServer: telefoneVar,
                 logradouroServer: logradouroVar,
                 cepServer: cepVar,
                 complementoServer: complementoVar
@@ -75,6 +77,8 @@ function CadastrarEmpresa() {
                     sessionStorage.NOME_EMPRESA = dados[0].nome
 
                     console.log('DEU BOM');
+
+                    window.location = "cadastroFuncionario.html";
                 })
 
                 // AINDA NAO COLEI O CSS DOS CARD
