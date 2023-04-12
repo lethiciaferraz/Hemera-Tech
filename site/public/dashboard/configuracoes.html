@@ -97,50 +97,40 @@
                 <i class="fa-sharp fa-solid fa-bars fa-xs"></i>
             </div>
         </div>
+
         <!-- ----------------- -->
 
-        <h2>Configurações > Funcionarios</h2>
+        <div class="configuracoes">
 
-
-        <div class="abas">
-            <nav>
-                <a href="#aba1">Empresa</a>
-                <a href="#aba2">Funcionarios</a>
-                <a href="#aba3">Administradores</a>
-                <a href="#aba4">Computadoes</a>
-            </nav>
-
-            <div id="aba1">
-                <h1>PRIMERIA ABA</h1>
+            <div class="titulo">
+                <h3>Configurações> Funcionários</h3>
+                <div id="tracinho"></div>
             </div>
 
-            <div class="class_aba2" id="aba2">
-                <div class="func">
-                    
-                    <div class="lista">
-                        isaias
+            <div class="abas">
+                <nav>
+                    <a href="#aba1">Funcionarios</a>
+                    <a href="#aba2">Computadoes</a>
+                </nav>
+
+                <!-- ABA 1 -->
+
+                <div class="class_aba1" id="aba1">
+                    <div class="func">
+
+
                     </div>
+                </div>
+                <!-- ABA 2 -->
 
-                    <div class=" lista">
-                        em
-                    </div>
-
-
+                <div id="aba2">
 
                 </div>
-            </div>
 
-            <div id="aba3">
-            
-            </div>
 
-            <div id="aba4">
-                <h1>Quarta aba</h1>
             </div>
 
         </div>
-
-
 
     </div>
 
@@ -153,10 +143,10 @@
 
 <script>
     window.addEventListener('load', () => {
-        document.querySelectorAll('.abas nav a').forEach((a)=> {
+        document.querySelectorAll('.abas nav a').forEach((a) => {
             a.addEventListener('click', () => {
-                let f=a.parentNode.querySelector('a.focus')
-                if (f)f.classList.remove('focus')
+                let f = a.parentNode.querySelector('a.focus')
+                if (f) f.classList.remove('focus')
                 a.classList.add('focus')
 
             })

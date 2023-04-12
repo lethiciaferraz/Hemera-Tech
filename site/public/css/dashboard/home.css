@@ -6,6 +6,10 @@
     --corSecundaria: #F3EBFA;
     --corForte: #812FCD;
     --tamanhoIcones: 1.5rem;
+
+    --caixaAlertaOtimo: #77D33E; 
+    --caixaAlertaAtencao: #DEE148;
+    --caixaAlertaCritico: #D95F58;
 }
 /* MUDAR CONFORME A PAG */
 .menu-lateral .navbar ul a:nth-child(4) {
@@ -92,10 +96,16 @@
     text-align: center;
 }
 
+.home .caixas #caixa a{
+   text-decoration: none;
+   color: var(--corLetraMenu);
+}
+
 .home .caixas #caixa button{
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     padding: 4px;
+    width: 100px;
     font-weight: var(--letraMedia);
     background-color: var(--corForte);
     color: var(--caixa);
@@ -106,8 +116,8 @@
 }
 /* VERRRRR */
 .home .caixas #caixa button:hover{
-    background-color: var(--corForte);
-    color: var(--caixa);
+    background-color: var(--corPrincipal);
+    color: var(--corLetraMenu);
     cursor: pointer;
 }
 
@@ -125,4 +135,70 @@
     text-align: center;  
     font-size: 15px;
 
+}
+
+.home #caixa_observacoes{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 30px;
+    background-color: var(--caixa);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.home #caixa_observacoes #titulo_observacoes{ 
+    display: flex;
+    justify-content: space-between;
+}
+
+.home #caixa_observacoes #titulo_observacoes h3{
+    color: black;
+    font-weight: var(--letraMedia);
+}
+
+.home #caixa_observacoes .observacoes_alertas {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.home .observacoes_alertas #observacoes {
+    margin: 5px;
+    background-color: var(--caixaAlertaAtencao);
+    width: 240px;
+    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+
+}
+
+.home .observacoes_alertas #observacoes p{
+    font-weight: var(--letraRegular);
+    font-size: 14px;
+    text-align: center;
+}
+
+.home .observacoes_alertas #observacoes div{
+    margin: 15px 5px;
+    font-weight: var(--letraSemiBold);
+    font-size: 20px;
+    text-align: center;
+}
+
+.home .observacoes_alertas #observacoes button{
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    padding: 4px;
+    font-weight: var(--letraMedia);
+    background-color: var(--corForte);
+    color: var(--caixa);
+    border-radius: 5px;
+    border: 0.04;
+    display: block;
+    margin: 0 auto;
+}
+
+.home .observacoes_alertas #observacoes button:hover{
+    background-color: var(--corForte);
+    color: var(--caixa);
+    cursor: pointer;
 }

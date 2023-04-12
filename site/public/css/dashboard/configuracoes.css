@@ -38,49 +38,38 @@
 .menu-lateral .navbar ul a:hover {
     color: var(--corForte);
 }
+/* --------------------------- */
 
-.conteudo {
-    background-color: #F3EBFA;
-    width: 100%;
-    margin-left: 0%;
+.configuracoes  {
+    padding: 10px 10px 0px 40px;
 }
 
-.conteudo h2 {
-    font-weight: 500;
-    margin-left: 1%;
-
+.configuracoes .abas nav {
+    margin-top: 20px;
 }
 
-div.abas nav a {
+.configuracoes .abas nav a {
     display: inline-block;
     padding: 8px 15px;
-    margin: -0.2%;
+    /* margin: -0.2%; */
     text-decoration: none;
     font-weight: 500;
-
 }
 
-div.abas nav {
-    margin-top: 2%;
-    padding-left: 20px;
-}
-
-div.abas div {
-    background: white;
-    width: 84%;
+.configuracoes .abas div {
+    /* width: 84%; */
     display: none;
     border-top: 1px solid #812FCD;
     margin-top: -1px;
-    height: 512px;
+    /* height: 512px; */
 }
 
-div.abas div:target {
+.configuracoes .abas div:target {
     display: block;
-
 }
 
-div.abas nav a.focus,
-div.abas nav a:focus {
+.configuracoes .abas nav a.focus,
+.configuracoes.abas nav a:focus {
     background: white;
     /* border-bottom: 1px solid; */
     color: black;
@@ -91,12 +80,5 @@ div.abas nav a:focus {
     background: yellow;
     padding: 1%;
 }
-
-
-
-
-
-
-
 
 /* --------------------------- */

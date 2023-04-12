@@ -60,7 +60,8 @@ body {
 
   #tracinho{
     border-bottom: 0.6px solid black;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
   }
 
 /* QUANDO CLICA NO MENU SANDUICHE add classe ATIVADO na navbar---------------------*/
@@ -202,7 +203,6 @@ body {
     width: 240px;
     box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
     padding: 15px;
-
 }
 
 .dashboard .caixas #caixa p{
@@ -249,11 +249,13 @@ body {
 .dashboard #caixa_lista #infos_principais{ 
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .dashboard #caixa_lista #infos_principais #legenda{  
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .dashboard #caixa_lista #infos_principais #legenda #caixinha{  
@@ -261,9 +263,40 @@ body {
     flex-direction: row;
 }
 
+.dashboard #caixa_lista #infos_principais #legenda h3{
+    font-size: 15px;
+}
+
+.dashboard #caixa_lista #infos_principais #legenda #caixinha{
+    font-size: 14px;
+    font-weight: var(--letraLight);
+}
+
 .dashboard #caixa_lista #infos_principais h3{
     color: black;
     font-weight: var(--letraMedia);
+}
+
+
+.dashboard #caixa_lista #linha{ 
+    display: flex;
+    flex-direction: row;
+}
+
+.dashboard #caixa_lista #linha #titulo { 
+    font-weight: var(--letraRegular);
+    width: 170px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.dashboard #caixa_lista #linha #dado { 
+    font-weight: var(--letraRegular);
+    width: 170px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
 }
 
 

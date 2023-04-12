@@ -1,0 +1,70 @@
+.dashboard_detalhes {
+    padding: 10px 10px 10px 40px;
+    /* background-color: aqua; */
+}
+
+
+.dashboard_detalhes .caixas {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.dashboard_detalhes .caixas #caixa {
+    margin: 5px;
+    background-color: var(--caixa);
+    width: 240px;
+    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
+    padding: 15px 15px 2px 15px;
+
+}
+
+.dashboard_detalhes .caixas #caixa p{
+    font-weight: var(--letraRegular);
+    font-size: 14px;
+    text-align: center;
+}
+
+.dashboard_detalhes .caixas #caixa #dado_idcomputador{
+    margin: 5px 5px;
+    font-weight: var(--letraSemiBold);
+    font-size: 20px;
+    text-align: center;
+}
+
+.dashboard_detalhes .caixas #caixa #dado_hostName{
+    margin: 5px 5px;
+    font-weight: var(--letraSemiBold);
+    font-size: 20px;
+    text-align: center;
+}
+
+.dashboard_detalhes .caixas #caixa #dado_setor_local{
+    margin: 5px 5px;
+    font-weight: var(--letraSemiBold);
+    font-size: 20px;
+    text-align: center;
+}
+
+.dashboard_detalhes .caixas #caixa #dado_status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 5px;
+    font-weight: var(--letraSemiBold);
+    font-size: 20px;
+    text-align: center;
+}
+
+.dashboard_detalhes .graficos{
+    display: flex;
+    flex-direction: row;
+}
+.dashboard_detalhes .graficos .caixa_grafico{
+    background-color: var(--caixa);
+    width: 400px;
+    margin: 20px 5px 5px 5px;
+    padding: 20px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+
+}

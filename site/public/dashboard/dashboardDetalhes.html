@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Dashboard Detalhes</title>
+
 
     <link rel="stylesheet" href="../css/dashboard/dashboard.css">
-    <link rel="stylesheet" href="../css/dashboard/home.css">
 
+    <link rel="stylesheet" href="../css/dashboard/dashboardDetalhes.css">
 
     <!-- ICONE -->
     <link rel="shortcut icon" href="../assets/artificial-intelligence (1).png" type="image/x-icon">
@@ -24,10 +25,13 @@
     <!-- ICONES -->
     <script src="https://kit.fontawesome.com/b176690e81.js" crossorigin="anonymous"></script>
 
+
+    <!-- GRAFICOS CHART JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
-    <!-- MENU LATERAL -->
     <div class="menu-lateral">
 
         <nav class="navbar">
@@ -87,110 +91,147 @@
             </ul>
         </nav>
     </div>
-    <!-- FIM MENU LATERAL -->
 
     <div class="conteudo">
-        <!-- icone pra abri o menu -->
         <div class="menu-sanduiche">
             <div class="abre-fecha-menu">
                 <i class="fa-sharp fa-solid fa-bars fa-xs"></i>
             </div>
         </div>
-        <!-- ----------------- -->
 
-        <div class="home">
+
+        <div class="dashboard_detalhes">
             <div>
-                <h3>Home</h3>
+                <h3>Dashboard> Geral> Detalhes</h3>
                 <div id="tracinho"></div>
             </div>
 
             <div class="caixas">
                 <div id="caixa">
-                    <p>Computadores Cadastrados</p>
-                    <div id="dado_computadores_cadastrados">DADO</div>
-                    <a href="">
-                        <button>ver lista</button>
-                    </a>
+                    <p>Computador</p>
+                    <div id="tracinho" style="margin-top: 0px; margin-bottom: 3px;"></div>
+
+                    <div id="dado_idcomputador">DADO</div>
                 </div>
 
                 <div id="caixa">
-                    <p>Funcionários Cadastrados</p>
-                    <div id="dado_funcionarios_cadastrados">DADO</div>
-                    <a href="">
-                        <button>ver lista</button>
-                    </a>
+                    <p>HostName</p>
+                    <div id="tracinho" style="margin-top: 0px; margin-bottom: 3px;"></div>
+
+                    <div id="dado_hostName">DADO</div>
                 </div>
 
                 <div id="caixa">
-                    <p>Computadores em Uso</p>
-                    <div id="dado_computadores_em_uso">DADO</div>
-                    <a href="dashboard.html">
-                        <button> situação geral</button>
-                    </a>
-
+                    <p>Setor/Local</p>
+                    <div id="tracinho" style="margin-top: 0px; margin-bottom: 3px;"></div>
+                    <div id="dado_setor_local">DADO</div>
                 </div>
 
 
                 <div id="caixa">
-                    <p>Legenda</p>
-                    <div id="caixinha">
-                        <div id="legenda_otimo">
-                            <div style="background-color: #77D33E; height: 8px; width: 60px; height: 20px;"></div>
-                            <p>
-                                ótimo
-                            </p>
-                        </div>
-
-                        <div id="legenda_atencao">
-                            <div style="background-color: #DEE148; height: 8px; width: 60px; height: 20px;"></div>
-                            <p>
-                                atenção
-                            </p>
-                        </div>
-
-                        <div id="legenda_critico">
-                            <div style="background-color: #D95F58; height: 8px; width: 60px; height: 20px;"></div>
-                            <p>
-                                crítico
-                            </p>
-                        </div>
-
+                    <p>Status</p>
+                    <div id="tracinho" style="margin-top: 0px; margin-bottom: 3px;"></div>
+                    <div id="dado_status">
+                        <div style="background-color: #77D33E; height: 20px; width: 30px; margin-right: 6px;"> </div>
+                        ótimo
                     </div>
                 </div>
+
 
             </div>
 
-            <div id="caixa_observacoes">
-                <div id="titulo_observacoes">
-                    <h3>Observações e Alertas</h3>
+            <div class="graficos">
+                <div class="caixa_grafico">
+                    <p>CPU</p>
+                    <canvas id="myChart1"> </canvas>
                 </div>
 
-                <div id="tracinho" style="margin-bottom: 10px;"></div>
+                <div class="caixa_grafico">
+                    <p>memoria</p>
 
-                <div class="observacoes_alertas">
+                    <canvas id="myChart2"> </canvas>
+                </div>
 
-                    <div id="observacoes">
-                        <p>ATENÇÃO</p>
-                        <div>Máquina com sla oq</div>
-                        <button>Ver desempenho</button>
-                    </div>
-
-                    <div id="observacoes">
-                        <p>ALERTA</p>
-                        <div>Máquina com sla oq</div>
-                        <button>Ver desempenho</button>
-                    </div>
+                <div class="caixa_grafico">
+                    <p>Disco</p>
+                    <canvas id="myChart3"> </canvas>
                 </div>
 
             </div>
-
 
         </div>
-
+    </div>
 
 </body>
 
-</html>
+<script>
+    const ctx1 = document.getElementById('myChart1');
 
+    new Chart(ctx1, {
+        type: 'line',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // GRAFICO 2
+    const ctx2 = document.getElementById('myChart2');
+
+    new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // GRAFICO 3
+    const ctx3 = document.getElementById('myChart3');
+
+    new Chart(ctx3, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+
+</html>
 
 <script src="../js/funcoesPlataforma.js"></script>
