@@ -102,7 +102,76 @@ function CadastrarEmpresa() {
 }
 
 function CadastrarFuncionario() {
-    // 
+    var nomeVar = nome_funcionario.value
+    var sobrenomeVar = sobrenome_funcionario.value
+    var emailVar = email_funcionario.value
+    var dddVar = 11
+    var telefoneVar = Number(telefone_funcionario.value)
+    var senhaVar = senha_funcionario.value
+    var confSenha = confirmar_senha_funcionario.value
+
+    if (nomeVar == "" || emailVar == "" || dddVar == null || telefoneVar == null || senhaVar == '' || confSenha == "") {
+        alert("Por favor, preencha todos os campos!")
+        return false;
+
+    } else {
+        if (senhaVar != confSenha) {
+            alert('As senhas não combinam')
+            return false;
+        } else {
+            fetch("/funcionarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/empresa.js
+                    nomeServer: nomeVar,
+                    sobrenomeServer: sobrenomeVar,
+                    emailServer: emailVar,
+                    dddServer: dddVar,
+                    telefoneServer: telefoneVar,
+                    senhaServer: senhaVar
+                })
+            }).then(function(resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+
+                    resposta.json().then(function(response) {
+
+                        dados = response[0]
+                        sessionStorage.ID_FUNCIONARIO_ADICIONADO = dados[0].idFuncionario
+
+                        console.log('DEU BOM');
+
+                        // AQUI VAI O FETCH DE ADD FUNÇÃO
+
+                        // window.location = "cadastroFuncionario.html";
+                    })
+
+                    // AINDA NAO COLEI O CSS DOS CARD
+                    cardErro.style.display = "block";
+                    mensagem_erro.innerHTML = "Cadastro do funcionário feito com sucesso";
+
+                    // setTimeout(() => {
+                    //     window.location = "cadastroFuncionario.html";
+                    // }, "2000")
+
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function(resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+
+            return false;
+
+        }
+
+    }
 }
 
 function entrar() {
