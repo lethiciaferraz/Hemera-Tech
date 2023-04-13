@@ -38,15 +38,25 @@
 .menu-lateral .navbar ul a:hover {
     color: var(--corForte);
 }
+
 /* --------------------------- */
 
-.configuracoes  {
-    padding: 10px 10px 0px 40px;
+.configuracoes {
+    padding: 3.0% 800px;
+    /* background-color: aqua; */
+}
+
+.configuracoes .titulo {
+    margin-left: -280%;
+    margin-top: -19.3%;
 }
 
 .configuracoes .abas nav {
     margin-top: 20px;
+    display: flex;
+    margin-left: -270%;
 }
+
 
 .configuracoes .abas nav a {
     display: inline-block;
@@ -56,15 +66,15 @@
     font-weight: 500;
 }
 
-.configuracoes .abas div {
-    /* width: 84%; */
+.configuracoes .abas section {
+    margin-left: -280%;
     display: none;
     border-top: 1px solid #812FCD;
     margin-top: -1px;
-    /* height: 512px; */
+
 }
 
-.configuracoes .abas div:target {
+.configuracoes .abas section:target {
     display: block;
 }
 
@@ -76,9 +86,25 @@
 }
 
 
-#aba2{
-    background: yellow;
-    padding: 1%;
+#aba2 {
+    background: white;
+    padding: 0% 0%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#aba2 .teste {
+    background-color: tomato;
+
+}
+
+#aba2 .caixa{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 /* --------------------------- */
