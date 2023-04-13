@@ -86,25 +86,25 @@
 }
 
 
-#aba2 {
+.class_aba2 {
     background: white;
     padding: 0% 0%;
     height: 450px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    text-align: center;
     justify-content: center;
+    align-items: center;
+  
 }
 
-#aba2 .teste {
+.class_aba2 .teste {
     background-color: tomato;
+    margin-top: 5%;
 
 }
 
 #aba2 .caixa{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
+} 
 
 /* --------------------------- */
