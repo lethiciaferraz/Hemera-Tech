@@ -1,0 +1,36 @@
+/* MUDAR CONFORME A PAG */
+.menu-lateral .navbar ul a:nth-child(8) {
+    color: var(--corForte);
+}
+
+.menu-lateral .navbar ul a:nth-child(8) li {
+    background-color: var(--corSecundaria);
+}
+
+/* ---------------TIRAR A MARCAÇÃO DOS OUTROS------------ */
+
+.menu-lateral .navbar ul a:nth-child(4) {
+    color: var(--corLetraMenu);
+}
+
+.menu-lateral .navbar ul a:nth-child(4) li {
+    background-color: var(--corPrincipal);
+}
+
+.menu-lateral .navbar ul a:nth-child(5) {
+    color: var(--corLetraMenu);
+}
+
+.menu-lateral .navbar ul a:nth-child(5) li {
+    background-color: var(--corPrincipal);
+}
+
+.menu-lateral .navbar ul a:hover {
+    color: var(--corForte);
+}
+
+/* --------------------------- */
+.aplicacao {
+    padding: 10px 10px 10px 40px;
+    /* background-color: aqua; */
+}

@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configurações</title>
+    <title>Document</title>
 
-
+    
     <link rel="stylesheet" href="../css/dashboard/dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard/aplicacao.css">
 
-    <link rel="stylesheet" href="../css/dashboard/configuracoes.css">
 
     <!-- ICONE -->
     <link rel="shortcut icon" href="../assets/artificial-intelligence (1).png" type="image/x-icon">
@@ -78,14 +78,14 @@
                     </li>
                 </a>
 
-                
+
                 <a href="aplicação.html">
                     <li>
                         <span class="icone-menu"><i class="fa-solid fa-download"></i></span>
                         <span class="item-menu">Aplicação</span>
                     </li>
                 </a>
-                
+
                 <a href="../login.html">
                     <li>
                         <span class="icone-menu"><i class="fa-solid fa-right-from-bracket"></i></span>
@@ -106,69 +106,16 @@
             </div>
         </div>
 
-        <!-- ----------------- -->
-
-        <div class="configuracoes">
-
-            <div class="titulo">
-                <h3>Configurações> Funcionários</h3>
+        <div class="aplicacao">
+            <div>
+                <h3>Aplicação</h3>
                 <div id="tracinho"></div>
             </div>
-
-            <div class="abas">
-                <nav>
-                    <a href="#aba1">Funcionarios</a>
-                    <a href="#aba2">Computadoes</a>
-                </nav>
-
-                <!-- ABA 1 -->
-
-                <section id="aba1">
-
-                </section>
-                <!-- ABA 2 -->
-
-
-                <section  class="class_aba2" id="aba2">
-                   <h1>wkmd</h1>
-                    <div class="teste">
-                        <div class="caixa">loren kejdi</div>
-                        <div class="caixa">lorecede</div>
-                        <div class="caixa">deij</div>
-                        <div class="caixa">dejiddj</div>
-
-                    </div>
-
-                </section>
-
-
-            </div>
-
         </div>
 
     </div>
-
 </body>
 
 </html>
 
-
 <script src="../js/funcoesPlataforma.js"></script>
-
-<script>
-    window.addEventListener('load', () => {
-        document.querySelectorAll('.abas nav a').forEach((a) => {
-            a.addEventListener('click', () => {
-                let f = a.parentNode.querySelector('a.focus')
-                if (f) f.classList.remove('focus')
-                a.classList.add('focus')
-
-            })
-            if (location.hash) {
-                document.querySelector('a[href="' + location.hash + '"]').classList.add('focus')
-            }
-        })
-    })
-
-
-</script>
