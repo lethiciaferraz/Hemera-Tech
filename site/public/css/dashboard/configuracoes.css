@@ -123,26 +123,19 @@
     margin: 0px 5px
 }
 
-#aba1{
-}
-/* .aba2 {
-    padding: 0% 0%;
-    height: 450px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-  
+#aba1 button{
+    background-color: #812FCD;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: #812FCD;
 }
 
-.aba2 .teste {
-    background-color: tomato;
-    margin-top: 5%;
-
+#aba2 button{
+    background-color: #812FCD;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: #812FCD;
 }
-
-#aba2 .caixa{
-}  */
-
 /* --------------------------- */
