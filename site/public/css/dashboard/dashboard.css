@@ -285,15 +285,39 @@ body {
 
 .dashboard #caixa_lista #linha #titulo { 
     font-weight: var(--letraRegular);
-    width: 170px;
+    width: 200px;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
 }
 
-.dashboard #caixa_lista #linha #dado { 
+.dashboard #caixa_lista #linha #dado_status{ 
     font-weight: var(--letraRegular);
-    width: 170px;
+    width: 200px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.dashboard #caixa_lista #linha #dado_idComputador{ 
+    font-weight: var(--letraRegular);
+    width: 200px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.dashboard #caixa_lista #linha #dado_nomeFuncionario{ 
+    font-weight: var(--letraRegular);
+    width: 200px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.dashboard #caixa_lista #linha #ver_desempenho{ 
+    font-weight: var(--letraRegular);
+    width: 190px;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px

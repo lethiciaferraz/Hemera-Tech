@@ -123,18 +123,17 @@
 
 .home #caixa #caixinha{  
     display: flex;
-    flex-direction: row;
+    flex-direction: row;    
 }
 
-.home #caixa #caixinha div {
-
-    text-align: center;  
+.home #caixa #caixinha div{  
+    margin: 5px 2px 2px 2px; 
 }
 
 .home #caixa #caixinha div p{
     text-align: center;  
-    font-size: 15px;
-
+    font-size: 14px;
+    margin-top: 12px;
 }
 
 .home #caixa_observacoes{
@@ -189,7 +188,7 @@
     font-size: 12px;
     padding: 4px;
     font-weight: var(--letraMedia);
-    background-color: var(--corForte);
+    background-color: var(--corPrincipal);
     color: var(--caixa);
     border-radius: 5px;
     border: 0.04;

@@ -32,19 +32,13 @@
     text-align: center;
 }
 
-.dashboard_detalhes .caixas #caixa #dado_hostName{
+.dashboard_detalhes .caixas #caixa #dado_totalIncidentes{
     margin: 5px 5px;
     font-weight: var(--letraSemiBold);
     font-size: 20px;
     text-align: center;
 }
 
-.dashboard_detalhes .caixas #caixa #dado_setor_local{
-    margin: 5px 5px;
-    font-weight: var(--letraSemiBold);
-    font-size: 20px;
-    text-align: center;
-}
 
 .dashboard_detalhes .caixas #caixa #dado_status{
     display: flex;
