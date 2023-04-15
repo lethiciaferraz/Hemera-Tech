@@ -42,52 +42,90 @@
 /* --------------------------- */
 
 .configuracoes {
-    padding: 3.0% 800px;
-    /* background-color: aqua; */
-}
-
-.configuracoes .titulo {
-    margin-left: -280%;
-    margin-top: -19.3%;
+    padding: 10px 10px 10px 40px;
 }
 
 .configuracoes .abas nav {
     margin-top: 20px;
     display: flex;
-    margin-left: -270%;
 }
 
 
 .configuracoes .abas nav a {
     display: inline-block;
     padding: 8px 15px;
-    /* margin: -0.2%; */
     text-decoration: none;
     font-weight: 500;
+    color: var(--letraMenu);
+}
+
+/* quando clico na opcao entra a classe focus */
+.configuracoes .abas nav a.focus,
+.configuracoes.abas nav a:focus {
+    background: white;
+    border-top: solid 1px var(--corForte);
+    border-left: solid 1px var(--corForte);
+    border-right: solid 1px var(--corForte);
+    color: var(--corForte);
 }
 
 .configuracoes .abas section {
-    margin-left: -280%;
     display: none;
     border-top: 1px solid #812FCD;
     margin-top: -1px;
-
 }
 
 .configuracoes .abas section:target {
     display: block;
 }
 
-.configuracoes .abas nav a.focus,
-.configuracoes.abas nav a:focus {
-    background: white;
-    /* border-bottom: 1px solid; */
-    color: black;
+
+.configuracoes #caixa_lista{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 30px;
+    background-color: var(--caixa);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.configuracoes #caixa_lista #infos_principais{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
-.class_aba2 {
-    background: white;
+.configuracoes #caixa_lista #infos_principais h3{
+    color: black;
+    font-weight: var(--letraMedia);
+}
+
+
+.configuracoes #caixa_lista #linha{ 
+    display: flex;
+    flex-direction: row;
+}
+
+.configuracoes #caixa_lista #linha #titulo { 
+    font-weight: var(--letraRegular);
+    width: 180px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.configuracoes #caixa_lista #linha #dado{ 
+    font-weight: var(--letraRegular);
+    width: 180px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+#aba1{
+}
+/* .aba2 {
     padding: 0% 0%;
     height: 450px;
     display: flex;
@@ -98,13 +136,13 @@
   
 }
 
-.class_aba2 .teste {
+.aba2 .teste {
     background-color: tomato;
     margin-top: 5%;
 
 }
 
 #aba2 .caixa{
-} 
+}  */
 
 /* --------------------------- */
