@@ -16,9 +16,7 @@
     <!-- FONTE POPPINS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
 
     <!-- função menu -->
     <script src="js/funcoes.js"></script>
@@ -119,7 +117,7 @@
             </div>
         </div>
         <!--  -->
-        
+
         <div class="container">
 
             <div class="destaque_txt" id="div_destaque_txt_cadastro_funcionario">
@@ -130,6 +128,8 @@
             <div class="caixa-formulario">
 
                 <div id="dados_principais">
+
+                    <b>Dados principais: </b>
 
                     <div class="campos">
 
@@ -157,26 +157,48 @@
                         <div class="linha">
 
                             <div class="campo">
-                                <input type="text" id="senha_funcionario" placeholder="Crie uma senha">
+                                <input type="password" id="senha_funcionario" placeholder="Crie uma senha">
                             </div>
 
                             <div class="campo">
-                                <input type="text" id="confirmar_senha_funcionario" placeholder="Confirme sua senha">
+                                <input type="password" id="confirmar_senha_funcionario" placeholder="Confirme sua senha">
                             </div>
                         </div>
 
 
                     </div>
                 </div>
-            </div>
+                <div id="dados_empresariais">
+                    <b>Especificações:</b>
 
-            <div class="botoes" id="botao_cadastro_funcionario">
-                <button id="bt_cadastrar_funcionario" onclick="CadastrarFuncionario()">Cadastrar</button>
+                    <div class="campos">
+
+                        <div class="linha">
+                            <div class="campo">
+                                <input type="text" id="funcao_funcionario" placeholder="Função">
+                            </div>
+
+                            <div class="campo">
+                                <select id="sel_nivel" placeholder="teste">
+                                    <option value="">Nível de acesso</option>
+                                    <option value="Sem acesso">Sem acesso</option>
+                                    <option value="Baixo">Monitoramento baixo</option>
+                                    <option value="Medio">Monitoramento parcial</option>
+                                    <option value="Administrador">Administrador geral</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="botoes " id="botao_cadastro_funcionario ">
+                <button id="bt_cadastrar_funcionario " onclick="CadastrarFuncionario() ">Cadastrar</button>
             </div>
         </div>
 
         <!-- CARD API-->
-        <div id="div_erros_login"></div>
+        <div id="div_erros_login "></div>
         <!-- --------------- -->
 
     </div>
@@ -190,5 +212,5 @@
 
 <script>
     // Coloquei pra desativar a função do scrool nesta pag (gambiarra :))
-    window.onscroll = function () { };
+    window.onscroll = function() {};
 </script>

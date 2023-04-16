@@ -86,8 +86,49 @@ function cadastrar(req, res) {
     }
 }
 
+function adicionarFuncao(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var funcao = req.body.funcaoServer;
+    var nivel = req.body.nivelServer;
+    var flagAdm = req.body.flagAdmServer;
+    var idEmpresa = req.body.idEmpresaServer
+    var idFuncionario = req.body.idFuncionarioServer
+
+    // Faça as validações dos valores
+    if (funcao == undefined) {
+        res.status(400).send("Sua função está undefined!");
+    } else if (nivel == undefined) {
+        res.status(400).send("Seu nivel está undefined!");
+    } else if (flagAdm == undefined) {
+        res.status(400).send("Sua flag adm está undefined!");
+    } else if (idEmpresa == undefined) {
+        res.status(400).send("Seu idEmpresa está undefined!");
+    } else if (idFuncionario == undefined) {
+        res.status(400).send("Seu idFuncionario está undefined!");
+    } else {
+
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        funcionarioModel.adicionarFuncao(funcao, nivel, flagAdm, idEmpresa, idFuncionario)
+            .then(
+                function(resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function(erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     entrar,
     cadastrar,
+    adicionarFuncao,
     testar
 }

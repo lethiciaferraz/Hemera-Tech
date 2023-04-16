@@ -22,8 +22,7 @@ sobrenome varchar(45),
 ddd char(2),
 telefone varchar(9),
 email varchar(75),
-senha varchar(45),
-flag_administrador boolean
+senha varchar(45)
 constraint chkemail_func check (email like '%@%.%'));
 
 create table Funcao (
@@ -31,6 +30,7 @@ idEmpresa int,
 idFuncionario int, 
 funcao varchar(45),
 nivel varchar(45),
+flag_administrador boolean,
 constraint fk_emp_funcao foreign key (idEmpresa) references Empresa(idEmpresa),
 constraint fk_func_funcao foreign key (idFuncionario) references Funcionario(idFuncionario)
 );
@@ -64,11 +64,10 @@ create procedure sp_cadastrar_funcionario(
 	in ddd char(2),
 	in telefone varchar(9),
 	in email varchar(75),
-	in senha varchar(45),
-	in flag_administrador boolean
+	in senha varchar(45)
 )
 begin
-	insert into funcionario (nome, sobrenome, ddd, telefone, email, senha, flag_administrador) values (nome, sobrenome, ddd, telefone, email, senha, flag_administrador);
+	insert into funcionario (nome, sobrenome, ddd, telefone, email, senha) values (nome, sobrenome, ddd, telefone, email, senha);
     select idFuncionario from Funcionario 
     where email = email
     order by idFuncionario desc limit 1;
