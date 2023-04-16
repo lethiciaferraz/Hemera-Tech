@@ -37,7 +37,7 @@
 
 /* ---------------NÃO SEI AINDA------------ */
 .passos {
-    padding: 20vh 30vh 20vh 30vh;
+    padding: 3vh 3vh 5vh 2vh;
    
 }
 
@@ -97,17 +97,19 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
 }
 
 #div_img_numeros img {
     margin: 4vh 1vw 0vh 1vh;
-    height: 79%;
+    height: 77%;
 }
 
 .destaque_txt_2 b {
     color: #6B0CC5;
     font-size: min(18px, 30vh);
 }
+
 
 #div_texto_passo p {
     font-weight: 400;
