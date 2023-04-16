@@ -69,6 +69,7 @@
     color: var(--corForte);
 }
 
+
 .configuracoes .abas section {
     display: none;
     border-top: 1px solid #812FCD;
@@ -80,7 +81,7 @@
 }
 
 
-.configuracoes #caixa_lista{
+.configuracoes #caixa_lista {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
@@ -89,25 +90,25 @@
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
-.configuracoes #caixa_lista #infos_principais{ 
+.configuracoes #caixa_lista #infos_principais {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 
-.configuracoes #caixa_lista #infos_principais h3{
+.configuracoes #caixa_lista #infos_principais h3 {
     color: black;
     font-weight: var(--letraMedia);
 }
 
 
-.configuracoes #caixa_lista #linha{ 
+.configuracoes #caixa_lista #linha {
     display: flex;
     flex-direction: row;
 }
 
-.configuracoes #caixa_lista #linha #titulo { 
+.configuracoes #caixa_lista #linha #titulo {
     font-weight: var(--letraRegular);
     width: 180px;
     text-align: center;
@@ -115,27 +116,202 @@
     margin: 0px 5px
 }
 
-.configuracoes #caixa_lista #linha #dado{ 
+.configuracoes #caixa_lista #linha #titulo:nth-child(5) {
+
+    width: 120px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.configuracoes #caixa_lista #linha #dado_nomeFuncionario {
     font-weight: var(--letraRegular);
+    font-size: 15px;
     width: 180px;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
 }
 
-#aba1 button{
-    background-color: #812FCD;
-    color: white;
-    padding: 8px 10px;
-    border-radius: 5px;
-    border: #812FCD;
+.configuracoes #caixa_lista #linha #dado_cargo {
+    font-weight: var(--letraRegular);
+    font-size: 15px;
+    width: 180px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
 }
 
-#aba2 button{
-    background-color: #812FCD;
-    color: white;
+.configuracoes #caixa_lista #linha #dado_email {
+    font-weight: var(--letraRegular);
+    font-size: 15px;
+    width: 180px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.configuracoes #caixa_lista #linha #dado_tipoUsuario {
+    font-weight: var(--letraRegular);
+    font-size: 15px;
+    width: 180px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.configuracoes #caixa_lista #linha #deletar {
+    font-weight: var(--letraRegular);
+    font-size: 15px;
+    width: 120px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px;
+    text-decoration: underline;
+    color: var(--corForte);
+    cursor: pointer;
+}
+
+.configuracoes #caixa_lista #linha #dado_status {
+    font-weight: var(--letraRegular);
+    font-size: 15px;
+    width: 180px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.configuracoes #caixa_lista #linha #dado_idComputador {
+    font-weight: var(--letraRegular);
+    font-size: 15px;
+    width: 180px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.configuracoes #caixa_lista #linha #detalhes {
+    font-weight: var(--letraRegular);
+    font-size: 15px;
+    width: 180px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px;
+}
+
+#detalhes a {
+    color: var(--corForte);
+}
+
+#aba1 button {
+    font-family: "Poppins", sans-serif;
     padding: 8px 10px;
     border-radius: 5px;
-    border: #812FCD;
+    background-color: var(--corForte);
+    border: 2px solid var(--corForte);
+    font-weight: 500;
+    font-size: 13px;
+    text-align: center;
+    color: #fff;
 }
+
+#aba1 button:hover {
+    cursor: pointer;
+    background-color: #812fcd00;
+    color: #812FCD;
+    transition: 0.8s;
+}
+
+#aba2 button {
+    font-family: "Poppins", sans-serif;
+    padding: 8px 10px;
+    border-radius: 5px;
+    background-color: var(--corForte);
+    border: 2px solid var(--corForte);
+    font-weight: 500;
+    font-size: 13px;
+    text-align: center;
+    color: #fff;
+}
+
+#aba2 button:hover {
+    cursor: pointer;
+    background-color: #812fcd00;
+    color: #812FCD;
+    transition: 0.8s;
+}
+
+
 /* --------------------------- */
+
+.configuracoes #caixa_cadastro {
+    display: flex;
+    flex-direction: column;
+    width: 950px;
+    text-align: center;
+    margin-top: 20px;
+    padding: 30px;
+    background-color: var(--caixa);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+#caixa_cadastro h3 {
+    color: var(--corForte);
+    font-size: 25px;
+    font-weight: var(--letraMedia);
+
+}
+
+#caixa_cadastro p {
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;;
+}
+
+.campos #linha {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.campo input {
+    border-radius: 5px;
+    margin: 8px;
+    padding: 5px;
+    width: 240px;
+}
+
+.select_tipo select{
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+
+}
+
+.botoes button {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--corForte);
+    border: 2px solid var(--corForte);
+    font-weight: 500;
+    font-size: 15px;
+    padding: 4px;
+    margin: 15px ;
+    width: 10vw;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+}
+
+
+.botoes a{
+    text-decoration: none;
+    color: var(--corForte);
+}
+
+.botoes button:hover {
+    cursor: pointer;
+    background-color: #812fcd00;
+    color: #812FCD;
+    transition: 0.8s;
+}
