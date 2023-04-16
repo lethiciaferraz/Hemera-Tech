@@ -34,3 +34,139 @@
     padding: 10px 10px 10px 40px;
     /* background-color: aqua; */
 }
+
+/* ---------------NÃO SEI AINDA------------ */
+.passos {
+    padding: 20vh 30vh 20vh 30vh;
+   
+}
+
+.passo {
+    max-width: 40vw; 
+    margin-top: 6vh;
+    padding: 1.9vh 2vw 1vh 2vw;
+    background-color: #E4CBFD;
+    border-radius: 0.4vw;
+}
+
+#div_bloco_funciona {
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+
+#div_funciona {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+
+#div_img_funciona img {
+    width: min(650px, 40vw);
+    margin-left: 5vw;
+}
+
+#div_bloco_funciona {
+    flex-direction: column;
+    margin: 0vh 10vw 2vh 4vw;
+    align-items: flex-start;
+}
+
+#div_destaque_txt_funciona b {
+    font-size: var(--tamanhoLetraDestaque);
+    font-weight: 600;
+    text-align: left;
+    margin-left: 1.5vw;
+}
+
+#div_destaque_txt_funciona b b {
+    margin-left: 0vw;
+}
+
+#div_txt_funciona p {
+    font-size: min(26px, 30vh);
+    font-weight: 200;
+    margin-left: 1.5vw;
+}
+
+#container_passos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#div_img_numeros img {
+    margin: 4vh 1vw 0vh 1vh;
+    height: 79%;
+}
+
+.destaque_txt_2 b {
+    color: #6B0CC5;
+    font-size: min(18px, 30vh);
+}
+
+#div_texto_passo p {
+    font-weight: 400;
+    font-size: min(15px, 30vh);
+}
+
+
+
+/* CONTATO */
+
+#div_contato {
+    background-color: #F3EBFA;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.5);
+}
+
+#div_bloco_contato {
+    margin: 8vh 4vw 5vh 4vw;
+}
+
+#div_destaque_txt_contato b {
+    font-size: var(--tamanhoLetraDestaque);
+    font-weight: 600;
+}
+
+#div_destaque_txt_contato b b {
+    margin-left: 0vw;
+}
+
+#div_txt_contato p {
+    font-size: min(16px, 30vh);
+    font-weight: 400;
+}
+
+#div_txt_cards {
+    display: flex;
+    justify-content: space-around;
+    padding: 3vh 5vw 3vh 5vw;
+}
+
+#div_img_contato img {
+    width: 5vw;
+    margin: 2vh;
+    margin-right: 2vh;
+}
+
+#div_txt_cards b {
+    font-size: min(17px, 20vh);
+    margin: 4px 0px 10px 0px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#div_txt_cards p {
+    font-size: min(15px, 30vh);
+    font-weight: 400;
+    margin-top: 2px;
+    margin-bottom: 4px;
+}
