@@ -62,6 +62,9 @@
 
 }
 
+.h3{
+    text-align: center;
+}
 .home .caixas #caixa p{
     font-weight: var(--letraRegular);
     font-size: 14px;
