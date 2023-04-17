@@ -54,34 +54,39 @@
     margin-top: 20px;
 }
 
-.graficos .abas nav a {
-    display: inline-block;
-    padding: 8px 15px;
+.graficos .abas nav {
+    display: flex;
+    flex-direction: row;
+    padding: 8px 15px 0px 0px;
     text-decoration: none;
     font-weight: 500;
     color: var(--letraMenu);
 }
 
-/* quando clico na opcao entra a classe focus */
-.graficos .abas nav a.focus,
-.graficos.abas nav a:focus {
+
+.graficos .abas nav .opcao_menu{
+    padding: 8px 15px ;
+    font-weight: 500;
+    color: var(--letraMenu);
+}
+
+.graficos .abas nav .opcao_menu:hover{
+   cursor: pointer;
+}
+
+.graficos .abas nav .opcao_menu.selecionado{
     background: white;
     border-top: solid 1px var(--corForte);
     border-left: solid 1px var(--corForte);
     border-right: solid 1px var(--corForte);
     color: var(--corForte);
-}
+ }
 
-
-.graficos .abas section {
-    display: none;
+ .graficos_divididos{
+    margin-top: 0px;
     border-top: 1px solid #812FCD;
-    margin-top: -1px;
-}
 
-.graficos .abas section:target {
-    display: block;
-}
+ }
 
 .dashboard_detalhes .graficos .caixa_grafico {
     background-color: var(--caixa);
@@ -100,4 +105,27 @@
 .dashboard_detalhes .graficos .caixa_grafico p {
     font-weight: var(--letraSemiBold);
     font-size: 14px;
+}
+
+.abaCPU{
+    display: none;
+}
+
+.abaCPU.selecionado{
+    display: block;
+}
+
+.abaDiscoEMemoria{
+    display: none;
+}
+.abaDiscoEMemoria.selecionado{
+    display: block;
+}
+
+.abaRede{
+    display: none;
+}
+
+.abaRede.selecionado{
+    display: block;
 }

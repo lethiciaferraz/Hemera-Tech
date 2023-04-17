@@ -32,7 +32,7 @@
 
 </head>
 
-<body>
+<body onload="CarregarPagina()">
     <div class="menu-lateral">
 
         <nav class="navbar">
@@ -133,8 +133,8 @@
                     <p>Status</p>
                     <div id="tracinho" style="margin-top: 0px; margin-bottom: 3px;"></div>
                     <div id="dado_status">
-                        <div style="background-color: #77D33E; height: 20px; width: 30px; margin-right: 6px;"> </div>
-                        ótimo
+                        <div style="background-color: #D95F58; height: 20px; width: 30px; margin-right: 6px;"> </div>
+                        Crítico
                     </div>
                 </div>
 
@@ -142,74 +142,73 @@
             </div>
 
             <div class="graficos">
-         
+
                 <div class="abas">
                     <nav>
-                        <a href="#abaCPU">CPU</a>
-                        <a href="#abaDiscoEMemoria">Disco e Memória</a>
-                        <a href="#abaRede">Rede</a>
-
+                        <div class="opcao_menu selecionado" id="opcao1">CPU</div>
+                        <div class="opcao_menu" id="opcao2">Disco e Memória</div>
+                        <div class="opcao_menu" id="opcao3">Rede</div>
                     </nav>
 
                     <!-- ABA 1 -->
 
-                    <section id="abaCPU" onload="teste()">
-                        <div class="caixa_grafico">
-                            <div>
-                                <p>Clock</p>
-                                <div id="valorClock" style="text-align: center;"></div>
-                                <canvas id="foo"></canvas>
+                    <div class=graficos_divididos>
+
+                        <div class="abaCPU">
+                            <div class="caixa_grafico">
+                                <div>
+                                    <p>Clock</p>
+                                    <div id="valorClock" style="text-align: center;"></div>
+                                    <canvas id="myChart3"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="caixa_grafico">
+
+                                <div>
+                                    <p>Variação do uso da CPU - a cada 30 minutos</p>
+                                    <canvas id="myChart1"> </canvas>
+                                </div>
+
+                                <div>
+                                    <p>Temperatura da CPU a cada 5 segundos</p>
+                                    <canvas id="myChart2"> </canvas>
+                                </div>
+
                             </div>
                         </div>
 
-                        <div class="caixa_grafico">
+                        <div class="abaDiscoEMemoria">
+                            <div class="caixa_grafico">
+                                <div>
+                                    <p>Uso da Memória - Espaço Total: slaoq GB</p>
+                                    <canvas id="myChart4"> </canvas>
+                                </div>
 
-                            <div>
-                                <p>Variação do uso da CPU - a cada 30 minutos</p>
-                                <canvas id="myChart1"> </canvas>
-                            </div>
-
-                            <div>
-                                <p>Temperatura da CPU a cada 5 segundos</p>
-                                <canvas id="myChart4"> </canvas>
+                                <div>
+                                    <p>Uso de Disco - Espaço total: slaoq GB</p>
+                                    <canvas id="myChart5"> </canvas>
+                                </div>
                             </div>
 
                         </div>
 
+                        <div class="abaRede selecionado">
+                            <div class="caixa_grafico">
+                                <div>
+                                    <p>Velocidade de Dowload e upload da Rede a cada 5 segundos</p>
+                                    <canvas id="myChart6"> </canvas>
+                                </div>
 
-                    </section>
-
-                    <section id="abaDiscoEMemoria">
-                        <div class="caixa_grafico">
-                            <div style="width: 300px; margin: 30px;">
-                                <p>Uso da Memória - Espaço Total: slaoq GB</p>
-                                <canvas id="myChart2"> </canvas>
+                                <div>
+                                    <p>MS de Rede - média dos últimos 2 dias</p>
+                                    <div id="valorMS" style="text-align: center;"></div>
+                                    <canvas id="myChart7"> </canvas>
+                                </div>
                             </div>
 
-                            <div style="width: 300px; margin: 30px;">
-                                <p>Uso de Disco - Espaço total: slaoq GB</p>
-                                <canvas id="myChart3"> </canvas>
-                            </div>
                         </div>
-
-                    </section>
-
-                    <section id="abaRede">
-                        <div class="caixa_grafico">
-                            <div>
-                                <p>Velocidade de Dowload e upload da Rede a cada 5 segundos</p>
-                                <canvas id="myChart5"> </canvas>
-                            </div>
-
-                            <div>
-                                <p>MS de Rede - média dos últimos 2 dias</p>
-                                <div id="valorMS" style="text-align: center;"></div>
-                                <canvas id="myChart8"> </canvas>
-                            </div>
-                        </div>
-
-
-                    </section>
+                    </div>
 
                 </div>
 

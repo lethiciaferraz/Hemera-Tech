@@ -1,11 +1,10 @@
-
 // menu sanduiche
 let menuSanduiche = document.querySelector('.abre-fecha-menu');
+
 // ele adiciona o a classe 'ativado' nas seguintes classes
 let navbar = document.querySelector('.navbar');
 let conteudo = document.querySelector('.conteudo');
 let logo = document.querySelector(".imagem_logo")
-
 
 menuSanduiche.onclick = function () {
     navbar.classList.toggle('ativado');
@@ -16,7 +15,7 @@ menuSanduiche.onclick = function () {
 
     if (logoAtivado) {
         logoAtivado.src = "../assets/dashboard/icone-logo.png";
-    }else{   
+    }else{
         logo.src = "../assets/HEMERA.png";
     }
 }
