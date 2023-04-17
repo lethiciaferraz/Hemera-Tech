@@ -19,5 +19,4 @@ menuSanduiche.onclick = function () {
     }else{   
         logo.src = "../assets/HEMERA.png";
     }
-
 }

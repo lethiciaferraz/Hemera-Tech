@@ -5,9 +5,7 @@
     --corPrincipal: #D8C4EC;
     --corSecundaria: #F3EBFA;
     --corForte: #812FCD;
-    --tamanhoIcones: 1.5rem;
-
-    --caixaAlertaOtimo: #77D33E; 
+ 
     --caixaAlertaAtencao: #DEE148;
     --caixaAlertaCritico: #D95F58;
 }
@@ -43,7 +41,7 @@
 /* --------------------------- */
 
 .home {
-    padding: 10px 10px 10px 40px;
+    padding: 0px 10px 10px 40px;
     /* background-color: aqua; */
 }
 
@@ -106,9 +104,9 @@
 
 .home .caixas #caixa button{
     font-family: "Poppins", sans-serif;
-    font-size: 12px;
+    font-size: 13px;
     padding: 4px;
-    width: 100px;
+    width: 110px;
     font-weight: var(--letraMedia);
     background-color: var(--corForte);
     color: var(--caixa);
@@ -116,6 +114,7 @@
     border: 0.04;
     display: block;
     margin: 0 auto;
+    transition: all 0.5s;
 }
 /* VERRRRR */
 .home .caixas #caixa button:hover{
@@ -126,7 +125,8 @@
 
 .home #caixa #caixinha{  
     display: flex;
-    flex-direction: row;    
+    flex-direction: row;   
+    justify-content: center; 
 }
 
 .home #caixa #caixinha div{  
@@ -142,7 +142,7 @@
 .home #caixa_observacoes{
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 15px;
     padding: 30px;
     background-color: var(--caixa);
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
@@ -156,51 +156,55 @@
 .home #caixa_observacoes #titulo_observacoes h3{
     color: black;
     font-weight: var(--letraMedia);
+    margin-bottom: 10px;
 }
 
 .home #caixa_observacoes .observacoes_alertas {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-
-.home .observacoes_alertas #observacoes {
+/*----------- CAIXA ALERTAS--------*/
+.home .observacoes_alertas #caixa_alerta{
     margin: 5px;
-    background-color: var(--caixaAlertaAtencao);
     width: 240px;
     box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
     padding: 15px;
 
 }
 
-.home .observacoes_alertas #observacoes p{
-    font-weight: var(--letraRegular);
-    font-size: 14px;
+.home .observacoes_alertas #caixa_alerta b{
+    font-size: 16px;
     text-align: center;
+    display: block;
 }
 
-.home .observacoes_alertas #observacoes div{
+.home .observacoes_alertas #caixa_alerta div{
     margin: 15px 5px;
-    font-weight: var(--letraSemiBold);
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
+    font-weight: var(--letraMedia);
 }
 
-.home .observacoes_alertas #observacoes button{
+.home .observacoes_alertas #caixa_alerta a{
+    text-decoration: none;
+}
+
+.home .observacoes_alertas #caixa_alerta button{
     font-family: "Poppins", sans-serif;
-    font-size: 12px;
-    padding: 4px;
+    font-size: 13px;
+    padding:  6px;
     font-weight: var(--letraMedia);
-    background-color: var(--corPrincipal);
-    color: var(--caixa);
+    background-color: #e7e2ed;
     border-radius: 5px;
-    border: 0.04;
     display: block;
     margin: 0 auto;
+    transition: all 0.5s;
 }
 
-.home .observacoes_alertas #observacoes button:hover{
-    background-color: var(--corForte);
-    color: var(--caixa);
-    cursor: pointer;
+.home .observacoes_alertas #caixa_alerta button:hover{
+ cursor: pointer;
+ background-color: #D8C4EC;
 }
+
+

@@ -112,19 +112,20 @@
             </div>
 
             <div class="caixas">
-                <div id="caixa">
-                    <p>Computadores Cadastrados</p>
-                    <div id="dado_computadores_cadastrados">4</div>
-                    <a href="configuracoes.html#aba2">
-                        <button>ver lista</button>
-                    </a>
-                </div>
 
                 <div id="caixa">
                     <p>Funcionários Cadastrados</p>
                     <div id="dado_funcionarios_cadastrados">5</div>
                     <a href="configuracoes.html#aba1">
-                        <button>ver lista</button>
+                        <button>Ver lista</button>
+                    </a>
+                </div>
+
+                <div id="caixa">
+                    <p>Computadores Cadastrados</p>
+                    <div id="dado_computadores_cadastrados">4</div>
+                    <a href="configuracoes.html#aba2">
+                        <button>Ver lista</button>
                     </a>
                 </div>
 
@@ -132,7 +133,7 @@
                     <p>Computadores em Uso</p>
                     <div id="dado_computadores_em_uso">3</div>
                     <a href="dashboard.html">
-                        <button> situação geral</button>
+                        <button>Situação geral</button>
                     </a>
 
                 </div>
@@ -141,24 +142,19 @@
                 <div id="caixa">
                     <p>Legenda</p>
                     <div id="caixinha">
-                        <div id="legenda_otimo">
-                            <div style="background-color: #77D33E; width: 62px; height: 40px;"></div>
-                            <p>
-                                ótimo
-                            </p>
-                        </div>
+                       
 
                         <div id="legenda_atencao">
-                            <div style="background-color: #DEE148; width: 62px; height: 40px;"></div>
+                            <div style="background-color: #DEE148; width: 75px; height: 40px;"></div>
                             <p>
-                                atenção
+                                Atenção
                             </p>
                         </div>
 
                         <div id="legenda_critico">
-                            <div style="background-color: #D95F58; width: 62px; height: 40px;"></div>
+                            <div style="background-color: #D95F58; width: 75px; height: 40px;"></div>
                             <p>
-                                crítico
+                                Crítico
                             </p>
                         </div>
 
@@ -169,26 +165,28 @@
 
             <div id="caixa_observacoes">
                 <div id="titulo_observacoes">
-                    <h3>Observações e Alertas</h3>
+                    <h3>Avisos</h3>
                 </div>
 
                 <div class="observacoes_alertas">
 
-                    <div id="observacoes">
-                        <p>ATENÇÃO</p>
-                        <div>Máquina com sla oq</div>
-                        <a href="dashboardDetalhes.html">
+                    <div id="caixa_alerta" style="background-color: var(--caixaAlertaAtencao)";>
+                        <b>ALERTA</b>
+                        <div>Computador 1 está usando 85% de mémoria</div>
+                        <a href="dashboardDetalhes.html#abaCPU">
+                            <button >Ver desempenho</button>
+                        </a>
+                    </div> 
+     
+                    <div id="caixa_alerta" style="background-color: var(--caixaAlertaCritico)";>
+                        <b>ALERTA</b>
+                        <div>Computador 2 está ocupando 95% de disco</div>
+                        <a href="dashboardDetalhes.html#abaCPU">
                             <button>Ver desempenho</button>
                         </a>
                     </div>
 
-                    <div id="observacoes">
-                        <p>ALERTA</p>
-                        <div>Máquina com sla oq</div>
-                        <a href="dashboardDetalhes.html">
-                            <button>Ver desempenho</button>
-                        </a>
-                    </div>
+                
                 </div>
 
             </div>
@@ -197,6 +195,7 @@
         </div>
 
 
+       
 </body>
 
 </html>

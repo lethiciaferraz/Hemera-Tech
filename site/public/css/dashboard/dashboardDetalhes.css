@@ -1,5 +1,5 @@
 .dashboard_detalhes {
-    padding: 10px 10px 10px 40px;
+    padding: 0px 10px 10px 40px;
     /* background-color: aqua; */
 }
 
@@ -15,24 +15,24 @@
     background-color: var(--caixa);
     width: 240px;
     box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
-    padding: 15px 15px 2px 15px;
+    padding: 7px 15px 2px 15px;
 
 }
 
-.dashboard_detalhes .caixas #caixa p{
+.dashboard_detalhes .caixas #caixa p {
     font-weight: var(--letraRegular);
     font-size: 14px;
     text-align: center;
 }
 
-.dashboard_detalhes .caixas #caixa #dado_idcomputador{
+.dashboard_detalhes .caixas #caixa #dado_idcomputador {
     margin: 5px 5px;
     font-weight: var(--letraSemiBold);
     font-size: 20px;
     text-align: center;
 }
 
-.dashboard_detalhes .caixas #caixa #dado_totalIncidentes{
+.dashboard_detalhes .caixas #caixa #dado_totalIncidentes {
     margin: 5px 5px;
     font-weight: var(--letraSemiBold);
     font-size: 20px;
@@ -40,7 +40,7 @@
 }
 
 
-.dashboard_detalhes .caixas #caixa #dado_status{
+.dashboard_detalhes .caixas #caixa #dado_status {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,16 +50,54 @@
     text-align: center;
 }
 
-.dashboard_detalhes .graficos{
+.graficos .abas nav  {
+    margin-top: 20px;
+}
+
+.graficos .abas nav a {
+    display: inline-block;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--letraMenu);
+}
+
+/* quando clico na opcao entra a classe focus */
+.graficos .abas nav a.focus,
+.graficos.abas nav a:focus {
+    background: white;
+    border-top: solid 1px var(--corForte);
+    border-left: solid 1px var(--corForte);
+    border-right: solid 1px var(--corForte);
+    color: var(--corForte);
+}
+
+
+.graficos .abas section {
+    display: none;
+    border-top: 1px solid #812FCD;
+    margin-top: -1px;
+}
+
+.graficos .abas section:target {
+    display: block;
+}
+
+.dashboard_detalhes .graficos .caixa_grafico {
+    background-color: var(--caixa);
+    margin: 20px 5px 5px 5px;
+    padding: 15px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: row;
 }
-.dashboard_detalhes .graficos .caixa_grafico{
-    background-color: var(--caixa);
-    /* width: 400px; */
-    /* height: 350px; */
-    margin: 20px 5px 5px 5px;
-    padding: 20px;
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
 
+.dashboard_detalhes .graficos .caixa_grafico div{
+    width: 400px;
+    margin: 15px;
+}
+
+.dashboard_detalhes .graficos .caixa_grafico p {
+    font-weight: var(--letraSemiBold);
+    font-size: 14px;
 }
