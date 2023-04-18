@@ -22,7 +22,7 @@ sobrenome varchar(45),
 ddd char(2),
 telefone varchar(9),
 email varchar(75),
-senha varchar(45)
+senha varchar(45),
 constraint chkemail_func check (email like '%@%.%'));
 
 create table Funcao (
@@ -73,3 +73,4 @@ begin
     order by idFuncionario desc limit 1;
 end$$
 delimiter ;
+

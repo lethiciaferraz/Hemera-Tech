@@ -227,7 +227,7 @@ function entrar() {
         console.log("FORM EMAIL: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
-        fetch("/empresas/autenticar", {
+        fetch("/funcionarios/autenticar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -247,8 +247,8 @@ function entrar() {
                     console.log(JSON.stringify(json));
 
                     sessionStorage.ID_EMPRESA = json.idEmpresa;
-                    sessionStorage.NOME_EMPRESA = json.nome;
-
+                    sessionStorage.ID_FUNCIONARIO = json.idFuncionario
+                    sessionStorage.NIVEL_ACESSO = json.nivel
 
                 });
 

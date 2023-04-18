@@ -1,7 +1,7 @@
 /* .header {} */
 
-:root{
-    --bordaCurva : 5px;
+:root {
+    --bordaCurva: 5px;
     --roxoEscuro: #812FCD;
     --roxoClarinho: #D8C4EC;
     --roxoClaroFundo: #EEDDFD;
@@ -42,7 +42,6 @@
 .destaque_txt {
     font-size: var(--tamanhoLetraDestaque);
     font-weight: 100;
-    margin-bottom: 1.5rem;
 }
 
 #campo1_login {
@@ -95,7 +94,7 @@
     margin-bottom: 0.5rem;
 }
 
-#div_esq_senha a{
+#div_esq_senha a {
     text-decoration: none;
 }
 
@@ -110,46 +109,38 @@ footer {
     left: 0;
     width: 100%;
     position: fixed;
-
 }
 
 @media only screen and (max-width: 1100px) {
     #div_img_login img {
         width: min(400px, 70vw);
     }
-
     #div_principal_login {
         justify-content: center;
     }
-    
 }
 
 @media only screen and (max-width: 976px) {
     .destaque_txt {
         font-size: 25px;
     }
-
-    #botao_login{
+    #botao_login {
         font-size: 11px;
     }
-
     .txt_2 {
-        font-size:12px;
+        font-size: 12px;
     }
-    #div_img_login{
-        display: none ;
+    #div_img_login {
+        display: none;
     }
-
     .campo input {
         padding: 10px;
         border-radius: 1vh;
         border: 0;
         width: 50vw;
     }
-
     #botao_login button {
         min-width: 30vw;
         font-size: 11px;
     }
-  
 }
