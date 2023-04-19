@@ -1,77 +1,46 @@
-let opcao1 = document.querySelector('#opcao1');
-let opcao2 = document.querySelector('#opcao2');
-let opcao3 = document.querySelector('#opcao3');
+window.addEventListener('load', () => {
+    document.querySelectorAll('.abas nav a').forEach((a) => {
+        a.addEventListener('click', () => {
 
-// function CarregarPagina(){
-// if (opcao1.classList.contains('selecionado')) {
-//     MostrarGraficosCPU();
-// }
-// if(opcao2.classList.contains('selecionado')){
-//     MostrarGraficosDiscoEMemoria();
-// }
-// if(opcao3.classList.contains('selecionado')){
-//     MostrarGraficosRede();
-// }
-// }
+            let f = a.parentNode.querySelector('a.selecionado')
 
-let cpuConteudo = document.querySelector('.abaCPU');
-let discoEMemoriConteudo = document.querySelector('.abaDiscoEMemoria');
-let redeConteudo = document.querySelector(".abaRede")
+            if (f) f.classList.remove('selecionado')
+            a.classList.add('selecionado')
 
-opcao1.onclick = function () {
+            // ADICIONEI ISO 
+            // criar variavel para guardar o elemento que foi clicado(o data target varia)
+            let div = document.querySelector(`.abas .${a.getAttribute('data-target')}`)
 
-    if (opcao2.classList.contains('selecionado') || opcao3.classList.contains('selecionado')) {
+            // pega todas as section dentro da div de classe abas
+            document.querySelectorAll('.abas section').forEach((sectionAtual) => {
 
-        opcao2.classList.remove('selecionado')
-        opcao3.classList.remove('selecionado')
-    }
-    opcao1.classList.add('selecionado')
+                // ele checa se é a mesma que foi clicada e some ou dá block nela
+                if (sectionAtual == div) {
+                    sectionAtual.style.display = 'block'
+                } else {
+                    sectionAtual.style.display = 'none'
+                }
+            })
 
+            // AQUI É PRA CHAMAR A FUNÇÃO DO GRÁFICO CORRESONDENTE A ABA
+            let selecionado = a.getAttribute('data-target');
+            if (selecionado) {
+                if (selecionado === 'abaCPU') {
+                    MostrarGraficosCPU();
+                } else if (selecionado === 'abaDiscoEMemoria') {
+                    MostrarGraficosDiscoEMemoria();
+                } else if (selecionado === 'abaRede') {
+                    MostrarGraficosRede();
+                }
+            }
+            //   ---------------------------------------------
+        })
 
-    if (discoEMemoriConteudo.classList.contains('selecionado') || redeConteudo.classList.contains('selecionado')) {
-
-        discoEMemoriConteudo.classList.remove('selecionado')
-        redeConteudo.classList.remove('selecionado')
-    }
-    cpuConteudo.classList.add('selecionado')
-    MostrarGraficosCPU()
-
-}
-
-opcao2.onclick = function () {
-    if (opcao1.classList.contains('selecionado') || opcao3.classList.contains('selecionado')) {
-
-        opcao1.classList.remove('selecionado')
-        opcao3.classList.remove('selecionado')
-    }
-    opcao2.classList.add('selecionado')
-
-    if (cpuConteudo.classList.contains('selecionado') || redeConteudo.classList.contains('selecionado')) {
-        cpuConteudo.classList.remove('selecionado')
-        redeConteudo.classList.remove('selecionado')
-    }
-    discoEMemoriConteudo.classList.add('selecionado')
-    MostrarGraficosDiscoEMemoria()
-
-}
-
-opcao3.onclick = function () {
-    if (opcao1.classList.contains('selecionado') || opcao2.classList.contains('selecionado')) {
-
-        opcao1.classList.remove('selecionado')
-        opcao2.classList.remove('selecionado')
-    }
-    opcao3.classList.add('selecionado')
-
-    if (cpuConteudo.classList.contains('selecionado') || discoEMemoriConteudo.classList.contains('selecionado')) {
-
-        cpuConteudo.classList.remove('selecionado')
-        discoEMemoriConteudo.classList.remove('selecionado')
-    }
-    redeConteudo.classList.add('selecionado')
-    MostrarGraficosRede()
-
-}
+        if (location.hash) {
+            document.querySelector('a[href="' + location.hash + '"]').click()
+        }
+    })
+})
 
 // -------------GRÁFICOS CPU--------------------------
 function MostrarGraficosCPU() {
@@ -264,4 +233,3 @@ function MostrarGraficosRede() {
     gaugeMS.animationSpeed = 30; // set animation speed (32 is default value)
     gaugeMS.set(valorAtualMS); // set actual value
 }
-

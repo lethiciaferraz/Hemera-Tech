@@ -523,6 +523,7 @@ footer p {
     margin: 0;
 }
 
+
 @media only screen and (max-width: 1160px) {
     #div_quem_somos {
         flex-direction: column;

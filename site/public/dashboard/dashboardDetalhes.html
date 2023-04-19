@@ -32,7 +32,7 @@
 
 </head>
 
-<body onload="CarregarPagina()">
+<body>
     <div class="menu-lateral">
 
         <nav class="navbar">
@@ -129,8 +129,9 @@
                     <div id="dado_totalIncidentes">1</div>
                 </div>
 
+
                 <div id="caixa">
-                    <p>Status</p>
+                    <p>Status CPU</p>
                     <div id="tracinho" style="margin-top: 0px; margin-bottom: 3px;"></div>
                     <div id="dado_status">
                         <div style="background-color: #D95F58; height: 20px; width: 30px; margin-right: 6px;"> </div>
@@ -138,25 +139,23 @@
                     </div>
                 </div>
 
-
             </div>
 
             <div class="graficos">
 
                 <div class="abas">
                     <nav>
-                        <div class="opcao_menu selecionado" id="opcao1">CPU</div>
-                        <div class="opcao_menu" id="opcao2">Disco e Memória</div>
-                        <div class="opcao_menu" id="opcao3">Rede</div>
+                        <a href="#aba1" data-target="abaCPU">CPU</a>
+                        <a href="#aba2" data-target="abaDiscoEMemoria">Disco e Memória</a>
+                        <a href="#aba3" data-target="abaRede">Rede</a>
                     </nav>
 
                     <!-- ABA 1 -->
 
-                    <div class=graficos_divididos>
-
-                        <div class="abaCPU">
+                        <section class="abaCPU" id="aba1" >
                             <div class="caixa_grafico">
                                 <div>
+                                    <i class="fa-solid fa-face-smile"></i>
                                     <p>Clock</p>
                                     <div id="valorClock" style="text-align: center;"></div>
                                     <canvas id="myChart3"></canvas>
@@ -176,9 +175,10 @@
                                 </div>
 
                             </div>
-                        </div>
+                        </section>
 
-                        <div class="abaDiscoEMemoria">
+                    <!-- ABA 2 -->
+                        <section class="abaDiscoEMemoria" id="aba2">
                             <div class="caixa_grafico">
                                 <div>
                                     <p>Uso da Memória - Espaço Total: slaoq GB</p>
@@ -191,9 +191,10 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </section>
 
-                        <div class="abaRede selecionado">
+                    <!-- ABA 3 -->
+                        <section class="abaRede" id="aba3">
                             <div class="caixa_grafico">
                                 <div>
                                     <p>Velocidade de Dowload e upload da Rede a cada 5 segundos</p>
@@ -207,9 +208,7 @@
                                 </div>
                             </div>
 
-                        </div>
-                    </div>
-
+                        </section>
                 </div>
 
             </div>

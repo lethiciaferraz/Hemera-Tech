@@ -125,6 +125,30 @@
     color: var(--roxoEscuro);
 }
 
+.alerta_erro{
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .card_erro {
+    display: none;
+    background-color: #d8c4ec;
+    color: white;
+    width: 250px;
+    height: 200px;
+    position: fixed;
+    /* border-radius: 1vw; */
+    /* border: #111011 3px solid; */
+    /* /* padding: 10px; */
+    margin-right: 20px;
+    margin-top: 5px;
+  }
+  
+  .card_erro #mensagem_erro{
+    font-weight: 500;
+    font-size: 20px;
+  }
+
 @media only screen and (max-width: 912px) {
     .linha {
         display: flex;

@@ -1,5 +1,5 @@
 // função da cor do menu
-window.onscroll = function() { scrollFunction() };
+window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
     if (document.body.scrollTop > 1400 || document.documentElement.scrollTop > 1400) {
@@ -64,13 +64,13 @@ function CadastrarEmpresa() {
                 complementoServer: complementoVar
 
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
 
-                resposta.json().then(function(response) {
+                resposta.json().then(function (response) {
 
                     dados = response[0]
                     sessionStorage.ID_EMPRESA = dados[0].idEmpresa
@@ -83,7 +83,7 @@ function CadastrarEmpresa() {
 
                 // AINDA NAO COLEI O CSS DOS CARD
                 cardErro.style.display = "block";
-                mensagem_erro.innerHTML = "Cadastro da empresa feito com sucesso. Redirecionando para a cadastro de funcionário...";
+                mensagem_erro.innerHTML = "Cadastro da empresa feito com sucesso. Redirecionando para o cadastro de funcionário...";
 
                 setTimeout(() => {
                     window.location = "cadastroFuncionario.html";
@@ -92,7 +92,7 @@ function CadastrarEmpresa() {
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
-        }).catch(function(resposta) {
+        }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
         });
 
@@ -137,13 +137,13 @@ function CadastrarFuncionario() {
                     telefoneServer: telefoneVar,
                     senhaServer: senhaVar
                 })
-            }).then(function(resposta) {
+            }).then(function (resposta) {
 
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
 
-                    resposta.json().then(function(response) {
+                    resposta.json().then(function (response) {
 
                         dados = response[0]
                         sessionStorage.ID_FUNCIONARIO_ADICIONADO = dados[0].idFuncionario
@@ -152,18 +152,20 @@ function CadastrarFuncionario() {
 
                         AdicionarFuncao(funcaoVar, nivelVar, flagadmVar);
 
-                        // window.location = "cadastroFuncionario.html";
+                        // AINDA NAO COLEI O CSS DOS CARD
+                        cardErro.style.display = "block";
+                        mensagem_erro.innerHTML = "Cadastro do funcionário feito com sucesso <br>Redirecionando para a tela de Login ";
+
+                        setTimeout(() => {
+                            window.location = "login.html";
+                        }, "2000")
                     })
 
-
-                    // setTimeout(() => {
-                    //     window.location = "cadastroFuncionario.html";
-                    // }, "2000")
 
                 } else {
                     throw ("Houve um erro ao tentar realizar o cadastro!");
                 }
-            }).catch(function(resposta) {
+            }).catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);
             });
 
@@ -189,7 +191,7 @@ function AdicionarFuncao(funcaoVar, nivelVar, flagadmVar) {
             idEmpresaServer: sessionStorage.ID_EMPRESA,
             idFuncionarioServer: sessionStorage.ID_FUNCIONARIO_ADICIONADO
         })
-    }).then(function(resposta) {
+    }).then(function (resposta) {
 
         console.log("resposta: ", resposta);
 
@@ -197,18 +199,10 @@ function AdicionarFuncao(funcaoVar, nivelVar, flagadmVar) {
 
             console.log('DEU BOM');
 
-            // AINDA NAO COLEI O CSS DOS CARD
-            cardErro.style.display = "block";
-            mensagem_erro.innerHTML = "Cadastro do funcionário feito com sucesso";
-
-            // setTimeout(() => {
-            //     window.location = "cadastroFuncionario.html";
-            // }, "2000")
-
         } else {
             throw ("Houve um erro ao tentar realizar o cadastro!");
         }
-    }).catch(function(resposta) {
+    }).catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
     });
 
@@ -236,7 +230,7 @@ function entrar() {
                 emailServer: emailVar,
                 senhaServer: senhaVar
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
 
             if (resposta.ok) {
@@ -251,6 +245,13 @@ function entrar() {
                     sessionStorage.NIVEL_ACESSO = json.nivel
 
                 });
+                // AINDA NAO COLEI O CSS DOS CARD
+                cardErro.style.display = "block";
+                mensagem_erro.innerHTML = "Login feito com sucesso";
+
+                setTimeout(() => {
+                    window.location = "/dashboard/home.html";
+                }, "2000")
 
             } else {
 
@@ -262,7 +263,7 @@ function entrar() {
                 });
             }
 
-        }).catch(function(erro) {
+        }).catch(function (erro) {
             console.log(erro);
         })
 

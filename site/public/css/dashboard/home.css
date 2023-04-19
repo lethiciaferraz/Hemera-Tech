@@ -138,6 +138,91 @@
     font-size: 14px;
     margin-top: 12px;
 }
+.home #caixa_lista{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    padding: 25px 30px 15px 30px;
+    background-color: var(--caixa);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.home #caixa_lista #infos_principais{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home #caixa_lista #infos_principais #legenda{  
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.home #caixa_lista #infos_principais #legenda #caixinha{  
+    display: flex;
+    flex-direction: row;
+}
+
+.home #caixa_lista #infos_principais #legenda h3{
+    font-size: 15px;
+}
+
+.home #caixa_lista #infos_principais #legenda #caixinha{
+    font-size: 14px;
+    font-weight: var(--letraLight);
+}
+
+.home #caixa_lista #infos_principais h3{
+    color: black;
+    font-weight: var(--letraMedia);
+}
+
+
+.home #caixa_lista #linha{ 
+    display: flex;
+    flex-direction: row;
+}
+
+.home #caixa_lista #linha #titulo { 
+    font-weight: var(--letraRegular);
+    width: 200px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.home #caixa_lista #linha #dado_status{ 
+    font-weight: var(--letraRegular);
+    width: 200px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.home #caixa_lista #linha #dado_idComputador{ 
+    font-weight: var(--letraRegular);
+    width: 200px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.home #caixa_lista #linha #dado_nomeFuncionario{ 
+    font-weight: var(--letraRegular);
+    width: 200px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.home #caixa_lista #linha #ver_desempenho{ 
+    font-weight: var(--letraRegular);
+    width: 190px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
 
 .home #caixa_observacoes{
     display: flex;
