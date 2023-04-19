@@ -31,24 +31,60 @@
 
 /* --------------------------- */
 .aplicacao {
-    padding: 0px 10px 10px 40px;
+    padding: 0px 10px 8px 40px;
     /* background-color: aqua; */
 }
 
 /* ---------------NÃO SEI AINDA------------ */
 
 .passo:nth-child(1) {
-    margin-top: 35px;
+    margin-top: 20px;
 }
 .passo {
     max-width: 40vw; 
     margin-top: 25px;
-    padding: 1.9vh 2vw 1vh 2vw;
+    padding: 1vh 1vw 1vh 1vw;
     background-color: #E4CBFD;
     border-radius: 0.4vw;
     height: 120px;
 }
 
+.passos {
+    display: flex;
+    flex-direction: row;
+}
+
+.passos img{
+    display: flex;
+    margin-top: 15vh;
+    margin-right: 10px;
+}
+
+
+#bt_download {
+    background-color: #812FCD;
+    color: #fff;
+    min-width: 1vw;
+    border-radius: 5px;
+    border: 2px;
+    border-style: groove;
+    border-color: #812FCD;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    padding: 3px;
+    font-size: min(15px, 15vh);
+    font-weight: 400;
+    cursor: pointer;
+    margin-left: 65vh;
+    margin-bottom: 40vh;
+    
+}
+
+#bt_download:hover {
+    background-color: #812fcd00;
+    color: #812FCD;
+    transition: 0.8s;
+}
 #div_bloco_funciona {
     display: flex;
     flex-direction: row;
@@ -61,11 +97,6 @@
     justify-content: center;
     align-items: center;
     margin-top: 0;
-}
-
-#div_img_funciona img {
-    width: min(650px, 40vw);
-    margin-left: 5vw;
 }
 
 #div_bloco_funciona {
