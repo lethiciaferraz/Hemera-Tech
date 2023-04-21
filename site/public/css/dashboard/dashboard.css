@@ -197,46 +197,111 @@ body {
 
 }
 
-.dashboard .caixas #caixa {
+/* caixa de computadores */
+.dashboard .caixas .caixa_computadores {
     margin: 5px;
     background-color: var(--caixa);
-    width: 240px;
+    width: 255px;
     box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
     padding: 15px;
 }
 
-.dashboard .caixas #caixa p{
+.dashboard .caixas .caixa_computadores p{
     font-weight: var(--letraRegular);
     font-size: 14px;
     text-align: center;
 }
 
-.dashboard .caixas #caixa div{
+.dashboard .caixas .caixa_computadores div{
     margin: 15px 5px;
     font-weight: var(--letraSemiBold);
     font-size: 20px;
     text-align: center;
 }
 
-.dashboard .caixas #caixa button{
-    font-family: "Poppins", sans-serif;
-    font-size: 12px;
-    padding: 4px;
-    font-weight: var(--letraMedia);
-    background-color: var(--corForte);
-    color: var(--caixa);
-    border-radius: 5px;
-    border: 0.04;
-    display: block;
-    margin: 0 auto;
+/* caixa de legenda */
+.dashboard .caixas .caixa_legenda_geral {
+    margin: 5px;
+    background-color: var(--caixa);
+    width: 344px;
+    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    text-align: center;
 }
 
-.dashboard .caixas #caixa button:hover{
-    background-color: var(--corForte);
-    color: var(--caixa);
-    cursor: pointer;
+.dashboard .caixas .caixa_legenda_geral p{
+    font-weight: var(--letraRegular);
+    font-size: 14px;
+    text-align: center;
 }
 
+.dashboard .caixas .caixa_legenda_geral #caixinha{
+ 
+    margin: 8px 5px;
+    font-weight: var(--letraSemiBold);
+    font-size: 20px;
+    text-align: center;
+}
+
+.dashboard .caixas .caixa_legenda_geral #caixinha #legenda{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px 5px;
+    font-weight: var(--letraSemiBold);
+    font-size: 20px;
+    text-align: center;
+}
+.dashboard .caixas .caixa_legenda_geral #caixinha #legenda div{
+    width: 50px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+
+/* caixa de resumo ultimos 7 dias */
+.dashboard .caixas .caixa_ultimos_7_dias {
+    margin: 5px;
+    background-color: var(--caixa);
+    width: 344px;
+    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    text-align: center;
+}
+
+.dashboard .caixas .caixa_ultimos_7_dias h3{
+    font-weight: var(--letraRegular);
+    font-size: 14px;
+    text-align: center;
+}
+
+.dashboard .caixas .caixa_ultimos_7_dias #caixinha{
+    margin: 8px 5px;
+    font-weight: var(--letraSemiBold);
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard .caixas .caixa_ultimos_7_dias #caixinha #legenda{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px 5px;
+    font-weight: var(--letraRegular);
+    font-size: 20px;
+    text-align: center;
+}
+.dashboard .caixas .caixa_ultimos_7_dias #caixinha #legenda div{
+    width: 50px;
+    height: 25px;
+    margin-right: 5px;
+    padding: 6px;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------- */
 .dashboard #caixa_lista{
     display: flex;
     flex-direction: column;
@@ -261,16 +326,14 @@ body {
 .dashboard #caixa_lista #infos_principais #legenda #caixinha{  
     display: flex;
     flex-direction: row;
+    font-size: 14px;
+    font-weight: var(--letraLight);
 }
 
 .dashboard #caixa_lista #infos_principais #legenda h3{
     font-size: 15px;
 }
 
-.dashboard #caixa_lista #infos_principais #legenda #caixinha{
-    font-size: 14px;
-    font-weight: var(--letraLight);
-}
 
 .dashboard #caixa_lista #infos_principais h3{
     color: black;

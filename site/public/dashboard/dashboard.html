@@ -48,8 +48,8 @@
 
                 <a href="home.html">
                     <li>
-                        <span class="icone-menu"><i class="fa-solid fa-house"></i></span>
-                        <span class="item-menu">Home</span>
+                        <span class="icone-menu"><i class="fa-solid fa-display"></i></span>
+                        <span class="item-menu">Computadores</span>
                     </li>
                 </a>
 
@@ -110,17 +110,54 @@
 
             <div class="caixas">
 
-                <div id="caixa">
-                    <p>Computadores em Uso</p>
-                    <div id="dado_computadores_em_uso">3</div>
-                    <p style="color: #812FCD;">75% dos computadores</p>
+                <div class="caixa_computadores">
+                    <p id="dado_computadores_cadastrados">4 Computadores cadastrados</p>
+                    <div id="dado_computadores_em_uso">3 em Uso</div>
+                    <p style="color: #812FCD;">75% dos computadores estão sendo monitorados</p>
                 </div>
 
-                <div id="caixa">
-                    <p>Resumo Incidentes</p>
-                    <div id="dado_resumo_5dias">1</div>
-                    <p style="color: #812FCD;">Últimos 5 dias</p>
+                <div class="caixa_legenda_geral">
+                    
+                    <b>Legenda</b>
 
+                    <div id="caixinha">
+                        <div id="legenda">
+                            <div style="background-color: #C0C2BE;"></div>
+                            <p>Computadores Inativos</p>
+                        </div>
+
+                        <div id="legenda">
+                            <div style="background-color: #77D33E;"></div>
+                            <p>Computadores sem Incidentes</p>
+                        </div>
+
+                        <div id="legenda">
+                            <div style="background-color: #D95F58;"></div>
+                            <p>Computadores com Incidentes</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="caixa_ultimos_7_dias">
+
+                    <b>Status dos computadores nos últimos 7 dias</b>
+
+                    <div id="caixinha">
+
+                        <div id="legenda">
+                            <div id="dado_inativo" style="background-color: #C0C2BE; width: 75px; height: 40px;">0%</div>
+                        </div>
+
+                        <div id="legenda">
+                            <div id="dado_sem_incidentes" style="background-color: #77D33E; width: 75px; height: 40px;">60%</div>
+                        </div>
+
+                        <div id="legenda">
+                            <div id="dado_com_incidentes" style="background-color: #D95F58; width: 75px; height: 40px;">40%</div>
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
@@ -132,33 +169,30 @@
                     </h3>
 
                     <div id="legenda">
-                        <h3>LEGENDA</h3>
+                        <h3>Resumo</h3>
                         <div id="caixinha">
-
                             <div id="legenda_otimo">
-                                <div style="background-color: #77D33E; height: 8px; width: 70px;"> </div>
-                                ótimo
+                                <div> 2 com incidente</div>
                             </div>
-                            <div id="legenda_atencao">
-                                <div style="background-color: #DEE148; height: 8px; width: 70px;"> </div>
-                                atenção
-                            </div>
+
                             <div id="legenda_critico">
-                                <div style="background-color: #D95F58; height: 8px; width: 70px;"> </div>
-                                crítico
+                                <div>1 sem incidentes |
+                                </div>
                             </div>
+                            
                             <div id="legenda_inativo">
-                                <div style="background-color: #D9D9D9; height: 8px; width: 70px;"> </div>
-                                inativo
+                                <div>1 inativo
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <div id="tracinho" style="margin-bottom: 20px;"></div>
 
                 <div id="linha">
                     <div id="titulo">
-                        <b>Status</b>
+                        <b>Status Atual</b>
                     </div>
 
                     <div id="titulo">
