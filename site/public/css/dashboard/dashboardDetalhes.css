@@ -107,10 +107,16 @@ section{
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: row;
+    text-align: center;
 }
 
-.dashboard_detalhes .graficos .caixa_grafico div{
-    /* width: 350px; */
+.dashboard_detalhes .graficos .caixa_grafico .grafico_gauges{
+    margin: 10px;
+    width: 300px;
+}
+
+
+.dashboard_detalhes .graficos .caixa_grafico .grafico_linha{
     margin: 15px;
 }
 
@@ -118,3 +124,34 @@ section{
     font-weight: var(--letraSemiBold);
     font-size: 14px;
 }
+
+
+/* ------------------------------------------------------------- */
+.dashboard_detalhes #legenda{  
+    margin-top: 10px;
+    text-align: center;
+    display: inline-block;
+}
+
+.dashboard_detalhes #legenda #caixinha{  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.dashboard_detalhes #legenda h3{
+    font-weight: var(--letraMedia);
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.dashboard_detalhes #legenda #caixinha{
+    font-size: 14px;
+    font-weight: var(--letraLight);
+}
+.dashboard_detalhes #legenda #caixinha_dados_parametros{
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+/* ------------------------------------------------------------- */

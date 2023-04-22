@@ -125,6 +125,23 @@
 }
 
 
+.configuracoes #caixa_lista #linha #titulo_cargo {
+    font-weight: var(--letraRegular);
+    width: 150px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.configuracoes #caixa_lista #linha #titulo_tipo {
+    font-weight: var(--letraRegular);
+    width: 150px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+
 .configuracoes #caixa_lista #linha #titulo:nth-child(6) {
     width: 80px;
     text-align: center;
@@ -148,6 +165,7 @@
     margin: 0px 5px
 }
 
+
 .configuracoes #caixa_lista #linha #dado_nomeFuncionario {
     font-weight: var(--letraRegular);
     font-size: 15px;
@@ -160,7 +178,7 @@
 .configuracoes #caixa_lista #linha #dado_cargo {
     font-weight: var(--letraRegular);
     font-size: 15px;
-    width: 180px;
+    width: 150px;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
@@ -178,7 +196,7 @@
 .configuracoes #caixa_lista #linha #dado_tipoUsuario {
     font-weight: var(--letraRegular);
     font-size: 15px;
-    width: 180px;
+    width: 150px;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
@@ -291,7 +309,7 @@
 .configuracoes #caixa_cadastro {
     display: flex;
     flex-direction: column;
-    width: 1150px;
+    width: 1100px;
     text-align: center;
     margin-top: 20px;
     padding: 30px;

@@ -154,6 +154,7 @@
     align-items: center;
 }
 
+/* ------------------------------------------------------------- */
 .home #caixa_lista #infos_principais #legenda{  
     display: flex;
     flex-direction: column;
@@ -167,12 +168,19 @@
 
 .home #caixa_lista #infos_principais #legenda h3{
     font-size: 15px;
+    margin-bottom: 2px;
 }
 
 .home #caixa_lista #infos_principais #legenda #caixinha{
     font-size: 14px;
     font-weight: var(--letraLight);
 }
+.home #caixa_lista #infos_principais #legenda #caixinha_dados_parametros{
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+/* ------------------------------------------------------------- */
 
 .home #caixa_lista #infos_principais h3{
     color: black;

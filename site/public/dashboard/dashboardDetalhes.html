@@ -149,60 +149,184 @@
 
                     <!-- ABA 1 -->
 
-                        <section class="abaCPU" id="aba1" >
-                            <div class="caixa_grafico">
-                                <div>
-                                    <p>Clock</p>
-                                    <div id="valorClock" style="text-align: center;"></div>
-                                    <canvas id="myChart3"></canvas>
-                                </div>
-                        
-
-                                <div>
-                                    <p>Variação do uso da CPU - a cada 30 minutos</p>
-                                    <canvas id="myChart1"> </canvas>
-                                </div>
-
-                                <div>
-                                    <p>Temperatura da CPU a cada 5 segundos</p>
-                                    <canvas id="myChart2"> </canvas>
-                                </div>
-
+                    <section class="abaCPU" id="aba1">
+                        <div class="caixa_grafico">
+                            <div class="grafico_gauges">
+                                <p>Clock</p>
+                                <div id="valorClock" style="text-align: center;"></div>
+                                <canvas id="myChart3"></canvas>
                             </div>
-                        </section>
+
+
+                            <div class="grafico_linha">
+                                <p>Variação do uso da CPU - a cada 30 minutos</p>
+                                <canvas id="myChart1"> </canvas>
+
+                                <div id="legenda">
+                                    <h3>Parâmetros - Uso</h3>
+
+                                    <div id="caixinha">
+                                        <div id="legenda_otimo">
+                                            ótimo
+                                            <div style="background-color: #77D33E; height: 8px; width: 70px;"> </div>
+                                        </div>
+                                        <div id="legenda_atencao">
+                                            atenção
+                                            <div style="background-color: #DEE148; height: 8px; width: 70px;"> </div>
+                                        </div>
+                                        <div id="legenda_critico">
+                                            crítico
+                                            <div style="background-color: #D95F58; height: 8px; width: 70px;"> </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="caixinha_dados_parametros">
+                                        <span>1%</span>
+                                        <span>50%</span>
+                                        <span>75%</span>
+                                        <span>100%</span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="grafico_linha">
+                                <p>Temperatura da CPU a cada 5 segundos</p>
+                                <canvas id="myChart2"> </canvas>
+
+                                <div id="legenda">
+                                    <h3>Parâmetros - Temperatura</h3>
+
+                                    <div id="caixinha">
+                                        <div id="legenda_otimo">
+                                            ótimo
+                                            <div style="background-color: #77D33E; height: 8px; width: 70px;"> </div>
+                                        </div>
+                                        <div id="legenda_atencao">
+                                            atenção
+                                            <div style="background-color: #DEE148; height: 8px; width: 70px;"> </div>
+                                        </div>
+                                        <div id="legenda_critico">
+                                            crítico
+                                            <div style="background-color: #D95F58; height: 8px; width: 70px;"> </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="caixinha_dados_parametros">
+                                        <span>
+                                            <</span>
+                                                <span>50Cº</span>
+                                                <span>80Cº</span>
+                                                <span>></span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
 
                     <!-- ABA 2 -->
-                        <section class="abaDiscoEMemoria" id="aba2">
-                            <div class="caixa_grafico">
-                                <div>
-                                    <p>Uso da Memória - Espaço Total: slaoq GB</p>
-                                    <canvas id="myChart4"> </canvas>
-                                </div>
+                    <section class="abaDiscoEMemoria" id="aba2">
+                        <div class="caixa_grafico">
+                            <div>
 
-                                <div>
-                                    <p>Uso de Disco - Espaço total: slaoq GB</p>
-                                    <canvas id="myChart5"> </canvas>
-                                </div>
+                                <p>Uso da Memória - Espaço Total: slaoq GB</p>
+                                <canvas id="myChart4"> </canvas>
                             </div>
 
-                        </section>
+                            <div>
+                                <p>Uso de Disco - Espaço total: slaoq GB</p>
+                                <canvas id="myChart5"> </canvas>
+                            </div>
+                        </div>
+
+                    </section>
 
                     <!-- ABA 3 -->
-                        <section class="abaRede" id="aba3">
-                            <div class="caixa_grafico">
-                                <div>
-                                    <p>Velocidade de Dowload e upload da Rede a cada 5 segundos</p>
-                                    <canvas id="myChart6"> </canvas>
+                    <section class="abaRede" id="aba3">
+                        <div class="caixa_grafico">
+                            <div class="grafico_linha">
+
+                                <p>Velocidade de Dowload e upload da Rede a cada 5 segundos</p>
+                                <canvas id="myChart6"> </canvas>
+
+                                <div class="caixa_parametros_dowload_upload">
+
+                                    <div id="legenda">
+                                        <h3>Parâmetros - Dowload</h3>
+
+                                        <div id="caixinha">
+                                            <div id="legenda_otimo">
+                                                ótimo
+                                                <div style="background-color: #77D33E; height: 8px; width: 70px;">
+                                                </div>
+                                            </div>
+                                            <div id="legenda_atencao">
+                                                atenção
+                                                <div style="background-color: #DEE148; height: 8px; width: 70px;">
+                                                </div>
+                                            </div>
+                                            <div id="legenda_critico">
+                                                crítico
+                                                <div style="background-color: #D95F58; height: 8px; width: 70px;">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="caixinha_dados_parametros">
+                                            <span>
+                                                < </span>
+                                                    <span>50Cº</span>
+                                                    <span>80Cº</span>
+                                                    <span>></span>
+                                        </div>
+
+                                    </div>
+
+                                    <div id="legenda">
+                                        <h3>Parâmetros - Upload</h3>
+
+                                        <div id="caixinha">
+                                            <div id="legenda_otimo">
+                                                ótimo
+                                                <div style="background-color: #77D33E; height: 8px; width: 70px;">
+                                                </div>
+                                            </div>
+                                            <div id="legenda_atencao">
+                                                atenção
+                                                <div style="background-color: #DEE148; height: 8px; width: 70px;">
+                                                </div>
+                                            </div>
+                                            <div id="legenda_critico">
+                                                crítico
+                                                <div style="background-color: #D95F58; height: 8px; width: 70px;">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="caixinha_dados_parametros">
+                                            <span>
+                                                <</span>
+                                                    <span>50Cº</span>
+                                                    <span>80Cº</span>
+                                                    <span>></span>
+                                        </div>
+
+                                    </div>
                                 </div>
 
-                                <div>
-                                    <p>MS de Rede - média dos últimos 2 dias</p>
-                                    <div id="valorMS" style="text-align: center;"></div>
-                                    <canvas id="myChart7"> </canvas>
-                                </div>
                             </div>
 
-                        </section>
+                            <div class="grafico_gauges">
+                                <p>MS de Rede - média dos últimos 2 dias</p>
+                                <div id="valorMS" style="text-align: center;"></div>
+                                <canvas id="myChart7" > </canvas>
+                            </div>
+                        </div>
+
+                    </section>
                 </div>
 
             </div>
