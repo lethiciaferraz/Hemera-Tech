@@ -20,6 +20,11 @@
     --letraRegular: 400;
     --letraMedia: 500;
     --letraSemiBold: 600;
+
+    /*  CORES CAIXAS DE ALERTAS*/
+    --caixaAlertaAtencao: #DEE148;
+    --caixaAlertaCritico: #D95F58;
+    --caiaAlertaOtimo: #77D33E;
 }
 
 body {
@@ -90,7 +95,6 @@ body {
     display: flex;
     list-style: none;
     border-radius: 10px;
-    /* border-top-left-radius: 15px; */
 }
 
 /* tirando o hover e qualquer tipo de função do nomeUsuario */
@@ -105,11 +109,11 @@ body {
 }
 
 /* MUDAR CONFORME A PAG */
-.menu-lateral .navbar ul a:nth-child(5) {
+.menu-lateral .navbar ul a:nth-child(4) {
     color: var(--corForte);
 }
 
-.menu-lateral .navbar ul a:nth-child(5) li{
+.menu-lateral .navbar ul a:nth-child(4) li{
     background-color: var(--corSecundaria);
 }
 /* --------------------------- */
@@ -186,33 +190,33 @@ body {
     cursor: pointer;
 }
 
-.dashboard {
+.relatorio {
     padding: 0px 10px 10px 40px;
     /* background-color: aqua; */
 }
 
-.dashboard .caixas {
+.relatorio .caixas {
     display: flex;
     flex-direction: row;
 
 }
 
 /* caixa de computadores */
-.dashboard .caixas .caixa_computadores {
+.relatorio .caixas .caixa_computadores {
     margin: 5px;
     background-color: var(--caixa);
-    width: 255px;
+    width: 295px;
     box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
     padding: 15px;
 }
 
-.dashboard .caixas .caixa_computadores p{
+.relatorio .caixas .caixa_computadores p{
     font-weight: var(--letraRegular);
     font-size: 14px;
     text-align: center;
 }
 
-.dashboard .caixas .caixa_computadores div{
+.relatorio .caixas .caixa_computadores div{
     margin: 15px 5px;
     font-weight: var(--letraSemiBold);
     font-size: 20px;
@@ -220,22 +224,22 @@ body {
 }
 
 /* caixa de legenda */
-.dashboard .caixas .caixa_legenda_geral {
+.relatorio .caixas .caixa_legenda_geral {
     margin: 5px;
     background-color: var(--caixa);
-    width: 344px;
+    width: 365px;
     box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
-    padding: 15px;
+    padding: 15px 20px 15px 20px;
     text-align: center;
 }
 
-.dashboard .caixas .caixa_legenda_geral p{
+.relatorio .caixas .caixa_legenda_geral p{
     font-weight: var(--letraRegular);
     font-size: 14px;
     text-align: center;
 }
 
-.dashboard .caixas .caixa_legenda_geral #caixinha{
+.relatorio .caixas .caixa_legenda_geral #caixinha{
  
     margin: 8px 5px;
     font-weight: var(--letraSemiBold);
@@ -243,7 +247,7 @@ body {
     text-align: center;
 }
 
-.dashboard .caixas .caixa_legenda_geral #caixinha #legenda{
+.relatorio .caixas .caixa_legenda_geral #caixinha #legenda{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -252,30 +256,30 @@ body {
     font-size: 20px;
     text-align: center;
 }
-.dashboard .caixas .caixa_legenda_geral #caixinha #legenda div{
+.relatorio .caixas .caixa_legenda_geral #caixinha #legenda div{
     width: 50px;
     height: 25px;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 
 /* caixa de resumo ultimos 7 dias */
-.dashboard .caixas .caixa_ultimos_7_dias {
+.relatorio .caixas .caixa_ultimos_7_dias {
     margin: 5px;
     background-color: var(--caixa);
-    width: 344px;
+    width: 350px;
     box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
-    padding: 15px;
+    padding: 15px 20px 15px 20px;
     text-align: center;
 }
 
-.dashboard .caixas .caixa_ultimos_7_dias h3{
+.relatorio .caixas .caixa_ultimos_7_dias h3{
     font-weight: var(--letraRegular);
     font-size: 14px;
     text-align: center;
 }
 
-.dashboard .caixas .caixa_ultimos_7_dias #caixinha{
+.relatorio .caixas .caixa_ultimos_7_dias #caixinha{
     margin: 8px 5px;
     font-weight: var(--letraSemiBold);
     font-size: 20px;
@@ -284,7 +288,7 @@ body {
     justify-content: center;
 }
 
-.dashboard .caixas .caixa_ultimos_7_dias #caixinha #legenda{
+.relatorio .caixas .caixa_ultimos_7_dias #caixinha #legenda{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -293,7 +297,7 @@ body {
     font-size: 20px;
     text-align: center;
 }
-.dashboard .caixas .caixa_ultimos_7_dias #caixinha #legenda div{
+.relatorio .caixas .caixa_ultimos_7_dias #caixinha #legenda div{
     width: 50px;
     height: 25px;
     margin-right: 5px;
@@ -302,85 +306,116 @@ body {
 
 /* ---------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------- */
-.dashboard #caixa_lista{
+.relatorio #caixa_lista{
     display: flex;
     flex-direction: column;
     margin-top: 15px;
-    padding: 25px 30px 15px 30px;
+    padding: 25px 45px 15px 45px;
     background-color: var(--caixa);
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
-.dashboard #caixa_lista #infos_principais{ 
+.relatorio #caixa_lista #infos_principais{ 
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.dashboard #caixa_lista #infos_principais #legenda{  
+.relatorio #caixa_lista #infos_principais #legenda{  
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-.dashboard #caixa_lista #infos_principais #legenda #caixinha{  
+.relatorio #caixa_lista #infos_principais #legenda #caixinha{  
     display: flex;
     flex-direction: row;
     font-size: 14px;
     font-weight: var(--letraLight);
 }
 
-.dashboard #caixa_lista #infos_principais #legenda h3{
+.relatorio #caixa_lista #infos_principais #legenda h3{
     font-size: 15px;
 }
 
+.relatorio #caixa_lista #infos_principais #legenda #resumo_com_incidentes{
+    font-size: 15px;
+    /* color: #77D33E; */
+    margin-right: 10px;
+    margin-left: 10px;
+}
 
-.dashboard #caixa_lista #infos_principais h3{
+.relatorio #caixa_lista #infos_principais #legenda #resumo_sem_incidentes{
+    font-size: 15px;
+    /* color: #77D33E; */
+    margin-right: 10px;
+    margin-left: 10px;
+
+}
+
+.relatorio #caixa_lista #infos_principais #legenda #resumo_inativos{
+    font-size: 15px;
+    /* color: #77D33E; */
+    margin-right: 10px;
+    margin-left: 10px;
+
+}
+
+.relatorio #caixa_lista #infos_principais h3{
     color: black;
     font-weight: var(--letraMedia);
 }
 
 
-.dashboard #caixa_lista #linha{ 
+.relatorio #caixa_lista #linha{ 
     display: flex;
     flex-direction: row;
 }
 
-.dashboard #caixa_lista #linha #titulo { 
+.relatorio #caixa_lista #linha #titulo { 
     font-weight: var(--letraRegular);
-    width: 200px;
+    width: 180px;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
 }
 
-.dashboard #caixa_lista #linha #dado_status{ 
+.relatorio #caixa_lista #linha #dado_status{ 
     font-weight: var(--letraRegular);
-    width: 200px;
+    width: 180px;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
 }
 
-.dashboard #caixa_lista #linha #dado_idComputador{ 
+.relatorio #caixa_lista #linha #dado_idComputador{ 
     font-weight: var(--letraRegular);
-    width: 200px;
+    width: 180px;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
 }
 
-.dashboard #caixa_lista #linha #dado_nomeFuncionario{ 
+.relatorio #caixa_lista #linha #dado_hostName {
     font-weight: var(--letraRegular);
-    width: 200px;
+    font-size: 15px;
+    width: 180px;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
 }
 
-.dashboard #caixa_lista #linha #ver_desempenho{ 
+.relatorio #caixa_lista #linha #dado_nomeFuncionario{ 
     font-weight: var(--letraRegular);
-    width: 190px;
+    width: 180px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.relatorio #caixa_lista #linha #ver_dashboard{ 
+    font-weight: var(--letraRegular);
+    width: 180px;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
@@ -406,7 +441,7 @@ body {
         left: 215px;
     }
 
-    .dashboard .caixas {
+    .relatorio .caixas {
         display: flex;
         flex-direction: column;
     }

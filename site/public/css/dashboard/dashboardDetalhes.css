@@ -32,6 +32,13 @@
     text-align: center;
 }
 
+.dashboard_detalhes .caixas #caixa #dado_hostName {
+    margin: 5px 5px;
+    font-weight: var(--letraSemiBold);
+    font-size: 20px;
+    text-align: center;
+}
+
 .dashboard_detalhes .caixas #caixa #dado_totalIncidentes {
     margin: 5px 5px;
     font-weight: var(--letraSemiBold);
@@ -39,14 +46,27 @@
     text-align: center;
 }
 
+.dashboard_detalhes .caixas #caixa_alerta {
+    margin: 5px;
+    width: 240px;
+    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
+    padding: 7px 15px 2px 15px;
 
-.dashboard_detalhes .caixas #caixa #dado_status {
+}
+
+.dashboard_detalhes .caixas #caixa_alerta b {
+    font-size: 16px;
+    display: block;
+    text-align: center;
+}
+
+.dashboard_detalhes .caixas #caixa_alerta #dado_status {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 5px 5px;
     font-weight: var(--letraSemiBold);
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
 }
 
@@ -90,7 +110,7 @@ section{
 }
 
 .dashboard_detalhes .graficos .caixa_grafico div{
-    width: 400px;
+    /* width: 350px; */
     margin: 15px;
 }
 

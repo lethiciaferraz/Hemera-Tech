@@ -9,11 +9,11 @@
 }
 
 /* MUDAR CONFORME A PAG */
-.menu-lateral .navbar ul a:nth-child(6) {
+.menu-lateral .navbar ul a:nth-child(5) {
     color: var(--corForte);
 }
 
-.menu-lateral .navbar ul a:nth-child(6) li {
+.menu-lateral .navbar ul a:nth-child(5) li {
     background-color: var(--corSecundaria);
 }
 
@@ -27,11 +27,11 @@
     background-color: var(--corPrincipal);
 }
 
-.menu-lateral .navbar ul a:nth-child(5) {
+.menu-lateral .navbar ul a:nth-child(6) {
     color: var(--corLetraMenu);
 }
 
-.menu-lateral .navbar ul a:nth-child(5) li {
+.menu-lateral .navbar ul a:nth-child(6) li {
     background-color: var(--corPrincipal);
 }
 
@@ -116,9 +116,33 @@
     margin: 0px 5px
 }
 
-.configuracoes #caixa_lista #linha #titulo:nth-child(5) {
+.configuracoes #caixa_lista #linha #titulo_cpf {
+    font-weight: var(--letraRegular);
+    width: 150px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
 
-    width: 120px;
+
+.configuracoes #caixa_lista #linha #titulo:nth-child(6) {
+    width: 80px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.configuracoes #caixa_lista #linha #titulo:nth-child(7) {
+    width: 80px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.configuracoes #caixa_lista #linha #dado_cpf {
+    font-weight: var(--letraRegular);
+    font-size: 15px;
+    width: 150px;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
@@ -160,10 +184,22 @@
     margin: 0px 5px
 }
 
+.configuracoes #caixa_lista #linha #editar {
+    font-weight: var(--letraRegular);
+    font-size: 15px;
+    width: 80px;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px;
+    text-decoration: underline;
+    color: var(--corForte);
+    cursor: pointer;
+}
+
 .configuracoes #caixa_lista #linha #deletar {
     font-weight: var(--letraRegular);
     font-size: 15px;
-    width: 120px;
+    width: 80px;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px;
@@ -190,16 +226,24 @@
     margin: 0px 5px
 }
 
-.configuracoes #caixa_lista #linha #detalhes {
+.configuracoes #caixa_lista #linha #dado_hostName {
     font-weight: var(--letraRegular);
     font-size: 15px;
     width: 180px;
     text-align: center;
     /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.configuracoes #caixa_lista #linha #ver_dashboard {
+    font-weight: var(--letraRegular);
+    font-size: 15px;
+    width: 180px;
+    text-align: center;
     margin: 0px 5px;
 }
 
-#detalhes a {
+#ver_dashboard a {
     color: var(--corForte);
 }
 
@@ -247,7 +291,7 @@
 .configuracoes #caixa_cadastro {
     display: flex;
     flex-direction: column;
-    width: 950px;
+    width: 1150px;
     text-align: center;
     margin-top: 20px;
     padding: 30px;

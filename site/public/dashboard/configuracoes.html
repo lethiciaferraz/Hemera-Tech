@@ -8,7 +8,7 @@
     <title>Configurações</title>
 
 
-    <link rel="stylesheet" href="../css/dashboard/dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard/relatorio.css">
 
     <link rel="stylesheet" href="../css/dashboard/configuracoes.css">
 
@@ -52,17 +52,10 @@
 
                 <div id="tracinho"></div>
 
-                <a href="home.html">
+                <a href="relatorio.html">
                     <li>
-                        <span class="icone-menu"><i class="fa-solid fa-house"></i></span>
-                        <span class="item-menu">Home</span>
-                    </li>
-                </a>
-
-                <a href="dashboard.html">
-                    <li>
-                        <span class="icone-menu"><i class="fa-solid fa-chart-simple"></i></span>
-                        <span class="item-menu">Dashboard</span>
+                        <span class="icone-menu"><i class="fa-regular fa-clipboard"></i></span>
+                        <span class="item-menu">Relatório</span>
                     </li>
                 </a>
 
@@ -147,6 +140,9 @@
                         <div id="tracinho" style="margin-bottom: 20px;"></div>
 
                         <div id="linha">
+                            <div id="titulo_cpf">
+                                <b>CPF</b>
+                            </div>
 
                             <div id="titulo">
                                 <b>Nome</b>
@@ -166,6 +162,8 @@
 
                             <div id="titulo">
                             </div>
+
+
                         </div>
 
                         <div id="tracinho" style="margin-bottom: 20px;"></div>
@@ -173,6 +171,9 @@
 
                         <div id="linha">
 
+                            <div id="dado_cpf">
+                                <p>678876388-83</p>
+                            </div>
 
                             <div id="dado_nomeFuncionario">
                                 <p>Amanda Oliveira</p>
@@ -190,6 +191,9 @@
                                 <p>Colaborador</p>
                             </div>
 
+                            <div id="editar">
+                                <div onclick="editar()">editar</div>
+                            </div>
 
                             <div id="deletar">
                                 <div onclick="deletar()">deletar</div>
@@ -201,6 +205,9 @@
 
                         <div id="linha">
 
+                            <div id="dado_cpf">
+                                <p>678984388-83</p>
+                            </div>
 
                             <div id="dado_nomeFuncionario">
                                 <p>Pedro Reis</p>
@@ -218,6 +225,9 @@
                                 <p>Colaborador</p>
                             </div>
 
+                            <div id="editar">
+                                <div onclick="editar()">editar</div>
+                            </div>
 
                             <div id="deletar">
                                 <div onclick="deletar()">deletar</div>
@@ -228,6 +238,9 @@
 
                         <div id="linha">
 
+                            <div id="dado_cpf">
+                                <p>678984388-83</p>
+                            </div>
 
                             <div id="dado_nomeFuncionario">
                                 <p>Mariana Soares</p>
@@ -245,6 +258,9 @@
                                 <p>Colaborador</p>
                             </div>
 
+                            <div id="editar">
+                                <div onclick="editar()">editar</div>
+                            </div>
 
                             <div id="deletar">
                                 <div onclick="deletar()">deletar</div>
@@ -256,6 +272,10 @@
 
                         <div id="linha">
 
+
+                            <div id="dado_cpf">
+                                <p>678984388-83</p>
+                            </div>
 
                             <div id="dado_nomeFuncionario">
                                 <p>Guilherme Fonseca </p>
@@ -273,6 +293,9 @@
                                 <p>Administrador</p>
                             </div>
 
+                            <div id="editar">
+                                <div onclick="editar()">editar</div>
+                            </div>
 
                             <div id="deletar">
                                 <div onclick="deletar()">deletar</div>
@@ -284,6 +307,10 @@
 
                         <div id="linha">
 
+
+                            <div id="dado_cpf">
+                                <p>984984388-83</p>
+                            </div>
 
                             <div id="dado_nomeFuncionario">
                                 <p>Vitoria Silva</p>
@@ -301,6 +328,9 @@
                                 <p>Administrador</p>
                             </div>
 
+                            <div id="editar">
+                                <div onclick="editar()">editar</div>
+                            </div>
 
                             <div id="deletar">
                                 <div onclick="deletar()">deletar</div>
@@ -334,7 +364,7 @@
 
                         <div id="linha">
                             <div id="titulo">
-                                <b>Situação</b>
+                                <b>Status Atual</b>
                             </div>
 
                             <div id="titulo">
@@ -342,12 +372,9 @@
                             </div>
 
                             <div id="titulo">
-
+                                <b>hostName</b>
                             </div>
 
-                            <div id="titulo">
-
-                            </div>
 
                         </div>
 
@@ -356,18 +383,23 @@
 
                         <div id="linha">
                             <div id="dado_status">
-                                Em Uso
+                                <i class="fa-solid fa-circle" style="color: #D95F58;"></i>
                             </div>
 
                             <div id="dado_idComputador">
                                 <p>1</p>
                             </div>
 
-                            <div id="detalhes">
-                                <a href="dashboardDetalhes.html#aba1">desempenho</a>
+                            <div id="dado_hostName">
+                                <p>guiche1</p>
                             </div>
+
                             <div id="deletar">
                                 <div onclick="deletar()">deletar</div>
+                            </div>
+
+                            <div id="ver_dashboard">
+                                <a href="dashboardDetalhes.html#aba1">ver dashboard</a>
                             </div>
 
                         </div>
@@ -377,18 +409,23 @@
 
                         <div id="linha">
                             <div id="dado_status">
-                                Em Uso
+                                <i class="fa-solid fa-circle" style="color: #77D33E;"></i>
                             </div>
 
                             <div id="dado_idComputador">
                                 <p>2</p>
                             </div>
 
-                            <div id="detalhes">
-                                <a href="dashboardDetalhes.html#aba1">desempenho</a>
+                            <div id="dado_hostName">
+                                <p>guiche2</p>
                             </div>
+
                             <div id="deletar">
-                                    <div onclick="deletar()">deletar</div>
+                                <div onclick="deletar()">deletar</div>
+                            </div>
+
+                            <div id="ver_dashboard">
+                                <a href="dashboardDetalhes.html#aba1">ver dashboard</a>
                             </div>
 
                         </div>
@@ -398,38 +435,50 @@
 
                         <div id="linha">
                             <div id="dado_status">
-                                Em Uso
+                                <i class="fa-solid fa-circle" style="color: #77D33E;"></i>
                             </div>
 
                             <div id="dado_idComputador">
                                 <p>3</p>
                             </div>
 
-                            <div id="detalhes">
-                                <a href="dashboardDetalhes.html#aba1">desempenho</a>
-                            </div>
-                            <div id="deletar">
-                                    <div onclick="deletar()">deletar</div>
+                            <div id="dado_hostName">
+                                <p>guiche3</p>
                             </div>
 
+                            <div id="deletar">
+                                <div onclick="deletar()">deletar</div>
+                            </div>
+
+                            <div id="ver_dashboard">
+                                <div id="detalhes">
+                                    <a href="dashboardDetalhes.html#aba1">ver dashboard</a>
+                                </div>
+                            </div>
                         </div>
 
                         <div id="tracinho" style="margin-bottom: 20px;"></div>
 
                         <div id="linha">
                             <div id="dado_status">
-                                Deslgado
+                                <i class="fa-solid fa-circle" style="color: #D9D9D9;"></i>
                             </div>
 
                             <div id="dado_idComputador">
                                 <p>4</p>
                             </div>
 
-                            <div id="detalhes">
-                                <a href="dashboardDetalhes.html#aba1">desempenho</a>
+                            <div id="dado_hostName">
+                                <p>guiche5</p>
                             </div>
+
                             <div id="deletar">
-                                    <div onclick="deletar()">deletar</div>
+                                <div onclick="deletar()">deletar</div>
+                            </div>
+
+
+                            <div id="ver_dashboard">
+                                <a href="dashboardDetalhes.html#aba1"></a>
                             </div>
 
                         </div>
@@ -472,22 +521,27 @@
                                     <div id="linha">
 
                                         <div class="campo">
-                                            <input type="text" id="email_funcionario" placeholder="E-mail">
+                                            <input type="text" id="cpf_funcionario" placeholder="CPF">
                                         </div>
 
                                         <div class="campo">
-                                            <input type="text" id="telefone_funcionario" placeholder="Telefone">
+                                            <input type="text" id="email_funcionario" placeholder="E-mail">
                                         </div>
+
+
                                     </div>
 
+
                                     <div id="linha">
+                                        <div class="campo">
+                                            <input type="text" id="telefone_funcionario" placeholder="Telefone">
+                                        </div>
+
                                         <div class="campo">
                                             <input type="text" id="cargo_funcionario" placeholder="Cargo">
                                         </div>
 
-                                        <div class="campo">
-                                            <input type="text" id="nivel_funcionario" placeholder="Nível">
-                                        </div>
+
                                     </div>
 
                                     <div id="linha">
@@ -556,7 +610,11 @@
     })
 
 
+    function editar() {
+        alert("construindo")
+    }
     function deletar() {
         alert("construindo")
     }
+
 </script>

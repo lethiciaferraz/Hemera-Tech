@@ -8,6 +8,7 @@
  
     --caixaAlertaAtencao: #DEE148;
     --caixaAlertaCritico: #D95F58;
+    --caiaAlertaOtimo: #77D33E;
 }
 /* MUDAR CONFORME A PAG */
 .menu-lateral .navbar ul a:nth-child(4) {

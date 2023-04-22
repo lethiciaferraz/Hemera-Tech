@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Relatório</title>
 
-    <link rel="stylesheet" href="../css/dashboard/dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard/relatorio.css">
 
     <!-- ICONE -->
     <link rel="shortcut icon" href="../assets/artificial-intelligence (1).png" type="image/x-icon">
@@ -46,17 +46,10 @@
 
                 <div id="tracinho"></div>
 
-                <a href="home.html">
+                <a href="relatorio.html">
                     <li>
-                        <span class="icone-menu"><i class="fa-solid fa-display"></i></span>
-                        <span class="item-menu">Computadores</span>
-                    </li>
-                </a>
-
-                <a href="dashboard.html">
-                    <li>
-                        <span class="icone-menu"><i class="fa-solid fa-chart-simple"></i></span>
-                        <span class="item-menu">Dashboard</span>
+                        <span class="icone-menu"><i class="fa-regular fa-clipboard"></i></span>
+                        <span class="item-menu">Relatório</span>
                     </li>
                 </a>
 
@@ -102,9 +95,9 @@
             </div>
         </div>
 
-        <div class="dashboard">
+        <div class="relatorio">
             <div>
-                <h3>Dashboard> Geral</h3>
+                <h3>Relatório</h3>
                 <div id="tracinho"></div>
             </div>
 
@@ -169,25 +162,23 @@
                     </h3>
 
                     <div id="legenda">
-                        <h3>Resumo</h3>
+                        <h3>RESUMO</h3>
                         <div id="caixinha">
-                            <div id="legenda_otimo">
-                                <div> 2 com incidente</div>
+                            <div id="resumo_com_incidentes">
+                                <div>2 com incidentes</div>
                             </div>
-
-                            <div id="legenda_critico">
-                                <div>1 sem incidentes |
-                                </div>
+                            |
+                            <div id="resumo_sem_incidentes">
+                                <div>1 sem incidentes</div>
                             </div>
-                            
-                            <div id="legenda_inativo">
-                                <div>1 inativo
-                                </div>
+                            |
+                            <div id="resumo_inativos">
+                                <div> 1 inativo </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
+
                 <div id="tracinho" style="margin-bottom: 20px;"></div>
 
                 <div id="linha">
@@ -200,12 +191,14 @@
                     </div>
 
                     <div id="titulo">
+                        <b>HostName</b>
+                    </div>
+
+                    <div id="titulo">
                         <b>Funcionário</b>
                     </div>
 
-
-
-                    <div id="titulo"></div>
+                   
                 </div>
 
                 <div id="tracinho" style="margin-bottom: 20px;"></div>
@@ -220,14 +213,18 @@
                         <p>1</p>
                     </div>
 
+                    <div id="dado_hostName">
+                        <p>guiche1</p>
+                    </div>
+
                     <div id="dado_nomeFuncionario">
                         <p>Amanda Oliveira</p>
                     </div>
 
 
 
-                    <div id="ver_desempenho">
-                        <a href="dashboardDetalhes.html#aba1">desempenho</a>
+                    <div id="ver_dashboard">
+                        <a href="dashboardDetalhes.html#aba1">ver dashboard</a>
                     </div>
 
                 </div>
@@ -236,11 +233,15 @@
 
                 <div id="linha">
                     <div id="dado_status">
-                        <i class="fa-solid fa-circle" style="color: #DEE148;"></i>
+                        <i class="fa-solid fa-circle" style="color: #D95F58;"></i>
                     </div>
 
                     <div id="dado_idComputador">
                         <p>2</p>
+                    </div>
+
+                    <div id="dado_hostName">
+                        <p>guiche2</p>
                     </div>
 
                     <div id="dado_nomeFuncionario">
@@ -249,8 +250,8 @@
 
 
 
-                    <div id="ver_desempenho">
-                        <a href="dashboardDetalhes.html#aba1">desempenho</a>
+                    <div id="ver_dashboard">
+                        <a href="dashboardDetalhes.html#aba1">ver dashboard</a>
                     </div>
 
                 </div>
@@ -267,14 +268,17 @@
                         <p>3</p>
                     </div>
 
+                    <div id="dado_hostName">
+                        <p>guiche3</p>
+                    </div>
+
                     <div id="dado_nomeFuncionario">
                         <p>Mariana Soares</p>
                     </div>
 
 
-
-                    <div id="ver_desempenho">
-                        <a href="dashboardDetalhes.html#aba1">desempenho</a>
+                    <div id="ver_dashboard">
+                        <a href="dashboardDetalhes.html#aba1">ver dashboard</a>
                     </div>
 
                 </div>
@@ -290,13 +294,16 @@
                         <p>4</p>
                     </div>
 
+                    <div id="dado_hostName">
+                        <p>guiche4</p>
+                    </div>
+
                     <div id="dado_nomeFuncionario">
                         <p></p>
                     </div>
 
-
-                    <div id="ver_desempenho">
-                        <a href="dashboardDetalhes.html#aba1">desempenho</a>
+                    <div id="ver_dashboard">
+                        <a href="dashboardDetalhes.html#aba1"></a>
                     </div>
 
                 </div>

@@ -1,9 +1,9 @@
 /* MUDAR CONFORME A PAG */
-.menu-lateral .navbar ul a:nth-child(7) {
+.menu-lateral .navbar ul a:nth-child(6) {
     color: var(--corForte);
 }
 
-.menu-lateral .navbar ul a:nth-child(7) li {
+.menu-lateral .navbar ul a:nth-child(6) li {
     background-color: var(--corSecundaria);
 }
 
