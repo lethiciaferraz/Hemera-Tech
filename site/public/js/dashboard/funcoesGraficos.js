@@ -53,7 +53,7 @@ function MostrarGraficosCPU() {
             labels: ['18:00:00', '18:01:00', '18:02:00', '18:03:00', '18:04:00', '18:05:00'],
             datasets: [{
                 label: 'Uso em %',
-                data: [40, 45, 35, 50, 80, 100],
+                data: [40, 45, 35, 50, 65, 70],
                 borderWidth: 1
             }]
         },
@@ -74,7 +74,7 @@ function MostrarGraficosCPU() {
             labels: ['18:04:40', '18:04:45', '18:04:50', '18:04:55', '18:05:00', '18:05:05'],
             datasets: [{
                 label: 'Temperatura em Cº',
-                data: [12, 19, 3, 5, 2, 3],
+                data: [20, 22, 20, 18, 17, 20],
                 borderWidth: 1
             }]
         },
@@ -90,7 +90,7 @@ function MostrarGraficosCPU() {
     let targetClock = document.getElementById('myChart3'); // your canvas element
 
 
-    let valorAtualClock = 1900;
+    let valorAtualClock = 3.2;
     valorClock.innerHTML = valorAtualClock;
 
     let optsClock = {
@@ -110,17 +110,27 @@ function MostrarGraficosCPU() {
         strokeColor: '#E0E0E0',  // to see which ones work best for you
         generateGradient: true,
         highDpiSupport: true,     // High resolution support
-        staticZones: [{ strokeStyle: "#F03E3E", min: 0, max: 1500 }, { strokeStyle: "#FFDD00", min: 1000, max: 2000 }, { strokeStyle: "#30B32D", min: 2000, max: 3000 }],
+        staticZones: [{ strokeStyle: "#F03E3E", min: 0, max: 2.0 }, { strokeStyle: "#FFDD00", min: 2.0, max: 2.6 }, { strokeStyle: "#30B32D", min: 2.6, max: 4 }],
         staticLabels: {
-            font: "10px sans-serif",  // Specifies font
-            labels: [0, 1000, 2000, 3000],  // Print labels at these values
+            font: "14px sans-serif",  // Specifies font
+            labels: [0, 2, 2.5, 4],  // Print labels at these values
             // color: "#000000",  // Optional: Label text color
-            // fractionDigits: 0  // Optional: Numerical precision. 0=round off.
-        }
+            fractionDigits: 0  // Optional: Numerical precision. 0=round off.
+        },
+        renderTicks: {
+            divisions: 4,
+            divWidth: 0.4,
+            divLength: 0.91,
+            divColor: '#000000',
+            subDivisions: 3,
+            subLength: 0.8,
+            subWidth: 1.0,
+            subColor: '#000000'
+          }
     };
 
     let gaugeClock = new Gauge(targetClock).setOptions(optsClock); // create sexy gaugeClock!
-    gaugeClock.maxValue = 3000; // set max gaugeClock value
+    gaugeClock.maxValue = 4; // set max gaugeClock value
     gaugeClock.setMinValue(0);  // Prefer setter over gaugeClock.minValue = 0
     gaugeClock.animationSpeed = 30; // set animation speed (32 is default value)
     gaugeClock.set(valorAtualClock); // set actual value-
@@ -135,8 +145,8 @@ function MostrarGraficosDiscoEMemoria() {
         data: {
             labels: ['Espaço livre', 'Em uso'],
             datasets: [{
-                label: 'Espaço livre',
-                data: [15, 85],
+                label: 'Em %',
+                data: [52, 48],
                 borderWidth: 1
             }]
         },
@@ -155,8 +165,8 @@ function MostrarGraficosDiscoEMemoria() {
         data: {
             labels: ['Espaço livre', 'Em uso'],
             datasets: [{
-                label: '# of Votes',
-                data: [12, 19],
+                label: 'em %',
+                data: [60, 40],
                 borderWidth: 1
             }]
         },
@@ -175,15 +185,15 @@ function MostrarGraficosRede() {
     new Chart(ctx6, {
         type: 'line',
         data: {
-            labels: ['14:00:00', '14:00:05', '14:00:10', '14:00:15', '14:00:20', '14:00:25'],
+            labels: ['18:04:40', '18:04:45', '18:04:50', '18:04:55', '18:05:00', '18:05:05'],
             datasets: [{
                 label: 'Dowload',
-                data: [12, 19, 3, 5, 2, 3],
+                data: [12, 19, 15, 31, 29, 29],
                 borderWidth: 1
             },
             {
                 label: 'Upload',
-                data: [15, 22, 10, 13, 5, 20],
+                data: [15, 22, 10, 13, 6, 20],
                 borderWidth: 1
             }]
         },
@@ -196,7 +206,7 @@ function MostrarGraficosRede() {
         }
     });
 
-    let valorAtualMS = 2000;
+    let valorAtualMS = 40;
     valorMS.innerHTML = valorAtualMS;
 
     let optsMS = {
@@ -216,19 +226,29 @@ function MostrarGraficosRede() {
         strokeColor: '#E0E0E0',  // to see which ones work best for you
         generateGradient: true,
         highDpiSupport: true,     // High resolution support
-        staticZones: [{ strokeStyle: "#F03E3E", min: 0, max: 1500 }, { strokeStyle: "#FFDD00", min: 1000, max: 2000 }, { strokeStyle: "#30B32D", min: 2000, max: 3000 }],
+        staticZones: [{ strokeStyle: "#30B32D", min: 0, max: 50 }, { strokeStyle: "#FFDD00", min: 50, max: 100 }, { strokeStyle: "#F03E3E", min: 100, max: 200 }],
         staticLabels: {
-            font: "10px sans-serif",  // Specifies font
-            labels: [0, 1000, 2000, 3000],  // Print labels at these values
+            font: "14px sans-serif",  // Specifies font
+            labels: [0, 50, 100, 200],  // Print labels at these values
             // color: "#000000",  // Optional: Label text color
             // fractionDigits: 0  // Optional: Numerical precision. 0=round off.
-        }
+        },
+        renderTicks: {
+            divisions: 4,
+            divWidth: 0.4,
+            divLength: 0.91,
+            divColor: '#000000',
+            subDivisions: 3,
+            subLength: 0.8,
+            subWidth: 1.0,
+            subColor: '#000000'
+          }
     };
 
     let targetMS = document.getElementById('myChart7'); // your canvas element
 
     let gaugeMS = new Gauge(targetMS).setOptions(optsMS); // create sexy gauge!
-    gaugeMS.maxValue = 3000; // set max gauge value
+    gaugeMS.maxValue = 200; // set max gauge value
     gaugeMS.setMinValue(0);  // Prefer setter over gauge.minValue = 0
     gaugeMS.animationSpeed = 30; // set animation speed (32 is default value)
     gaugeMS.set(valorAtualMS); // set actual value

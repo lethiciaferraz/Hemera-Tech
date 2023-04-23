@@ -192,7 +192,6 @@ body {
 
 .relatorio {
     padding: 0px 10px 10px 40px;
-    /* background-color: aqua; */
 }
 
 .relatorio .caixas {
@@ -205,7 +204,7 @@ body {
 .relatorio .caixas .caixa_computadores {
     margin: 5px;
     background-color: var(--caixa);
-    width: 295px;
+    width: 21vw;
     box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
     padding: 10px 15px;
 }
@@ -228,7 +227,7 @@ body {
 .relatorio .caixas .caixa_legenda_geral {
     margin: 5px;
     background-color: var(--caixa);
-    width: 360px;
+    width: 25vw;
     box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
     padding: 15px 20px 10px 20px;
     padding: 10px 15px;
@@ -270,7 +269,7 @@ body {
 .relatorio .caixas .caixa_ultimos_7_dias {
     margin: 5px;
     background-color: var(--caixa);
-    width: 350px;
+    width: 23vw;
     box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
     padding: 20px 20px 10px 20px;
     text-align: center;
@@ -343,14 +342,12 @@ body {
 
 .relatorio #caixa_lista #infos_principais #legenda #resumo_com_incidentes{
     font-size: 15px;
-    /* color: #77D33E; */
     margin-right: 10px;
     margin-left: 10px;
 }
 
 .relatorio #caixa_lista #infos_principais #legenda #resumo_sem_incidentes{
     font-size: 15px;
-    /* color: #77D33E; */
     margin-right: 10px;
     margin-left: 10px;
 
@@ -358,7 +355,6 @@ body {
 
 .relatorio #caixa_lista #infos_principais #legenda #resumo_inativos{
     font-size: 15px;
-    /* color: #77D33E; */
     margin-right: 10px;
     margin-left: 10px;
 
@@ -377,7 +373,7 @@ body {
 
 .relatorio #caixa_lista #linha #titulo { 
     font-weight: var(--letraRegular);
-    width: 180px;
+    width: 12vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
@@ -385,7 +381,7 @@ body {
 
 .relatorio #caixa_lista #linha #dado_status{ 
     font-weight: var(--letraRegular);
-    width: 180px;
+    width: 12vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
@@ -393,7 +389,7 @@ body {
 
 .relatorio #caixa_lista #linha #dado_idComputador{ 
     font-weight: var(--letraRegular);
-    width: 180px;
+    width: 12vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
@@ -402,7 +398,7 @@ body {
 .relatorio #caixa_lista #linha #dado_hostName {
     font-weight: var(--letraRegular);
     font-size: 15px;
-    width: 180px;
+    width: 12vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
@@ -410,7 +406,7 @@ body {
 
 .relatorio #caixa_lista #linha #dado_nomeFuncionario{ 
     font-weight: var(--letraRegular);
-    width: 180px;
+    width: 12vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
@@ -418,8 +414,13 @@ body {
 
 .relatorio #caixa_lista #linha #ver_dashboard{ 
     font-weight: var(--letraRegular);
-    width: 180px;
+    width: 12vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
 }
+
+.relatorio #caixa_lista #linha #ver_dashboard a{ 
+    color: var(--corForte);
+}
+

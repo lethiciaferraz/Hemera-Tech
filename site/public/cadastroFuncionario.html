@@ -16,7 +16,9 @@
     <!-- FONTE POPPINS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap"
+        rel="stylesheet">
 
     <!-- função menu -->
     <script src="js/funcoes.js"></script>
@@ -79,29 +81,31 @@
         <div class="mobile-menu" id="navbar_conteudo_mobile">
             <nav>
                 <ul>
-                    <li><a href="index.html#quem_somos">
-                            Sobre nós
-                        </a></li>
-
-                    <li><a href="index.html#imagem-fundo1">
-                            Serviços
-                        </a></li>
-
-                    <li><a href="index.html#div_contato">
-                            Contato
-                        </a></li>
+                    <a href="index.html#quem_somos">
+                        <li>
+                                Sobre nós
+                            </li>
+                        </a>
+    
+                        <a href="index.html#imagem-fundo1">
+                        <li>
+                                Serviços
+                            </li>
+                        </a>
+    
+                        <a href="index.html#div_contato">
+                        <li>
+                                Contato
+                            </li>
+                        </a>
                 </ul>
             </nav>
 
             <div id="navbar_botoes_mobile">
                 <ul>
-                    <a href="login.html">
-                        <li id="btn-nav-login_mobile"> Login</li>
-                    </a>
+                    <a href="login.html"><li id="btn-nav-login_mobile"> Login</li></a>
 
-                    <a href="cadastro.html">
-                        <li id="btn-nav-cadastro_mobile">Cadastrar-se</li>
-                    </a>
+                    <a href="cadastro.html"><li id="btn-nav-cadastro_mobile">Cadastrar-se</li></a>
                 </ul>
 
             </div>
@@ -161,7 +165,8 @@
                             </div>
 
                             <div class="campo">
-                                <input type="password" id="confirmar_senha_funcionario" placeholder="Confirme sua senha">
+                                <input type="password" id="confirmar_senha_funcionario"
+                                    placeholder="Confirme sua senha">
                             </div>
                         </div>
 
@@ -212,5 +217,9 @@
 
 <script>
     // Coloquei pra desativar a função do scrool nesta pag (gambiarra :))
-    window.onscroll = function() {};
+    window.onscroll = function () { };
+
+    var nomeUsuario = nome_funcionario.value;
+    sessionStorage.NOME = nomeUsuario
+
 </script>

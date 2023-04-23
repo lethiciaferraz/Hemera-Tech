@@ -66,7 +66,6 @@
 
 .graficos .abas nav {
     display: flex;
-    /* margin-top: 20px; */
     flex-direction: row;
     padding: 8px 15px 0px 0px;
 }
@@ -113,13 +112,11 @@ section{
 .dashboard_detalhes .graficos .caixa_grafico .grafico_linha{
     margin: 15px;
     width: 350px;
-    /* height: 290px; */
 }
 
 .dashboard_detalhes .graficos .caixa_grafico .grafico_donnut{
     margin: 10px 15px;
     width: 350px;
-    /* height: 290px; */
 }
 
 
@@ -127,7 +124,6 @@ section{
     font-weight: var(--letraSemiBold);
     font-size: 14px;
 }
-
 
 /* ------------------------------------------------------------- */
 .dashboard_detalhes #legenda{  

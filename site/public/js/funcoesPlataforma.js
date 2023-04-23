@@ -19,3 +19,7 @@ menuSanduiche.onclick = function () {
         logo.src = "../assets/HEMERA.png";
     }
 }
+
+var nome = sessionStorage.NOME_USUARIO;
+var b_usuario = document.getElementById("usuario_atual");
+b_usuario.innerHTML = nome; 

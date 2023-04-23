@@ -120,13 +120,13 @@ footer {
   .card_erro {
     display: none;
     background-color: #d8c4ec;
-    color: white;
+    color: rgb(0, 0, 0);
     width: 250px;
     height: 200px;
     position: fixed;
-    /* border-radius: 1vw; */
+    border-radius: 1vw;
     /* border: #111011 3px solid; */
-    /* /* padding: 10px; */
+    padding: 10px; 
     margin-right: 20px;
     /* margin-top: 5px; */
   }

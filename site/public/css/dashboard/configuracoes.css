@@ -110,7 +110,7 @@
 
 .configuracoes #caixa_lista #linha #titulo {
     font-weight: var(--letraRegular);
-    width: 180px;
+    width: 12.5vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
@@ -118,16 +118,15 @@
 
 .configuracoes #caixa_lista #linha #titulo_cpf {
     font-weight: var(--letraRegular);
-    width: 150px;
+    width: 12vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
 }
 
-
 .configuracoes #caixa_lista #linha #titulo_cargo {
     font-weight: var(--letraRegular);
-    width: 150px;
+    width: 10vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
@@ -135,22 +134,21 @@
 
 .configuracoes #caixa_lista #linha #titulo_tipo {
     font-weight: var(--letraRegular);
-    width: 150px;
+    width: 11vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
 }
 
-
 .configuracoes #caixa_lista #linha #titulo:nth-child(6) {
-    width: 80px;
+    width: 4vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
 }
 
 .configuracoes #caixa_lista #linha #titulo:nth-child(7) {
-    width: 80px;
+    width: 4vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
@@ -159,7 +157,7 @@
 .configuracoes #caixa_lista #linha #dado_cpf {
     font-weight: var(--letraRegular);
     font-size: 15px;
-    width: 150px;
+    width: 12vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
@@ -169,7 +167,7 @@
 .configuracoes #caixa_lista #linha #dado_nomeFuncionario {
     font-weight: var(--letraRegular);
     font-size: 15px;
-    width: 180px;
+    width: 12.5vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
@@ -178,7 +176,7 @@
 .configuracoes #caixa_lista #linha #dado_cargo {
     font-weight: var(--letraRegular);
     font-size: 15px;
-    width: 150px;
+    width: 10vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
@@ -187,7 +185,7 @@
 .configuracoes #caixa_lista #linha #dado_email {
     font-weight: var(--letraRegular);
     font-size: 15px;
-    width: 180px;
+    width: 12.5vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
@@ -196,7 +194,7 @@
 .configuracoes #caixa_lista #linha #dado_tipoUsuario {
     font-weight: var(--letraRegular);
     font-size: 15px;
-    width: 150px;
+    width: 11vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
@@ -205,7 +203,7 @@
 .configuracoes #caixa_lista #linha #editar {
     font-weight: var(--letraRegular);
     font-size: 15px;
-    width: 80px;
+    width: 4vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px;
@@ -217,7 +215,7 @@
 .configuracoes #caixa_lista #linha #deletar {
     font-weight: var(--letraRegular);
     font-size: 15px;
-    width: 80px;
+    width: 4vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px;
@@ -229,7 +227,7 @@
 .configuracoes #caixa_lista #linha #dado_status {
     font-weight: var(--letraRegular);
     font-size: 15px;
-    width: 180px;
+    width: 12.5vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
@@ -238,7 +236,7 @@
 .configuracoes #caixa_lista #linha #dado_idComputador {
     font-weight: var(--letraRegular);
     font-size: 15px;
-    width: 180px;
+    width: 12.5vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
@@ -247,7 +245,7 @@
 .configuracoes #caixa_lista #linha #dado_hostName {
     font-weight: var(--letraRegular);
     font-size: 15px;
-    width: 180px;
+    width: 12.5vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px
@@ -256,7 +254,7 @@
 .configuracoes #caixa_lista #linha #ver_dashboard {
     font-weight: var(--letraRegular);
     font-size: 15px;
-    width: 180px;
+    width: 10vw;
     text-align: center;
     margin: 0px 5px;
 }
@@ -309,9 +307,9 @@
 .configuracoes #caixa_cadastro {
     display: flex;
     flex-direction: column;
-    width: 1100px;
+    width: 74.4vw;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 1vw;
     padding: 30px;
     background-color: var(--caixa);
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
@@ -319,14 +317,14 @@
 
 #caixa_cadastro h3 {
     color: var(--corForte);
-    font-size: 25px;
+    font-size: 1.5vw;
     font-weight: var(--letraMedia);
 
 }
 
 #caixa_cadastro p {
     font-size: 15px;
-    margin-top: 20px;
+    margin-top: 1vw;
     margin-bottom: 20px;;
 }
 
@@ -334,20 +332,21 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 15px;
+    margin-bottom: 0.3vw;
 }
 
 .campo input {
     border-radius: 5px;
-    margin: 8px;
+    margin: 0.6vw 1vw;
     padding: 5px;
-    width: 240px;
+    width: 16vw;
 }
 
 .select_tipo select{
     border-radius: 5px;
     margin: 10px;
     padding: 5px;
+    cursor: pointer;
 
 }
 
@@ -364,7 +363,6 @@
     text-align: center;
     color: #fff;
 }
-
 
 .botoes a{
     text-decoration: none;

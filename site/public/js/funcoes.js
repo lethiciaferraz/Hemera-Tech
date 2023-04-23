@@ -243,6 +243,8 @@ function entrar() {
                     sessionStorage.ID_EMPRESA = json.idEmpresa;
                     sessionStorage.ID_FUNCIONARIO = json.idFuncionario
                     sessionStorage.NIVEL_ACESSO = json.nivel
+                    sessionStorage.NOME_USUARIO = json.nome
+
 
                 });
                 // AINDA NAO COLEI O CSS DOS CARD
@@ -250,7 +252,7 @@ function entrar() {
                 mensagem_erro.innerHTML = "Login feito com sucesso";
 
                 setTimeout(() => {
-                    window.location = "/dashboard/home.html";
+                    window.location = "/dashboard/relatorio.html";
                 }, "2000")
 
             } else {

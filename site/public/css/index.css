@@ -187,11 +187,12 @@ header {
 
     #navbar_conteudo_mobile nav ul a li {
         list-style: none;
-        margin-top: 1vh;
+        margin-top: 2vh;
     }
 
     #navbar_botoes_mobile ul a li {
         list-style: none;
+        /* height: 2px; */
     }
 
     #navbar_conteudo_mobile nav ul a {
