@@ -39,23 +39,17 @@
     text-align: center;
 }
 
-.dashboard_detalhes .caixas #caixa #dado_totalIncidentes {
-    margin: 5px 5px;
-    font-weight: var(--letraSemiBold);
-    font-size: 20px;
-    text-align: center;
-}
 
 .dashboard_detalhes .caixas #caixa_alerta {
     margin: 5px;
-    width: 240px;
+    width: 270px;
     box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
     padding: 7px 15px 2px 15px;
 
 }
 
 .dashboard_detalhes .caixas #caixa_alerta b {
-    font-size: 16px;
+    font-size: 14px;
     display: block;
     text-align: center;
 }
@@ -64,9 +58,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px 5px;
+    margin: 5px 1px;
     font-weight: var(--letraSemiBold);
-    font-size: 15px;
+    font-size: 13px;
     text-align: center;
 }
 
@@ -102,7 +96,7 @@ section{
 
 .dashboard_detalhes .graficos .caixa_grafico {
     background-color: var(--caixa);
-    margin: 20px 5px 5px 5px;
+    margin: 15px 5px 5px 5px;
     padding: 15px;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
     display: flex;
@@ -111,14 +105,23 @@ section{
 }
 
 .dashboard_detalhes .graficos .caixa_grafico .grafico_gauges{
-    margin: 10px;
-    width: 300px;
+    margin: 15px 5px;
+    width: 290px;
 }
 
 
 .dashboard_detalhes .graficos .caixa_grafico .grafico_linha{
     margin: 15px;
+    width: 350px;
+    /* height: 290px; */
 }
+
+.dashboard_detalhes .graficos .caixa_grafico .grafico_donnut{
+    margin: 10px 15px;
+    width: 350px;
+    /* height: 290px; */
+}
+
 
 .dashboard_detalhes .graficos .caixa_grafico p {
     font-weight: var(--letraSemiBold);
@@ -148,6 +151,11 @@ section{
 .dashboard_detalhes #legenda #caixinha{
     font-size: 14px;
     font-weight: var(--letraLight);
+}
+
+.caixa_parametros_dowload_upload{
+display: flex;
+justify-content: space-around;
 }
 .dashboard_detalhes #legenda #caixinha_dados_parametros{
     font-size: 13px;

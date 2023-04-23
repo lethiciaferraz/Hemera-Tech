@@ -50,7 +50,7 @@ function MostrarGraficosCPU() {
     new Chart(ctx1, {
         type: 'line',
         data: {
-            labels: ['14:00:00', '14:30:00', '15:00:00', '15:30:00', '16:00:00', '16:30:00'],
+            labels: ['18:00:00', '18:01:00', '18:02:00', '18:03:00', '18:04:00', '18:05:00'],
             datasets: [{
                 label: 'Uso em %',
                 data: [40, 45, 35, 50, 80, 100],
@@ -71,7 +71,7 @@ function MostrarGraficosCPU() {
     new Chart(ctx2, {
         type: 'line',
         data: {
-            labels: ['14:00:00', '14:00:05', '14:00:10', '14:00:15', '14:00:20', '14:00:25'],
+            labels: ['18:04:40', '18:04:45', '18:04:50', '18:04:55', '18:05:00', '18:05:05'],
             datasets: [{
                 label: 'Temperatura em Cº',
                 data: [12, 19, 3, 5, 2, 3],
