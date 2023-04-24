@@ -156,6 +156,9 @@
         justify-content: space-between;
 
     }
+    #logradouro_empresa {
+        width: auto;
+    }
     /* ------------------------------------------------------ */
     .destaque_txt {
         font-size: 25px;
