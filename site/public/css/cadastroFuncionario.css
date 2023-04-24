@@ -156,10 +156,11 @@ footer {
 }
 
 @media only screen and (max-width: 912px) {
-    .linha {
+    #linha {
         display: flex;
         flex-direction: column;
     }
+
     .destaque_txt {
         font-size: 20px;
     }
@@ -174,6 +175,7 @@ footer {
         border: 0;
         width: 60vw;
     }
+
     #bt_cadastrar_funcionario {
         min-width: 30vw;
         font-size: 11px;
@@ -181,5 +183,10 @@ footer {
     footer {
         margin-top: 20px;
         position: relative;
+    }
+
+    .select_tipo select {
+        width: auto;
+        font-size: 11px;
     }
 }
