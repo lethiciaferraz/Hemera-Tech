@@ -1,5 +1,5 @@
 // função da cor do menu
-window.onscroll = function () { scrollFunction() };
+window.onscroll = function() { scrollFunction() };
 
 function scrollFunction() {
     if (document.body.scrollTop > 1400 || document.documentElement.scrollTop > 1400) {
@@ -64,13 +64,13 @@ function CadastrarEmpresa() {
                 complementoServer: complementoVar
 
             })
-        }).then(function (resposta) {
+        }).then(function(resposta) {
 
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
 
-                resposta.json().then(function (response) {
+                resposta.json().then(function(response) {
 
                     dados = response[0]
                     sessionStorage.ID_EMPRESA = dados[0].idEmpresa
@@ -92,7 +92,7 @@ function CadastrarEmpresa() {
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
-        }).catch(function (resposta) {
+        }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
         });
 
@@ -105,15 +105,14 @@ function CadastrarFuncionario() {
     var nomeVar = nome_funcionario.value
     var sobrenomeVar = sobrenome_funcionario.value
     var emailVar = email_funcionario.value
-    var dddVar = 11
+    var cpfVar = cpf_funcionario.value
     var telefoneVar = Number(telefone_funcionario.value)
     var senhaVar = senha_funcionario.value
     var confSenha = confirmar_senha_funcionario.value
     var funcaoVar = funcao_funcionario.value
-    var nivelVar = sel_nivel.value
-    var flagadmVar = nivelVar == "Sem acesso" ? 0 : 1
+    var flagadmVar = sel_tipo_usuario.value == "colaborador" ? 0 : 1
 
-    if (nomeVar == "" || emailVar == "" || dddVar == null || telefoneVar == null || senhaVar == '' || confSenha == "") {
+    if (nomeVar == "" || emailVar == "" || cpfVar == null || telefoneVar == null || senhaVar == '' || confSenha == "" || funcaoVar == "" || sel_tipo_usuario.value == "") {
         alert("Por favor, preencha todos os campos!")
         return false;
 
@@ -133,24 +132,24 @@ function CadastrarFuncionario() {
                     nomeServer: nomeVar,
                     sobrenomeServer: sobrenomeVar,
                     emailServer: emailVar,
-                    dddServer: dddVar,
+                    cpfServer: cpfVar,
                     telefoneServer: telefoneVar,
                     senhaServer: senhaVar
                 })
-            }).then(function (resposta) {
+            }).then(function(resposta) {
 
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
 
-                    resposta.json().then(function (response) {
+                    resposta.json().then(function(response) {
 
                         dados = response[0]
                         sessionStorage.ID_FUNCIONARIO_ADICIONADO = dados[0].idFuncionario
 
                         console.log('DEU BOM');
 
-                        AdicionarFuncao(funcaoVar, nivelVar, flagadmVar);
+                        AdicionarFuncao(funcaoVar, flagadmVar);
 
                         // AINDA NAO COLEI O CSS DOS CARD
                         cardErro.style.display = "block";
@@ -165,7 +164,7 @@ function CadastrarFuncionario() {
                 } else {
                     throw ("Houve um erro ao tentar realizar o cadastro!");
                 }
-            }).catch(function (resposta) {
+            }).catch(function(resposta) {
                 console.log(`#ERRO: ${resposta}`);
             });
 
@@ -176,7 +175,7 @@ function CadastrarFuncionario() {
     }
 }
 
-function AdicionarFuncao(funcaoVar, nivelVar, flagadmVar) {
+function AdicionarFuncao(funcaoVar, flagadmVar) {
     fetch("/funcionarios/adicionarFuncao", {
         method: "POST",
         headers: {
@@ -186,12 +185,11 @@ function AdicionarFuncao(funcaoVar, nivelVar, flagadmVar) {
             // crie um atributo que recebe o valor recuperado aqui
             // Agora vá para o arquivo routes/empresa.js
             funcaoServer: funcaoVar,
-            nivelServer: nivelVar,
             flagAdmServer: flagadmVar,
             idEmpresaServer: sessionStorage.ID_EMPRESA,
             idFuncionarioServer: sessionStorage.ID_FUNCIONARIO_ADICIONADO
         })
-    }).then(function (resposta) {
+    }).then(function(resposta) {
 
         console.log("resposta: ", resposta);
 
@@ -202,7 +200,7 @@ function AdicionarFuncao(funcaoVar, nivelVar, flagadmVar) {
         } else {
             throw ("Houve um erro ao tentar realizar o cadastro!");
         }
-    }).catch(function (resposta) {
+    }).catch(function(resposta) {
         console.log(`#ERRO: ${resposta}`);
     });
 
@@ -230,7 +228,7 @@ function entrar() {
                 emailServer: emailVar,
                 senhaServer: senhaVar
             })
-        }).then(function (resposta) {
+        }).then(function(resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
 
             if (resposta.ok) {
@@ -242,7 +240,6 @@ function entrar() {
 
                     sessionStorage.ID_EMPRESA = json.idEmpresa;
                     sessionStorage.ID_FUNCIONARIO = json.idFuncionario
-                    sessionStorage.NIVEL_ACESSO = json.nivel
                     sessionStorage.NOME_USUARIO = json.nome
 
 
@@ -265,7 +262,7 @@ function entrar() {
                 });
             }
 
-        }).catch(function (erro) {
+        }).catch(function(erro) {
             console.log(erro);
         })
 

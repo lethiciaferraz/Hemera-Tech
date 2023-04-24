@@ -48,7 +48,7 @@ function cadastrar(req, res) {
     var nome = req.body.nomeServer;
     var sobrenome = req.body.sobrenomeServer
     var email = req.body.emailServer;
-    var ddd = req.body.dddServer
+    var cpf = req.body.cpfServer
     var telefone = req.body.telefoneServer
     var senha = req.body.senhaServer
 
@@ -59,8 +59,8 @@ function cadastrar(req, res) {
         res.status(400).send("Seu sobrenome está undefined!");
     } else if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
-    } else if (ddd == undefined) {
-        res.status(400).send("Seu ddd está undefined!");
+    } else if (cpf == undefined) {
+        res.status(400).send("Seu cpf está undefined!");
     } else if (telefone == undefined) {
         res.status(400).send("Seu telefone está undefined!");
     } else if (senha == undefined) {
@@ -68,7 +68,7 @@ function cadastrar(req, res) {
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        funcionarioModel.cadastrar(nome, sobrenome, email, ddd, telefone, senha)
+        funcionarioModel.cadastrar(nome, sobrenome, email, cpf, telefone, senha)
             .then(
                 function(resultado) {
                     res.json(resultado);
@@ -89,7 +89,6 @@ function cadastrar(req, res) {
 function adicionarFuncao(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var funcao = req.body.funcaoServer;
-    var nivel = req.body.nivelServer;
     var flagAdm = req.body.flagAdmServer;
     var idEmpresa = req.body.idEmpresaServer
     var idFuncionario = req.body.idFuncionarioServer
@@ -97,8 +96,6 @@ function adicionarFuncao(req, res) {
     // Faça as validações dos valores
     if (funcao == undefined) {
         res.status(400).send("Sua função está undefined!");
-    } else if (nivel == undefined) {
-        res.status(400).send("Seu nivel está undefined!");
     } else if (flagAdm == undefined) {
         res.status(400).send("Sua flag adm está undefined!");
     } else if (idEmpresa == undefined) {
@@ -108,7 +105,7 @@ function adicionarFuncao(req, res) {
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        funcionarioModel.adicionarFuncao(funcao, nivel, flagAdm, idEmpresa, idFuncionario)
+        funcionarioModel.adicionarFuncao(funcao, flagAdm, idEmpresa, idFuncionario)
             .then(
                 function(resultado) {
                     res.json(resultado);
