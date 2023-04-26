@@ -67,19 +67,20 @@ function CadastrarEmpresa() {
         }).then(function(resposta) {
             console.log();
             console.log("resposta: ", resposta);
-            console.log(recordset)
+            // console.log(recordset)
 
             if (resposta.ok) {
 
                 resposta.json().then(function(response) {
+                    console.log(response);
 
-                    dados = response[0]
-                    sessionStorage.ID_EMPRESA = 1
-                        // sessionStorage.NOME_EMPRESA = dados[0].nome
+                    sessionStorage.ID_EMPRESA = response[0].idEmpresa;
+                    // sessionStorage.ID_EMPRESA = 1
+                    sessionStorage.NOME_EMPRESA = response[0].nome
 
                     console.log('DEU BOM');
 
-                    window.location = "cadastroFuncionario.html";
+                    // window.location = "cadastroFuncionario.html";
                 })
 
                 // AINDA NAO COLEI O CSS DOS CARD
@@ -145,8 +146,7 @@ function CadastrarFuncionario() {
 
                     resposta.json().then(function(response) {
 
-                        dados = response[0]
-                        sessionStorage.ID_FUNCIONARIO_ADICIONADO = 1
+                        sessionStorage.ID_FUNCIONARIO_ADICIONADO = response[0].idFuncionario;
 
                         console.log('DEU BOM');
 
