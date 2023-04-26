@@ -25,7 +25,7 @@ function cadastrar(nome, sobrenome, email, cpf, telefone, senha) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-    CALL sp_cadastrar_funcionario("${nome}", '${sobrenome}' , '${cpf}', '${telefone}', '${email}', '${senha}');`;
+    EXEC sp_cadastrar_funcionario @nome = '${nome}', @sobrenome = '${sobrenome}', @cpf = '${cpf}', @telefone = '${telefone}', @email = '${email}', @senha = '${senha}';`;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }

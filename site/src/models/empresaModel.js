@@ -17,7 +17,7 @@ function cadastrar(nome, email, ddd, telefone, cnpj, logradouro, cep, complement
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        CALL sp_cadastrar_empresa('${email}', '${nome}', '${cnpj}', ${ddd}, ${telefone}, '${logradouro}', '${cep}', '${complemento}');`;
+        EXEC sp_cadastrar_empresa @email = '${email}', @nome = '${nome}', @cnpj = '${cnpj}', @ddd = ${ddd}, @telefone = ${telefone}, @logradouro = '${logradouro}', @cep = '${cep}', @complemento = '${complemento}';`;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
