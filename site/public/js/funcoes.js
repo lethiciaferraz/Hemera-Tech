@@ -65,16 +65,17 @@ function CadastrarEmpresa() {
 
             })
         }).then(function(resposta) {
-
+            console.log();
             console.log("resposta: ", resposta);
+            console.log(recordset)
 
             if (resposta.ok) {
 
                 resposta.json().then(function(response) {
 
                     dados = response[0]
-                    sessionStorage.ID_EMPRESA = dados[0].idEmpresa
-                    sessionStorage.NOME_EMPRESA = dados[0].nome
+                    sessionStorage.ID_EMPRESA = 1
+                        // sessionStorage.NOME_EMPRESA = dados[0].nome
 
                     console.log('DEU BOM');
 
@@ -145,7 +146,7 @@ function CadastrarFuncionario() {
                     resposta.json().then(function(response) {
 
                         dados = response[0]
-                        sessionStorage.ID_FUNCIONARIO_ADICIONADO = dados[0].idFuncionario
+                        sessionStorage.ID_FUNCIONARIO_ADICIONADO = 1
 
                         console.log('DEU BOM');
 
@@ -238,9 +239,9 @@ function entrar() {
                     console.log(json);
                     console.log(JSON.stringify(json));
 
-                    sessionStorage.ID_EMPRESA = json.idEmpresa;
-                    sessionStorage.ID_FUNCIONARIO = json.idFuncionario
-                    sessionStorage.NOME_USUARIO = json.nome
+                    // sessionStorage.ID_EMPRESA = json.idEmpresa;
+                    // sessionStorage.ID_FUNCIONARIO = json.idFuncionario
+                    // sessionStorage.NOME_USUARIO = json.nome
 
 
                 });
