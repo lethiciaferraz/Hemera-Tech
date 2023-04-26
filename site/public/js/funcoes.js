@@ -59,8 +59,8 @@ function CadastrarEmpresa() {
                 cnpjServer: cnpjVar,
                 dddServer: dddVar,
                 telefoneServer: telefoneVar,
-                logradouroServer: logradouroVar,
                 cepServer: cepVar,
+                logradouroServer: logradouroVar,
                 complementoServer: complementoVar
 
             })
@@ -154,7 +154,7 @@ function CadastrarFuncionario() {
 
                         // AINDA NAO COLEI O CSS DOS CARD
                         cardErro.style.display = "block";
-                        mensagem_erro.innerHTML = "Cadastro do funcionário feito com sucesso <br>Redirecionando para a tela de Login ";
+                        mensagem_erro.innerHTML = "Cadastro do funcionário feito com sucesso <br>Redirecionando para a tela de Login";
 
                         setTimeout(() => {
                             window.location = "login.html";
