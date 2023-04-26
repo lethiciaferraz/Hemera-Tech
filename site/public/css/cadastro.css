@@ -153,6 +153,11 @@
     .linha {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
+
+    }
+    #logradouro_empresa {
+        width: auto;
     }
     /* ------------------------------------------------------ */
     .destaque_txt {

@@ -102,6 +102,10 @@
     min-width: 20vw;
     font-weight: 400;
 }
+#div_moldura_login p {
+    font-size: (15px, 30vh);
+}
+
 
 footer {
     background-color: #D8C4EC;
@@ -155,6 +159,10 @@ footer {
     .txt_2 {
         font-size: 12px;
     }
+    #div_moldura_login p {
+        font-size: 14px;
+    }
+
     #div_img_login {
         display: none;
     }
