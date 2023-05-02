@@ -141,19 +141,21 @@ function MostrarGraficosCPU() {
 function MostrarGraficosDiscoEMemoria() {
     let ctx4 = document.getElementById('myChart4');
     new Chart(ctx4, {
-        type: 'doughnut',
+        type: 'line',
         data: {
-            labels: ['Espaço livre', 'Em uso'],
+            labels: ['18:04:40', '18:04:45', '18:04:50', '18:04:55', '18:05:00', '18:05:05'],
             datasets: [{
-                label: 'Em %',
-                data: [52, 48],
+                label: 'Uso em %',
+                data: [20, 22, 20, 18, 17, 20],
                 borderWidth: 1
             }]
         },
         options: {
-            responsive: false, // desabilita o ajuste automático do tamanho
-            width: 15, // define a largura em pixels
-            height: 5 // define a altura em pixels
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
         }
     });
 

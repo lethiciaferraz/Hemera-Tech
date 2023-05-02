@@ -13,7 +13,7 @@
     --corSecundaria: #F3EBFA;
     --corForte: #812FCD;
     --tamanhoIcones: 1.5rem;
-    --caixa: #FFFFFF;
+    --caixa: #ffffffe7;
 
     /* para usar no font-weigth */
     --letraLight: 300;
@@ -174,10 +174,18 @@ body {
 }
 
 .conteudo .menu-sanduiche {
-    width: 100%;
+    width: 82vw;
     height: 40px;
     padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
 }
+
+.conteudo .menu-sanduiche .titulo_pagina{
+    margin-left: 10px;
+}
+
 
 .conteudo .menu-sanduiche .abre-fecha-menu {
     position: relative;
@@ -360,6 +368,9 @@ body {
 
 }
 
+.relatorio #caixa_lista{
+    width: 71vw;
+}
 .relatorio #caixa_lista #infos_principais h3{
     color: black;
     font-weight: var(--letraMedia);

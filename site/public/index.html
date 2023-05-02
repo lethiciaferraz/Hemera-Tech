@@ -14,7 +14,9 @@
     <!-- FONTE POPPINS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap"
+        rel="stylesheet">
 
 
     <!-- biblioteca aos -->
@@ -48,8 +50,8 @@
 
                         <li>|</li>
 
-                        <a href="#div_contato" id="contato_selecao">
-                            <li>Contato</li>
+                        <a href="#div_suporte" id="contato_selecao">
+                            <li>Suporte</li>
                         </a>
                     </ul>
                 </nav>
@@ -62,8 +64,8 @@
                         <li id="btn-nav-login">Login</li>
                     </a>
 
-                    <a href="cadastro.html">
-                        <li id="btn-nav-cadastro">Cadastre-se</li>
+                    <a href="" class="modal">
+                        <li id="btn-nav-cadastro">Entrar em contato</li>
                     </a>
                 </ul>
 
@@ -82,20 +84,20 @@
             <nav>
                 <ul>
                     <a href="#quem_somos">
-                    <li>
+                        <li>
                             Sobre nós
                         </li>
                     </a>
 
                     <a href="#div_botoes_quem_somos">
-                            <li>
+                        <li>
                             Serviços
                         </li>
-                        </a>
+                    </a>
 
-                        <a href="#div_contato">
-                    <li>
-                            Contato
+                    <a href="#div_suporte">
+                        <li>
+                            Suporte
                         </li>
                     </a>
                 </ul>
@@ -103,15 +105,70 @@
 
             <div id="navbar_botoes_mobile">
                 <ul>
-                    <a href="login.html"><li id="btn-nav-login_mobile"> Login</li></a>
+                    <a href="login.html">
+                        <li id="btn-nav-login_mobile"> Login</li>
+                    </a>
 
-                    <a href="cadastro.html"><li id="btn-nav-cadastro_mobile">Cadastrar-se</li></a>
+                    <a href="" class="modal">
+                        <li id="btn-nav-cadastro_mobile">Entrar em Contato</li>
+                    </a>
                 </ul>
 
             </div>
         </div>
 
     </header>
+    <!-- ------MODAL CONTATO-------- -->
+
+    <div class="modal_contatar" style="display: none;">
+        <div id="modal_caixa">
+            <div class="fechar">X</div>
+            <div class="texto_principal">
+                <h3>Entrar em contato</h3>
+            </div>
+
+            <div class="caixa_informacoes">
+                <p>Preencha os campos abaixo e dentro de alguns minutos um dos nossos atendentes entrará em contato com
+                    você.</p>
+
+                <div id="caixa_campos">
+                    <div class="campos">
+
+                        <div class="campo">
+                            <label class="user-label">Empresa: </label>
+                            <input type="text" placeholder="Nome da Empresa">
+                        </div>
+
+                        <div class="campo">
+                            <label class="user-label">Responsável:</label>
+                            <input type="text" placeholder="Nome do Responsável">
+                        </div>
+
+                        <div class="campo">
+                            <label class="user-label">Email:</label>
+                            <input type="email" placeholder="email@exemplo.com">
+                        </div>
+
+                        <div class="campo">
+                            <label class="user-label">Telefone:</label>
+                            <input type="tel" placeholder="9 99999999">
+                        </div>
+
+                       <div class="botao">
+                           <button>Enviar</button>
+                        </div>
+                    </div>
+
+                    <div id="imagem_campos">
+                        <img src="./assets/contato.png" width="380vh">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
     <!-- ------SOBRE NOS-------- -->
 
@@ -128,12 +185,14 @@
         <div id="div_bloco_txt">
 
             <div class="destque_txt" id="div_destaque_txt_quem_somos">
-                <b><b style="color: #6B0CC5">Monitoramos </b>o <b style="color: #6B0CC5;">desempenho</b> dos computadores do <b style="color: #6B0CC5;">seu</b> consultório.
+                <b><b style="color: #6B0CC5">Monitoramos </b>o <b style="color: #6B0CC5;">desempenho</b> dos
+                    computadores do <b style="color: #6B0CC5;">seu</b> consultório.
                 </b>
             </div>
 
             <div class="txt" id="div_txt_quem_somos">
-                <p>Cuidar de um consultório é díficil neh? Com o nosso sistema de monitoramento de componentes do computador tudo pode ficar mais fácil!! Deixe a dor de cabeça pra lá, contrate nossos serviços!
+                <p>Cuidar de um consultório é díficil neh? Com o nosso sistema de monitoramento de componentes do
+                    computador tudo pode ficar mais fácil!! Deixe a dor de cabeça pra lá, contrate nossos serviços!
                 </p>
             </div>
 
@@ -142,7 +201,7 @@
                 <span id="btn_saiba"><a href="#como_funciona">
                         Saiba mais </a></span>
 
-                <span id="btn_fale"><a href="#div_contato">
+                <span id="btn_fale" class="modal"><a href="#">
                         Fale com a gente </a>
                 </span>
 
@@ -167,7 +226,9 @@
         </div>
 
         <div class="txt" id="div_txt_servicos">
-            <p>Somos uma empresa de tecnologia que foi criada no intuito de ajudar consultórios a terem uma melhor gestão dos seus négocios. Monitoramos seus computadores para uma melhor eficiência do seu dia-a-dia com a tecnologia.
+            <p>Somos uma empresa de tecnologia que foi criada no intuito de ajudar consultórios a terem uma melhor
+                gestão dos seus négocios. Monitoramos seus computadores para uma melhor eficiência do seu dia-a-dia com
+                a tecnologia.
             </p>
         </div>
 
@@ -192,7 +253,8 @@
                 </div>
 
                 <div class="txt_card" id="div_txt_card2_servicos">
-                    Apresentamos dados relevantes para a sua análise com base nos parâmetros estabelecidos pela sua empresa.
+                    Apresentamos dados relevantes para a sua análise com base nos parâmetros estabelecidos pela sua
+                    empresa.
                 </div>
             </div>
 
@@ -245,11 +307,12 @@
                     <div class="passo" id="div_passo1">
 
                         <div class="destaque_txt_2">
-                            <b>Faça seu cadastro</b>
+                            <b>Cadastro da empresa</b>
                         </div>
 
                         <div class="txt" id="div_texto_passo">
-                            <p>Cadastre a sua empresa e um administrador para fazer login na plataforma.</p>
+                            <p>Entre em contato conosco para fazermos o cadastro da sua empresa e criarmos seu acesso a
+                                plataforma.</p>
                         </div>
                     </div>
 
@@ -259,7 +322,8 @@
                             <b>Registre seus computadores</b>
                         </div>
                         <div class="txt" id="div_texto_passo">
-                            <p>Ao efetuar login, cadastre os funcionários e baixe a aplicação no computadores.</p>
+                            <p>Acesse a plataforma, cadastre seus funcionários e baixe a aplicação de monitoramento nos
+                                computadores.</p>
                         </div>
                     </div>
 
@@ -268,7 +332,8 @@
                             <b>Acompanhe o monitoramento</b>
                         </div>
                         <div class="txt" id="div_texto_passo">
-                            <p>A partir deste momento você irá receber notificações caso haja algo de errado com seus computadores.</p>
+                            <p>A partir deste momento você irá receber notificações caso haja algo de errado com seus
+                                computadores.</p>
                         </div>
                     </div>
                 </div>
@@ -278,26 +343,26 @@
         </div>
     </div>
 
-    <!-- ------------------CONTATO ------------- -->
-    <div class="corpo" id="div_contato">
+    <!-- ------------------SUPORTEA ------------- -->
+    <div class="corpo" id="div_suporte">
 
-        <div id="div_bloco_contato">
+        <div id="div_bloco_suporte">
 
-            <div class="div_destaque_txt_contato" id="div_destaque_txt_contato">
+            <div class="div_destaque_txt_suporte" id="div_destaque_txt_suporte">
                 <b>Quer <b style="color: #6B0CC5;"> falar</b> com<b style="color:#6B0CC5;"> a gente</b>?</b>
             </div>
 
-            <div class="txt" id="div_txt_contato">
-                <p>Se você ainda não se decidiu ou ficou com dúvidas entre em contato pelos seguintes canais.</p>
+            <div class="txt" id="div_txt_suporte">
+                <p>Se você já é cliente e precisa de ajuda entre em contato com a gente pelos seguintes canais</p>
             </div>
 
 
             <div data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                <div id="container_contato">
+                <div id="container_suporte">
                     <div class="txt" id="div_txt_cards">
 
                         <div id="email">
-                            <div id="div_img_contato">
+                            <div id="div_img_suporte">
                                 <img src="assets/icone-email.png">
                             </div>
                             <b style="color:#6B0CC5">E-mail</b>
@@ -306,7 +371,7 @@
                         </div>
 
                         <div id="div_telefone">
-                            <div id="div_img_contato">
+                            <div id="div_img_suporte">
                                 <img src="assets/icone-telefone.png">
                             </div>
                             <b style="color: #6B0CC5">Telefone</b>
@@ -336,5 +401,5 @@
 
 <script>
     // animação biblioteca
-        AOS.init();
-        </script>
+    AOS.init();
+</script>

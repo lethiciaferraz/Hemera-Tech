@@ -40,8 +40,9 @@
 .passo:nth-child(1) {
     margin-top: 20px;
 }
+
 .passo {
-    max-width: 40vw; 
+    max-width: 40vw;
     margin-top: 25px;
     padding: 1vh 1vw 1vh 1vw;
     background-color: #E4CBFD;
@@ -54,14 +55,19 @@
     flex-direction: row;
 }
 
-.passos img{
+.passos img {
     display: flex;
     margin-top: 15vh;
     margin-right: 10px;
 }
 
 
-#bt_download {
+.botao_download{
+    display: flex;
+    justify-content: end;
+}
+
+.botao_download button{
     background-color: #812FCD;
     color: #fff;
     min-width: 1vw;
@@ -75,16 +81,18 @@
     font-size: min(15px, 15vh);
     font-weight: 400;
     cursor: pointer;
-    margin-left: 65vh;
-    margin-bottom: 40vh;
-    
+    display: flex;
+    text-align: right;
+    /* margin-bottom: 40vh; */
+
 }
 
-#bt_download:hover {
+.botao_download button:hover {
     background-color: #812fcd00;
     color: #812FCD;
     transition: 0.8s;
 }
+
 #div_bloco_funciona {
     display: flex;
     flex-direction: row;
@@ -113,10 +121,11 @@
 #div_txt_funciona h3 {
     margin-bottom: 15px;
 }
+
 #div_txt_funciona p {
     font-size: min(26px, 30vh);
     font-weight: 200;
-    margin-left: 1.5vw;
+    /* margin-left: 1.5vw; */
 }
 
 #container_passos {
@@ -141,4 +150,3 @@
     font-weight: 400;
     font-size: min(15px, 30vh);
 }
-
