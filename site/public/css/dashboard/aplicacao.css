@@ -81,7 +81,7 @@
     font-size: min(15px, 15vh);
     font-weight: 400;
     cursor: pointer;
-    display: flex;
+    /* display: flex; */
     text-align: right;
     /* margin-bottom: 40vh; */
 

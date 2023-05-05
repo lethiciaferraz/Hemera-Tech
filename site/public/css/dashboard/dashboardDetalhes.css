@@ -13,29 +13,55 @@
 .dashboard_detalhes .caixas #caixa {
     margin: 5px;
     background-color: var(--caixa);
-    width: 240px;
+    width: 12vw;
     box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
     padding: 7px 15px 2px 15px;
 
 }
+/* 
+.dashboard_detalhes .caixas #caixa:nth-child(1) {
+    width: 10vw;
+}
+
+
+.dashboard_detalhes .caixas #caixa:nth-child(2) {
+    width: 10vw;
+} */
+
+.dashboard_detalhes .caixas #caixa:nth-child(4) {
+    width: auto;
+}
 
 .dashboard_detalhes .caixas #caixa p {
-    font-weight: var(--letraRegular);
+    font-weight: var(--letraMedia);
     font-size: 14px;
     text-align: center;
 }
 
 .dashboard_detalhes .caixas #caixa #dado_idcomputador {
     margin: 5px 5px;
-    font-weight: var(--letraSemiBold);
-    font-size: 20px;
+    font-weight: var(--letraLight);
+    font-size: 15px;
     text-align: center;
 }
 
 .dashboard_detalhes .caixas #caixa #dado_hostName {
     margin: 5px 5px;
-    font-weight: var(--letraSemiBold);
-    font-size: 20px;
+    font-weight: var(--letraLight);
+    font-size: 15px;
+    text-align: center;
+}
+
+.dashboard_detalhes .caixas #caixa #dado_sistema_operacional{
+    margin: 5px 5px;
+    font-weight: var(--letraLight);
+    font-size: 15px;
+    text-align: center;
+}
+.dashboard_detalhes .caixas #caixa #dado_processador{
+    margin: 5px 5px;
+    font-weight: var(--letraLight);
+    font-size: 15px;
     text-align: center;
 }
 

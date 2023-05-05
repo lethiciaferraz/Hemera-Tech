@@ -202,10 +202,13 @@ body {
     padding: 0px 10px 10px 40px;
 }
 
+.titulo_pagina{
+    margin-left: 40px;
+}
+
 .relatorio .caixas {
     display: flex;
     flex-direction: row;
-
 }
 
 /* caixa de computadores */
