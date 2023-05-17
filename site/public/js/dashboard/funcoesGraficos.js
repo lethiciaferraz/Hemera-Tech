@@ -43,6 +43,50 @@ window.addEventListener('load', () => {
 })
 
 // -------------GRÁFICOS CPU--------------------------
+// function obterDadosGraficoCPU() {
+//     console.log('Obter dados graficos USO Cpu')
+
+//     fetch(`/graficos/ultimosUsoCPU`, { cache: 'no-store' }).then(function (response) {
+//       if (response.ok) {
+
+//         response.json().then(function (resposta) {
+
+//           console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+//           resposta.reverse();
+
+//           plotarGraficoUsoCPU(resposta);
+//         });
+//       } else {
+//         console.error('Nenhum dado encontrado ou erro na API');
+//       }
+//     })
+//       .catch(function (error) {
+//         console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+//       });
+//   }
+
+//   function obterDadosGraficoTemperaturaCPU() {
+//     console.log('Obter dados graficos TEMPERATURA Cpu')
+
+//     fetch(`/graficos/ultimosTemperaturaCPU`, { cache: 'no-store' }).then(function (response) {
+//       if (response.ok) {
+
+//         response.json().then(function (resposta) {
+
+//           console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+//           resposta.reverse();
+
+//           plotarGraficoTemperaturaCPU(resposta);
+//         });
+//       } else {
+//         console.error('Nenhum dado encontrado ou erro na API');
+//       }
+//     })
+//       .catch(function (error) {
+//         console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+//       });
+//   }
+
 function MostrarGraficosCPU() {
 
     let ctx1 = document.getElementById('myChart1');
@@ -86,54 +130,6 @@ function MostrarGraficosCPU() {
             }
         }
     });
-
-    let targetClock = document.getElementById('myChart3'); // your canvas element
-
-
-    let valorAtualClock = 3.2;
-    valorClock.innerHTML = valorAtualClock;
-
-    let optsClock = {
-        angle: 0, // The span of the gauge arc
-        lineWidth: 0.4, // The line thickness
-        radiusScale: 0.90, // Relative radius
-        pointer: {
-            length: 0.53, // // Relative to gauge radius
-            strokeWidth: 0.042, // The thickness
-            color: 'black' // Fill color
-
-        },
-        limitMax: false,     // If false, max value increases automatically if value > maxValue
-        limitMin: false,     // If true, the min value of the gauge will be fixed
-        colorStart: '#6FADCF',   // Colors
-        colorStop: '#8FC0DA',    // just experiment with them
-        strokeColor: '#E0E0E0',  // to see which ones work best for you
-        generateGradient: true,
-        highDpiSupport: true,     // High resolution support
-        staticZones: [{ strokeStyle: "#F03E3E", min: 0, max: 2.0 }, { strokeStyle: "#FFDD00", min: 2.0, max: 2.6 }, { strokeStyle: "#30B32D", min: 2.6, max: 4 }],
-        staticLabels: {
-            font: "14px sans-serif",  // Specifies font
-            labels: [0, 2, 2.5, 4],  // Print labels at these values
-            // color: "#000000",  // Optional: Label text color
-            fractionDigits: 0  // Optional: Numerical precision. 0=round off.
-        },
-        renderTicks: {
-            divisions: 4,
-            divWidth: 0.4,
-            divLength: 0.91,
-            divColor: '#000000',
-            subDivisions: 3,
-            subLength: 0.8,
-            subWidth: 1.0,
-            subColor: '#000000'
-          }
-    };
-
-    let gaugeClock = new Gauge(targetClock).setOptions(optsClock); // create sexy gaugeClock!
-    gaugeClock.maxValue = 4; // set max gaugeClock value
-    gaugeClock.setMinValue(0);  // Prefer setter over gaugeClock.minValue = 0
-    gaugeClock.animationSpeed = 30; // set animation speed (32 is default value)
-    gaugeClock.set(valorAtualClock); // set actual value-
 
 }
 
