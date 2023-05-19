@@ -116,6 +116,31 @@
     margin: 0px 5px
 }
 
+.configuracoes #caixa_lista #linha #tituloComputador{
+    font-weight: var(--letraRegular);
+    width: 10vw;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+
+.configuracoes #caixa_lista #linha #tituloTotalRAM{
+    font-weight: var(--letraRegular);
+    width: 10vw;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.configuracoes #caixa_lista #linha #tituloTotalDisco{
+    font-weight: var(--letraRegular);
+    width: 10vw;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
 .configuracoes #caixa_lista #linha #titulo_cpf {
     font-weight: var(--letraRegular);
     width: 12vw;
@@ -143,7 +168,7 @@
 .configuracoes #caixa_lista #linha #titulo:nth-child(6) {
     width: 4vw;
     text-align: center;
-    /* background-color: #812FCD; */
+ /* background-color: #812FCD;  */
     margin: 0px 5px
 }
 
@@ -203,7 +228,7 @@
 .configuracoes #caixa_lista #linha #editar {
     font-weight: var(--letraRegular);
     font-size: 15px;
-    width: 4vw;
+    width: 5vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px;
@@ -215,7 +240,7 @@
 .configuracoes #caixa_lista #linha #deletar {
     font-weight: var(--letraRegular);
     font-size: 15px;
-    width: 4vw;
+    width: 5vw;
     text-align: center;
     /* background-color: #812FCD; */
     margin: 0px 5px;
@@ -224,63 +249,51 @@
     cursor: pointer;
 }
 
-.configuracoes #caixa_lista #linha #dado_status {
-    font-weight: var(--letraRegular);
-    font-size: 15px;
-    width: 12.5vw;
-    text-align: center;
-    /* background-color: #812FCD; */
-    margin: 0px 5px
-}
-
 .configuracoes #caixa_lista #linha #dado_idComputador {
-    font-weight: var(--letraRegular);
-    font-size: 15px;
-    width: 12.5vw;
-    text-align: center;
-    /* background-color: #812FCD; */
-    margin: 0px 5px
-}
-
-.configuracoes #caixa_lista #linha #dado_hostName {
-    font-weight: var(--letraRegular);
-    font-size: 15px;
-    width: 12.5vw;
-    text-align: center;
-    /* background-color: #812FCD; */
-    margin: 0px 5px
-}
-
-.configuracoes #caixa_lista #linha #ver_dashboard {
     font-weight: var(--letraRegular);
     font-size: 15px;
     width: 10vw;
     text-align: center;
-    margin: 0px 5px;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
 }
 
-#ver_dashboard a {
-    color: var(--corForte);
-}
-
-#aba1 button {
-    font-family: "Poppins", sans-serif;
-    padding: 8px 10px;
-    border-radius: 5px;
-    background-color: var(--corForte);
-    border: 2px solid var(--corForte);
-    font-weight: 500;
-    font-size: 13px;
+.configuracoes #caixa_lista #linha #dado_macAddress {
+    font-weight: var(--letraRegular);
+    font-size: 15px;
+    width: 12.5vw;
     text-align: center;
-    color: #fff;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
 }
 
-#aba1 button:hover {
-    cursor: pointer;
-    background-color: #812fcd00;
-    color: #812FCD;
-    transition: 0.8s;
+.configuracoes #caixa_lista #linha #dado_sistemaOperacional {
+    font-weight: var(--letraRegular);
+    font-size: 15px;
+    width: 12.5vw;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
 }
+
+.configuracoes #caixa_lista #linha #dado_totalRAM {
+    font-weight: var(--letraRegular);
+    font-size: 15px;
+    width: 10vw;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.configuracoes #caixa_lista #linha #dado_totalDisco{
+    font-weight: var(--letraRegular);
+    font-size: 15px;
+    width: 10vw;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
 
 #aba2 button {
     font-family: "Poppins", sans-serif;
@@ -295,6 +308,25 @@
 }
 
 #aba2 button:hover {
+    cursor: pointer;
+    background-color: #812fcd00;
+    color: #812FCD;
+    transition: 0.8s;
+}
+
+#aba3 button {
+    font-family: "Poppins", sans-serif;
+    padding: 8px 10px;
+    border-radius: 5px;
+    background-color: var(--corForte);
+    border: 2px solid var(--corForte);
+    font-weight: 500;
+    font-size: 13px;
+    text-align: center;
+    color: #fff;
+}
+
+#aba3 button:hover {
     cursor: pointer;
     background-color: #812fcd00;
     color: #812FCD;

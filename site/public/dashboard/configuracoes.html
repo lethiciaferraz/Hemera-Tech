@@ -18,7 +18,9 @@
     <!-- FONTE POPPINS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap"
+        rel="stylesheet">
 
     <!-- ICONES -->
     <script src="https://kit.fontawesome.com/b176690e81.js" crossorigin="anonymous"></script>
@@ -47,7 +49,7 @@
                         <span class="item-menu">
                             <b>Olá,
                                 <span id="usuario_atual">usuario </span>
-                        </b>
+                            </b>
                         </span>
                     </li>
                 </a>
@@ -76,13 +78,6 @@
                     </li>
                 </a>
 
-                <a href="">
-                    <li>
-                        <span class="icone-menu"><i class="fa-solid fa-headset"></i></span>
-                        <span class="item-menu">Suporte</span>
-                    </li>
-                </a>
-
                 <a href="../login.html">
                     <li>
                         <span class="icone-menu"><i class="fa-solid fa-right-from-bracket"></i></span>
@@ -103,7 +98,7 @@
             </div>
 
         </div>
-        
+
         <div class="titulo_pagina">
             <h3>Configurações</h3>
         </div>
@@ -115,13 +110,105 @@
         <div class="configuracoes">
             <div class="abas">
                 <nav>
-                    <a href="#aba1">Funcionários</a>
-                    <a href="#aba2">Computadores</a>
+                    <a href="#aba1">Empresa</a>
+                    <a href="#aba2">Funcionários</a>
+                    <a href="#aba3">Computadores</a>
+
                 </nav>
 
                 <!-- ABA 1 -->
 
                 <section id="aba1">
+                    <!-- CADATRO FUNCIONARIO -->
+                    <div id="caixa_cadastro">
+
+                        <div class="destaque_txt" id="div_destaque_txt_cadastro_funcionario">
+                            <h3>
+                                Empresa 
+                            </h3>
+                        </div>
+                        <p>Preencha os campos com os dados do funcionário</p>
+
+                        <div class="caixa-formulario">
+
+                            <div id="dados_principais">
+
+                                <div class="campos">
+
+                                    <div id="linha">
+                                        <div class="campo">
+                                            <input type="text" id="nome_funcionario" placeholder="Nome">
+                                        </div>
+
+                                        <div class="campo">
+                                            <input type="text" id="sobrenome_funcionario" placeholder="Sobrenome">
+                                        </div>
+                                    </div>
+
+                                    <div id="linha">
+
+                                        <div class="campo">
+                                            <input type="text" id="cpf_funcionario" placeholder="CPF">
+                                        </div>
+
+                                        <div class="campo">
+                                            <input type="text" id="email_funcionario" placeholder="E-mail">
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <div id="linha">
+                                        <div class="campo">
+                                            <input type="text" id="telefone_funcionario" placeholder="Telefone">
+                                        </div>
+
+                                        <div class="campo">
+                                            <input type="text" id="funcao_funcionario" placeholder="Funcão">
+                                        </div>
+
+
+                                    </div>
+
+                                    <div id="linha">
+
+                                        <div class="campo">
+                                            <input type="password" id="senha_funcionario" placeholder="Crie uma senha">
+                                        </div>
+
+                                        <div class="campo">
+                                            <input type="password" id="confirmar_senha_funcionario"
+                                                placeholder="Confirme sua senha">
+                                        </div>
+                                    </div>
+
+                                    <div class="select_tipo">
+                                        <select name="" id="sel_tipo_usuario">
+                                            <option value="">Escolha o tipo de usuário</option>
+                                            <option value="colaborador">Colaborador</option>
+                                            <option value="administrador">Administrador</option>
+                                        </select>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="botoes" id="botao_cadastro_funcionario">
+                            <a href="configuracoes.html#aba2">
+                                <button>Cancelar</button>
+                            </a>
+
+                            <button id="bt_cadastrar_funcionario" onclick="CadastrarFuncionario()">Cadastrar</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ABA 2 -->
+
+                <section id="aba2">
 
                     <div id="caixa_lista">
                         <div id="infos_principais">
@@ -131,7 +218,7 @@
                             <div>
 
                                 <nav style="margin-top: 0px;">
-                                    <a href="#aba3" style="border: 0; padding: 0px;">
+                                    <a href="#aba2Cadastrar" style="border: 0; padding: 0px;">
 
                                         <button>Add Funcionário</button>
                                     </a>
@@ -348,7 +435,7 @@
                 </section>
                 <!-- ABA 2 -->
 
-                <section class="aba2" id="aba2">
+                <section class="aba3" id="aba3">
 
                     <div id="caixa_lista">
                         <div id="infos_principais">
@@ -366,16 +453,26 @@
                         <div id="tracinho" style="margin-bottom: 20px;"></div>
 
                         <div id="linha">
-                            <div id="titulo">
-                                <b>Status Atual</b>
-                            </div>
 
-                            <div id="titulo">
+
+                            <div id="tituloComputador">
                                 <b>Computador</b>
                             </div>
 
                             <div id="titulo">
-                                <b>hostName</b>
+                                <b>MacAddress</b>
+                            </div>
+
+                            <div id="titulo">
+                                <b>Sistema Operacional</b>
+                            </div>
+
+                            <div id="tituloTotalRAM">
+                                <b>total RAM</b>
+                            </div>
+
+                            <div id="tituloTotalDisco">
+                                <b>total Disco</b>
                             </div>
 
                             <div id="titulo" style="width: 4vw;">
@@ -393,24 +490,33 @@
 
 
                         <div id="linha">
-                            <div id="dado_status">
-                                <i class="fa-solid fa-circle" style="color: #D95F58;"></i>
-                            </div>
 
                             <div id="dado_idComputador">
                                 <p>1</p>
                             </div>
 
-                            <div id="dado_hostName">
+                            <div id="dado_macAddress">
                                 <p>guiche1</p>
+                            </div>
+
+                            <div id="dado_sistemaOperacional">
+                                <p>ubuntu</p>
+                            </div>
+
+                            <div id="dado_totalRAM">
+                                <p>900 sla</p>
+                            </div>
+
+                            <div id="dado_totalDisco">
+                                <p>900 sla</p>
+                            </div>
+
+                            <div id="editar">
+                                <div onclick="editar()">editar</div>
                             </div>
 
                             <div id="deletar">
                                 <div onclick="deletar()">deletar</div>
-                            </div>
-
-                            <div id="ver_dashboard">
-                                <a href="dashboardDetalhes.html#aba1">ver dashboard</a>
                             </div>
 
                         </div>
@@ -419,24 +525,33 @@
 
 
                         <div id="linha">
-                            <div id="dado_status">
-                                <i class="fa-solid fa-circle" style="color: #77D33E;"></i>
-                            </div>
 
                             <div id="dado_idComputador">
                                 <p>2</p>
                             </div>
 
-                            <div id="dado_hostName">
-                                <p>guiche2</p>
+                            <div id="dado_macAddress">
+                                <p>guiche1</p>
+                            </div>
+
+                            <div id="dado_sistemaOperacional">
+                                <p>windows</p>
+                            </div>
+
+                            <div id="dado_totalRAM">
+                                <p>900 sla</p>
+                            </div>
+
+                            <div id="dado_totalDisco">
+                                <p>900 sla</p>
+                            </div>
+
+                            <div id="editar">
+                                <div onclick="editar()">editar</div>
                             </div>
 
                             <div id="deletar">
                                 <div onclick="deletar()">deletar</div>
-                            </div>
-
-                            <div id="ver_dashboard">
-                                <a href="dashboardDetalhes.html#aba1">ver dashboard</a>
                             </div>
 
                         </div>
@@ -445,51 +560,65 @@
 
 
                         <div id="linha">
-                            <div id="dado_status">
-                                <i class="fa-solid fa-circle" style="color: #77D33E;"></i>
-                            </div>
 
                             <div id="dado_idComputador">
                                 <p>3</p>
                             </div>
 
-                            <div id="dado_hostName">
-                                <p>guiche3</p>
+                            <div id="dado_macAddress">
+                                <p>guiche1</p>
+                            </div>
+
+                            <div id="dado_sistemaOperacional">
+                                <p>windows</p>
+                            </div>
+
+                            <div id="dado_totalRAM">
+                                <p>900 sla</p>
+                            </div>
+
+                            <div id="dado_totalDisco">
+                                <p>900 sla</p>
+                            </div>
+                            <div id="editar">
+                                <div onclick="editar()">editar</div>
                             </div>
 
                             <div id="deletar">
                                 <div onclick="deletar()">deletar</div>
-                            </div>
-
-                            <div id="ver_dashboard">
-                                <div id="detalhes">
-                                    <a href="dashboardDetalhes.html#aba1">ver dashboard</a>
-                                </div>
                             </div>
                         </div>
 
                         <div id="tracinho" style="margin-bottom: 20px;"></div>
 
                         <div id="linha">
-                            <div id="dado_status">
-                                <i class="fa-solid fa-circle" style="color: #D9D9D9;"></i>
-                            </div>
 
                             <div id="dado_idComputador">
                                 <p>4</p>
                             </div>
 
-                            <div id="dado_hostName">
-                                <p>guiche5</p>
+                            <div id="dado_macAddress">
+                                <p>guiche1</p>
+                            </div>
+
+                            <div id="dado_sistemaOperacional">
+                                <p>ubuntu</p>
+                            </div>
+
+                            <div id="dado_totalRAM">
+                                <p>900 sla</p>
+                            </div>
+
+                            <div id="dado_totalDisco">
+                                <p>900 sla</p>
+                            </div>
+
+                            <div id="editar">
+                                <div onclick="editar()">editar</div>
                             </div>
 
                             <div id="deletar">
                                 <div onclick="deletar()">deletar</div>
-                            </div>
-
-
-                            <div id="ver_dashboard">
-                                <a href="dashboardDetalhes.html#aba1"></a>
                             </div>
 
                         </div>
@@ -502,7 +631,7 @@
                 <!-- ABA 3 -->
 
 
-                <section id="aba3">
+                <section id="aba2Cadastrar">
                     <!-- CADATRO FUNCIONARIO -->
                     <div id="caixa_cadastro">
 
@@ -562,7 +691,8 @@
                                         </div>
 
                                         <div class="campo">
-                                            <input type="password" id="confirmar_senha_funcionario" placeholder="Confirme sua senha">
+                                            <input type="password" id="confirmar_senha_funcionario"
+                                                placeholder="Confirme sua senha">
                                         </div>
                                     </div>
 
@@ -580,15 +710,15 @@
                         </div>
 
                         <div class="botoes" id="botao_cadastro_funcionario">
-                            <a href="configuracoes.html#aba1">
+                            <a href="configuracoes.html#aba2">
                                 <button>Cancelar</button>
                             </a>
 
                             <button id="bt_cadastrar_funcionario" onclick="CadastrarFuncionario()">Cadastrar</button>
                         </div>
                     </div>
-
                 </section>
+
             </div>
 
         </div>
