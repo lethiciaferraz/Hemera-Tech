@@ -1,6 +1,6 @@
 var database = require("../database/config");
 
-function buscarUltimasMedidasUsoCPU(idComputador, limite_linhas) {
+function buscarUltimasMedidasUsoProcessador(idComputador, limite_linhas) {
 
     instrucaoSql = ''
 
@@ -31,7 +31,7 @@ function buscarUltimasMedidasUsoCPU(idComputador, limite_linhas) {
     return database.executar(instrucaoSql);
 }
 
-function buscarMedidasEmTempoRealUsoCPU(idComputador) {
+function buscarMedidasEmTempoRealUsoProcessador(idComputador) {
 
     instrucaoSql = ''
 
@@ -63,11 +63,8 @@ function buscarMedidasEmTempoRealUsoCPU(idComputador) {
 
 
 module.exports = {
-    buscarUltimasMedidasUsoCPU,
-    buscarMedidasEmTempoRealUsoCPU,
-
-    buscarUltimasMedidasTemperaturaCPU,
-    buscarMedidasEmTempoRealTemperaturaCPU,
+    buscarUltimasMedidasUsoProcessador,
+    buscarMedidasEmTempoRealUsoProcessador,
 
     buscarUltimasMedidasArmazenamentoDisco,
     buscarMedidasEmTempoRealArmazenamentoDisco,

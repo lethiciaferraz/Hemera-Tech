@@ -127,5 +127,7 @@ module.exports = {
     entrar,
     cadastrar,
     adicionarFuncao,
-    testar
+    testar,
+    listar,
+    editar
 }

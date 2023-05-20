@@ -1,6 +1,6 @@
 var graficoModel = require("../models/graficoModel");
 
-function buscarUltimasMedidasUsoCPU(req, res) {
+function buscarUltimasMedidasUsoProcessador(req, res) {
 
     const limite_linhas = 7;
 
@@ -22,7 +22,7 @@ function buscarUltimasMedidasUsoCPU(req, res) {
 }
 
 
-function buscarMedidasEmTempoRealUsoCPU(req, res) {
+function buscarMedidasEmTempoRealUsoProcessador(req, res) {
 
     var idComputador = req.params.idComputador;
 
@@ -42,11 +42,8 @@ function buscarMedidasEmTempoRealUsoCPU(req, res) {
 }
 
 module.exports = {
-    buscarUltimasMedidasUsoCPU,
-    buscarMedidasEmTempoRealUsoCPU,
-
-    buscarUltimasMedidasTemperaturaCPU,
-    buscarMedidasEmTempoRealTemperaturaCPU,
+    buscarUltimasMedidasUsoProcessador,
+    buscarMedidasEmTempoRealUsoProcessador,
 
     buscarUltimasMedidasArmazenamentoDisco,
     buscarMedidasEmTempoRealArmazenamentoDisco,

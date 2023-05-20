@@ -40,7 +40,7 @@ window.addEventListener('load', () => {
     })
 })
 
-// -------------GRÁFICOS CPU--------------------------
+// -------------GRÁFICOS --------------------------
 // function obterDadosGraficoCPU() {
 //     console.log('Obter dados graficos USO Cpu')
 
