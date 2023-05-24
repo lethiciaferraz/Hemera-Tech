@@ -23,8 +23,3 @@ menuSanduiche.onclick = function () {
 var nome = sessionStorage.NOME_USUARIO;
 var b_usuario = document.getElementById("usuario_atual");
 b_usuario.innerHTML = nome; 
-
-
-let fazerDowload = document.querySelector("#dowload");
-
-fazerDowload.onclick

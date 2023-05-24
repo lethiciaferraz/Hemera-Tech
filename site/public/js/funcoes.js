@@ -274,10 +274,9 @@ function entrar() {
                     console.log(json);
                     console.log(JSON.stringify(json));
 
-                    // sessionStorage.ID_EMPRESA = json.idEmpresa;
-                    // sessionStorage.ID_FUNCIONARIO = json.idFuncionario
-                    // sessionStorage.NOME_USUARIO = json.nome
-
+                 sessionStorage.ID_EMPRESA = json.idEmpresa;
+                 sessionStorage.ID_FUNCIONARIO = json.idFuncionario;
+                 sessionStorage.NOME_USUARIO = json.nome;
 
                 });
                 // AINDA NAO COLEI O CSS DOS CARD

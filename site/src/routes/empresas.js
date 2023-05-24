@@ -7,9 +7,9 @@ router.get("/", function(req, res) {
     empresaController.testar(req, res);
 });
 
-router.get("/listar", function(req, res) {
-    empresaController.listar(req, res);
-});
+// router.get("/listarEmpresa", function(req, res) {
+//     empresaController.listarDadosEmpresa(req, res);
+// });
 
 //Recebendo os dados do html e direcionando para a função cadastrar de empresaController.js
 router.post("/cadastrar", function(req, res) {

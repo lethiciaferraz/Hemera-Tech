@@ -19,7 +19,7 @@ function entrar(req, res) {
 
         funcionarioModel.entrar(email, senha)
             .then(
-                function(resultado) {
+                function (resultado) {
                     console.log(`\nResultados encontrados: ${resultado.length}`);
                     console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
 
@@ -33,7 +33,7 @@ function entrar(req, res) {
                     }
                 }
             ).catch(
-                function(erro) {
+                function (erro) {
                     console.log(erro);
                     console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
                     res.status(500).json(erro.sqlMessage);
@@ -70,11 +70,11 @@ function cadastrar(req, res) {
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         funcionarioModel.cadastrar(nome, sobrenome, email, cpf, telefone, senha)
             .then(
-                function(resultado) {
+                function (resultado) {
                     res.json(resultado);
                 }
             ).catch(
-                function(erro) {
+                function (erro) {
                     console.log(erro);
                     console.log(
                         "\nHouve um erro ao realizar o cadastro! Erro: ",
@@ -107,11 +107,11 @@ function adicionarFuncao(req, res) {
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         funcionarioModel.adicionarFuncao(funcao, flagAdm, idEmpresa, idFuncionario)
             .then(
-                function(resultado) {
+                function (resultado) {
                     res.json(resultado);
                 }
             ).catch(
-                function(erro) {
+                function (erro) {
                     console.log(erro);
                     console.log(
                         "\nHouve um erro ao realizar o cadastro! Erro: ",
@@ -123,11 +123,72 @@ function adicionarFuncao(req, res) {
     }
 }
 
+    function listarFuncionarios(req, res) {
+        var idEmpresa = req.params.idEmpresa;
+    
+        funcionarioModel.listarFuncionarios(idEmpresa).then(function (resultado) {
+                    if (resultado.length > 0) {
+                        res.status(200).json(resultado);
+                    } else {
+                        res.status(204).send("Nenhum resultado encontrado!");
+                    }
+                }
+            )
+            .catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "Houve um erro ao buscar os funcionarios: ",erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+    
+// function editarFuncionario(req, res) {
+//     var novaDescricao = req.body.descricao;
+//     var idFuncionario = req.params.idFuncionario;
+
+//     avisoModel.editar(novaDescricao, idFuncionario)
+//         .then(
+//             function (resultado) {
+//                 res.json(resultado);
+//             }
+//         )
+//         .catch(
+//             function (erro) {
+//                 console.log(erro);
+//                 console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+//                 res.status(500).json(erro.sqlMessage);
+//             }
+//         );
+
+// }
+
+
+function deletarFuncionario(req, res) {
+    var idFuncionario = req.params.idFuncionario;
+
+    funcionarioModel.deletarFuncionario(idFuncionario)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao deletar o post: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
 module.exports = {
     entrar,
     cadastrar,
     adicionarFuncao,
     testar,
-    listar,
-    editar
+    listarFuncionarios,
+    // editarFuncionario,
+    deletarFuncionario
 }

@@ -45,13 +45,13 @@ module.exports = {
     buscarUltimasMedidasUsoProcessador,
     buscarMedidasEmTempoRealUsoProcessador,
 
-    buscarUltimasMedidasArmazenamentoDisco,
-    buscarMedidasEmTempoRealArmazenamentoDisco,
+    // buscarUltimasMedidasArmazenamentoDisco,
+    // buscarMedidasEmTempoRealArmazenamentoDisco,
 
-    buscarUltimasMedidasArmazenamentoMemoria,
-    buscarMedidasEmTempoRealArmazenamentoMemoria,
+    // buscarUltimasMedidasArmazenamentoMemoria,
+    // buscarMedidasEmTempoRealArmazenamentoMemoria,
 
-    buscarUltimasMedidasUsoRede,
-    buscarMedidasEmTempoRealUsoRede,
+    // buscarUltimasMedidasUsoRede,
+    // buscarMedidasEmTempoRealUsoRede,
 
 }

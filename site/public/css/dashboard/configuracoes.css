@@ -60,14 +60,14 @@
 }
 
 /* quando clico na opcao entra a classe focus */
-.configuracoes .abas nav a.focus,
+/* .configuracoes .abas nav a.focus,
 .configuracoes.abas nav a:focus {
     background: white;
     border-top: solid 1px var(--corForte);
     border-left: solid 1px var(--corForte);
     border-right: solid 1px var(--corForte);
     color: var(--corForte);
-}
+} */
 
 
 .configuracoes .abas section {
@@ -80,6 +80,51 @@
     display: block;
 }
 
+
+.abas nav a.selecionado{
+    background: white;
+    border-top: solid 1px var(--corForte);
+    border-left: solid 1px var(--corForte);
+    border-right: solid 1px var(--corForte);
+    color: var(--corForte);
+}
+
+section{
+    border-top: 1px solid #812FCD;
+    margin-top: -1px;
+
+}
+
+/* 
+.configuracoes .abas nav {
+    display: flex;
+    flex-direction: row;
+    padding: 8px 15px 0px 0px;
+}
+
+.configuracoes .abas nav a{
+    display: flex;
+    flex-direction: row;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--letraMenu);
+}
+
+.abas nav a.selecionado{
+    background: white;
+    border-top: solid 1px var(--corForte);
+    border-left: solid 1px var(--corForte);
+    border-right: solid 1px var(--corForte);
+    color: var(--corForte);
+}
+
+section{
+    border-top: 1px solid #812FCD;
+    margin-top: -1px; 
+    
+}
+*/
 
 .configuracoes #caixa_lista {
     display: flex;

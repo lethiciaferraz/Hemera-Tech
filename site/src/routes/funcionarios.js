@@ -15,4 +15,17 @@ router.post("/autenticar", function(req, res) {
     funcionarioController.entrar(req, res);
 });
 
+// CRUD
+router.get("/listarFuncionarios/:idEmpresa", function (req, res) {
+    funcionarioController.listarFuncionarios(req, res);
+});
+
+// router.put("/editarFuncionario/:idFuncionario", function (req, res) {
+//     funcionarioController.editarFuncionario(req, res);
+// });
+
+
+router.delete("/deletarFuncionario/:idAviso", function (req, res) {
+    funcionarioController.deletarFuncionario(req, res);
+});
 module.exports = router;

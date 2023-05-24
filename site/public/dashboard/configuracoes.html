@@ -110,15 +110,15 @@
         <div class="configuracoes">
             <div class="abas">
                 <nav>
-                    <a href="#aba1">Empresa</a>
-                    <a href="#aba2">Funcionários</a>
-                    <a href="#aba3">Computadores</a>
+                    <a href="#aba1" data-target="abaEmpresa">Empresa</a>
+                    <a href="#aba2" data-target="abaFuncionarios">Funcionários</a>
+                    <a href="#aba3" data-target="abaComputadores">Computadores</a>
 
                 </nav>
 
                 <!-- ABA 1 -->
 
-                <section id="aba1">
+                <section id="aba1" class="abaEmpresa">
                     <!-- CADATRO FUNCIONARIO -->
                     <div id="dados_empresa">
 
@@ -143,12 +143,12 @@
                                         <div id="linha">
                                             <div class="campo">
                                                 <label class="user-label">Nome da Empresa: </label>
-                                                <input type="text" placeholder="Nome da Empresa">
+                                                <input type="text" placeholder="Nome da Empresa" disabled>
                                             </div>
 
                                             <div class="campo">
                                                 <label class="user-label">CNPJ: </label>
-                                                <input type="text" placeholder="Nome da Empresa">
+                                                <input type="text" placeholder="Nome da Empresa" disabled>
                                             </div>
                                         </div>
 
@@ -156,12 +156,12 @@
 
                                             <div class="campo">
                                                 <label class="user-label">Email: </label>
-                                                <input type="text" id="cpf_funcionario" placeholder="CPF">
+                                                <input type="text" id="cpf_funcionario" placeholder="CPF" disabled>
                                             </div>
 
                                             <div class="campo">
                                                 <label class="user-label">Telefone: </label>
-                                                <input type="text" id="email_funcionario" placeholder="E-mail">
+                                                <input type="text" id="email_funcionario" placeholder="E-mail" disabled>
                                             </div>
 
 
@@ -171,7 +171,87 @@
                                         <div id="linha">
                                             <div class="campo">
                                                 <label class="user-label">CEP: </label>
-                                                <input type="text" id="telefone_funcionario" placeholder="Telefone">
+                                                <input type="text" id="telefone_funcionario" placeholder="Telefone" disabled>
+                                            </div>
+
+                                            <div class="campo">
+                                                <label class="user-label">Logradouro: </label>
+                                                <input type="text" id="funcao_funcionario" placeholder="Funcão" disabled>
+                                            </div>
+                                        </div>
+
+                                        <div class="campo">
+                                            <label class="user-label">Complemento: </label>
+                                            <input type="password" id="senha_funcionario placeholder=" Crie uma senha" disabled>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="botoes" id="botao_cadastro_funcionario">
+                                <a href="configuracoes.html#EmpresaEditar">
+                                    <button>Editar</button>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="aba1Editar">
+                    <div id="dados_empresa">
+
+                        <div class="foto_empresa">
+                            <img src="../assets/empresa-icone.jpg" alt="">
+
+                        </div>
+
+                        <div class="caixa_dados">
+                            <div class="destaque_txt" id="div_destaque_txt_cadastro_funcionario">
+                                <h3>
+                                    Empresa
+                                </h3>
+                            </div>
+
+                            <div class="caixa-formulario">
+
+                                <div id="dados_principais">
+
+                                    <div class="campos">
+
+                                        <div id="linha">
+                                            <div class="campo">
+                                                <label class="user-label">Nome da Empresa: </label>
+                                                <!-- <input type="text" placeholder="Nome da Empresa"> -->
+                                            </div>
+
+                                            <div class="campo">
+                                                <label class="user-label">CNPJ: </label>
+                                                <!-- <input type="text" placeholder="Nome da Empresa"> -->
+                                            </div>
+                                        </div>
+
+                                        <div id="linha">
+
+                                            <div class="campo">
+                                                <label class="user-label">Email: </label>
+                                                <!-- <input type="text" id="cpf_funcionario" placeholder="CPF"> -->
+                                            </div>
+
+                                            <div class="campo">
+                                                <label class="user-label">Telefone: </label>
+                                                <!-- <input type="text" id="email_funcionario" placeholder="E-mail"> -->
+                                            </div>
+
+
+                                        </div>
+
+
+                                        <div id="linha">
+                                            <div class="campo">
+                                                <label class="user-label">CEP: </label>
+                                                <!-- <input type="text" id="telefone_funcionario" placeholder="Telefone"> -->
                                             </div>
 
                                             <div class="campo">
@@ -182,7 +262,7 @@
 
                                         <div class="campo">
                                             <label class="user-label">Complemento: </label>
-                                            <input type="password" id="senha_funcionario placeholder=" Crie uma senha">
+                                            <!-- <input type="password" id="senha_funcionario placeholder=" Crie uma senha"> -->
                                         </div>
 
                                     </div>
@@ -190,245 +270,27 @@
                             </div>
 
                             <div class="botoes" id="botao_cadastro_funcionario">
-                                <a href="configuracoes.html#aba1Editar">
+                                <a href="configuracoes.html#EmpresaEditar">
                                     <button>Editar</button>
                                 </a>
 
                             </div>
                         </div>
+
                     </div>
                 </section>
 
                 <!-- ABA 2 -->
+                <section id="aba2" class="abaFuncionarios">
 
-                <section id="aba2">
-
-                    <div id="caixa_lista">
-                        <div id="infos_principais">
-                            <h3>
-                                Lista de Funcionários
-                            </h3>
-                            <div>
-
-                                <nav style="margin-top: 0px;">
-                                    <a href="#aba2Cadastrar" style="border: 0; padding: 0px;">
-
-                                        <button>Add Funcionário</button>
-                                    </a>
-                                </nav>
-
-                            </div>
-                        </div>
-
-                        <div id="tracinho" style="margin-bottom: 20px;"></div>
-
-                        <div id="linha">
-                            <div id="titulo_cpf">
-                                <b>CPF</b>
-                            </div>
-
-                            <div id="titulo">
-                                <b>Nome</b>
-                            </div>
-
-                            <div id="titulo_cargo">
-                                <b>Função</b>
-                            </div>
-
-                            <div id="titulo">
-                                <b>Email</b>
-                            </div>
-
-                            <div id="titulo_tipo">
-                                <b>Tipo</b>
-                            </div>
-
-                            <div id="titulo">
-                            </div>
-
-
-                        </div>
-
-                        <div id="tracinho" style="margin-bottom: 20px;"></div>
-
-
-                        <div id="linha">
-
-                            <div id="dado_cpf">
-                                <p>678876388-83</p>
-                            </div>
-
-                            <div id="dado_nomeFuncionario">
-                                <p>Amanda Oliveira</p>
-                            </div>
-
-                            <div id="dado_cargo">
-                                <p>Recepcionista</p>
-                            </div>
-
-                            <div id="dado_email">
-                                <p>amanda@gmail.com</p>
-                            </div>
-
-                            <div id="dado_tipoUsuario">
-                                <p>Colaborador</p>
-                            </div>
-
-                            <div id="editar">
-                                <div onclick="editar()">editar</div>
-                            </div>
-
-                            <div id="deletar">
-                                <div onclick="deletar()">deletar</div>
-                            </div>
-
-                        </div>
-
-                        <div id="tracinho" style="margin-bottom: 20px;"></div>
-
-                        <div id="linha">
-
-                            <div id="dado_cpf">
-                                <p>678984388-83</p>
-                            </div>
-
-                            <div id="dado_nomeFuncionario">
-                                <p>Pedro Reis</p>
-                            </div>
-
-                            <div id="dado_cargo">
-                                <p>Recepcionista</p>
-                            </div>
-
-                            <div id="dado_email">
-                                <p>pedro@gmail.com</p>
-                            </div>
-
-                            <div id="dado_tipoUsuario">
-                                <p>Colaborador</p>
-                            </div>
-
-                            <div id="editar">
-                                <div onclick="editar()">editar</div>
-                            </div>
-
-                            <div id="deletar">
-                                <div onclick="deletar()">deletar</div>
-                            </div>
-
-                        </div>
-                        <div id="tracinho" style="margin-bottom: 20px;"></div>
-
-                        <div id="linha">
-
-                            <div id="dado_cpf">
-                                <p>678984388-83</p>
-                            </div>
-
-                            <div id="dado_nomeFuncionario">
-                                <p>Mariana Soares</p>
-                            </div>
-
-                            <div id="dado_cargo">
-                                <p>Recepcionista</p>
-                            </div>
-
-                            <div id="dado_email">
-                                <p>mariana@gmail.com</p>
-                            </div>
-
-                            <div id="dado_tipoUsuario">
-                                <p>Colaborador</p>
-                            </div>
-
-                            <div id="editar">
-                                <div onclick="editar()">editar</div>
-                            </div>
-
-                            <div id="deletar">
-                                <div onclick="deletar()">deletar</div>
-                            </div>
-
-                        </div>
-                        <div id="tracinho" style="margin-bottom: 20px;"></div>
-
-
-                        <div id="linha">
-
-
-                            <div id="dado_cpf">
-                                <p>678984388-83</p>
-                            </div>
-
-                            <div id="dado_nomeFuncionario">
-                                <p>Guilherme Fonseca </p>
-                            </div>
-
-                            <div id="dado_cargo">
-                                <p>NOC</p>
-                            </div>
-
-                            <div id="dado_email">
-                                <p>guilherme@gmail.com</p>
-                            </div>
-
-                            <div id="dado_tipoUsuario">
-                                <p>Administrador</p>
-                            </div>
-
-                            <div id="editar">
-                                <div onclick="editar()">editar</div>
-                            </div>
-
-                            <div id="deletar">
-                                <div onclick="deletar()">deletar</div>
-                            </div>
-
-                        </div>
-
-                        <div id="tracinho" style="margin-bottom: 20px;"></div>
-
-                        <div id="linha">
-
-
-                            <div id="dado_cpf">
-                                <p>984984388-83</p>
-                            </div>
-
-                            <div id="dado_nomeFuncionario">
-                                <p>Vitoria Silva</p>
-                            </div>
-
-                            <div id="dado_cargo">
-                                <p>NOC</p>
-                            </div>
-
-                            <div id="dado_email">
-                                <p>vitoria@gmail.com</p>
-                            </div>
-
-                            <div id="dado_tipoUsuario">
-                                <p>Administrador</p>
-                            </div>
-
-                            <div id="editar">
-                                <div onclick="editar()">editar</div>
-                            </div>
-
-                            <div id="deletar">
-                                <div onclick="deletar()">deletar</div>
-                            </div>
-
-                        </div>
-
-                        <div id="tracinho" style="margin-bottom: 20px;"></div>
+                    <div id="caixa_lista" class="lista_funcionarios">
 
                     </div>
 
                 </section>
-                <!-- ABA 2 -->
 
-                <section class="aba3" id="aba3">
+                <!-- ABA 3 -->
+                <section class="abaComputadores" id="aba3">
 
                     <div id="caixa_lista">
                         <div id="infos_principais">
@@ -516,115 +378,11 @@
 
                         <div id="tracinho" style="margin-bottom: 20px;"></div>
 
-
-                        <div id="linha">
-
-                            <div id="dado_idComputador">
-                                <p>2</p>
-                            </div>
-
-                            <div id="dado_macAddress">
-                                <p>guiche1</p>
-                            </div>
-
-                            <div id="dado_sistemaOperacional">
-                                <p>windows</p>
-                            </div>
-
-                            <div id="dado_totalRAM">
-                                <p>900 sla</p>
-                            </div>
-
-                            <div id="dado_totalDisco">
-                                <p>900 sla</p>
-                            </div>
-
-                            <div id="editar">
-                                <div onclick="editar()">editar</div>
-                            </div>
-
-                            <div id="deletar">
-                                <div onclick="deletar()">deletar</div>
-                            </div>
-
-                        </div>
-
-                        <div id="tracinho" style="margin-bottom: 20px;"></div>
-
-
-                        <div id="linha">
-
-                            <div id="dado_idComputador">
-                                <p>3</p>
-                            </div>
-
-                            <div id="dado_macAddress">
-                                <p>guiche1</p>
-                            </div>
-
-                            <div id="dado_sistemaOperacional">
-                                <p>windows</p>
-                            </div>
-
-                            <div id="dado_totalRAM">
-                                <p>900 sla</p>
-                            </div>
-
-                            <div id="dado_totalDisco">
-                                <p>900 sla</p>
-                            </div>
-                            <div id="editar">
-                                <div onclick="editar()">editar</div>
-                            </div>
-
-                            <div id="deletar">
-                                <div onclick="deletar()">deletar</div>
-                            </div>
-                        </div>
-
-                        <div id="tracinho" style="margin-bottom: 20px;"></div>
-
-                        <div id="linha">
-
-                            <div id="dado_idComputador">
-                                <p>4</p>
-                            </div>
-
-                            <div id="dado_macAddress">
-                                <p>guiche1</p>
-                            </div>
-
-                            <div id="dado_sistemaOperacional">
-                                <p>ubuntu</p>
-                            </div>
-
-                            <div id="dado_totalRAM">
-                                <p>900 sla</p>
-                            </div>
-
-                            <div id="dado_totalDisco">
-                                <p>900 sla</p>
-                            </div>
-
-                            <div id="editar">
-                                <div onclick="editar()">editar</div>
-                            </div>
-
-                            <div id="deletar">
-                                <div onclick="deletar()">deletar</div>
-                            </div>
-
-                        </div>
-
-                        <div id="tracinho" style="margin-bottom: 20px;"></div>
                     </div>
 
                 </section>
 
-                <!-- ABA 3 -->
-
-
-                <section id="aba2Cadastrar">
+                <section id="ComputadoresCadastrar" id="ComputadoresCadastrar">
                     <!-- CADATRO FUNCIONARIO -->
                     <div id="caixa_cadastro">
 
@@ -683,7 +441,8 @@
                                         </div>
 
                                         <div class="campo">
-                                            <input type="password" id="confirmar_senha_funcionario" placeholder="Confirme sua senha">
+                                            <input type="password" id="confirmar_senha_funcionario"
+                                                placeholder="Confirme sua senha">
                                         </div>
                                     </div>
 
@@ -722,31 +481,4 @@
 
 
 <script src="../js/funcoesPlataforma.js"></script>
-<script src="../js/funcoes.js"></script>
-
-<script>
-    window.addEventListener('load', () => {
-        document.querySelectorAll('.abas nav a').forEach((a) => {
-            a.addEventListener('click', () => {
-
-                let f = a.parentNode.querySelector('a.focus')
-
-                if (f) f.classList.remove('focus')
-                a.classList.add('focus')
-
-            })
-            if (location.hash) {
-                document.querySelector('a[href="' + location.hash + '"]').classList.add('focus')
-            }
-        })
-    })
-
-
-    function editar() {
-        alert("construindo")
-    }
-
-    function deletar() {
-        alert("construindo")
-    }
-</script>
+<script src="../js/dashboard/configuracoes.js"></script>
