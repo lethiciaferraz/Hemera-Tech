@@ -25,7 +25,7 @@ router.get("/listarFuncionarios/:idEmpresa", function (req, res) {
 // });
 
 
-router.delete("/deletarFuncionario/:idAviso", function (req, res) {
+router.delete("/deletarFuncionario/:idFuncionario", function (req, res) {
     funcionarioController.deletarFuncionario(req, res);
 });
 module.exports = router;

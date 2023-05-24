@@ -43,41 +43,193 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-    function MostrarDadosEmpresa() {
-        //aguardar();
+function MostrarDadosEmpresa() {
+    //aguardar();
 
-        fetch("/empresas/listarEmpresa").then(function (resposta) {
-            if (resposta.ok) {
-                if (resposta.status == 204) {
-                    var feed = document.getElementById("feed_container");
-                    var mensagem = document.createElement("span");
-                    mensagem.innerHTML = "Nenhum resultado encontrado."
-                    feed.appendChild(mensagem);
-                    throw "Nenhum resultado encontrado!!";
+    fetch(`/empresas/listarEmpresa/${idEmpresa}`).then(function (resposta) {
+        if (resposta.ok) {
+            if (resposta.status == 204) {
+                var feed = document.getElementById("feed_container");
+                var mensagem = document.createElement("span");
+                mensagem.innerHTML = "Nenhum resultado encontrado."
+                feed.appendChild(mensagem);
+                throw "Nenhum resultado encontrado!!";
+            }
+
+            resposta.json().then(function (resposta) {
+                console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                var divDadosEmpresa = document.getElementById("dados_empresa");
+
+                divDadosEmpresa.innerHTML = "";
+
+                for (let i = 0; i < resposta.length; i++) {
+                    var publicacao = resposta[i];
+
+                    // criando e manipulando elementos do HTML via JavaScript
+                    var divFotoEmpresa = document.createElement("div");
+                    divFotoEmpresa.className = "foto_empresa";
+                    var imgEmpresa = document.createElement("img");
+                    imgEmpresa.src = "../assets/empresa-icone.jpg";
+                    divFotoEmpresa.appendChild(imgEmpresa);
+                    var divCaixaDados = document.createElement("div");
+                    divCaixaDados.className = "caixa_dados";
+
+                    var divDestaqueTxt = document.createElement("div");
+                    divDestaqueTxt.className = "destaque_txt";
+                    divDestaqueTxt.id = "div_destaque_txt_cadastro_funcionario";
+                    var h3Empresa = document.createElement("h3");
+                    h3Empresa.textContent = "Empresa";
+                    divDestaqueTxt.appendChild(h3Empresa);
+
+                    // CRIANDO A CAIXA DE FORMULARIO QUE VAI LISTAR OS DADOS
+                    var divCaixaFormulario = document.createElement("div");
+                    divCaixaFormulario.className = "caixa-formulario";
+
+                    // DADOS DA CAIXA
+
+                    var divCampos = document.createElement("div");
+                    divCampos.className = "campos";
+                    // ----------------------------------------------------------------------
+                    var divLinha1 = document.createElement("div");
+                    divLinha1.id = "linha";
+
+                    var divCampo1 = document.createElement("div");
+                    divCampo1.className = "campo";
+                    var labelNomeEmpresa = document.createElement("label");
+                    labelNomeEmpresa.className = "user-label";
+                    labelNomeEmpresa.textContent = "Nome da Empresa: ";
+                    var inputNomeEmpresa = document.createElement("input");
+                    inputNomeEmpresa.type = "text";
+                    inputNomeEmpresa.placeholder = publicacao.nome;
+                    inputNomeEmpresa.disabled = true;
+                    // inputNomeEmpresa.value = publicacao.nome;
+
+                    divCampo1.appendChild(labelNomeEmpresa);
+                    divCampo1.appendChild(inputNomeEmpresa);
+
+                    var divCampo2 = document.createElement("div");
+                    divCampo2.className = "campo";
+                    var labelCNPJ = document.createElement("label");
+                    labelCNPJ.className = "user-label";
+                    labelCNPJ.textContent = "CNPJ: ";
+                    var inputCNPJ = document.createElement("input");
+                    inputCNPJ.type = "text";
+                    inputCNPJ.placeholder = publicacao.CNPJ;
+                    inputCNPJ.disabled = true;
+                    // inputCNPJ.value = publicacao.CNPJ;
+
+                    divCampo2.appendChild(labelCNPJ);
+                    divCampo2.appendChild(inputCNPJ);
+
+                    divLinha1.appendChild(divCampo1);
+                    divLinha1.appendChild(divCampo2);
+                    // ----------------------------------------------------------------------
+
+                    var divLinha2 = document.createElement("div");
+                    divLinha2.id = "linha";
+
+                    var divCampo3 = document.createElement("div");
+                    divCampo3.className = "campo";
+                    var labelEmail = document.createElement("label");
+                    labelEmail.className = "user-label";
+                    labelEmail.textContent = "Email: ";
+                    var inputEmail = document.createElement("input");
+                    inputEmail.type = "text";
+                    inputEmail.id = "cpf_funcionario";
+                    inputEmail.placeholder = publicacao.email;
+                    inputEmail.disabled = true;
+                    divCampo3.appendChild(labelEmail);
+                    divCampo3.appendChild(inputEmail);
+
+                    var divCampo4 = document.createElement("div");
+                    divCampo4.className = "campo";
+                    var labelTelefone = document.createElement("label");
+                    labelTelefone.className = "user-label";
+                    labelTelefone.textContent = "Telefone: ";
+                    var inputTelefone = document.createElement("input");
+                    inputTelefone.type = "text";
+                    inputTelefone.id = "email_funcionario";
+                    inputTelefone.placeholder = publicacao.telefone;
+                    inputTelefone.disabled = true;
+                    divCampo4.appendChild(labelTelefone);
+                    divCampo4.appendChild(inputTelefone);
+
+                    divLinha2.appendChild(divCampo3);
+                    divLinha2.appendChild(divCampo4);
+                    // ----------------------------------------------------------------------
+
+                    var divLinha3 = document.createElement("div");
+                    divLinha3.id = "linha";
+
+                    var divCampo5 = document.createElement("div");
+                    divCampo5.className = "campo";
+                    var labelCEP = document.createElement("label");
+                    labelCEP.className = "user-label";
+                    labelCEP.textContent = "CEP: ";
+                    var inputCEP = document.createElement("input");
+                    inputCEP.type = "text";
+                    inputCEP.id = "telefone_funcionario";
+                    inputCEP.placeholder = publicacao.cep;
+                    inputCEP.disabled = true;
+                    divCampo5.appendChild(labelCEP);
+                    divCampo5.appendChild(inputCEP);
+
+                    var divCampo6 = document.createElement("div");
+                    divCampo6.className = "campo";
+                    var labelLogradouro = document.createElement("label");
+                    labelLogradouro.className = "user-label";
+                    labelLogradouro.textContent = "Logradouro: ";
+                    var inputLogradouro = document.createElement("input");
+                    inputLogradouro.type = "text";
+                    inputLogradouro.id = "funcao";
+                    inputLogradouro.placeholder = publicacao.logradouro;
+                    inputLogradouro.disabled = true;
+                    divCampo6.appendChild(labelLogradouro);
+                    divCampo6.appendChild(inputLogradouro);
+
+                    divLinha3.appendChild(divCampo5);
+                    divLinha3.appendChild(divCampo6);
+
+
+                    // ----------------------------------------------------------------------
+
+                    var divBotoes = document.createElement("div");
+                    divBotoes.className = "botoes";
+                    divBotoes.id = "botao_cadastro_funcionario";
+                    var linkEditar = document.createElement("a");
+                    linkEditar.href = "configuracoes.html#EmpresaEditar";
+                    var buttonEditar = document.createElement("button");
+                    buttonEditar.textContent = "Editar";
+                    linkEditar.appendChild(buttonEditar);
+                    divBotoes.appendChild(linkEditar);
+
+                    // Inserir os elementos na estrutura correta
+                    divDadosEmpresa.appendChild(divFotoEmpresa);
+                    divDadosEmpresa.appendChild(divCaixaDados);
+
+                    divCaixaDados.appendChild(divDestaqueTxt);
+                    divCaixaDados.appendChild(divCaixaFormulario);
+
+                    divCampos.appendChild(divLinha1);
+                    divCampos.appendChild(divLinha2);
+                    divCampos.appendChild(divLinha3);
+
+                    divCaixaDados.appendChild(divBotoes);
+
+                    divCaixaFormulario.appendChild(divCampos);
                 }
 
-                resposta.json().then(function (resposta) {
-                    console.log("Dados recebidos: ", JSON.stringify(resposta));
-
-                    var feed = document.getElementById("feed_container");
-                    feed.innerHTML = "";
-                    for (let i = 0; i < resposta.length; i++) {
-                        var publicacao = resposta[i];
-
-                        // criando e manipulando elementos do HTML via JavaScript
-     
-                    }
-
-                    finalizarAguardar();
-                });
-            } else {
-                throw ('Houve um erro na API!');
-            }
-        }).catch(function (resposta) {
-            console.error(resposta);
-            finalizarAguardar();
-        });
-    }
+                // finalizarAguardar();
+            });
+        } else {
+            throw ('Houve um erro na API!');
+        }
+    }).catch(function (resposta) {
+        console.error(resposta);
+        finalizarAguardar();
+    });
+}
 
 
 function MostrarListaComputadores() {
@@ -237,7 +389,7 @@ function MostrarListaFuncionarios() {
                     divEditar.setAttribute("onclick", `editarFuncionario(${publicacao.idFuncionario})`);
 
                     divDeletar.id = "deletar";
-                    divEditar.setAttribute("onclick", `deletarFuncionario(${publicacao.idFuncionario})`);
+                    divDeletar.setAttribute("onclick", `deletarFuncionario(${publicacao.idFuncionario})`);
 
 
                     divLinha.appendChild(divDado1);
@@ -297,7 +449,7 @@ function MostrarListaFuncionarios() {
 
 function deletarFuncionario(idFuncionario) {
     console.log("FUNCIONÁRIO A SER DELETADO - ID" + idFuncionario);
-    
+
     fetch(`/funcionarios/deletarFuncionario/${idFuncionario}`, {
         method: "DELETE",
         headers: {
@@ -306,8 +458,9 @@ function deletarFuncionario(idFuncionario) {
     }).then(function (resposta) {
 
         if (resposta.ok) {
-            window.alert("Funcionário deletado com sucesso: " + sessionStorage.getItem("NOME") + "!");
+            window.alert("Funcionário deletado com sucesso " + sessionStorage.getItem("NOME_USUARIO") + "!");
             // window.location = "/dashboard/mural.html"
+            MostrarListaFuncionarios();
             console.log("deletado com sucesso")
         } else if (resposta.status == 404) {
             window.alert("Deu 404!");

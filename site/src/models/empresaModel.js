@@ -22,7 +22,15 @@ function cadastrar(nome, email, ddd, telefone, cnpj, cep, logradouro, complement
     return database.executar(instrucao);
 }
 
+function listarEmpresa(idEmpresa) {
+    console.log("ACESSEI O empresa MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarFuncionarios():", idEmpresa);
+    var instrucao = `select * from Empresa where idEmpresa = ${idEmpresa}`;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+  }
+
 module.exports = {
     cadastrar,
     listar,
+    listarEmpresa,
 };
