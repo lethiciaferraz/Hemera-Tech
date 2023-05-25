@@ -1,5 +1,5 @@
 // função da cor do menu
-window.onscroll = function () { scrollFunction() };
+window.onscroll = function() { scrollFunction() };
 
 function scrollFunction() {
     if (document.body.scrollTop > 1400 || document.documentElement.scrollTop > 1400) {
@@ -31,39 +31,39 @@ function MostrarMenu() {
 }
 
 // 
-    // MODAL--------------------------------
-    // código para carregar o script
-    const abrirModal = document.querySelectorAll(".modal");
-    const modal = document.querySelector(".modal_contatar")
-    const body = document.querySelector("body");
-    
-    abrirModal.forEach(a => {
-        a.addEventListener('click', function () {
-            event.preventDefault();
-            modal.style.display = "flex"
-            body.style.overflow = "hidden"
-        });
+// MODAL--------------------------------
+// código para carregar o script
+const abrirModal = document.querySelectorAll(".modal");
+const modal = document.querySelector(".modal_contatar")
+const body = document.querySelector("body");
+
+abrirModal.forEach(a => {
+    a.addEventListener('click', function() {
+        event.preventDefault();
+        modal.style.display = "flex"
+        body.style.overflow = "hidden"
     });
-    
-    // Fechar Modal----------------------
-    const fecharModal = document.querySelector(".fechar")
-    
-    fecharModal.onclick = function () {
-        modal.style.display = "none"
+});
+
+// Fechar Modal----------------------
+const fecharModal = document.querySelector(".fechar")
+
+fecharModal.onclick = function() {
+    modal.style.display = "none"
+    body.style.overflow = "auto"
+}
+
+// QUANDO CLICAR FORA DO MODAL
+const modalFundo = document.querySelector('.modal_contatar');
+
+modalFundo.addEventListener('click', function(event) {
+    if (event.target === modalFundo) {
+        modal.style.display = 'none';
         body.style.overflow = "auto"
+
     }
-    
-    // QUANDO CLICAR FORA DO MODAL
-    const modalFundo = document.querySelector('.modal_contatar');
-    
-    modalFundo.addEventListener('click', function (event) {
-        if (event.target === modalFundo) {
-            modal.style.display = 'none';
-        body.style.overflow = "auto"
-    
-        }
-    });
-    
+});
+
 
 function CadastrarEmpresa() {
     var nomeVar = nome_empresa.value
@@ -99,19 +99,18 @@ function CadastrarEmpresa() {
                 complementoServer: complementoVar
 
             })
-        }).then(function (resposta) {
+        }).then(function(resposta) {
             console.log();
             console.log("resposta: ", resposta);
             // console.log(recordset)
 
             if (resposta.ok) {
 
-                resposta.json().then(function (response) {
+                resposta.json().then(function(response) {
                     console.log(response);
 
-                    sessionStorage.ID_EMPRESA = response[0].idEmpresa;
+                    sessionStorage.EMPRESA = response[0];
                     // sessionStorage.ID_EMPRESA = 1
-                    sessionStorage.NOME_EMPRESA = response[0].nome
 
                     console.log('DEU BOM');
 
@@ -129,7 +128,7 @@ function CadastrarEmpresa() {
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
-        }).catch(function (resposta) {
+        }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
         });
 
@@ -173,13 +172,13 @@ function CadastrarFuncionario() {
                     telefoneServer: telefoneVar,
                     senhaServer: senhaVar
                 })
-            }).then(function (resposta) {
+            }).then(function(resposta) {
 
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
 
-                    resposta.json().then(function (response) {
+                    resposta.json().then(function(response) {
 
                         sessionStorage.ID_FUNCIONARIO_ADICIONADO = response[0].idFuncionario;
 
@@ -200,7 +199,7 @@ function CadastrarFuncionario() {
                 } else {
                     throw ("Houve um erro ao tentar realizar o cadastro!");
                 }
-            }).catch(function (resposta) {
+            }).catch(function(resposta) {
                 console.log(`#ERRO: ${resposta}`);
             });
 
@@ -225,7 +224,7 @@ function AdicionarFuncao(funcaoVar, flagadmVar) {
             idEmpresaServer: sessionStorage.ID_EMPRESA,
             idFuncionarioServer: sessionStorage.ID_FUNCIONARIO_ADICIONADO
         })
-    }).then(function (resposta) {
+    }).then(function(resposta) {
 
         console.log("resposta: ", resposta);
 
@@ -236,7 +235,7 @@ function AdicionarFuncao(funcaoVar, flagadmVar) {
         } else {
             throw ("Houve um erro ao tentar realizar o cadastro!");
         }
-    }).catch(function (resposta) {
+    }).catch(function(resposta) {
         console.log(`#ERRO: ${resposta}`);
     });
 
@@ -264,7 +263,7 @@ function entrar() {
                 emailServer: emailVar,
                 senhaServer: senhaVar
             })
-        }).then(function (resposta) {
+        }).then(function(resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
 
             if (resposta.ok) {
@@ -274,9 +273,9 @@ function entrar() {
                     console.log(json);
                     console.log(JSON.stringify(json));
 
-                 sessionStorage.ID_EMPRESA = json.idEmpresa;
-                 sessionStorage.ID_FUNCIONARIO = json.idFuncionario;
-                 sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_EMPRESA = json.idEmpresa;
+                    sessionStorage.ID_FUNCIONARIO = json.idFuncionario;
+                    sessionStorage.NOME_USUARIO = json.nome;
 
                 });
                 // AINDA NAO COLEI O CSS DOS CARD
@@ -297,7 +296,7 @@ function entrar() {
                 });
             }
 
-        }).catch(function (erro) {
+        }).catch(function(erro) {
             console.log(erro);
         })
 
