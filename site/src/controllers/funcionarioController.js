@@ -144,25 +144,29 @@ function adicionarFuncao(req, res) {
             );
     }
     
-// function editarFuncionario(req, res) {
-//     var novaDescricao = req.body.descricao;
-//     var idFuncionario = req.params.idFuncionario;
+function editarFuncionario(req, res) {
+    let novoNome = req.body.nome;
+    let novoSobrenome = req.body.sobrenome;
+    let novoEmail = req.body.email;
+    let novoTelefone = req.body.telefone;
+    let novaFuncao = req.body.funcao;
+    let idFuncionario = req.params.idFuncionario;
 
-//     avisoModel.editar(novaDescricao, idFuncionario)
-//         .then(
-//             function (resultado) {
-//                 res.json(resultado);
-//             }
-//         )
-//         .catch(
-//             function (erro) {
-//                 console.log(erro);
-//                 console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
-//                 res.status(500).json(erro.sqlMessage);
-//             }
-//         );
+    funcionarioModel.editarFuncionario(novoNome, novoSobrenome, novoEmail, novoTelefone, novaFuncao, idFuncionario)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
 
-// }
+}
 
 
 function deletarFuncionario(req, res) {
@@ -189,6 +193,6 @@ module.exports = {
     adicionarFuncao,
     testar,
     listarFuncionarios,
-    // editarFuncionario,
+    editarFuncionario,
     deletarFuncionario
 }

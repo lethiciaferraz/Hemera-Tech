@@ -39,17 +39,23 @@ function listarFuncionarios(idEmpresa) {
     var instrucao = `select * from funcionario where idEmpresa = ${idEmpresa}`;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
-  }
+}
 
-// function editarFuncionario(novaDescricao, idFuncionario) {
-//     console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", novaDescricao, idAviso);
-//     var instrucao = `
-//             UPDATE aviso SET descricao = '${novaDescricao}' WHERE id = ${idFuncionario};
-//         `;
-//     console.log("Executando a instrução SQL: \n" + instrucao);
-//     return database.executar(instrucao);
+function editarFuncionario(novoNome, novoSobrenome, novoEmail, novoTelefone, novaFuncao, idFuncionario) {
+    console.log("ACESSEI O EDITAR FUNCIONARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", novoNome, novoSobrenome, novoEmail, novoTelefone, novaFuncao, idFuncionario);
+    var instrucao = `
+    UPDATE funcionario 
+    SET nome = '${novoNome}',
+        sobrenome = '${novoSobrenome}',
+        email = '${novoEmail}',
+        telefone = '${novoTelefone}',
+        funcao = '${novaFuncao}'
+    WHERE idFuncionario = ${idFuncionario};
+        `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
 
-// }
+}
 
 function deletarFuncionario(idFuncionario) {
     console.log("ACESSEI O Funcionario MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function deletar():", idFuncionario);
@@ -65,6 +71,6 @@ module.exports = {
     cadastrar,
     adicionarFuncao,
     listarFuncionarios,
-    // editarFuncionario,
+    editarFuncionario,
     deletarFuncionario
 };

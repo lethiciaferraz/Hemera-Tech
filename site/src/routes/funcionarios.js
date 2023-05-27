@@ -20,9 +20,9 @@ router.get("/listarFuncionarios/:idEmpresa", function (req, res) {
     funcionarioController.listarFuncionarios(req, res);
 });
 
-// router.put("/editarFuncionario/:idFuncionario", function (req, res) {
-//     funcionarioController.editarFuncionario(req, res);
-// });
+router.put("/editarFuncionario/:idFuncionario", function (req, res) {
+    funcionarioController.editarFuncionario(req, res);
+});
 
 
 router.delete("/deletarFuncionario/:idFuncionario", function (req, res) {
