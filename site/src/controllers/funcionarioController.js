@@ -147,12 +147,20 @@ function adicionarFuncao(req, res) {
 function editarFuncionario(req, res) {
     let novoNome = req.body.nome;
     let novoSobrenome = req.body.sobrenome;
+    let novoCpf = req.body.cpf;
     let novoEmail = req.body.email;
     let novoTelefone = req.body.telefone;
     let novaFuncao = req.body.funcao;
+    let flagAdministrador = req.body.flagAdministrador;
     let idFuncionario = req.params.idFuncionario;
 
-    funcionarioModel.editarFuncionario(novoNome, novoSobrenome, novoEmail, novoTelefone, novaFuncao, idFuncionario)
+    // FAZER LOGICA PARA ELE MUDAR O TIPO DE USUARIO
+    if(flagAdministrador == 'Administrador'){
+        
+
+    }
+
+    funcionarioModel.editarFuncionario(novoNome, novoSobrenome,novoCpf, novoEmail, novoTelefone, novaFuncao, idFuncionario)
         .then(
             function (resultado) {
                 res.json(resultado);

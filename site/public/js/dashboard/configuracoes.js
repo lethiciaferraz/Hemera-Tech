@@ -1,58 +1,57 @@
 var idEmpresa = Number(sessionStorage.getItem('ID_EMPRESA'));
-let abaSelecionada = null;
 
-function mudarAba(linkSection) {
-  let a = document.querySelector(`.abas nav a[data-target="${linkSection}"]`);
-
-  if (!a.classList.contains('selecionado')) {
-    let div = document.querySelector(`.abas .${linkSection}`);
-
-    // Remove a classe "selecionado" de todos os elementos antes de adicionar ao elemento atualmente selecionado
-    document.querySelectorAll('.abas nav a').forEach((link) => {
-      link.classList.remove('selecionado');
-    });
-
-    a.classList.add('selecionado');
-
+function exibirSection(sectionSelecionada){
     document.querySelectorAll('.abas section').forEach((sectionAtual) => {
-      if (sectionAtual == div) {
-        sectionAtual.style.display = 'block';
-      } else {
         sectionAtual.style.display = 'none';
-      }
     });
 
-    if (linkSection == 'abaEmpresa') {
-      MostrarDadosEmpresa();
-    } else if (linkSection == 'abaFuncionarios') {
-      MostrarListaFuncionarios();
-    } else if (linkSection == 'abaComputadores') {
-      MostrarListaComputadores();
-    }
-  }
+    // MOSTRA A SECTION 
+    let sectionExibir = document.querySelector(`.${sectionSelecionada}`);
+    sectionExibir.style.display = 'block';
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  let abas = document.querySelectorAll('.abas nav a');
+window.addEventListener('load', () => {
+    document.querySelectorAll('.abas nav a').forEach((a) => {
+        a.addEventListener('click', () => {
 
-  // Adiciona um evento de clique a todos os links para chamar a função mudarAba
-  abas.forEach((abas) => {
-    abas.addEventListener('click', (event) => {
-      event.preventDefault();
-      let linkSection = abas.getAttribute('data-target');
-      mudarAba(linkSection);
-    });
-  });
+            let f = a.parentNode.querySelector('a.selecionado')
 
-  if (abaSelecionada) {
-    // Restaura a classe "selecionado" no elemento correspondente
-    abaSelecionada.classList.add('selecionado');
-    let linkSection = abaSelecionada.getAttribute('data-target');
-    mudarAba(linkSection); // Chama a função mudarAba com o target correto
-  } else {
-    mudarAba('abaEmpresa'); // Chama a função mudarAba com a aba 'abaEmpresa' selecionada por padrão
-  }
-});
+            if (f) f.classList.remove('selecionado')
+            a.classList.add('selecionado')
+
+            // ADICIONEI ISO 
+            // criar variavel para guardar o elemento que foi clicado(o data target varia)
+            let div = document.querySelector(`.abas .${a.getAttribute('data-target')}`)
+
+            // pega todas as section dentro da div de classe abas
+            document.querySelectorAll('.abas section').forEach((sectionAtual) => {
+
+                // ele checa se é a mesma que foi clicada e some ou dá block nela
+                if (sectionAtual == div) {
+                    sectionAtual.style.display = 'block'
+                } else {
+                    sectionAtual.style.display = 'none'
+                }
+            })
+
+            // AQUI É PRA CHAMAR A FUNÇÃO DO GRÁFICO CORRESONDENTE A ABA
+            let selecionado = a.getAttribute('data-target');
+            if (selecionado === 'abaEmpresa') {
+                MostrarDadosEmpresa();
+              } else if (selecionado === 'abaFuncionarios') {
+                MostrarListaFuncionarios();
+              } else if (selecionado === 'abaComputadores') {
+                MostrarListaComputadores();
+              }
+            //   ---------------------------------------------
+        })
+
+        if (location.hash) {
+            document.querySelector('a[href="' + location.hash + '"]').click()
+        }
+    })
+})
+
 
 const nomeEmpresaInput = document.querySelector('#nome_empresa');
 const cnpjInput = document.querySelector('#cnpj_empresa');
@@ -180,6 +179,8 @@ let cpfFuncionarioInput = document.querySelector('#cpf_funcionario');
 let telefoneFuncionarioInput = document.querySelector('#telefone_funcionario');
 let emailFuncionarioInput = document.querySelector('#email_funcionario');
 let funcaoFuncionarioInput = document.querySelector('#funcao_funcionario');
+let tipoFuncionarioSelect = document.querySelector('#sel_tipo_usuario');
+
 
 // MostrarLista de funcionário
 function MostrarListaFuncionarios() {
@@ -241,7 +242,14 @@ function MostrarListaFuncionarios() {
                     dado2.innerHTML = publicacao.nome + " " + publicacao.sobrenome;
                     dado3.innerHTML = publicacao.funcao;
                     dado4.innerHTML = publicacao.email;
-                    dado5.innerHTML = publicacao.flagAdministrador;
+
+                    tipoUsuario = ""
+                    if(publicacao.flagAdministrador == true){
+                        tipoUsuario = 'Administrador';
+                    }else {
+                        tipoUsuario = 'Colaborador';
+                    }
+                    dado5.innerHTML = tipoUsuario;
                     funcaoEditar.innerHTML = "editar";
                     funcaoDeletar.innerHTML = "deletar";
 
@@ -294,23 +302,8 @@ function MostrarListaFuncionarios() {
     });
 }
 
-function adicionarFuncionario() {
-    // Selecionar a seção desejada
-    var secaoFuncionario = document.querySelector('.abaFuncionarioCadastrar');
-
-    // Exibir a seção do funcionário
-    secaoFuncionario.style.display = 'block';
-
-    // Ocultar outras seções, se necessário
-    document.querySelectorAll('.abas section').forEach((sectionAtual) => {
-        if (sectionAtual !== secaoFuncionario) {
-            sectionAtual.style.display = 'none';
-        }
-    });
-
-}
-
 function IrParaEditarFuncionario(funcionarioInformacoes) {
+    console.log(funcionarioInformacoes)
     // VERIFICA QUAL SECTION ESTÁ APARECENDO E DÁ NONE PRA ELA SUMIR
     document.querySelectorAll('.abas section').forEach((sectionAtual) => {
         sectionAtual.style.display = 'none';
@@ -325,11 +318,12 @@ function IrParaEditarFuncionario(funcionarioInformacoes) {
     // COLOCANDO AS INFORMAÇÕES DOS FUNCIONÁRIOS NOS INPUTS
     nomeFuncionarioInput.value = funcionarioInformacoes.nome;
     sobrenomeFuncionarioInput.value = funcionarioInformacoes.sobrenome;
+    cpfFuncionarioInput.value = funcionarioInformacoes.cpf;
     emailFuncionarioInput.value = funcionarioInformacoes.email;
     telefoneFuncionarioInput.value = funcionarioInformacoes.telefone;
     funcaoFuncionarioInput.value = funcionarioInformacoes.funcao;
-    document.querySelector('#sel_tipo_usuario').value = funcionarioInformacoes.tipo;
 
+    tipoFuncionarioSelect.value = funcionarioInformacoes.flagAdministrador ? 'administrador' : 'colaborador';
 
     let botaoEditarFuncionario = document.createElement("button");
     botaoEditarFuncionario.innerText = "Editar";
@@ -337,20 +331,10 @@ function IrParaEditarFuncionario(funcionarioInformacoes) {
 
     let botaoCancelarEditarFuncionario = document.createElement("button");
     botaoCancelarEditarFuncionario.innerText = "Cancelar";
-    botaoCancelarEditarFuncionario.setAttribute("onclick", `VoltarParaListaFuncionarios()`);
+    botaoCancelarEditarFuncionario.setAttribute("onclick", `exibirSection('abaFuncionarios')`);
 
     divBotoes.appendChild(botaoEditarFuncionario);
     divBotoes.appendChild(botaoCancelarEditarFuncionario);
-}
-
-function VoltarParaListaFuncionarios() {
-    // Ocultar a seção de edição
-    let secaoEditarFuncionario = document.querySelector('.abaFuncionarioEditar');
-    secaoEditarFuncionario.style.display = 'none';
-
-    // Mostrar a seção da lista de funcionários
-    let secaoListaFuncionarios = document.querySelector('.abaFuncionarios');
-    secaoListaFuncionarios.style.display = 'block';
 }
 
 function EditarFuncionario(idFuncionario) {
@@ -360,11 +344,13 @@ function EditarFuncionario(idFuncionario) {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            nome : nomeFuncionarioInput.value,
-            sobrenome : sobrenomeFuncionarioInput.value,
-            email : emailFuncionarioInput.value,
-            telefone : telefoneFuncionarioInput.value,            
-            funcao: funcaoFuncionarioInput.value
+            nome: nomeFuncionarioInput.value,
+            sobrenome: sobrenomeFuncionarioInput.value,
+            cpf: cpfFuncionarioInput.value,
+            email: emailFuncionarioInput.value,
+            telefone: telefoneFuncionarioInput.value,
+            funcao: funcaoFuncionarioInput.value,
+            flagAdministrador: tipoFuncionarioSelect.value
 
         })
     }).then(function (resposta) {

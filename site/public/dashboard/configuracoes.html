@@ -24,7 +24,6 @@
 
     <!-- ICONES -->
     <script src="https://kit.fontawesome.com/b176690e81.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
@@ -202,7 +201,7 @@
                             <nav style="margin-top: 0px;">
                                 <!-- <a style="border: 0; padding: 0;"> -->
                                 <!-- <a href="#abaFuncionarioEditar"> -->
-                                <button class="botaoEditarFuncionario" onclick="adicionarFuncionario()">Add
+                                <button class="botaoEditarFuncionario" onclick="exibirSection('abaFuncionarioCadastrar')">Add
                                     Funcionário</button>
                                 <!-- </a> -->
                                 <!-- </a> -->
@@ -260,34 +259,39 @@
                                         <div id="linha">
 
                                             <div class="campo">
-                                                <label class="user-label">Email: </label>
-                                                <input type="text" id="email_funcionario">
+                                                <label class="user-label">CPF: </label>
+                                                <input type="text" id="cpf_funcionario">
                                             </div>
 
                                             <div class="campo">
-                                                <label class="user-label">Telefone: </label>
-                                                <input type="text" id="telefone_funcionario">
+                                                <label class="user-label">Email: </label>
+                                                <input type="text" id="email_funcionario">
                                             </div>
 
 
                                         </div>
 
-
                                         <div id="linha">
+                                            <div class="campo">
+                                                <label class="user-label">Telefone: </label>
+                                                <input type="text" id="telefone_funcionario">
+                                            </div>
+    
                                             <div class="campo">
                                                 <label class="user-label">Função: </label>
                                                 <input type="text" id="funcao_funcionario">
                                             </div>
-
-                                            <div class="campo">
-                                                <div class="select_tipo">
-                                                    <select name="" id="sel_tipo_usuario">
-                                                        <option value="">Escolha o tipo de usuário</option>
-                                                        <option value="colaborador">Colaborador</option>
-                                                        <option value="administrador">Administrador</option>
-                                                    </select>
-                                                </div>
-                                            </div>
+    
+    
+                                        </div>
+    
+    
+                                        <div class="select_tipo">
+                                            <select name="" id="sel_tipo_usuario">
+                                                <option value="">Escolha o tipo de usuário</option>
+                                                <option value="colaborador">Colaborador</option>
+                                                <option value="administrador">Administrador</option>
+                                            </select>
                                         </div>
 
                                     </div>
@@ -375,7 +379,7 @@
                         </div>
 
                         <div class="botoes" id="botao_cadastro_funcionario">
-                            <button onclick="VoltarParaListaFuncionarios()">Cancelar</button>
+                            <button onclick="exibirSection('abaFuncionarios')">Cancelar</button>
                             <button id="bt_cadastrar_funcionario" onclick="CadastrarFuncionario()">Cadastrar</button>
                         </div>
                     </div>
