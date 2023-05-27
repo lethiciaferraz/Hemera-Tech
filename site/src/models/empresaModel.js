@@ -38,8 +38,27 @@ function listarEmpresa(idEmpresa) {
     return database.executar(instrucao);
 }
 
+function editarEmpresa(novoNome, novoEmail, novoCnpj, novoTelefone, novoCep, novoLogradouro, novoComplemento, idEmpresa) {
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", novoNome, novoEmail, novoCnpj, novoTelefone, novoCep, novoLogradouro, novoComplemento, idEmpresa);
+    var instrucao = `
+    UPDATE Empresa SET 
+    nome = '${novoNome}',
+    email = '${novoEmail}',
+    CNPJ = '${novoCnpj}',
+    telefone = '${novoTelefone}',
+	cep = '${novoCep}',
+	logradouro = '${novoLogradouro}',
+	complemento = '${novoComplemento}'
+WHERE idEmpresa = ${idEmpresa};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     cadastrar,
     listar,
     listarEmpresa,
+    editarEmpresa
+
 };

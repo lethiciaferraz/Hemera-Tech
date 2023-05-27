@@ -113,20 +113,10 @@
                     <a href="#aba1" data-target="abaEmpresa">Empresa</a>
                     <a href="#aba2" data-target="abaFuncionarios">Funcionários</a>
                     <a href="#aba3" data-target="abaComputadores">Computadores</a>
-
                 </nav>
 
                 <!-- ABA 1 -->
-
                 <section id="aba1" class="abaEmpresa">
-                    <!-- CADATRO FUNCIONARIO -->
-                    <div id="dados_empresa">
-
-                    
-                    </div>
-                </section>
-
-                <section id="aba1Editar">
                     <div id="dados_empresa">
 
                         <div class="foto_empresa">
@@ -135,7 +125,7 @@
                         </div>
 
                         <div class="caixa_dados">
-                            <div class="destaque_txt" id="div_destaque_txt_cadastro_funcionario">
+                            <div class="destaque_txt" id="texto_destaque_empresa">
                                 <h3>
                                     Empresa
                                 </h3>
@@ -150,12 +140,12 @@
                                         <div id="linha">
                                             <div class="campo">
                                                 <label class="user-label">Nome da Empresa: </label>
-                                                <!-- <input type="text" placeholder="Nome da Empresa"> -->
+                                                <input type="text" id="nome_empresa" placeholder="Nome da Empresa">
                                             </div>
 
                                             <div class="campo">
                                                 <label class="user-label">CNPJ: </label>
-                                                <!-- <input type="text" placeholder="Nome da Empresa"> -->
+                                                <input type="text" id="cnpj_empresa" placeholder="Nome da Empresa">
                                             </div>
                                         </div>
 
@@ -163,12 +153,12 @@
 
                                             <div class="campo">
                                                 <label class="user-label">Email: </label>
-                                                <!-- <input type="text" id="cpf_funcionario" placeholder="CPF"> -->
+                                                <input type="text" id="email_empresa" placeholder="CPF">
                                             </div>
 
                                             <div class="campo">
                                                 <label class="user-label">Telefone: </label>
-                                                <!-- <input type="text" id="email_funcionario" placeholder="E-mail"> -->
+                                                <input type="text" id="telefone_empresa" placeholder="E-mail">
                                             </div>
 
 
@@ -178,46 +168,229 @@
                                         <div id="linha">
                                             <div class="campo">
                                                 <label class="user-label">CEP: </label>
-                                                <!-- <input type="text" id="telefone_funcionario" placeholder="Telefone"> -->
+                                                <input type="text" id="cep_empresa" placeholder="Telefone">
                                             </div>
 
                                             <div class="campo">
                                                 <label class="user-label">Logradouro: </label>
-                                                <input type="text" id="funcao_funcionario" placeholder="Funcão">
+                                                <input type="text" id="logradouro_empresa" placeholder="Funcão">
                                             </div>
                                         </div>
 
                                         <div class="campo">
                                             <label class="user-label">Complemento: </label>
-                                            <!-- <input type="password" id="senha_funcionario placeholder=" Crie uma senha"> -->
+                                            <input type="text" id="complemento_empresa" placeholder="Crie uma senha">
                                         </div>
 
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="botoes" id="botao_cadastro_funcionario">
-                                <a href="configuracoes.html#EmpresaEditar">
-                                    <button>Editar</button>
-                                </a>
-
+                            <div class="botoes" id="botoes_dados_empresa">
+                                <button onclick="EditarEmpresa()" id="botao_editar">Editar</button>
                             </div>
                         </div>
 
                     </div>
+
                 </section>
 
                 <!-- ABA 2 -->
                 <section id="aba2" class="abaFuncionarios">
 
                     <div id="caixa_lista" class="lista_funcionarios">
+                        <div id="infos_principais">
+                            <h3>Lista de Funcionários</h3>
+                            <nav style="margin-top: 0px;">
+                                <!-- <a style="border: 0; padding: 0;"> -->
+                                <!-- <a href="#abaFuncionarioEditar"> -->
+                                <button class="botaoEditarFuncionario" onclick="adicionarFuncionario()">Add
+                                    Funcionário</button>
+                                <!-- </a> -->
+                                <!-- </a> -->
+                            </nav>
+                        </div>
+                        <div id="tracinho" style="margin-bottom: 20px;"></div>
+                        <div id="linha">
+                            <div id="titulo_cpf"><b>CPF</b></div>
+                            <div id="titulo"><b>Nome</b></div>
+                            <div id="titulo_cargo"><b>Função</b></div>
+                            <div id="titulo"><b>Email</b></div>
+                            <div id="titulo_tipo"><b>Tipo</b></div>
+                            <div id="titulo"></div>
+                        </div>
+                        <div id="tracinho" style="margin-bottom: 20px;"></div>
+
 
                     </div>
 
                 </section>
 
+                <section id="aba2Editar" class="abaFuncionarioEditar">
+                    <div id="dados_funcionario">
+
+                        <div class="foto_empresa">
+                            <img src="../assets/empresa-icone.jpg" alt="">
+
+                        </div>
+
+                        <div class="caixa_dados">
+                            <div class="destaque_txt" id="texto_destaque">
+                                <h3>
+                                    Editar Funcionário
+                                </h3>
+                            </div>
+
+                            <div class="caixa-formulario">
+
+                                <div id="dados_principais">
+
+                                    <div class="campos">
+
+                                        <div id="linha">
+                                            <div class="campo">
+                                                <label class="user-label">Nome: </label>
+                                                <input type="text" id="nome_funcionario">
+                                            </div>
+
+                                            <div class="campo">
+                                                <label class="user-label">Sobrenome: </label>
+                                                <input type="text" id="sobrenome_funcionario">
+                                            </div>
+                                        </div>
+
+                                        <div id="linha">
+
+                                            <div class="campo">
+                                                <label class="user-label">Email: </label>
+                                                <input type="text" id="email_funcionario">
+                                            </div>
+
+                                            <div class="campo">
+                                                <label class="user-label">Telefone: </label>
+                                                <input type="text" id="telefone_funcionario">
+                                            </div>
+
+
+                                        </div>
+
+
+                                        <div id="linha">
+                                            <div class="campo">
+                                                <label class="user-label">Função: </label>
+                                                <input type="text" id="funcao_funcionario">
+                                            </div>
+
+                                            <div class="campo">
+                                                <div class="select_tipo">
+                                                    <select name="" id="sel_tipo_usuario">
+                                                        <option value="">Escolha o tipo de usuário</option>
+                                                        <option value="colaborador">Colaborador</option>
+                                                        <option value="administrador">Administrador</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="botoes" id="botoes_dados_empresa">
+                                <button>Cancelar</button>
+                                <button onclick="EditarFuncionario()" id="botao_editar">Editar</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section id="aba2Cadastrar" class="abaFuncionarioCadastrar">
+                    <!-- CADATRO FUNCIONARIO -->
+                    <div id="caixa_cadastro">
+
+                        <div class="destaque_txt" id="div_destaque_txt_cadastro_funcionario">
+                            <h3>
+                                Cadastro de Funcionário
+                            </h3>
+                        </div>
+
+                        <div class="caixa-formulario">
+
+                            <div id="dados_principais">
+
+                                <div class="campos">
+
+                                    <div id="linha">
+                                        <div class="campo">
+                                            <label class="user-label">Nome: </label>
+                                            <input type="text" id="nome_funcionario">
+                                        </div>
+
+                                        <div class="campo">
+                                            <label class="user-label">Sobrenome: </label>
+                                            <input type="text" id="sobrenome_funcionario">
+                                        </div>
+                                    </div>
+
+                                    <div id="linha">
+
+                                        <div class="campo">
+                                            <label class="user-label">CPF: </label>
+                                            <input type="text" id="cpf_funcionario">
+                                        </div>
+
+                                        <div class="campo">
+                                            <label class="user-label">Email: </label>
+                                            <input type="text" id="email_funcionario">
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <div id="linha">
+                                        <div class="campo">
+                                            <label class="user-label">Telefone: </label>
+                                            <input type="text" id="telefone_funcionario">
+                                        </div>
+
+                                        <div class="campo">
+                                            <label class="user-label">Função: </label>
+                                            <input type="text" id="funcao_funcionario">
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <div class="select_tipo">
+                                        <select name="" id="sel_tipo_usuario">
+                                            <option value="">Escolha o tipo de usuário</option>
+                                            <option value="colaborador">Colaborador</option>
+                                            <option value="administrador">Administrador</option>
+                                        </select>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="botoes" id="botao_cadastro_funcionario">
+                            <!-- <a href="configuracoes.html#aba2"> -->
+                                <button onclick="MostrarListaFuncionarios()">Cancelar</button>
+                            <!-- </a> -->
+
+                            <button id="bt_cadastrar_funcionario" onclick="CadastrarFuncionario()">Cadastrar</button>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- ABA 3 -->
-                <section class="abaComputadores" id="aba3">
+                <section id="aba3" class="abaComputadores">
 
                     <div id="caixa_lista">
                         <div id="infos_principais">
@@ -309,92 +482,10 @@
 
                 </section>
 
-                <section id="ComputadoresCadastrar" id="ComputadoresCadastrar">
-                    <!-- CADATRO FUNCIONARIO -->
-                    <div id="caixa_cadastro">
+                <section id="aba3Editar" class="abaComputadorEditar">
 
-                        <div class="destaque_txt" id="div_destaque_txt_cadastro_funcionario">
-                            <h3>
-                                Cadastro de Funcionário
-                            </h3>
-                        </div>
-
-                        <div class="caixa-formulario">
-
-                            <div id="dados_principais">
-
-                                <div class="campos">
-
-                                    <div id="linha">
-                                        <div class="campo">
-                                            <input type="text" id="nome_funcionario" placeholder="Nome">
-                                        </div>
-
-                                        <div class="campo">
-                                            <input type="text" id="sobrenome_funcionario" placeholder="Sobrenome">
-                                        </div>
-                                    </div>
-
-                                    <div id="linha">
-
-                                        <div class="campo">
-                                            <input type="text" id="cpf_funcionario" placeholder="CPF">
-                                        </div>
-
-                                        <div class="campo">
-                                            <input type="text" id="email_funcionario" placeholder="E-mail">
-                                        </div>
-
-
-                                    </div>
-
-
-                                    <div id="linha">
-                                        <div class="campo">
-                                            <input type="text" id="telefone_funcionario" placeholder="Telefone">
-                                        </div>
-
-                                        <div class="campo">
-                                            <input type="text" id="funcao_funcionario" placeholder="Funcão">
-                                        </div>
-
-
-                                    </div>
-
-                                    <div id="linha">
-
-                                        <div class="campo">
-                                            <input type="password" id="senha_funcionario" placeholder="Crie uma senha">
-                                        </div>
-
-                                        <div class="campo">
-                                            <input type="password" id="confirmar_senha_funcionario"
-                                                placeholder="Confirme sua senha">
-                                        </div>
-                                    </div>
-
-                                    <div class="select_tipo">
-                                        <select name="" id="sel_tipo_usuario">
-                                            <option value="">Escolha o tipo de usuário</option>
-                                            <option value="colaborador">Colaborador</option>
-                                            <option value="administrador">Administrador</option>
-                                        </select>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="botoes" id="botao_cadastro_funcionario">
-                            <a href="configuracoes.html#aba2">
-                                <button>Cancelar</button>
-                            </a>
-
-                            <button id="bt_cadastrar_funcionario" onclick="CadastrarFuncionario()">Cadastrar</button>
-                        </div>
-                    </div>
                 </section>
+
 
             </div>
 

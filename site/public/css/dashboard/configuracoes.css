@@ -390,6 +390,16 @@ section{
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
 
 }
+
+#aba2Editar #dados_funcionario{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--caixa);
+    margin-top: 15px;
+    padding: 30px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+
+}
 /* 
 #aba1 #dados_empresa .caixa_dados .caixa-formulario #dados_principais .campos #linha {
     margin-top: 10px;
@@ -492,4 +502,8 @@ section{
     background-color: #812fcd00;
     color: #812FCD;
     transition: 0.8s;
+}
+
+.destaque_txt{
+    font-weight: var(--letraMedia);
 }

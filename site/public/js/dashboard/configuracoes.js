@@ -1,47 +1,59 @@
+
 var idEmpresa = Number(sessionStorage.getItem('ID_EMPRESA'));
 
 document.addEventListener('DOMContentLoaded', () => {
-    const linksAbas = document.querySelectorAll('.abas nav a');
+    let linksAbas = document.querySelectorAll('.abas nav a');
 
     linksAbas.forEach((a) => {
         if (!a.hasAttribute('data-listener')) {
             a.setAttribute('data-listener', true);
 
             a.addEventListener('click', () => {
-                let f = a.parentNode.querySelector('a.selecionado')
-
-                if (f) f.classList.remove('selecionado')
-                a.classList.add('selecionado')
-
-                let div = document.querySelector(`.abas .${a.getAttribute('data-target')}`)
-
-                document.querySelectorAll('.abas section').forEach((sectionAtual) => {
-                    if (sectionAtual == div) {
-                        sectionAtual.style.display = 'block'
-                    } else {
-                        sectionAtual.style.display = 'none'
-                    }
-                })
-
-                let selecionado = a.getAttribute('data-target')
-
-                if (selecionado) {
-                    if (selecionado == 'abaEmpresa') {
-                        MostrarDadosEmpresa()
-
-
-                    } else if (selecionado == 'abaFuncionarios') {
-                        MostrarListaFuncionarios()
-                        console.log('aba3')
-                    } else if (selecionado == 'abaComputadores') {
-                        MostrarListaComputadores()
-                    }
-                }
+                mudarAba(a.getAttribute('data-target'));
             });
         }
     });
 });
 
+function mudarAba(target) {
+    let a = document.querySelector(`.abas nav a[data-target="${target}"]`);
+
+
+    if (!a.classList.contains('selecionado')) {
+        let f = a.parentNode.querySelector('a.selecionado');
+
+        if (f) f.classList.remove('selecionado');
+        a.classList.add('selecionado');
+
+        let div = document.querySelector(`.abas .${target}`);
+
+        document.querySelectorAll('.abas section').forEach((sectionAtual) => {
+            if (sectionAtual == div) {
+                sectionAtual.style.display = 'block';
+            } else {
+                sectionAtual.style.display = 'none';
+            }
+        });
+
+        if (target == 'abaEmpresa') {
+            MostrarDadosEmpresa();
+        } else if (target == 'abaFuncionarios') {
+            MostrarListaFuncionarios();
+        } else if (target == 'abaComputadores') {
+            MostrarListaComputadores();
+        }
+    }
+}
+
+
+const nomeEmpresaInput = document.querySelector('#nome_empresa');
+const cnpjInput = document.querySelector('#cnpj_empresa');
+const emailInput = document.querySelector('#email_empresa');
+const telefoneInput = document.querySelector('#telefone_empresa');
+const cepInput = document.querySelector('#cep_empresa');
+const complementoInput = document.querySelector('#complemento_empresa');
+const logradouroInput = document.querySelector('#logradouro_empresa');
+const botoesEmpresa = document.querySelector('#botoes_dados_empresa');
 
 function MostrarDadosEmpresa() {
     //aguardar();
@@ -58,166 +70,37 @@ function MostrarDadosEmpresa() {
 
             resposta.json().then(function (resposta) {
                 console.log("Dados recebidos: ", JSON.stringify(resposta));
+                texto_destaque_empresa.innerHTML = '';
+                texto_destaque_empresa.innerHTML = '<h3>Dados da Empresa</h3>'
 
-                var divDadosEmpresa = document.getElementById("dados_empresa");
-
-                divDadosEmpresa.innerHTML = "";
+                var botaoExistente = document.querySelector("#botao_cancelar");
+                if (botaoExistente) {
+                    // Remove o botão se ele existir
+                    botoesEmpresa.removeChild(botaoExistente);
+                }
 
                 for (let i = 0; i < resposta.length; i++) {
                     var publicacao = resposta[i];
 
-                    // criando e manipulando elementos do HTML via JavaScript
-                    var divFotoEmpresa = document.createElement("div");
-                    divFotoEmpresa.className = "foto_empresa";
-                    var imgEmpresa = document.createElement("img");
-                    imgEmpresa.src = "../assets/empresa-icone.jpg";
-                    divFotoEmpresa.appendChild(imgEmpresa);
-                    var divCaixaDados = document.createElement("div");
-                    divCaixaDados.className = "caixa_dados";
 
-                    var divDestaqueTxt = document.createElement("div");
-                    divDestaqueTxt.className = "destaque_txt";
-                    divDestaqueTxt.id = "div_destaque_txt_cadastro_funcionario";
-                    var h3Empresa = document.createElement("h3");
-                    h3Empresa.textContent = "Empresa";
-                    divDestaqueTxt.appendChild(h3Empresa);
-
-                    // CRIANDO A CAIXA DE FORMULARIO QUE VAI LISTAR OS DADOS
-                    var divCaixaFormulario = document.createElement("div");
-                    divCaixaFormulario.className = "caixa-formulario";
-
-                    // DADOS DA CAIXA
-
-                    var divCampos = document.createElement("div");
-                    divCampos.className = "campos";
-                    // ----------------------------------------------------------------------
-                    var divLinha1 = document.createElement("div");
-                    divLinha1.id = "linha";
-
-                    var divCampo1 = document.createElement("div");
-                    divCampo1.className = "campo";
-                    var labelNomeEmpresa = document.createElement("label");
-                    labelNomeEmpresa.className = "user-label";
-                    labelNomeEmpresa.textContent = "Nome da Empresa: ";
-                    var inputNomeEmpresa = document.createElement("input");
-                    inputNomeEmpresa.type = "text";
-                    inputNomeEmpresa.placeholder = publicacao.nome;
-                    inputNomeEmpresa.disabled = true;
-                    // inputNomeEmpresa.value = publicacao.nome;
-
-                    divCampo1.appendChild(labelNomeEmpresa);
-                    divCampo1.appendChild(inputNomeEmpresa);
-
-                    var divCampo2 = document.createElement("div");
-                    divCampo2.className = "campo";
-                    var labelCNPJ = document.createElement("label");
-                    labelCNPJ.className = "user-label";
-                    labelCNPJ.textContent = "CNPJ: ";
-                    var inputCNPJ = document.createElement("input");
-                    inputCNPJ.type = "text";
-                    inputCNPJ.placeholder = publicacao.CNPJ;
-                    inputCNPJ.disabled = true;
-                    // inputCNPJ.value = publicacao.CNPJ;
-
-                    divCampo2.appendChild(labelCNPJ);
-                    divCampo2.appendChild(inputCNPJ);
-
-                    divLinha1.appendChild(divCampo1);
-                    divLinha1.appendChild(divCampo2);
-                    // ----------------------------------------------------------------------
-
-                    var divLinha2 = document.createElement("div");
-                    divLinha2.id = "linha";
-
-                    var divCampo3 = document.createElement("div");
-                    divCampo3.className = "campo";
-                    var labelEmail = document.createElement("label");
-                    labelEmail.className = "user-label";
-                    labelEmail.textContent = "Email: ";
-                    var inputEmail = document.createElement("input");
-                    inputEmail.type = "text";
-                    inputEmail.id = "cpf_funcionario";
-                    inputEmail.placeholder = publicacao.email;
-                    inputEmail.disabled = true;
-                    divCampo3.appendChild(labelEmail);
-                    divCampo3.appendChild(inputEmail);
-
-                    var divCampo4 = document.createElement("div");
-                    divCampo4.className = "campo";
-                    var labelTelefone = document.createElement("label");
-                    labelTelefone.className = "user-label";
-                    labelTelefone.textContent = "Telefone: ";
-                    var inputTelefone = document.createElement("input");
-                    inputTelefone.type = "text";
-                    inputTelefone.id = "email_funcionario";
-                    inputTelefone.placeholder = publicacao.telefone;
-                    inputTelefone.disabled = true;
-                    divCampo4.appendChild(labelTelefone);
-                    divCampo4.appendChild(inputTelefone);
-
-                    divLinha2.appendChild(divCampo3);
-                    divLinha2.appendChild(divCampo4);
-                    // ----------------------------------------------------------------------
-
-                    var divLinha3 = document.createElement("div");
-                    divLinha3.id = "linha";
-
-                    var divCampo5 = document.createElement("div");
-                    divCampo5.className = "campo";
-                    var labelCEP = document.createElement("label");
-                    labelCEP.className = "user-label";
-                    labelCEP.textContent = "CEP: ";
-                    var inputCEP = document.createElement("input");
-                    inputCEP.type = "text";
-                    inputCEP.id = "telefone_funcionario";
-                    inputCEP.placeholder = publicacao.cep;
-                    inputCEP.disabled = true;
-                    divCampo5.appendChild(labelCEP);
-                    divCampo5.appendChild(inputCEP);
-
-                    var divCampo6 = document.createElement("div");
-                    divCampo6.className = "campo";
-                    var labelLogradouro = document.createElement("label");
-                    labelLogradouro.className = "user-label";
-                    labelLogradouro.textContent = "Logradouro: ";
-                    var inputLogradouro = document.createElement("input");
-                    inputLogradouro.type = "text";
-                    inputLogradouro.id = "funcao";
-                    inputLogradouro.placeholder = publicacao.logradouro;
-                    inputLogradouro.disabled = true;
-                    divCampo6.appendChild(labelLogradouro);
-                    divCampo6.appendChild(inputLogradouro);
-
-                    divLinha3.appendChild(divCampo5);
-                    divLinha3.appendChild(divCampo6);
+                    // desabilitando a edição
+                    nomeEmpresaInput.setAttribute('disabled', 'true');
+                    cnpjInput.setAttribute('disabled', 'true');
+                    emailInput.setAttribute('disabled', 'true');
+                    telefoneInput.setAttribute('disabled', 'true');
+                    cepInput.setAttribute('disabled', 'true');
+                    logradouroInput.setAttribute('disabled', 'true');
+                    complementoInput.setAttribute('disabled', 'true');
 
 
-                    // ----------------------------------------------------------------------
-
-                    var divBotoes = document.createElement("div");
-                    divBotoes.className = "botoes";
-                    divBotoes.id = "botao_cadastro_funcionario";
-                    var linkEditar = document.createElement("a");
-                    linkEditar.href = "configuracoes.html#EmpresaEditar";
-                    var buttonEditar = document.createElement("button");
-                    buttonEditar.textContent = "Editar";
-                    linkEditar.appendChild(buttonEditar);
-                    divBotoes.appendChild(linkEditar);
-
-                    // Inserir os elementos na estrutura correta
-                    divDadosEmpresa.appendChild(divFotoEmpresa);
-                    divDadosEmpresa.appendChild(divCaixaDados);
-
-                    divCaixaDados.appendChild(divDestaqueTxt);
-                    divCaixaDados.appendChild(divCaixaFormulario);
-
-                    divCampos.appendChild(divLinha1);
-                    divCampos.appendChild(divLinha2);
-                    divCampos.appendChild(divLinha3);
-
-                    divCaixaDados.appendChild(divBotoes);
-
-                    divCaixaFormulario.appendChild(divCampos);
+                    // colocando os dados da empresa
+                    nomeEmpresaInput.value = publicacao.nome;
+                    emailInput.value = publicacao.email;
+                    cnpjInput.value = publicacao.CNPJ;
+                    telefoneInput.value = publicacao.telefone;
+                    cepInput.value = publicacao.cep;
+                    logradouroInput.value = publicacao.logradouro;
+                    complementoInput.value = publicacao.complemento;
                 }
 
                 // finalizarAguardar();
@@ -231,21 +114,74 @@ function MostrarDadosEmpresa() {
     });
 }
 
+function EditarEmpresa() {
+    if (nomeEmpresaInput.disabled) {
+        // VERIFIFANDO SE OS CAMPOS ESTAO HABILITADOS PARA EDIÇÃO,PARA HABILITALOS
+        texto_destaque_empresa.innerHTML = '';
+        texto_destaque_empresa.innerHTML = '<h3> Editar Dados da Empresa</h3>'
+        nomeEmpresaInput.removeAttribute('disabled');
+        cnpjInput.removeAttribute('disabled');
+        emailInput.removeAttribute('disabled');
+        telefoneInput.removeAttribute('disabled');
+        cepInput.removeAttribute('disabled');
+        logradouroInput.removeAttribute('disabled');
+        complementoInput.removeAttribute('disabled');
 
-function MostrarListaComputadores() {
-    alert('computadores');
+        let botaoCancelar = document.createElement("button");
+        botaoCancelar.textContent = "Cancelar";
+        botaoCancelar.id = 'botao_cancelar'
+        botaoCancelar.onclick = MostrarDadosEmpresa;
+
+        botoesEmpresa.appendChild(botaoCancelar);
+
+    } else {
+        fetch(`/empresas/editarEmpresa/${idEmpresa}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nome: nomeEmpresaInput.value,
+                cnpj: cnpjInput.value,
+                email: emailInput.value,
+                telefone: telefoneInput.value,
+                cep: cepInput.value,
+                logradouro: logradouroInput.value,
+                complemento: complementoInput.value
+            })
+        }).then(function (resposta) {
+
+            if (resposta.ok) {
+                window.alert("Dados da empresa atualizados com sucesso pelo usuario" + sessionStorage.getItem("NOME_USUARIO") + "!");
+                MostrarDadosEmpresa();
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar editar os dados Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+    }
 }
+
+const nomeFuncionarionput = document.querySelector('#nome_funcionario');
+const sobrenomeFuncionarioInput = document.querySelector('#sobrenome_funcionario');
+const cpfFuncionarioInput = document.querySelector('#email_funcionario');
+const telefoneFuncionarioInput = document.querySelector('#telefone_funcionario');
+const emailFuncionarioInput = document.querySelector('#email_funcionario');
+const funcaoFuncionarioInput = document.querySelector('#telefone_empresa');
 
 
 // MostrarLista de funcionário
 function MostrarListaFuncionarios() {
-    console.log(idEmpresa)
     //aguardar();
-    console.log("OIIIIII")
     fetch(`/funcionarios/listarFuncionarios/${idEmpresa}`).then(function (resposta) {
         if (resposta.ok) {
             if (resposta.status == 204) {
-                var feed = document.getElementsByClassName("lista_funcionarios");
+                var feed =document.getElementsByClassName("lista_funcionarios")[0];
+                
                 var mensagem = document.createElement("span");
                 mensagem.innerHTML = "Nenhum resultado encontrado."
                 feed.appendChild(mensagem);
@@ -257,91 +193,19 @@ function MostrarListaFuncionarios() {
 
                 var feed = document.getElementsByClassName("lista_funcionarios")[0];
 
-                feed.innerHTML = "";
+                // Remover linhas antigas (exceto o título)
 
-                var infosPrincipais = document.createElement("div");
-                infosPrincipais.id = "infos_principais";
-
-                var titulo = document.createElement("h3");
-                titulo.textContent = "Lista de Funcionários";
-
-                var nav = document.createElement("nav");
-                nav.style.marginTop = "0px";
-
-                var linkCadastrar = document.createElement("a");
-                linkCadastrar.href = "#FuncionarioCadastrar";
-                linkCadastrar.style.border = "0";
-                linkCadastrar.style.padding = "0px";
-
-                var botaoCadastrar = document.createElement("button");
-                botaoCadastrar.textContent = "Add Funcionário";
-
-                var tracinho1 = document.createElement("div");
-                tracinho1.id = "tracinho";
-                tracinho1.style.marginBottom = "20px";
-
-                var linha = document.createElement("div");
-                linha.id = "linha";
-
-                var tituloCpf = document.createElement("div");
-                tituloCpf.id = "titulo_cpf";
-                var cpf = document.createElement("b");
-                cpf.textContent = "CPF";
-                tituloCpf.appendChild(cpf);
-
-                var tituloNome = document.createElement("div");
-                tituloNome.id = "titulo";
-                var nome = document.createElement("b");
-                nome.textContent = "Nome";
-                tituloNome.appendChild(nome);
-
-                var tituloCargo = document.createElement("div");
-                tituloCargo.id = "titulo_cargo";
-                var cargo = document.createElement("b");
-                cargo.textContent = "Função";
-                tituloCargo.appendChild(cargo);
-
-                var tituloEmail = document.createElement("div");
-                tituloEmail.id = "titulo";
-                var email = document.createElement("b");
-                email.textContent = "Email";
-                tituloEmail.appendChild(email);
-
-                var tituloTipo = document.createElement("div");
-                tituloTipo.id = "titulo_tipo";
-                var tipo = document.createElement("b");
-                tipo.textContent = "Tipo";
-                tituloTipo.appendChild(tipo);
-
-                var tituloEditar = document.createElement("div");
-                tituloEditar.id = "titulo";
-
-                var tracinho2 = document.createElement("div");
-                tracinho2.id = "tracinho";
-                tracinho2.style.marginBottom = "20px";
-
-                // Organização dos elementos na estrutura HTML
-                linkCadastrar.appendChild(botaoCadastrar);
-                nav.appendChild(linkCadastrar);
-
-                infosPrincipais.appendChild(titulo);
-                infosPrincipais.appendChild(nav);
-
-                linha.appendChild(tituloCpf);
-                linha.appendChild(tituloNome);
-                linha.appendChild(tituloCargo);
-                linha.appendChild(tituloEmail);
-                linha.appendChild(tituloTipo);
-                linha.appendChild(tituloEditar);
-
-                // Inserção dos elementos no documento
-                feed.appendChild(infosPrincipais);
-                feed.appendChild(tracinho1);
-                feed.appendChild(linha);
-                feed.appendChild(tracinho2);
+                var linhasAntigas = feed.querySelectorAll("#linha ~ div:not(#titulo)");
+                linhasAntigas.forEach(function (linhaAntiga) {
+                    linhaAntiga.remove();
+                });
 
                 for (let i = 0; i < resposta.length; i++) {
                     var publicacao = resposta[i];
+
+                    var tracinho = document.createElement("div");
+                    tracinho.id = "tracinho";
+                    tracinho.style.marginBottom = "20px";
 
                     // CRIAR ELEMENTOS
                     var divLinha = document.createElement("div");
@@ -367,10 +231,6 @@ function MostrarListaFuncionarios() {
                     var divDeletar = document.createElement("div");
                     var funcaoDeletar = document.createElement("div");
 
-                    var tracinho = document.createElement("div");
-                    tracinho.id = "tracinho";
-                    tracinho.style.marginBottom = "20px";
-
                     dado1.innerHTML = publicacao.cpf;
                     dado2.innerHTML = publicacao.nome + " " + publicacao.sobrenome;
                     dado3.innerHTML = publicacao.funcao;
@@ -386,7 +246,7 @@ function MostrarListaFuncionarios() {
                     divDado4.id = "dado_email";
                     divDado5.id = "dado_tipoUsuario";
                     divEditar.id = "editar";
-                    divEditar.setAttribute("onclick", `editarFuncionario(${publicacao.idFuncionario})`);
+                    divEditar.setAttribute("onclick", `IrParaEditarFuncionario(${JSON.stringify(publicacao)})`);
 
                     divDeletar.id = "deletar";
                     divDeletar.setAttribute("onclick", `deletarFuncionario(${publicacao.idFuncionario})`);
@@ -409,12 +269,15 @@ function MostrarListaFuncionarios() {
                     divDeletar.appendChild(funcaoDeletar);
 
 
-                    feed.appendChild(divLinha);
                     feed.appendChild(tracinho);
-
+                    feed.appendChild(divLinha);
                 }
-
+                var tracinhoFinal = document.createElement("div");
+                tracinhoFinal.id = "tracinho";
+                tracinhoFinal.style.marginBottom = "10px";
                 // finalizarAguardar();
+                feed.appendChild(tracinhoFinal);
+
             });
         } else {
             throw ('Houve um erro na API!');
@@ -425,27 +288,41 @@ function MostrarListaFuncionarios() {
     });
 }
 
+function adicionarFuncionario() {
+    // Selecionar a seção desejada
+    var secaoFuncionario = document.querySelector('.abaFuncionarioCadastrar');
+  
+    // Exibir a seção do funcionário
+    secaoFuncionario.style.display = 'block';
+  
+    // Ocultar outras seções, se necessário
+    document.querySelectorAll('.abas section').forEach((sectionAtual) => {
+      if (sectionAtual !== secaoFuncionario) {
+        sectionAtual.style.display = 'none';
+      }
+    });
 
-// function editarFuncionario(idFuncionario,idEmpresa) {
+  }
 
-//     var tabela = document.querySelector('.tabela');
-//     for (var i = 1; i < tabela.rows.length; i++) {
-//         var idCelula = tabela.rows[i].cells[0];
-//         if (idCelula.textContent == idAviso) {
-//             var nomeCelula = tabela.rows[i].cells[1];
-//             var cargoCelula = tabela.rows[i].cells[2];
-//             var emailCelula = tabela.rows[i].cells[3];
+function IrParaEditarFuncionario(funcionarioInformacoes) {
+    document.querySelector('#nome_funcionario').value = funcionarioInformacoes.nome;
+    document.querySelector('#sobrenome_funcionario').value = funcionarioInformacoes.sobrenome;
+    document.querySelector('#email_funcionario').value = funcionarioInformacoes.email;
+    document.querySelector('#telefone_funcionario').value = funcionarioInformacoes.telefone;
+    document.querySelector('#funcao_funcionario').value = funcionarioInformacoes.funcao;
+    // Exibe a seção de edição e oculta as outras seções
+    var secaoFuncionario = document.querySelector('.abaFuncionarioEditar');
+    secaoFuncionario.style.display = 'block';
+    document.querySelector('#sel_tipo_usuario').value = funcionarioInformacoes.tipo;
+    
+      document.querySelectorAll('.abas section').forEach((sectionAtual) => {
+        if (sectionAtual !== secaoFuncionario) {
+          sectionAtual.style.display = 'none';
+        }
+      });
+ 
+  }
 
-//             sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
-//             sessionStorage.NOME_EDITANDO = nomeCelula.textContent;
-//             sessionStorage.CARGO_EDITANDO = cargoCelula.textContent;
-//             sessionStorage.EMAIL_EDITANDO = emailCelula.textContent;
-//             window.location = "editfunc.html";
-
-//             break;
-//         }
-//     }
-// }
 
 function deletarFuncionario(idFuncionario) {
     console.log("FUNCIONÁRIO A SER DELETADO - ID" + idFuncionario);
@@ -470,4 +347,8 @@ function deletarFuncionario(idFuncionario) {
     }).catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
     });
+}
+
+function MostrarListaComputadores() {
+    alert('computadores');
 }

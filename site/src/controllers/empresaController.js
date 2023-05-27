@@ -96,9 +96,37 @@ function listarEmpresa(req, res) {
         );
 }
 
+function editarEmpresa(req, res) {
+    var novoNome = req.body.nome;
+    var novoEmail = req.body.email;
+    var novoCnpj = req.body.cnpj;
+    var novoTelefone = req.body.telefone;
+    var novoCep = req.body.cep;
+    var novoLogradouro  = req.body.logradouro;
+    var novoComplemento = req.body.complemento;
+
+    var idEmpresa = req.params.idEmpresa;
+
+    empresaModel.editarEmpresa(novoNome, novoEmail, novoCnpj, novoTelefone, novoCep, novoLogradouro, novoComplemento, idEmpresa)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+
+}
+
 module.exports = {
     cadastrar,
     listar,
     testar,
     listarEmpresa,
+    editarEmpresa,
 }
