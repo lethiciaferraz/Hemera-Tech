@@ -108,9 +108,10 @@ function CadastrarEmpresa() {
 
                 resposta.json().then(function(response) {
                     console.log(response);
-
-                    sessionStorage.EMPRESA = response[0];
-                    // sessionStorage.ID_EMPRESA = 1
+                    // max_uso_cpu, max_utilizado_memoria, max_utilizado_armazenamento, max_download_rede, max_upload_rede, idEmpresa
+                    sessionStorage.ID_EMPRESA = response[0].idEmpresa;
+                    sessionStorage.PARAMETROS = response[0]
+                        // sessionStorage.ID_EMPRESA = 1
 
                     console.log('DEU BOM');
 

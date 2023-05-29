@@ -11,6 +11,7 @@ var app = express();
 var funcionarioRouter = require("./src/routes/funcionarios");
 var empresaRouter = require("./src/routes/empresas");
 var graficoRouter = require("./src/routes/graficos");
+var computadorRouter = require("./src/routes/computadores");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -21,6 +22,7 @@ app.use(cors());
 app.use("/funcionarios", funcionarioRouter);
 app.use("/empresas", empresaRouter);
 app.use("/graficos", graficoRouter);
+app.use("/computadores", computadorRouter);
 
 app.listen(PORTA, function() {
     console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${PORTA} \n
