@@ -1,4 +1,3 @@
-
 var idEmpresa = Number(sessionStorage.getItem('ID_EMPRESA'));
 
 function exibirSection(sectionSelecionada) {
@@ -9,6 +8,14 @@ function exibirSection(sectionSelecionada) {
     // MOSTRA A SECTION 
     let sectionExibir = document.querySelector(`.${sectionSelecionada}`);
     sectionExibir.style.display = 'block';
+
+    // if (selecionado === 'abaEmpresa') {
+    //     MostrarDadosEmpresa();
+    // } else if (selecionado === 'abaFuncionarios') {
+    //     MostrarListaFuncionarios();
+    // } else if (selecionado === 'abaComputadores') {
+    //     MostrarListaComputadores();
+    // }
 }
 
 window.addEventListener('load', () => {
@@ -62,6 +69,8 @@ const cepInput = document.querySelector('#cep_empresa');
 const complementoInput = document.querySelector('#complemento_empresa');
 const logradouroInput = document.querySelector('#logradouro_empresa');
 const botoesEmpresa = document.querySelector('#botoes_dados_empresa');
+const botaoEditar = document.querySelector('#botao_editar');
+
 
 function MostrarDadosEmpresa() {
     //aguardar();
@@ -75,21 +84,20 @@ function MostrarDadosEmpresa() {
                 feed.appendChild(mensagem);
                 throw "Nenhum resultado encontrado!!";
             }
-
             resposta.json().then(function (resposta) {
                 console.log("Dados recebidos: ", JSON.stringify(resposta));
-                texto_destaque_empresa.innerHTML = '';
-                texto_destaque_empresa.innerHTML = '<h3>Dados da Empresa</h3>'
-
+                texto_destaque.innerHTML = '';
+                texto_destaque.innerHTML = '<h3>Dados da Empresa</h3>'
+                // botoes_dados_empresa.innerHTML = '';
                 var botaoExistente = document.querySelector("#botao_cancelar");
                 if (botaoExistente) {
                     // Remove o botão se ele existir
                     botoesEmpresa.removeChild(botaoExistente);
+
                 }
 
                 for (let i = 0; i < resposta.length; i++) {
                     var publicacao = resposta[i];
-
 
                     // desabilitando a edição
                     nomeEmpresaInput.setAttribute('disabled', 'true');
@@ -109,6 +117,15 @@ function MostrarDadosEmpresa() {
                     cepInput.value = publicacao.cep;
                     logradouroInput.value = publicacao.logradouro;
                     complementoInput.value = publicacao.complemento;
+
+                    botaoEditar.textContent = "Editar Dados";
+
+                    // botoes_dados_empresa.innerHTML = '<button onclick="EditarEmpresa()" id="botao_editar">Editar Dados</button>';
+
+
+
+                    // botoesEmpresa.appendChild(botaoEditar);
+
                 }
 
                 // finalizarAguardar();
@@ -125,8 +142,8 @@ function MostrarDadosEmpresa() {
 function EditarEmpresa() {
     if (nomeEmpresaInput.disabled) {
         // VERIFIFANDO SE OS CAMPOS ESTAO HABILITADOS PARA EDIÇÃO,PARA HABILITALOS
-        texto_destaque_empresa.innerHTML = '';
-        texto_destaque_empresa.innerHTML = '<h3> Editar Dados da Empresa</h3>'
+        texto_destaque.innerHTML = '';
+        texto_destaque.innerHTML = '<h3> Editar Dados da Empresa</h3>'
         nomeEmpresaInput.removeAttribute('disabled');
         cnpjInput.removeAttribute('disabled');
         emailInput.removeAttribute('disabled');
@@ -140,6 +157,7 @@ function EditarEmpresa() {
         botaoCancelar.id = 'botao_cancelar'
         botaoCancelar.onclick = MostrarDadosEmpresa;
 
+        botaoEditar.textContent = "Salvar alterações";
         botoesEmpresa.appendChild(botaoCancelar);
 
     } else {
@@ -160,8 +178,26 @@ function EditarEmpresa() {
         }).then(function (resposta) {
 
             if (resposta.ok) {
-                window.alert("Dados da empresa atualizados com sucesso pelo usuario" + sessionStorage.getItem("NOME_USUARIO") + "!");
-                MostrarDadosEmpresa();
+                // window.alert("Dados da empresa atualizados com sucesso pelo usuario" + sessionStorage.getItem("NOME_USUARIO") + "!"
+                let timerInterval
+                Swal.fire({
+                    title: 'Alterações salvas com sucesso!',
+                    //   html: 'I will close in <b></b> milliseconds.',
+                    timer: 1200,
+                    //              timerProgressBar: true,
+                    icon: 'success',
+                    showConfirmButton: false,
+                    willClose: () => {
+                        clearInterval(timerInterval)
+                    }
+                }).then((result) => {
+                    /* Read more about handling dismissals below */
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                        console.log('salvo com sucesso')
+                        MostrarDadosEmpresa()
+                    }
+                })
+
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -326,7 +362,7 @@ function IrParaEditarFuncionario(funcionarioInformacoes) {
     tipoFuncionarioSelect.value = funcionarioInformacoes.flagAdministrador ? 'administrador' : 'colaborador';
 
     let botaoEditarFuncionario = document.createElement("button");
-    botaoEditarFuncionario.innerText = "Editar";
+    botaoEditarFuncionario.innerText = "Salvar alterações";
     botaoEditarFuncionario.setAttribute("onclick", `EditarFuncionario(${funcionarioInformacoes.idFuncionario})`);
 
     let botaoCancelarEditarFuncionario = document.createElement("button");
@@ -363,8 +399,28 @@ function EditarFuncionario(idFuncionario) {
     }).then(function (resposta) {
 
         if (resposta.ok) {
-            window.alert("Informações do funcionário atualizadas com sucesso: " + sessionStorage.getItem("NOME_USUARIO") + "!");
             // window.location = "/dashboard/mural.html"
+
+            let timerInterval
+            Swal.fire({
+                title: 'Alterações salvas com sucesso!',
+                //   html: 'I will close in <b></b> milliseconds.',
+                timer: 1200,
+                //              timerProgressBar: true,
+                icon: 'success',
+                showConfirmButton: false,
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log('salvo com sucesso')
+                    exibirSection('abaFuncionarios')
+                }
+            })
+
+
         } else if (resposta.status == 404) {
             window.alert("Deu 404!");
         } else {
@@ -377,16 +433,32 @@ function EditarFuncionario(idFuncionario) {
 
 function deletarFuncionario(idFuncionario) {
     console.log("FUNCIONÁRIO A SER DELETADO - ID" + idFuncionario);
+    Swal.fire({
+        title: 'Tem certeza?',
+        //     text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: 'Deletar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            fetch(`/funcionarios/deletarFuncionario/${idFuncionario}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }).then(function (resposta) {
 
-    fetch(`/funcionarios/deletarFuncionario/${idFuncionario}`, {
-        method: "DELETE",
-        headers: {
-            "Content-Type": "application/json"
-        }
-    }).then(function (resposta) {
+                if (resposta.ok) {
+                    // window.alert("Funcionário deletado com sucesso " + sessionStorage.getItem("NOME_USUARIO") + "!");
+                    Swal.fire(
+                        'Funcionário deletado'
+                    )
+                }
+            })
 
-        if (resposta.ok) {
-            window.alert("Funcionário deletado com sucesso " + sessionStorage.getItem("NOME_USUARIO") + "!");
             MostrarListaFuncionarios();
             console.log("deletado com sucesso")
         } else if (resposta.status == 404) {
@@ -515,6 +587,7 @@ function MostrarListaComputadores() {
 
 let macAddressComputadorInput = document.querySelector('#macAddress_computador');
 let sistemaOperacionalComputadorInput = document.querySelector('#sistemaOperacional_computador');
+let modeloProcessadorComputadorInput = document.querySelector('#modeloProcessador_computador');
 let totalRamComputadorInput = document.querySelector('#totalRam_computador');
 let totalDiscoComputadorInput = document.querySelector('#totalDisco_computador');
 
@@ -534,9 +607,10 @@ function IrParaEditarComputador(computadorInformacoes) {
     // COLOCANDO AS INFORMAÇÕES DOS Computadores NOS INPUTS
     macAddressComputadorInput.value = computadorInformacoes.MacAddress;
     sistemaOperacionalComputadorInput.value = computadorInformacoes.sistema_operacional;
+    modeloProcessadorComputadorInput.value = computadorInformacoes.modelo;
     totalRamComputadorInput.value = computadorInformacoes.total_memoria;
     totalDiscoComputadorInput.value = computadorInformacoes.total_armazenamento;
-  
+
 
     let botaoEditarComputador = document.createElement("button");
     botaoEditarComputador.innerText = "Editar";
@@ -548,4 +622,94 @@ function IrParaEditarComputador(computadorInformacoes) {
 
     divBotoes.appendChild(botaoEditarComputador);
     divBotoes.appendChild(botaoCancelarEditarComputador);
+}
+
+
+function EditarComputador(idComputador) {
+
+    fetch(`/computadores/editarComputador/${idComputador}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            sistemaOperacional: sistemaOperacionalComputadorInput.value,
+            modelo: modeloProcessadorComputadorInput.value,
+            totalRam: totalRamComputadorInput.value,
+            totalDisco: totalDiscoComputadorInput.value,
+
+        })
+    }).then(function (resposta) {
+
+        if (resposta.ok) {
+            // window.location = "/dashboard/mural.html"
+
+            let timerInterval
+            Swal.fire({
+                title: 'Alterações salvas com sucesso!',
+                //   html: 'I will close in <b></b> milliseconds.',
+                timer: 1200,
+                //              timerProgressBar: true,
+                icon: 'success',
+                showConfirmButton: false,
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log('salvo com sucesso')
+                    exibirSection('abaComputadores')
+                }
+            })
+
+
+        } else if (resposta.status == 404) {
+            window.alert("Deu 404!");
+        } else {
+            throw ("Houve um erro ao tentar editar dados do computador! Código da resposta: " + resposta.status);
+        }
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
+}
+
+function deletarComputador(idComputador) {
+    console.log("COMPUTADOR A SER DELETADO - ID" + idComputador);
+    Swal.fire({
+        title: 'Tem certeza?',
+        //     text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: 'Deletar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            fetch(`/computadores/deletarComputador/${idComputador}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }).then(function (resposta) {
+
+                if (resposta.ok) {
+                    // window.alert("Funcionário deletado com sucesso " + sessionStorage.getItem("NOME_USUARIO") + "!");
+                    Swal.fire(
+                        'Computador deletado'
+                    )
+                }
+            })
+
+            MostrarListaComputadores();
+            console.log("deletado com sucesso")
+        } else if (resposta.status == 404) {
+            window.alert("Deu 404!");
+        } else {
+            throw ("Houve um erro ao tentar deletar o computador! Código da resposta: " + resposta.status);
+        }
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
 }

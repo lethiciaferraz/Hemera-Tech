@@ -24,6 +24,12 @@
     <!-- ICONES -->
     <script src="https://kit.fontawesome.com/b176690e81.js" crossorigin="anonymous"></script>
 
+    <!-- ALERTAS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+
 </head>
 
 <body>
@@ -116,14 +122,14 @@
                     <div id="dados_empresa">
 
                         <div class="foto_empresa">
-                            <img src="../assets/empresa-icone.jpg" alt="">
+                            <img src="../assets/office-building.png"  width="330px" alt="">
 
                         </div>
 
                         <div class="caixa_dados">
-                            <div class="destaque_txt" id="texto_destaque_empresa">
+                            <div class="destaque_txt" id="texto_destaque">
                                 <h3>
-                                    Empresa
+                                    DADOS DA EMPRESA
                                 </h3>
                             </div>
 
@@ -141,7 +147,7 @@
 
                                             <div class="campo">
                                                 <label class="user-label">CNPJ: </label>
-                                                <input type="text" id="cnpj_empresa" placeholder="Nome da Empresa">
+                                                <input type="text" id="cnpj_empresa" placeholder="CNPJ">
                                             </div>
                                         </div>
 
@@ -149,12 +155,12 @@
 
                                             <div class="campo">
                                                 <label class="user-label">Email: </label>
-                                                <input type="text" id="email_empresa" placeholder="CPF">
+                                                <input type="text" id="email_empresa" placeholder="exemplo@exemplo.com">
                                             </div>
 
                                             <div class="campo">
                                                 <label class="user-label">Telefone: </label>
-                                                <input type="text" id="telefone_empresa" placeholder="E-mail">
+                                                <input type="text" maxlength="9" id="telefone_empresa" placeholder="999999999">
                                             </div>
 
 
@@ -164,7 +170,7 @@
                                         <div id="linha">
                                             <div class="campo">
                                                 <label class="user-label">CEP: </label>
-                                                <input type="text" id="cep_empresa" placeholder="Telefone">
+                                                <input type="text" maxlength="8" id="cep_empresa" placeholder="Telefone">
                                             </div>
 
                                             <div class="campo">
@@ -183,7 +189,7 @@
                             </div>
 
                             <div class="botoes" id="botoes_dados_empresa">
-                                <button onclick="EditarEmpresa()" id="botao_editar">Editar</button>
+                                <button onclick="EditarEmpresa()" id="botao_editar">Editar Dados</button>
                             </div>
                         </div>
 
@@ -200,7 +206,8 @@
                             <nav style="margin-top: 0px;">
                                 <!-- <a style="border: 0; padding: 0;"> -->
                                 <!-- <a href="#abaFuncionarioEditar"> -->
-                                <button class="botaoEditarFuncionario" onclick="exibirSection('abaFuncionarioCadastrar')">Add
+                                <button class="botaoEditarFuncionario"
+                                    onclick="exibirSection('abaFuncionarioCadastrar')">Add
                                     Funcionário</button>
                                 <!-- </a> -->
                                 <!-- </a> -->
@@ -233,7 +240,7 @@
                         <div class="caixa_dados">
                             <div class="destaque_txt" id="texto_destaque">
                                 <h3>
-                                    Editar Funcionário
+                                    EDITAR DADOS DO FUNCIONÁRIO
                                 </h3>
                             </div>
 
@@ -245,12 +252,14 @@
 
                                         <div id="linha">
                                             <div class="campo">
-                                                <label class="user-label">Nome: </label>
+                                                <label class="user-label">Nome: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
                                                 <input type="text" id="nome_funcionario">
                                             </div>
 
                                             <div class="campo">
-                                                <label class="user-label">Sobrenome: </label>
+                                                <label class="user-label">Sobrenome: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
                                                 <input type="text" id="sobrenome_funcionario">
                                             </div>
                                         </div>
@@ -258,12 +267,14 @@
                                         <div id="linha">
 
                                             <div class="campo">
-                                                <label class="user-label">CPF: </label>
-                                                <input type="text" id="cpf_funcionario">
+                                                <label class="user-label">CPF: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
+                                                <input type="text" maxlength="11"  id="cpf_funcionario">
                                             </div>
 
                                             <div class="campo">
-                                                <label class="user-label">Email: </label>
+                                                <label class="user-label">Email: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
                                                 <input type="text" id="email_funcionario">
                                             </div>
 
@@ -273,11 +284,12 @@
                                         <div id="linha">
                                             <div class="campo">
                                                 <label class="user-label">Telefone: </label>
-                                                <input type="text" id="telefone_funcionario">
+                                                <input type="text" maxlength="9" id="telefone_funcionario">
                                             </div>
 
                                             <div class="campo">
-                                                <label class="user-label">Função: </label>
+                                                <label class="user-label">Função: <span
+                                                        style="color: red; font-size: 12px;">*</span></label>
                                                 <input type="text" id="funcao_funcionario">
                                             </div>
 
@@ -286,6 +298,8 @@
 
 
                                         <div class="select_tipo">
+                                            <label for=""> Tipo de Acesso: <span
+                                                    style="color: red; font-size: 13px;">*</span> </label>
                                             <select name="" id="sel_tipo_usuario">
                                                 <option value="">Escolha o tipo de usuário</option>
                                                 <option value="colaborador">Colaborador</option>
@@ -307,81 +321,104 @@
 
                 <section id="aba2Cadastrar" class="abaFuncionarioCadastrar">
                     <!-- CADATRO FUNCIONARIO -->
-                    <div id="caixa_cadastro">
+                    <div id="dados_funcionario">
 
-                        <div class="destaque_txt" id="div_destaque_txt_cadastro_funcionario">
-                            <h3>
-                                Cadastro de Funcionário
-                            </h3>
+                        <div class="foto_empresa">
+                            <img src="../assets/user (1).png" width="300px" alt="">
+
                         </div>
+                        <div id="caixa_cadastro">
 
-                        <div class="caixa-formulario">
+                            <div class="destaque_txt" id="texto_destaque">
+                                <h3>
+                                    Cadastro de Funcionário
+                                </h3>
+                            </div>
 
-                            <div id="dados_principais">
+                            <div class="caixa-formulario">
 
-                                <div class="campos">
+                                <div id="dados_principais">
 
-                                    <div id="linha">
-                                        <div class="campo">
-                                            <label class="user-label">Nome: </label>
-                                            <input type="text" id="nome_funcionario" placeholder="primeiro nome">
+                                    <div class="campos">
+
+                                        <div id="linha">
+                                            <div class="campo">
+                                                <label class="user-label">Nome: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
+                                                <input type="text" id="nome_funcionario" placeholder="primeiro nome">
+                                            </div>
+
+                                            <div class="campo">
+                                                <label class="user-label">Sobrenome: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
+                                                <input type="text" id="sobrenome_funcionario"
+                                                    placeholder="segundo nome">
+                                            </div>
                                         </div>
 
-                                        <div class="campo">
-                                            <label class="user-label">Sobrenome: </label>
-                                            <input type="text" id="sobrenome_funcionario" placeholder="segundo nome">
+                                        <div id="linha">
+
+                                            <div class="campo">
+                                                <label class="user-label">CPF: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
+                                                <input type="text" maxlength="18" placeholder="XXXXXXXXXXX"
+                                                    id="cpf_funcionario">
+                                            </div>
+
+                                            <div class="campo">
+                                                <label class="user-label">Email: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
+                                                <input type="text" id="email_funcionario"
+                                                    placeholder="exemplo@exemplo.com">
+                                            </div>
+
+
                                         </div>
+
+
+                                        <div id="linha">
+                                            <div class="campo">
+                                                <label class="user-label">Telefone: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
+                                                <input type="text" id="telefone_funcionario" placeholder="123456789">
+                                            </div>
+
+                                            <div class="campo">
+                                                <label class="user-label">Função: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
+                                                <input type="text" id="funcao_funcionario"
+                                                    placeholder="função na empresa">
+                                            </div>
+
+
+                                        </div>
+
+
+                                        <div class="select_tipo">
+                                            <label for=""> Tipo de Acesso: <span
+                                                    style="color: red; font-size: 13px;">*</span> </label>
+                                            <select name="" id="sel_tipo_usuario">
+                                                <option value="">Escolha o tipo de usuário</option>
+                                                <option value="false">Colaborador</option>
+                                                <option value="true">Administrador</option>
+                                            </select>
+                                        </div>
+
+
                                     </div>
-
-                                    <div id="linha">
-
-                                        <div class="campo">
-                                            <label class="user-label">CPF: </label>
-                                            <input type="text" maxlength="18" placeholder="XXXXXXXXXXX" id="cpf_funcionario">
-                                        </div>
-
-                                        <div class="campo">
-                                            <label class="user-label">Email: </label>
-                                            <input type="text" id="email_funcionario" placeholder="exemplo@exemplo.com">
-                                        </div>
-
-
-                                    </div>
-
-
-                                    <div id="linha">
-                                        <div class="campo">
-                                            <label class="user-label">Telefone: </label>
-                                            <input type="text" id="telefone_funcionario" placeholder="123456789">
-                                        </div>
-
-                                        <div class="campo">
-                                            <label class="user-label">Função: </label>
-                                            <input type="text" id="funcao_funcionario"placeholder="função na empresa">
-                                        </div>
-
-
-                                    </div>
-
-
-                                    <div class="select_tipo">
-                                        <select name="" id="sel_tipo_usuario">
-                                            <option value="">Escolha o tipo de usuário</option>
-                                            <option value="false">Colaborador</option>
-                                            <option value="true">Administrador</option>
-                                        </select>
-                                    </div>
-
-
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="botoes" id="botao_cadastro_funcionario">
-                            <button onclick="exibirSection('abaFuncionarios')">Cancelar</button>
-                            <button id="bt_cadastrar_funcionario" onclick="CadastrarFuncionario()">Cadastrar</button>
+                            <div class="botoes" id="botao_cadastro_funcionario">
+                                <button onclick="exibirSection('abaFuncionarios')">Cancelar</button>
+                                <button id="bt_cadastrar_funcionario"
+                                    onclick="CadastrarFuncionario()">Cadastrar</button>
+                            </div>
+
                         </div>
                     </div>
+                    
+
                 </section>
 
                 <!-- ABA 3 -->
@@ -445,15 +482,14 @@
                 <section id="aba3Editar" class="abaComputadorEditar">
                     <div id="dados_computador">
 
-                        <div class="foto_empresa">
-                            <img src="../assets/user (1).png" width="300px" alt="">
-
+                        <div class="foto_monitor">
+                            <img src="../assets/monitor.png" width="250px" alt="">
                         </div>
 
                         <div class="caixa_dados">
                             <div class="destaque_txt" id="texto_destaque">
                                 <h3>
-                                    Editar dados do computador
+                                    EDITAR DADOS DO COMPUTADOR
                                 </h3>
                             </div>
 
@@ -466,24 +502,36 @@
                                         <div id="linha">
                                             <div class="campo">
                                                 <label class="user-label">MacAddress: </label>
-                                                <input type="text" id="macAddress_computador">
+                                                <input type="text" id="macAddress_computador" disabled>
                                             </div>
 
                                             <div class="campo">
-                                                <label class="user-label">Sistema Operacional: </label>
+                                                <label class="user-label">Sistema Operacional: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
                                                 <input type="text" id="sistemaOperacional_computador">
                                             </div>
                                         </div>
 
                                         <div id="linha">
-
                                             <div class="campo">
-                                                <label class="user-label">Total RAM: </label>
-                                                <input type="text" id="totalRam_computador">
+                                                <label class="user-label">Modelo do Processador: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
+                                                <input type="text" id="modeloProcessador_computador">
                                             </div>
 
                                             <div class="campo">
-                                                <label class="user-label">Total Disco: </label>
+                                                <label class="user-label">Total RAM: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
+                                                <input type="text" id="totalRam_computador">
+                                            </div>
+
+                                        </div>
+                                        
+                                        <div id="linha">
+                                            
+                                            <div class="campo">
+                                                <label class="user-label">Total Disco: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
                                                 <input type="text" id="totalDisco_computador">
                                             </div>
 

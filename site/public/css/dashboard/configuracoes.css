@@ -81,7 +81,7 @@
 }
 
 
-.abas nav a.selecionado{
+.abas nav a.selecionado {
     background: white;
     border-top: solid 1px var(--corForte);
     border-left: solid 1px var(--corForte);
@@ -89,7 +89,7 @@
     color: var(--corForte);
 }
 
-section{
+section {
     border-top: 1px solid #812FCD;
     margin-top: -1px;
 
@@ -161,7 +161,7 @@ section{
     margin: 0px 5px
 }
 
-.configuracoes #caixa_lista #linha #tituloComputador{
+.configuracoes #caixa_lista #linha #tituloComputador {
     font-weight: var(--letraRegular);
     width: 10vw;
     text-align: center;
@@ -170,7 +170,7 @@ section{
 }
 
 
-.configuracoes #caixa_lista #linha #tituloTotalRAM{
+.configuracoes #caixa_lista #linha #tituloTotalRAM {
     font-weight: var(--letraRegular);
     width: 10vw;
     text-align: center;
@@ -178,7 +178,7 @@ section{
     margin: 0px 5px
 }
 
-.configuracoes #caixa_lista #linha #tituloTotalDisco{
+.configuracoes #caixa_lista #linha #tituloTotalDisco {
     font-weight: var(--letraRegular);
     width: 10vw;
     text-align: center;
@@ -213,7 +213,7 @@ section{
 .configuracoes #caixa_lista #linha #titulo:nth-child(6) {
     width: 4vw;
     text-align: center;
- /* background-color: #812FCD;  */
+    /* background-color: #812FCD;  */
     margin: 0px 5px
 }
 
@@ -330,7 +330,7 @@ section{
     margin: 0px 5px
 }
 
-.configuracoes #caixa_lista #linha #dado_totalDisco{
+.configuracoes #caixa_lista #linha #dado_totalDisco {
     font-weight: var(--letraRegular);
     font-size: 15px;
     width: 10vw;
@@ -381,7 +381,7 @@ section{
 
 /* --------------------------- */
 
- #aba1 #dados_empresa{
+#aba1 #dados_empresa {
     display: flex;
     flex-direction: row;
     background-color: var(--caixa);
@@ -391,7 +391,7 @@ section{
 
 }
 
-#aba2Editar #dados_funcionario{
+#dados_funcionario {
     display: flex;
     flex-direction: row;
     background-color: var(--caixa);
@@ -401,7 +401,7 @@ section{
 
 }
 
-#aba3Editar #dados_computador{
+#aba2Cadastrar #dados_funcionario {
     display: flex;
     flex-direction: row;
     background-color: var(--caixa);
@@ -411,53 +411,56 @@ section{
 
 }
 
-#aba2Editar #dados_funcionario .foto_empresa{
+#aba3Editar #dados_computador {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--caixa);
+    margin-top: 15px;
+    padding: 30px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+
+}
+
+#dados_funcionario .foto_empresa {
     margin-left: 30px;
 
 }
-#aba2Editar .caixa_dados{
+
+.caixa_dados {
     margin-left: 40px;
 }
-/* 
-#aba1 #dados_empresa .caixa_dados .caixa-formulario #dados_principais .campos #linha {
-    margin-top: 10px;
-}
 
-#aba1 #dados_empresa .caixa_dados .caixa-formulario #dados_principais .campos .campo input{
-    margin: 5px 0px;
-}
 
-#aba1 #dados_empresa .caixa_dados .caixa-formulario #dados_principais .campos #linha .campo input{
-    margin: 5px 0px;
+#caixa_cadastro {
+    margin-left: 40px;
 }
 
 
-#aba1 #dados_empresa .caixa_dados .caixa-formulario #dados_principais .campos #linha .campo:nth-child(2){
+#aba3Editar #dados_computador .foto_computador {
     margin-left: 30px;
-} */
+
+}
+
+#aba3Editar .caixa_dados {
+    margin-left: 40px;
+}
 
 .configuracoes #caixa_cadastro {
     display: flex;
     flex-direction: column;
-    width: 74.4vw;
     text-align: center;
-    margin-top: 1vw;
-    padding: 30px;
-    background-color: var(--caixa);
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
-}
-
-#caixa_cadastro h3 {
-    color: var(--corForte);
-    font-size: 1.5vw;
-    font-weight: var(--letraMedia);
+    /* margin-top: 1vw; */
+    /* padding: 30px; */
 
 }
+
+
 
 #caixa_cadastro p {
     font-size: 15px;
     margin-top: 1vw;
-    margin-bottom: 20px;;
+    margin-bottom: 20px;
+    ;
 }
 
 .campos #linha {
@@ -468,13 +471,14 @@ section{
     text-align: left;
 
 }
-.campo{
+
+.campo {
     display: flex;
     flex-direction: column;
     justify-content: right;
 }
 
-.campo:nth-child(2){
+.campo:nth-child(2) {
     margin-left: 30px;
 
 }
@@ -487,12 +491,44 @@ section{
 
 }
 
-.select_tipo select{
+.select_tipo {
+    text-align: center;
+}
+
+.select_tipo select {
     border-radius: 5px;
     margin: 10px;
     padding: 5px;
     cursor: pointer;
 
+}
+
+.botoes {
+    text-align: center;
+}
+
+#texto_destaque {
+    text-align: center;
+    /* background-color: #812FCD; */
+    border-top: 2px solid #812FCD;
+    border-bottom: 2px solid #812FCD;
+    /* height: 5vh; */
+    margin: 0px 0px 2vw 0px;
+}
+
+.foto_monitor {
+    margin-left: 40px;
+}
+
+.foto_empresa {
+    margin-left: 40px;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+h3 {
+    margin-top: 2px;
 }
 
 .botoes button {
@@ -502,14 +538,14 @@ section{
     font-weight: 500;
     font-size: 15px;
     padding: 4px;
-    margin: 15px ;
+    margin: 15px;
     width: 10vw;
     border-radius: 5px;
     text-align: center;
     color: #fff;
 }
 
-.botoes a{
+.botoes a {
     text-decoration: none;
     color: var(--corForte);
 }
@@ -521,6 +557,6 @@ section{
     transition: 0.8s;
 }
 
-.destaque_txt{
+.destaque_txt {
     font-weight: var(--letraMedia);
 }

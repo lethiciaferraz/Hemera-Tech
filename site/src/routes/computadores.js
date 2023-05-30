@@ -11,4 +11,12 @@ router.get("/relatorioComputadores/:idEmpresa", function(req, res) {
     computadorController.exibirRelatorio(req, res);
 });
 
+router.delete("/deletarComputador/:idComputador", function (req, res) {
+    computadorController.deletarComputador(req, res);
+});
+
+router.put("/editarComputador/:idComputador", function (req, res) {
+    computadorController.editarComputador(req, res);
+});
+
 module.exports = router;
