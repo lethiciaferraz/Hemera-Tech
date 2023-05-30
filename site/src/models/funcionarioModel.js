@@ -41,8 +41,8 @@ function listarFuncionarios(idEmpresa) {
     return database.executar(instrucao);
 }
 
-function editarFuncionario(novoNome, novoSobrenome,novoCpf, novoEmail, novoTelefone, novaFuncao, idFuncionario) {
-    console.log("ACESSEI O EDITAR FUNCIONARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", novoNome, novoSobrenome, novoCpf, novoEmail, novoTelefone, novaFuncao, idFuncionario);
+function editarFuncionario(novoNome, novoSobrenome,novoCpf, novoEmail, novoTelefone, novaFuncao,novoflagAdministrador, idFuncionario) {
+    console.log("ACESSEI O EDITAR FUNCIONARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", novoNome, novoSobrenome, novoCpf, novoEmail, novoTelefone, novaFuncao,novoflagAdministrador, idFuncionario);
     var instrucao = `
     UPDATE funcionario 
     SET nome = '${novoNome}',
@@ -50,7 +50,8 @@ function editarFuncionario(novoNome, novoSobrenome,novoCpf, novoEmail, novoTelef
         cpf = '${novoCpf}',
         email = '${novoEmail}',
         telefone = '${novoTelefone}',
-        funcao = '${novaFuncao}'
+        funcao = '${novaFuncao}',
+        flagAdministrador = '${novoflagAdministrador}' 
     WHERE idFuncionario = ${idFuncionario};
         `;
     console.log("Executando a instrução SQL: \n" + instrucao);

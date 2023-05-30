@@ -400,6 +400,24 @@ section{
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
 
 }
+
+#aba3Editar #dados_computador{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--caixa);
+    margin-top: 15px;
+    padding: 30px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+
+}
+
+#aba2Editar #dados_funcionario .foto_empresa{
+    margin-left: 30px;
+
+}
+#aba2Editar .caixa_dados{
+    margin-left: 40px;
+}
 /* 
 #aba1 #dados_empresa .caixa_dados .caixa-formulario #dados_principais .campos #linha {
     margin-top: 10px;
@@ -417,7 +435,6 @@ section{
 #aba1 #dados_empresa .caixa_dados .caixa-formulario #dados_principais .campos #linha .campo:nth-child(2){
     margin-left: 30px;
 } */
-
 
 .configuracoes #caixa_cadastro {
     display: flex;

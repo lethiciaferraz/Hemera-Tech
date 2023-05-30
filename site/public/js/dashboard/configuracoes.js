@@ -1,6 +1,7 @@
+
 var idEmpresa = Number(sessionStorage.getItem('ID_EMPRESA'));
 
-function exibirSection(sectionSelecionada){
+function exibirSection(sectionSelecionada) {
     document.querySelectorAll('.abas section').forEach((sectionAtual) => {
         sectionAtual.style.display = 'none';
     });
@@ -38,11 +39,11 @@ window.addEventListener('load', () => {
             let selecionado = a.getAttribute('data-target');
             if (selecionado === 'abaEmpresa') {
                 MostrarDadosEmpresa();
-              } else if (selecionado === 'abaFuncionarios') {
+            } else if (selecionado === 'abaFuncionarios') {
                 MostrarListaFuncionarios();
-              } else if (selecionado === 'abaComputadores') {
+            } else if (selecionado === 'abaComputadores') {
                 MostrarListaComputadores();
-              }
+            }
             //   ---------------------------------------------
         })
 
@@ -244,9 +245,9 @@ function MostrarListaFuncionarios() {
                     dado4.innerHTML = publicacao.email;
 
                     tipoUsuario = ""
-                    if(publicacao.flagAdministrador == true){
+                    if (publicacao.flagAdministrador == true) {
                         tipoUsuario = 'Administrador';
-                    }else {
+                    } else {
                         tipoUsuario = 'Colaborador';
                     }
                     dado5.innerHTML = tipoUsuario;
@@ -322,7 +323,6 @@ function IrParaEditarFuncionario(funcionarioInformacoes) {
     emailFuncionarioInput.value = funcionarioInformacoes.email;
     telefoneFuncionarioInput.value = funcionarioInformacoes.telefone;
     funcaoFuncionarioInput.value = funcionarioInformacoes.funcao;
-
     tipoFuncionarioSelect.value = funcionarioInformacoes.flagAdministrador ? 'administrador' : 'colaborador';
 
     let botaoEditarFuncionario = document.createElement("button");
@@ -338,6 +338,13 @@ function IrParaEditarFuncionario(funcionarioInformacoes) {
 }
 
 function EditarFuncionario(idFuncionario) {
+    var flagAdministradorInput = tipoFuncionarioSelect.value;
+    if (flagAdministradorInput == "colaborador") {
+        flagAdministradorInput = false;
+    } else {
+        flagAdministradorInput = true;
+    }
+
     fetch(`/funcionarios/editarFuncionario/${idFuncionario}`, {
         method: "PUT",
         headers: {
@@ -350,7 +357,7 @@ function EditarFuncionario(idFuncionario) {
             email: emailFuncionarioInput.value,
             telefone: telefoneFuncionarioInput.value,
             funcao: funcaoFuncionarioInput.value,
-            flagAdministrador: tipoFuncionarioSelect.value
+            flagAdministrador: flagAdministradorInput
 
         })
     }).then(function (resposta) {
@@ -393,5 +400,152 @@ function deletarFuncionario(idFuncionario) {
 }
 
 function MostrarListaComputadores() {
-    alert('computadores');
+
+    //aguardar();
+    fetch(`/computadores/listarComputadores/${idEmpresa}`).then(function (resposta) {
+        if (resposta.ok) {
+            if (resposta.status == 204) {
+                var feed = document.getElementsByClassName("lista_computadores")[0];
+
+                var mensagem = document.createElement("span");
+                mensagem.innerHTML = "Nenhum resultado encontrado."
+                feed.appendChild(mensagem);
+                throw "Nenhum resultado encontrado!!";
+            }
+
+            resposta.json().then(function (resposta) {
+                console.log("Dados computadores recebidos: ", JSON.stringify(resposta));
+
+                var feed = document.getElementsByClassName("lista_computadores")[0];
+
+                // Remover linhas antigas (exceto o título)
+                var linhasAntigas = feed.querySelectorAll("#linha ~ div:not(#titulo)");
+                linhasAntigas.forEach(function (linhaAntiga) {
+                    linhaAntiga.remove();
+                });
+
+                for (let i = 0; i < resposta.length; i++) {
+                    var computadorAtual = resposta[i];
+
+                    var tracinho = document.createElement("div");
+                    tracinho.id = "tracinho";
+                    tracinho.style.marginBottom = "20px";
+
+                    // CRIAR ELEMENTOS
+                    var divLinha = document.createElement("div");
+
+                    var divDado1 = document.createElement("div");
+                    var dado1 = document.createElement("p");
+
+                    var divDado2 = document.createElement("div");
+                    var dado2 = document.createElement("p");
+
+                    var divDado3 = document.createElement("div");
+                    var dado3 = document.createElement("p");
+
+                    var divDado4 = document.createElement("div");
+                    var dado4 = document.createElement("p");
+
+                    var divDado5 = document.createElement("div");
+                    var dado5 = document.createElement("p");
+
+                    var divEditar = document.createElement("div");
+                    var funcaoEditar = document.createElement("div");
+
+                    var divDeletar = document.createElement("div");
+                    var funcaoDeletar = document.createElement("div");
+
+                    dado1.innerHTML = computadorAtual.idComputador;
+                    dado2.innerHTML = computadorAtual.MacAddress;
+                    dado3.innerHTML = computadorAtual.sistema_operacional;
+                    dado4.innerHTML = computadorAtual.total_memoria;
+                    dado5.innerHTML = computadorAtual.total_armazenamento;
+                    funcaoEditar.innerHTML = "editar";
+                    funcaoDeletar.innerHTML = "deletar";
+
+                    divLinha.id = "linha";
+                    divDado1.id = "dado_idComputador";
+                    divDado2.id = "dado_macAddress";
+                    divDado3.id = 'dado_sistemaOperacional';
+                    divDado4.id = "dado_totalRAM";
+                    divDado5.id = "dado_totalDisco";
+                    divEditar.id = "editar";
+                    divEditar.setAttribute("onclick", `IrParaEditarComputador(${JSON.stringify(computadorAtual)})`);
+
+                    divDeletar.id = "deletar";
+                    divDeletar.setAttribute("onclick", `deletarComputador(${computadorAtual.idComputador})`);
+
+
+                    divLinha.appendChild(divDado1);
+                    divLinha.appendChild(divDado2);
+                    divLinha.appendChild(divDado3);
+                    divLinha.appendChild(divDado4);
+                    divLinha.appendChild(divDado5);
+                    divLinha.appendChild(divEditar);
+                    divLinha.appendChild(divDeletar);
+
+                    divDado1.appendChild(dado1);
+                    divDado2.appendChild(dado2);
+                    divDado3.appendChild(dado3);
+                    divDado4.appendChild(dado4);
+                    divDado5.appendChild(dado5);
+                    divEditar.appendChild(funcaoEditar);
+                    divDeletar.appendChild(funcaoDeletar);
+
+
+                    feed.appendChild(tracinho);
+                    feed.appendChild(divLinha);
+                }
+                var tracinhoFinal = document.createElement("div");
+                tracinhoFinal.id = "tracinho";
+                tracinhoFinal.style.marginBottom = "10px";
+                feed.appendChild(tracinhoFinal);
+                // finalizarAguardar();
+
+            });
+        } else {
+            throw ('Houve um erro na API!');
+        }
+    }).catch(function (resposta) {
+        console.error(resposta);
+        // finalizarAguardar();
+    });
+
+}
+
+let macAddressComputadorInput = document.querySelector('#macAddress_computador');
+let sistemaOperacionalComputadorInput = document.querySelector('#sistemaOperacional_computador');
+let totalRamComputadorInput = document.querySelector('#totalRam_computador');
+let totalDiscoComputadorInput = document.querySelector('#totalDisco_computador');
+
+function IrParaEditarComputador(computadorInformacoes) {
+    console.log(computadorInformacoes)
+    // VERIFICA QUAL SECTION ESTÁ APARECENDO E DÁ NONE PRA ELA SUMIR
+    document.querySelectorAll('.abas section').forEach((sectionAtual) => {
+        sectionAtual.style.display = 'none';
+    });
+
+    // MOSTRA A SECTION DE EDITAR COMPUTADOR
+    let secaoComputador = document.querySelector('.abaComputadorEditar');
+    secaoComputador.style.display = 'block';
+
+    let divBotoes = document.getElementById("botoes_dados_computador");
+    divBotoes.innerHTML = "";
+    // COLOCANDO AS INFORMAÇÕES DOS Computadores NOS INPUTS
+    macAddressComputadorInput.value = computadorInformacoes.MacAddress;
+    sistemaOperacionalComputadorInput.value = computadorInformacoes.sistema_operacional;
+    totalRamComputadorInput.value = computadorInformacoes.total_memoria;
+    totalDiscoComputadorInput.value = computadorInformacoes.total_armazenamento;
+  
+
+    let botaoEditarComputador = document.createElement("button");
+    botaoEditarComputador.innerText = "Editar";
+    botaoEditarComputador.setAttribute("onclick", `EditarComputador(${computadorInformacoes.idComputador})`);
+
+    let botaoCancelarEditarComputador = document.createElement("button");
+    botaoCancelarEditarComputador.innerText = "Cancelar";
+    botaoCancelarEditarComputador.setAttribute("onclick", `exibirSection('abaComputadores')`);
+
+    divBotoes.appendChild(botaoEditarComputador);
+    divBotoes.appendChild(botaoCancelarEditarComputador);
 }

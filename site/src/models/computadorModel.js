@@ -1,7 +1,7 @@
 var database = require("../database/config");
 
-function listar() {
-    console.log("ACESSEI O COMENTARIO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+function listarComputadores(idEmpresa) {
+    console.log("ACESSEI O COMENTARIO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()", idEmpresa);
     var instrucao = `
     select*from Computador where idEmpresa = ${idEmpresa};
     `;
@@ -21,6 +21,6 @@ where c.idEmpresa = ${idEmpresa} and (l.horario_final 	is null or (l.horario_fin
 
 
 module.exports = {
-    listar,
+    listarComputadores,
     exibirRelatorio
 }

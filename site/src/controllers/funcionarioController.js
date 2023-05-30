@@ -151,16 +151,16 @@ function editarFuncionario(req, res) {
     let novoEmail = req.body.email;
     let novoTelefone = req.body.telefone;
     let novaFuncao = req.body.funcao;
-    let flagAdministrador = req.body.flagAdministrador;
+    let novoflagAdministrador = req.body.flagAdministrador;
     let idFuncionario = req.params.idFuncionario;
 
     // FAZER LOGICA PARA ELE MUDAR O TIPO DE USUARIO
-    if(flagAdministrador == 'Administrador'){
+    // if(flagAdministrador == 'Administrador'){
         
 
-    }
+    // }
 
-    funcionarioModel.editarFuncionario(novoNome, novoSobrenome,novoCpf, novoEmail, novoTelefone, novaFuncao, idFuncionario)
+    funcionarioModel.editarFuncionario(novoNome, novoSobrenome,novoCpf, novoEmail, novoTelefone, novaFuncao,novoflagAdministrador, idFuncionario)
         .then(
             function (resultado) {
                 res.json(resultado);
