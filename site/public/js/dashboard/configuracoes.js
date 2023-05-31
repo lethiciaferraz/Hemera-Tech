@@ -8,15 +8,8 @@ function exibirSection(sectionSelecionada) {
     // MOSTRA A SECTION 
     let sectionExibir = document.querySelector(`.${sectionSelecionada}`);
     sectionExibir.style.display = 'block';
-
-    // if (selecionado === 'abaEmpresa') {
-    //     MostrarDadosEmpresa();
-    // } else if (selecionado === 'abaFuncionarios') {
-    //     MostrarListaFuncionarios();
-    // } else if (selecionado === 'abaComputadores') {
-    //     MostrarListaComputadores();
-    // }
 }
+
 
 window.addEventListener('load', () => {
     document.querySelectorAll('.abas nav a').forEach((a) => {
@@ -60,6 +53,14 @@ window.addEventListener('load', () => {
     })
 })
 
+// PEGAR TODOS OS INPUTS
+const inputs = document.querySelectorAll('input');
+// QUANDO O USUARIO SAIR DO CAMPO SE ELE ESTIVER APENAS COM ESPAÇOS ELE LIMPA
+inputs.forEach(function (input) {
+    input.addEventListener('blur', function () {
+        input.value = input.value.trim();
+    });
+});
 
 const nomeEmpresaInput = document.querySelector('#nome_empresa');
 const cnpjInput = document.querySelector('#cnpj_empresa');
@@ -70,6 +71,8 @@ const complementoInput = document.querySelector('#complemento_empresa');
 const logradouroInput = document.querySelector('#logradouro_empresa');
 const botoesEmpresa = document.querySelector('#botoes_dados_empresa');
 const botaoEditar = document.querySelector('#botao_editar');
+const titulo = document.querySelector('#texto_titulo');
+const obrigatorio = document.querySelectorAll('label.user-label');
 
 
 function MostrarDadosEmpresa() {
@@ -86,14 +89,23 @@ function MostrarDadosEmpresa() {
             }
             resposta.json().then(function (resposta) {
                 console.log("Dados recebidos: ", JSON.stringify(resposta));
-                texto_destaque.innerHTML = '';
-                texto_destaque.innerHTML = '<h3>Dados da Empresa</h3>'
+                titulo.textContent = ''
+
+                titulo.textContent = 'Dados da Empresa'
+
                 // botoes_dados_empresa.innerHTML = '';
                 var botaoExistente = document.querySelector("#botao_cancelar");
                 if (botaoExistente) {
                     // Remove o botão se ele existir
                     botoesEmpresa.removeChild(botaoExistente);
 
+                }
+
+                for (var i = 0; i < obrigatorio.length; i++) {
+                    var span = obrigatorio[i].querySelector('span');
+                    if (span) {
+                        obrigatorio[i].removeChild(span);
+                    }
                 }
 
                 for (let i = 0; i < resposta.length; i++) {
@@ -107,6 +119,7 @@ function MostrarDadosEmpresa() {
                     cepInput.setAttribute('disabled', 'true');
                     logradouroInput.setAttribute('disabled', 'true');
                     complementoInput.setAttribute('disabled', 'true');
+
 
 
                     // colocando os dados da empresa
@@ -142,15 +155,20 @@ function MostrarDadosEmpresa() {
 function EditarEmpresa() {
     if (nomeEmpresaInput.disabled) {
         // VERIFIFANDO SE OS CAMPOS ESTAO HABILITADOS PARA EDIÇÃO,PARA HABILITALOS
-        texto_destaque.innerHTML = '';
-        texto_destaque.innerHTML = '<h3> Editar Dados da Empresa</h3>'
+        titulo.textContent = ''
+
+        titulo.textContent = 'Editar Dados da Empresa'
         nomeEmpresaInput.removeAttribute('disabled');
+        nomeEmpresaInput.classList.add('transition-input');
+
         cnpjInput.removeAttribute('disabled');
         emailInput.removeAttribute('disabled');
         telefoneInput.removeAttribute('disabled');
         cepInput.removeAttribute('disabled');
         logradouroInput.removeAttribute('disabled');
         complementoInput.removeAttribute('disabled');
+
+
 
         let botaoCancelar = document.createElement("button");
         botaoCancelar.textContent = "Cancelar";
@@ -160,53 +178,92 @@ function EditarEmpresa() {
         botaoEditar.textContent = "Salvar alterações";
         botoesEmpresa.appendChild(botaoCancelar);
 
+        for (var i = 0; i < obrigatorio.length; i++) {
+            var span = document.createElement('span');
+            span.style.color = 'red';
+            span.style.fontSize = '13px';
+            span.textContent = '*';
+
+            obrigatorio[i].appendChild(span);
+        }
+
     } else {
-        fetch(`/empresas/editarEmpresa/${idEmpresa}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                nome: nomeEmpresaInput.value,
-                cnpj: cnpjInput.value,
-                email: emailInput.value,
-                telefone: telefoneInput.value,
-                cep: cepInput.value,
-                logradouro: logradouroInput.value,
-                complemento: complementoInput.value
+        let nomeEmpresaVar = nomeEmpresaInput.value.trim()
+        let cnpjVar = cnpjInput.value.trim()
+        let emailVar = emailInput.value.trim()
+        let telefoneVar = telefoneInput.value.trim()
+        let cepVar = cepInput.value.trim()
+        let logradouroVar = logradouroInput.value.trim()
+
+        if (nomeEmpresaVar == "" || cnpjVar == "" || emailVar == "" || telefoneVar == '' || cepVar == "" || logradouroVar == '') {
+            let timerInterval
+            Swal.fire({
+                title: 'Não deixe nenhum campo em branco!',
+                //   html: 'I will close in <b></b> milliseconds.',
+                timer: 1200,
+                //              timerProgressBar: true,
+                icon: 'error',
+                showConfirmButton: false,
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log('faltam preencher campos')
+                    // exibirSection('abaFuncionarios')
+                }
             })
-        }).then(function (resposta) {
+            return false;
 
-            if (resposta.ok) {
-                // window.alert("Dados da empresa atualizados com sucesso pelo usuario" + sessionStorage.getItem("NOME_USUARIO") + "!"
-                let timerInterval
-                Swal.fire({
-                    title: 'Alterações salvas com sucesso!',
-                    //   html: 'I will close in <b></b> milliseconds.',
-                    timer: 1200,
-                    //              timerProgressBar: true,
-                    icon: 'success',
-                    showConfirmButton: false,
-                    willClose: () => {
-                        clearInterval(timerInterval)
-                    }
-                }).then((result) => {
-                    /* Read more about handling dismissals below */
-                    if (result.dismiss === Swal.DismissReason.timer) {
-                        console.log('salvo com sucesso')
-                        MostrarDadosEmpresa()
-                    }
+        } else {
+            fetch(`/empresas/editarEmpresa/${idEmpresa}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    nome: nomeEmpresaVar,
+                    cnpj: cnpjVar,
+                    email: emailVar,
+                    telefone: telefoneVar,
+                    cep: cepVar,
+                    logradouro: logradouroVar,
+                    complemento: complementoInput.value
                 })
+            }).then(function (resposta) {
 
-            } else if (resposta.status == 404) {
-                window.alert("Deu 404!");
-            } else {
-                throw ("Houve um erro ao tentar editar os dados Código da resposta: " + resposta.status);
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        });
+                if (resposta.ok) {
+                    // window.alert("Dados da empresa atualizados com sucesso pelo usuario" + sessionStorage.getItem("NOME_USUARIO") + "!"
+                    let timerInterval
+                    Swal.fire({
+                        title: 'Alterações salvas com sucesso!',
+                        //   html: 'I will close in <b></b> milliseconds.',
+                        timer: 1200,
+                        //              timerProgressBar: true,
+                        icon: 'success',
+                        showConfirmButton: false,
+                        willClose: () => {
+                            clearInterval(timerInterval)
+                        }
+                    }).then((result) => {
+                        /* Read more about handling dismissals below */
+                        if (result.dismiss === Swal.DismissReason.timer) {
+                            console.log('salvo com sucesso')
+                            MostrarDadosEmpresa()
+                        }
+                    })
 
+                } else if (resposta.status == 404) {
+                    window.alert("Deu 404!");
+                } else {
+                    throw ("Houve um erro ao tentar editar os dados Código da resposta: " + resposta.status);
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+
+        }
     }
 }
 
@@ -217,6 +274,7 @@ let telefoneFuncionarioInput = document.querySelector('#telefone_funcionario');
 let emailFuncionarioInput = document.querySelector('#email_funcionario');
 let funcaoFuncionarioInput = document.querySelector('#funcao_funcionario');
 let tipoFuncionarioSelect = document.querySelector('#sel_tipo_usuario');
+
 
 
 // MostrarLista de funcionário
@@ -361,6 +419,7 @@ function IrParaEditarFuncionario(funcionarioInformacoes) {
     funcaoFuncionarioInput.value = funcionarioInformacoes.funcao;
     tipoFuncionarioSelect.value = funcionarioInformacoes.flagAdministrador ? 'administrador' : 'colaborador';
 
+
     let botaoEditarFuncionario = document.createElement("button");
     botaoEditarFuncionario.innerText = "Salvar alterações";
     botaoEditarFuncionario.setAttribute("onclick", `EditarFuncionario(${funcionarioInformacoes.idFuncionario})`);
@@ -371,66 +430,101 @@ function IrParaEditarFuncionario(funcionarioInformacoes) {
 
     divBotoes.appendChild(botaoEditarFuncionario);
     divBotoes.appendChild(botaoCancelarEditarFuncionario);
+
 }
 
 function EditarFuncionario(idFuncionario) {
-    var flagAdministradorInput = tipoFuncionarioSelect.value;
-    if (flagAdministradorInput == "colaborador") {
-        flagAdministradorInput = false;
-    } else {
-        flagAdministradorInput = true;
+    let flagAdministradorVar = tipoFuncionarioSelect.value.trim();
+    if (flagAdministradorVar == "colaborador") {
+        flagAdministradorVar = false;
+    } else if (flagAdministradorVar == "administrador") {
+        flagAdministradorVar = true;
+    }else {
+        flagAdministradorVar = null
     }
 
-    fetch(`/funcionarios/editarFuncionario/${idFuncionario}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            nome: nomeFuncionarioInput.value,
-            sobrenome: sobrenomeFuncionarioInput.value,
-            cpf: cpfFuncionarioInput.value,
-            email: emailFuncionarioInput.value,
-            telefone: telefoneFuncionarioInput.value,
-            funcao: funcaoFuncionarioInput.value,
-            flagAdministrador: flagAdministradorInput
+    let nomeFuncionarioVar = nomeFuncionarioInput.value.trim()
+    let sobrenomeFuncionarioVar = sobrenomeFuncionarioInput.value.trim()
+    let cpfFuncionarioVar = cpfFuncionarioInput.value.trim()
+    let emailFuncionarioVar = emailFuncionarioInput.value.trim()
+    let telefoneFuncionarioVar = telefoneFuncionarioInput.value.trim()
+    let funcaoFuncionarioVar = funcaoFuncionarioInput.value.trim()
 
+    if (nomeFuncionarioVar == "" || sobrenomeFuncionarioVar == "" ||
+        cpfFuncionarioVar == "" || emailFuncionarioVar == '' || telefoneFuncionarioVar == '' || funcaoFuncionarioVar == '' || flagAdministradorVar == null) {
+        // alert("Por favor, preencha todos os campos do funcionário!")
+
+        let timerInterval
+        Swal.fire({
+            title: 'Não deixe nenhum campo em branco!',
+            //   html: 'I will close in <b></b> milliseconds.',
+            timer: 1200,
+            //              timerProgressBar: true,
+            icon: 'error',
+            showConfirmButton: false,
+            willClose: () => {
+                clearInterval(timerInterval)
+            }
+        }).then((result) => {
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) {
+                console.log('faltam preencher campos')
+                // exibirSection('abaFuncionarios')
+            }
         })
-    }).then(function (resposta) {
+        return false;
 
-        if (resposta.ok) {
-            // window.location = "/dashboard/mural.html"
+    } else {
+        fetch(`/funcionarios/editarFuncionario/${idFuncionario}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nome: nomeFuncionarioVar,
+                sobrenome: sobrenomeFuncionarioVar,
+                cpf: cpfFuncionarioVar,
+                email: emailFuncionarioVar,
+                telefone: telefoneFuncionarioVar,
+                funcao: funcaoFuncionarioVar,
+                flagAdministrador: flagAdministradorVar
 
-            let timerInterval
-            Swal.fire({
-                title: 'Alterações salvas com sucesso!',
-                //   html: 'I will close in <b></b> milliseconds.',
-                timer: 1200,
-                //              timerProgressBar: true,
-                icon: 'success',
-                showConfirmButton: false,
-                willClose: () => {
-                    clearInterval(timerInterval)
-                }
-            }).then((result) => {
-                /* Read more about handling dismissals below */
-                if (result.dismiss === Swal.DismissReason.timer) {
-                    console.log('salvo com sucesso')
-                    exibirSection('abaFuncionarios')
-                }
             })
+        }).then(function (resposta) {
+
+            if (resposta.ok) {
+                // window.location = "/dashboard/mural.html"
+
+                let timerInterval
+                Swal.fire({
+                    title: 'Alterações salvas com sucesso!',
+                    //   html: 'I will close in <b></b> milliseconds.',
+                    timer: 1200,
+                    //              timerProgressBar: true,
+                    icon: 'success',
+                    showConfirmButton: false,
+                    willClose: () => {
+                        clearInterval(timerInterval)
+                    }
+                }).then((result) => {
+                    /* Read more about handling dismissals below */
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                        console.log('salvo com sucesso')
+                        exibirSection('abaFuncionarios')
+                    }
+                })
 
 
-        } else if (resposta.status == 404) {
-            window.alert("Deu 404!");
-        } else {
-            throw ("Houve um erro ao tentar editar dados do funcionário! Código da resposta: " + resposta.status);
-        }
-    }).catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-    });
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar editar dados do funcionário! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
 }
-
 function deletarFuncionario(idFuncionario) {
     console.log("FUNCIONÁRIO A SER DELETADO - ID" + idFuncionario);
     Swal.fire({
@@ -626,54 +720,83 @@ function IrParaEditarComputador(computadorInformacoes) {
 
 
 function EditarComputador(idComputador) {
+    let sistemaOperacionalComputadorVar = sistemaOperacionalComputadorInput.value.trim()
+    let modeloProcessadorComputadorVar = modeloProcessadorComputadorInput.value.trim()
+    let totalRamComputadorVar = totalRamComputadorInput.value.trim()
+    let totalDiscoComputadorVar = totalDiscoComputadorInput.value.trim()
 
-    fetch(`/computadores/editarComputador/${idComputador}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            sistemaOperacional: sistemaOperacionalComputadorInput.value,
-            modelo: modeloProcessadorComputadorInput.value,
-            totalRam: totalRamComputadorInput.value,
-            totalDisco: totalDiscoComputadorInput.value,
 
+    if (sistemaOperacionalComputadorVar == "" || modeloProcessadorComputadorVar == "" ||
+        totalRamComputadorVar == "" || totalDiscoComputadorVar == '') {
+
+        let timerInterval
+        Swal.fire({
+            title: 'Não deixe nenhum campo em branco!',
+            //   html: 'I will close in <b></b> milliseconds.',
+            timer: 1200,
+            //              timerProgressBar: true,
+            icon: 'error',
+            showConfirmButton: false,
+            willClose: () => {
+                clearInterval(timerInterval)
+            }
+        }).then((result) => {
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) {
+                console.log('faltam preencher campos')
+                // exibirSection('abaFuncionarios')
+            }
         })
-    }).then(function (resposta) {
+        return false;
 
-        if (resposta.ok) {
-            // window.location = "/dashboard/mural.html"
+    } else {
+        fetch(`/computadores/editarComputador/${idComputador}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                sistemaOperacional: sistemaOperacionalComputadorVar,
+                modelo: modeloProcessadorComputadorVar,
+                totalRam: totalRamComputadorVar,
+                totalDisco: totalDiscoComputadorVar,
 
-            let timerInterval
-            Swal.fire({
-                title: 'Alterações salvas com sucesso!',
-                //   html: 'I will close in <b></b> milliseconds.',
-                timer: 1200,
-                //              timerProgressBar: true,
-                icon: 'success',
-                showConfirmButton: false,
-                willClose: () => {
-                    clearInterval(timerInterval)
-                }
-            }).then((result) => {
-                /* Read more about handling dismissals below */
-                if (result.dismiss === Swal.DismissReason.timer) {
-                    console.log('salvo com sucesso')
-                    exibirSection('abaComputadores')
-                }
             })
+        }).then(function (resposta) {
+
+            if (resposta.ok) {
+                // window.location = "/dashboard/mural.html"
+
+                let timerInterval
+                Swal.fire({
+                    title: 'Alterações salvas com sucesso!',
+                    //   html: 'I will close in <b></b> milliseconds.',
+                    timer: 1200,
+                    //              timerProgressBar: true,
+                    icon: 'success',
+                    showConfirmButton: false,
+                    willClose: () => {
+                        clearInterval(timerInterval)
+                    }
+                }).then((result) => {
+                    /* Read more about handling dismissals below */
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                        console.log('salvo com sucesso')
+                        exibirSection('abaComputadores')
+                    }
+                })
 
 
-        } else if (resposta.status == 404) {
-            window.alert("Deu 404!");
-        } else {
-            throw ("Houve um erro ao tentar editar dados do computador! Código da resposta: " + resposta.status);
-        }
-    }).catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-    });
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar editar dados do computador! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
 }
-
 function deletarComputador(idComputador) {
     console.log("COMPUTADOR A SER DELETADO - ID" + idComputador);
     Swal.fire({
@@ -713,3 +836,4 @@ function deletarComputador(idComputador) {
         console.log(`#ERRO: ${resposta}`);
     });
 }
+

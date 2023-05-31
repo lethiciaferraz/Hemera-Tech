@@ -115,6 +115,8 @@
                     <a href="#aba1" data-target="abaEmpresa">Empresa</a>
                     <a href="#aba2" data-target="abaFuncionarios">Funcionários</a>
                     <a href="#aba3" data-target="abaComputadores">Computadores</a>
+                    <a href="#aba4" data-target="abaParametros">Parâmetros</a>
+
                 </nav>
 
                 <!-- ABA 1 -->
@@ -122,14 +124,14 @@
                     <div id="dados_empresa">
 
                         <div class="foto_empresa">
-                            <img src="../assets/office-building.png"  width="330px" alt="">
+                            <img src="../assets/building.png" width="340px" alt="">
 
                         </div>
 
                         <div class="caixa_dados">
                             <div class="destaque_txt" id="texto_destaque">
-                                <h3>
-                                    DADOS DA EMPRESA
+                                <h3 id="texto_titulo">
+                                    Dados da Empresa
                                 </h3>
                             </div>
 
@@ -147,7 +149,7 @@
 
                                             <div class="campo">
                                                 <label class="user-label">CNPJ: </label>
-                                                <input type="text" id="cnpj_empresa" placeholder="CNPJ">
+                                                <input type="text" maxlength="14" id="cnpj_empresa" placeholder="CNPJ">
                                             </div>
                                         </div>
 
@@ -160,7 +162,8 @@
 
                                             <div class="campo">
                                                 <label class="user-label">Telefone: </label>
-                                                <input type="text" maxlength="9" id="telefone_empresa" placeholder="999999999">
+                                                <input type="text" maxlength="9" id="telefone_empresa"
+                                                    placeholder="999999999">
                                             </div>
 
 
@@ -170,18 +173,19 @@
                                         <div id="linha">
                                             <div class="campo">
                                                 <label class="user-label">CEP: </label>
-                                                <input type="text" maxlength="8" id="cep_empresa" placeholder="Telefone">
+                                                <input type="text" maxlength="8" id="cep_empresa"
+                                                    placeholder="Telefone">
                                             </div>
 
                                             <div class="campo">
                                                 <label class="user-label">Logradouro: </label>
-                                                <input type="text" id="logradouro_empresa" placeholder="Funcão">
+                                                <input type="text" id="logradouro_empresa" placeholder="Rua exemplo">
                                             </div>
                                         </div>
 
                                         <div class="campo">
                                             <label class="user-label">Complemento: </label>
-                                            <input type="text" id="complemento_empresa" placeholder="Crie uma senha">
+                                            <input type="text" id="complemento_empresa" placeholder="Nº 000">
                                         </div>
 
                                     </div>
@@ -191,7 +195,10 @@
                             <div class="botoes" id="botoes_dados_empresa">
                                 <button onclick="EditarEmpresa()" id="botao_editar">Editar Dados</button>
                             </div>
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 320"><path fill="#E4CBFD" fill-opacity="1" d="M0,288L1440,128L1440,320L0,320Z"></path></svg> -->
+
                         </div>
+                        <div class="caixa_triangulo"></div>
 
                     </div>
 
@@ -203,7 +210,7 @@
                     <div id="caixa_lista" class="lista_funcionarios">
                         <div id="infos_principais">
                             <h3>Lista de Funcionários</h3>
-                            <nav style="margin-top: 0px;">
+                            <div style="margin-top: 0px;">
                                 <!-- <a style="border: 0; padding: 0;"> -->
                                 <!-- <a href="#abaFuncionarioEditar"> -->
                                 <button class="botaoEditarFuncionario"
@@ -211,7 +218,7 @@
                                     Funcionário</button>
                                 <!-- </a> -->
                                 <!-- </a> -->
-                            </nav>
+                            </div>
                         </div>
                         <div id="tracinho" style="margin-bottom: 20px;"></div>
                         <div id="linha">
@@ -233,14 +240,14 @@
                     <div id="dados_funcionario">
 
                         <div class="foto_empresa">
-                            <img src="../assets/user (1).png" width="300px" alt="">
+                            <img src="../assets/funcionario-fotoOK.jpg" width="200px" alt="">
 
                         </div>
 
                         <div class="caixa_dados">
                             <div class="destaque_txt" id="texto_destaque">
                                 <h3>
-                                    EDITAR DADOS DO FUNCIONÁRIO
+                                    Editar Dados do Funcionário
                                 </h3>
                             </div>
 
@@ -252,13 +259,13 @@
 
                                         <div id="linha">
                                             <div class="campo">
-                                                <label class="user-label">Nome: <span
+                                                <label class="user-label">Primeiro Nome: <span
                                                         style="color: red; font-size: 13px;">*</span> </label>
                                                 <input type="text" id="nome_funcionario">
                                             </div>
 
                                             <div class="campo">
-                                                <label class="user-label">Sobrenome: <span
+                                                <label class="user-label">Segundo Nome: <span
                                                         style="color: red; font-size: 13px;">*</span> </label>
                                                 <input type="text" id="sobrenome_funcionario">
                                             </div>
@@ -269,7 +276,7 @@
                                             <div class="campo">
                                                 <label class="user-label">CPF: <span
                                                         style="color: red; font-size: 13px;">*</span> </label>
-                                                <input type="text" maxlength="11"  id="cpf_funcionario">
+                                                <input type="text" maxlength="11" id="cpf_funcionario">
                                             </div>
 
                                             <div class="campo">
@@ -324,8 +331,7 @@
                     <div id="dados_funcionario">
 
                         <div class="foto_empresa">
-                            <img src="../assets/user (1).png" width="300px" alt="">
-
+                            <img src="../assets/funcionario-fotoOK.jpg" width="200px" alt=""">
                         </div>
                         <div id="caixa_cadastro">
 
@@ -361,7 +367,7 @@
                                             <div class="campo">
                                                 <label class="user-label">CPF: <span
                                                         style="color: red; font-size: 13px;">*</span> </label>
-                                                <input type="text" maxlength="18" placeholder="XXXXXXXXXXX"
+                                                <input type="text" maxlength="11" placeholder="XXXXXXXXXXX"
                                                     id="cpf_funcionario">
                                             </div>
 
@@ -417,7 +423,7 @@
 
                         </div>
                     </div>
-                    
+
 
                 </section>
 
@@ -482,14 +488,14 @@
                 <section id="aba3Editar" class="abaComputadorEditar">
                     <div id="dados_computador">
 
-                        <div class="foto_monitor">
+                        <!-- <div class="foto_monitor">
                             <img src="../assets/monitor.png" width="250px" alt="">
-                        </div>
+                        </div> -->
 
                         <div class="caixa_dados">
                             <div class="destaque_txt" id="texto_destaque">
                                 <h3>
-                                    EDITAR DADOS DO COMPUTADOR
+                                    Editar Dados do Computador
                                 </h3>
                             </div>
 
@@ -526,9 +532,9 @@
                                             </div>
 
                                         </div>
-                                        
+
                                         <div id="linha">
-                                            
+
                                             <div class="campo">
                                                 <label class="user-label">Total Disco: <span
                                                         style="color: red; font-size: 13px;">*</span> </label>
@@ -548,12 +554,581 @@
                     </div>
                 </section>
 
+                <!-- ABA 4 -->
+
+                <section id="aba2" class="abaFuncionarios">
+
+                    <div id="caixa_lista" class="lista_funcionarios">
+                        <div id="infos_principais">
+                            <h3>Lista de Funcionários</h3>
+                            <div style="margin-top: 0px;">
+            
+                                <button class="botaoEditarFuncionario"
+                                    onclick="exibirSection('abaFuncionarioCadastrar')">Add
+                                    Funcionário</button>
+                        
+                            </div>
+                        </div>
+                        <div id="tracinho" style="margin-bottom: 20px;"></div>
+                        <div id="linha">
+                            <div id="titulo_cpf"><b>CPF</b></div>
+                            <div id="titulo"><b>Nome</b></div>
+                            <div id="titulo_cargo"><b>Função</b></div>
+                            <div id="titulo"><b>Email</b></div>
+                            <div id="titulo_tipo"><b>Tipo</b></div>
+                            <div id="titulo"></div>
+                        </div>
+                        <div id="tracinho" style="margin-bottom: 20px;"></div>
+
+
+                    </div>
+
+                </section>
+
+                <section id="aba2Editar" class="abaFuncionarioEditar">
+                    <div id="dados_funcionario">
+
+                        <div class="foto_empresa">
+                            <img src="../assets/funcionario-fotoOK.jpg" width="200px" alt="">
+
+                        </div>
+
+                        <div class="caixa_dados">
+                            <div class="destaque_txt" id="texto_destaque">
+                                <h3>
+                                    Editar Dados do Funcionário
+                                </h3>
+                            </div>
+
+                            <div class="caixa-formulario">
+
+                                <div id="dados_principais">
+
+                                    <div class="campos">
+
+                                        <div id="linha">
+                                            <div class="campo">
+                                                <label class="user-label">Primeiro Nome: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
+                                                <input type="text" id="nome_funcionario">
+                                            </div>
+
+                                            <div class="campo">
+                                                <label class="user-label">Segundo Nome: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
+                                                <input type="text" id="sobrenome_funcionario">
+                                            </div>
+                                        </div>
+
+                                        <div id="linha">
+
+                                            <div class="campo">
+                                                <label class="user-label">CPF: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
+                                                <input type="text" maxlength="11" id="cpf_funcionario">
+                                            </div>
+
+                                            <div class="campo">
+                                                <label class="user-label">Email: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
+                                                <input type="text" id="email_funcionario">
+                                            </div>
+
+
+                                        </div>
+
+                                        <div id="linha">
+                                            <div class="campo">
+                                                <label class="user-label">Telefone: </label>
+                                                <input type="text" maxlength="9" id="telefone_funcionario">
+                                            </div>
+
+                                            <div class="campo">
+                                                <label class="user-label">Função: <span
+                                                        style="color: red; font-size: 12px;">*</span></label>
+                                                <input type="text" id="funcao_funcionario">
+                                            </div>
+
+
+                                        </div>
+
+
+                                        <div class="select_tipo">
+                                            <label for=""> Tipo de Acesso: <span
+                                                    style="color: red; font-size: 13px;">*</span> </label>
+                                            <select name="" id="sel_tipo_usuario">
+                                                <option value="">Escolha o tipo de usuário</option>
+                                                <option value="colaborador">Colaborador</option>
+                                                <option value="administrador">Administrador</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="botoes" id="botoes_dados_funcionario">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section id="aba2Cadastrar" class="abaFuncionarioCadastrar">
+                    <!-- CADATRO FUNCIONARIO -->
+                    <div id="dados_funcionario">
+
+                        <div class="foto_empresa">
+                            <img src="../assets/funcionario-fotoOK.jpg" width="200px" alt=""">
+                        </div>
+                        <div id="caixa_cadastro">
+
+                            <div class="destaque_txt" id="texto_destaque">
+                                <h3>
+                                    Cadastro de Funcionário
+                                </h3>
+                            </div>
+
+                            <div class="caixa-formulario">
+
+                                <div id="dados_principais">
+
+                                    <div class="campos">
+
+                                        <div id="linha">
+                                            <div class="campo">
+                                                <label class="user-label">Nome: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
+                                                <input type="text" id="nome_funcionario" placeholder="primeiro nome">
+                                            </div>
+
+                                            <div class="campo">
+                                                <label class="user-label">Sobrenome: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
+                                                <input type="text" id="sobrenome_funcionario"
+                                                    placeholder="segundo nome">
+                                            </div>
+                                        </div>
+
+                                        <div id="linha">
+
+                                            <div class="campo">
+                                                <label class="user-label">CPF: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
+                                                <input type="text" maxlength="11" placeholder="XXXXXXXXXXX"
+                                                    id="cpf_funcionario">
+                                            </div>
+
+                                            <div class="campo">
+                                                <label class="user-label">Email: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
+                                                <input type="text" id="email_funcionario"
+                                                    placeholder="exemplo@exemplo.com">
+                                            </div>
+
+
+                                        </div>
+
+
+                                        <div id="linha">
+                                            <div class="campo">
+                                                <label class="user-label">Telefone: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
+                                                <input type="text" id="telefone_funcionario" placeholder="123456789">
+                                            </div>
+
+                                            <div class="campo">
+                                                <label class="user-label">Função: <span
+                                                        style="color: red; font-size: 13px;">*</span> </label>
+                                                <input type="text" id="funcao_funcionario"
+                                                    placeholder="função na empresa">
+                                            </div>
+
+
+                                        </div>
+
+
+                                        <div class="select_tipo">
+                                            <label for=""> Tipo de Acesso: <span
+                                                    style="color: red; font-size: 13px;">*</span> </label>
+                                            <select name="" id="sel_tipo_usuario">
+                                                <option value="">Escolha o tipo de usuário</option>
+                                                <option value="false">Colaborador</option>
+                                                <option value="true">Administrador</option>
+                                            </select>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="botoes" id="botao_cadastro_funcionario">
+                                <button onclick="exibirSection('abaFuncionarios')">Cancelar</button>
+                                <button id="bt_cadastrar_funcionario"
+                                    onclick="CadastrarFuncionario()">Cadastrar</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </section>
+
+                <!-- ABA 3 -->
+                <section id="aba4" class="abaParametros">
+
+                    <div id="caixa_lista" class="lista_parametros">
+                        <div id="infos_principais">
+                            <h3>
+                                Parâmetros para Alertas
+                            </h3>
+                            <div style="margin-top: 0px;">
+
+                            <button class="botaoEditarFuncionario"
+                            onclick="exibirSection('abaEditarParametros')">Editar Parâmetros</button>
+                        </div>
+            
+                        </div>
+
+                        <div id="tracinho" style="margin-bottom: 20px;"></div>
+
+                        <div id="linha">
+
+                            <div id="titulo_monitoramento">
+                                <b>Tipo de Monitoramento</b>
+                            </div>
+
+                            <div id="titulo_componente">
+                                <b>Componente</b>
+                            </div>
+                            <!-- <div id="tituloTotalRAM">
+                                <b>Normal</b>
+                            </div> -->
+
+                            <div id="titulo_atencao">
+                                <b>Alerta de Atenção</b>
+                            </div>
+
+                            <div id="titulo_critico">
+                                <b>Alerta de Crítico</b>
+                            </div>
+                           
+                            <div id="titulo" style="width: 4vw;"></div>
+
+                            <div id="titulo" style="width: 4vw;"></div>
+
+                        </div>
+
+                        <div id="tracinho" style="margin-bottom: 20px;"></div>
+
+                        <div id="linha">
+
+                            <div id="dado_monitoramento">
+                                <p>Uso</p>
+                            </div>
+
+                            <div id="titulo_componente">
+                                <p>CPU</p>
+                            </div>
+                            <!-- <div id="tituloTotalRAM">
+                                <p>Normal</p>
+                            </div> -->
+
+                            <div id="titulo_atencao">
+                                <p>Acima de 70%</p>
+                            </div>
+
+                            <div id="titulo_critico">
+                                <p>Acima de 85%</p>
+                            </div>
+                           
+                            <div id="titulo" style="width: 4vw;"></div>
+
+                            <div id="titulo" style="width: 4vw;"></div>
+
+                        </div>
+                        <div id="tracinho" style="margin-bottom: 20px;"></div>
+
+                        <div id="linha">
+
+                            <div id="dado_monitoramento">
+                                <p>Uso</p>
+                            </div>
+
+                            <div id="titulo_componente">
+                                <p>Memória</p>
+                            </div>
+                            <!-- <div id="tituloTotalRAM">
+                                <p>Normal</p>
+                            </div> -->
+
+                            <div id="titulo_atencao">
+                                <p>Acima de 70%</p>
+                            </div>
+
+                            <div id="titulo_critico">
+                                <p>Acima de 85%</p>
+                            </div>
+                           
+                            <div id="titulo" style="width: 4vw;"></div>
+
+                            <div id="titulo" style="width: 4vw;"></div>
+
+                        </div>
+                        <div id="tracinho" style="margin-bottom: 20px;"></div>
+
+                        <div id="linha">
+
+                            <div id="dado_monitoramento">
+                                <p>Uso</p>
+                            </div>
+
+                            <div id="titulo_componente">
+                                <p>Disco</p>
+                            </div>
+                            <!-- <div id="tituloTotalRAM">
+                                <p>Normal</p>
+                            </div> -->
+
+                            <div id="titulo_atencao">
+                                <p>Acima de 70%</p>
+                            </div>
+
+                            <div id="titulo_critico">
+                                <p>Acima de 70%</p>
+                            </div>
+                           
+                            <div id="titulo" style="width: 4vw;"></div>
+
+                            <div id="titulo" style="width: 4vw;"></div>
+
+                        </div>
+
+                        <div id="tracinho" style="margin-bottom: 20px;"></div>
+
+                        <div id="linha">
+
+                            <div id="dado_monitoramento">
+                                <p>Velocidade de Dowload</p>
+                            </div>
+
+                            <div id="titulo_componente">
+                                <p>Rede</p>
+                            </div>
+                            <!-- <div id="tituloTotalRAM">
+                                <p>Normal</p>
+                            </div> -->
+
+                            <div id="titulo_atencao">
+                                <p>Abaixo acima </p>
+                            </div>
+
+                            <div id="titulo_critico">
+                                <p>Abaixo acima?</p>
+                            </div>
+                           
+                            <div id="titulo" style="width: 4vw;"></div>
+
+                            <div id="titulo" style="width: 4vw;"></div>
+
+                        </div>
+
+                        <div id="tracinho" style="margin-bottom: 20px;"></div>
+
+                        <div id="linha">
+
+                            <div id="dado_monitoramento">
+                                <p>Velocidade de Upload</p>
+                            </div>
+
+                            <div id="titulo_componente">
+                                <p>Rede</p>
+                            </div>
+                            <!-- <div id="tituloTotalRAM">
+                                <p>Normal</p>
+                            </div> -->
+
+                            <div id="titulo_atencao">
+                                <p>abaixo acima</p>
+                            </div>
+
+                            <div id="titulo_critico">
+                                <p>abaxixo acima?</p>
+                            </div>
+                           
+                            <div id="titulo" style="width: 4vw;"></div>
+
+                            <div id="titulo" style="width: 4vw;"></div>
+
+                        </div>
+
+                        <div id="tracinho" style="margin-bottom: 20px;"></div>
+
+
+                    </div>
+
+                </section>
+
+                          
+                <section id="aba4Editar" class="abaEditarParametros">
+                    <div id="dados_empresa">
+
+                        <!-- <div class="icones_parametros">
+                            <img src="../assets/alerta-icone.png" width="90px" alt="">
+                            <img src="../assets/critico-icone.png" width="90px" alt="">
+                            <img src="../assets/otimo-icone.png" width="90px" alt="">
+
+
+                        </div> -->
+
+                        <div class="caixa_dados">
+                            <div class="destaque_txt" id="texto_destaque">
+                                <h3>
+                                    Parâmetros de Alerta
+                                </h3>
+                            </div>
+
+                            <div class="caixa-formulario">
+
+                                <div id="dados_principais">
+
+                                    <!-- 
+                                    <div>
+                                        <b>Considerações</b>
+
+                                        <p>
+                                            A Hemera Tech faz dois tipos de ALERTAS
+                                        </p>
+
+                                        <b>Atenção</b>
+                                        <p>Ele é quando está chegando na chegando na fase crítica</p>
+
+                                        <b>Crítico</b>
+                                        <p>Ele é quando atingiu o limite definido por você</p>
+
+                                    </div> -->
+
+                                    <div class="campos">
+
+                                        <div id="caixa_linha">
+
+                                            <div id="linha">
+                                                <b>Uso do Processador</b>
+
+                                                <div id="caixa_campo">
+                                                    <div class="campo">
+                                                        <label class="user-label">Atenção: </label>
+                                                        <input type="number" id="atencao_parametro_cpu"
+                                                            placeholder="exemplo: 60">
+                                                    </div>
+
+                                                    <div class="campo">
+                                                        <label class="user-label">Crítico: </label>
+                                                        <input type="number" id="critico_parametro_cpu" placeholder="exemplo: 80">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="linha">
+                                                <b>Uso da Memória</b>
+                                                <div id="caixa_campo">
+
+                                                    <div class="campo">
+                                                        <label class="user-label">Atenção: </label>
+                                                        <input type="number" id="atencao_parametro_memoria"
+                                                            placeholder="exemplo: 70">
+                                                    </div>
+
+                                                    <div class="campo">
+                                                        <label class="user-label">Crítico: </label>
+                                                        <input type="number" maxlength="9" id="critico_parametro_memoria"
+                                                            placeholder="exemplo: 85">
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+
+
+                                        <div id="caixa_linha">
+
+                                            <div id="linha">
+                                                <b>Uso de Disco</b>
+                                                <div id="caixa_campo">
+                                                    <div class="campo">
+                                                        <label class="user-label">Atenção: </label>
+                                                        <input type="number" maxlength="8" id="atencao_parametro_disco"
+                                                            placeholder="exemplo: 75">
+                                                    </div>
+
+                                                    <div class="campo">
+                                                        <label class="user-label">Crítico: </label>
+                                                        <input type="number" id="critico_parametro_disco"
+                                                            placeholder="exemplo: 85">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="linha">
+                                                <b>Velocidade de Upload</b>
+                                                <div id="caixa_campo">
+                                                    <div class="campo">
+                                                        <label class="user-label">Atenção: </label>
+                                                        <input type="number" maxlength="8" id="atencao_parametro_upload"
+                                                            placeholder="exemplo: ">
+                                                    </div>
+
+                                                    <div class="campo">
+                                                        <label class="user-label">Crítico: </label>
+                                                        <input type="number" id="critico_parametro_upload"
+                                                            placeholder="exemplo: ">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div id="linha">
+                                            <b>Velocidade de Dowload</b>
+                                            <div id="caixa_campo">
+                                                <div class="campo">
+                                                    <label class="user-label">Atenção: </label>
+                                                    <input type="number" id="atencao_parametro_dowload"
+                                                        placeholder="exemplo:">
+                                                </div>
+
+                                                <div class="campo">
+                                                    <label class="user-label">Crítico: </label>
+                                                    <input type="number" id="critico_parametro_download" placeholder="exemplo:">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="botoes" id="botoes_dados_empresa">
+                                <button onclick="EditarParametros()" id="botao_editar">Salvar Alterações</button>
+                                <button onclick="exibirSection('abaParametros')" id="botao_editar">Cancelar</button>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </section>
 
             </div>
 
         </div>
 
     </div>
+    <!-- MARCARAS -->
+
 
 </body>
 
