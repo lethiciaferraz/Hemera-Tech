@@ -1,0 +1,386 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #b9abc5;
+    margin: 0%;
+}
+
+:root {
+    --bordaCurva: 5px;
+    --roxoEscuro: #a188b8;
+    --roxoClarinho: #D8C4EC;
+    --roxoClaroFundo: #EEDDFD;
+    --tamanhoLetraDestaque: min(32px, 19vh);
+
+    /* para usar no font-weigth */
+    --letraLight: 300;
+    --letraRegular: 400;
+    --letraMedia: 500;
+    --letraSemiBold: 600;
+}
+
+#div_principal_contato {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 90px 1vw 0px 1vw;
+    min-height: 10vh;
+}
+
+
+.cadastrado {
+    background-color: #d8c4ec;
+    display: flex;
+    flex-direction: row;
+    /* padding: 3rem 0 0 0; */
+    justify-content: center;
+    /* margin: 0px 13vw 0px 13vw; */
+    border-radius: 10px 0px 0px 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+
+}
+
+.cadastrado p {
+    font-size: 1rem;
+    color: #8327a4;
+    font-weight: 700;
+    /* margin-bottom: 2px solid black; */
+}
+
+.cadastrado #lateral {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.moldura {
+    background-color: #ffffff;
+    padding: 4rem 4rem 2.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0px 10px 10px 0px;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+    min-width: 23vw;
+}
+
+.moldura a {
+    color: #812FCD;
+}
+
+.destaque_txt {
+    font-size: var(--tamanhoLetraDestaque);
+    color: #812FCD;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+#campo1_login {
+    margin-bottom: 1rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+#div_campos .campo input {
+    /* padding: 5px; */
+    border-radius: 1vh;
+    /* border: 1px solid black; */
+    width: 25vw;
+    font-family: "Poppins", sans-serif;
+    background-color: #ffffff;
+}
+
+#div_campos .campo label {
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: var(--letraMedia);
+}
+
+#botao_login {
+    margin: 1.5rem 0 2rem 0;
+}
+
+#botao_login button {
+    background-color: #812FCD;
+    color: #fff;
+    min-width: 15vw;
+    border-radius: 5px;
+    border: 2px;
+    border-style: groove;
+    border-color: #812FCD;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    padding: 10px;
+    font-size: min(16px, 32vh);
+    font-weight: 550;
+    cursor: pointer;
+}
+
+#botao_login button:hover {
+    background-color: #812fcd00;
+    color: #812FCD;
+    transition: 0.8s;
+}
+
+
+.txt_2 {
+    font-size: min(15px, 28vh);
+    font-weight: 400;
+}
+
+.campo label.user-label {
+    font-size: 2rem;
+    color: #020202;
+    font-weight: 500;
+    position: relative;
+    top: 0.9rem;
+    margin: 0 0 0 7px;
+    padding: 0 3px;
+    background: #ffffff;
+    width: fit-content;
+    z-index: 1;
+    border-radius: 2px;
+}
+
+.campo input[type=text],
+input[type=password] {
+    padding: 11px 10px;
+    font-size: 0.95rem;
+    border: 2px #000000 solid;
+    border-radius: 2px;
+    background: #ffffff;
+    width: 25vw;
+    margin: 5px 0px;
+}
+
+
+input[type=text]:focus,
+input[type=password]:focus {
+    border-color: #812FCD;
+    outline: none;
+}
+
+button {
+    /* width: 9em; */
+    /* height: 3em; */
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5,
+        -6px -6px 12px #ffffff;
+}
+
+button::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    /* border-radius: 30em; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #8327a4 0%, #702487 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+    color: #fff;
+}
+
+button:hover::before {
+    width: 100vw;
+}
+
+#mostrarBotao{
+    display: none;
+}
+
+
+@media only screen and (max-width: 992px) {
+
+    .campo label.user-label {
+        /* font-size: 0.3rem; */
+        color: #020202;
+        font-weight: 500;
+        position: relative;
+        top: 0.9rem;
+        margin: 0 0 0 7px;
+        padding: 0 3px;
+        background: #ffffff;
+        width: fit-content;
+        z-index: 1;
+        border-radius: 1px;
+    }
+
+    .campo input[type=text],
+    input[type=password] {
+        padding: 11px 10px;
+        font-size: 0.75rem;
+        border: 2px #000000 solid;
+        border-radius: 2px;
+        background: #ffffff;
+        width: 25vw;
+        margin: 5px 0px;
+    }
+
+    input[type=text]:focus,
+    input[type=password]:focus {
+        border-color: #812FCD;
+        outline: none;
+    }
+
+    .cadastrado {
+        display: none;
+    }
+    #mostrarBotao{
+        display: block;
+    }
+
+    #voltar {
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        color: #000000;
+        transition: .5s ease;
+        font-weight: 500;
+    
+    }
+
+    #voltar{
+        display: block;
+    }
+
+    #voltar a {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 4rem;
+        color: #ffffff;
+    }
+
+    #div_moldura_login {
+        box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+        border-radius: 10px 10px 10px 10px;
+
+    }
+
+    .destaque_txt {
+        font-size: 25px;
+    }
+
+    #botao_login {
+        font-size: 11px;
+    }
+
+    .txt_2 {
+        font-size: 12px;
+    }
+
+    #div_moldura_login p {
+        font-size: 14px;
+    }
+
+    #div_img_login {
+        display: none;
+    }
+
+    #div_campos .campo input {
+        width: 50vw;
+    }
+
+    #botao_login button {
+        min-width: 30vw;
+        font-size: 11px;
+    }
+}
+
+
+@media only screen and (max-width: 800px) {
+    .destaque_txt {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 526px) {
+
+
+    .campo label.user-label {
+        font-size: 0.1rem;
+        color: #020202;
+        font-weight: 500;
+        position: relative;
+        top: 0.9rem;
+        margin: 0 0 0 7px;
+        padding: 0 3px;
+        background: #ffffff;
+        width: fit-content;
+        z-index: 1;
+        border-radius: 1px;
+    }
+
+
+    
+#div_campos .campo label {
+    /* font-family: "Poppins", sans-serif; */
+    margin-bottom: 6px;
+    font-size: 12px;
+    /* font-weight: var(--letraMedia); */
+}
+
+    .campo input[type=text],
+    input[type=password] {
+        padding: 8px 7px;
+        font-size: 0.7rem;
+        border: 2px #000000 solid;
+        border-radius: 2px;
+        background: #ffffff;
+        width: 25vw;
+        margin: 5px 0px;
+    }
+
+    .destaque_txt {
+        font-size: 1rem;
+    }
+
+    .moldura {
+        padding: 2rem;
+    }
+}
+
+#voltarContato {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #000000;
+    transition: .5s ease;
+    font-weight: 500;
+
+}
+
+
+#voltarContato:hover {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#voltarContato a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 4rem;
+    color: #ffffff;
+}

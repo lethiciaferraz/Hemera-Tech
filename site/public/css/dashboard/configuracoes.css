@@ -675,33 +675,6 @@ section button:hover:after {
 
 }
 
-/*   
-  #dados_empresa::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 0px solid transparent;
-    border-right: 9vw solid transparent;
-    border-top: 490px solid #d1c6df;
-    box-sizing: border-box;
-  }
-  
-
-  #dados_empresa::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    right: 0;
-    border-left: 9vw solid transparent;
-    border-right: 0px solid transparent;
-    border-bottom: 490px solid #d1c6df;
-  } */
-
 
 #caixa_campo {
     display: flex;

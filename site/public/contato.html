@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar em contato</title>
+
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/contato.css">
+    <!-- <link rel="stylesheet" href="./css/login.css"> -->
+
+</head>
+
+<body>
+
+    <!-- LOGIN -->
+    <div class="corpo" id="div_principal_contato">
+
+
+        <div class="cadastrado">
+            <div id="lateral">
+                <a href="index.html">
+                    <div id="voltarContato">
+                        Voltar
+                    </div>
+                </a>
+
+
+                <!-- <p>Adquira nossa solução de monitoramento!</p> -->
+                <img src="./assets/Contact us-pana.png" width="400px" alt="">
+                <p>Adquira nossa solução de monitoramento!</p>
+
+            </div>
+        </div>
+
+        <div class="moldura" id="div_moldura_login">
+            <a href="index.html" id="mostrarBotao"">
+                <div id="voltar" >
+                    Voltar
+                </div>
+            </a>
+
+            <div class="destaque_txt" id="div_destaque_txt_login">
+                <b>Entrar em Contato</b>
+            </div>
+
+            <!-- <p style="text-align: center; margin-top: 0.5rem;">Insira seus dados para ter acesso a plataforma</p> -->
+
+            <div id="div_campos">
+                <div class="campo" id="campo1_contato">
+                    <label class="user-label">Empresa: </label>
+                    <input type="text" id="ip_nomeEmpresa" placeholder="Nome da Empresa">
+                </div>
+
+                <div class="campo" id="campo2_login">
+                    <label class="user-label">Responsável:</label>
+                    <input type="text" id="ip_nomeResponsavel" placeholder="ex: Mariana ">
+                </div>
+
+                <div class="campo" id="campo2_login">
+                    <label class="user-label">Email:</label>
+                    <input type="text" id="ip_email" placeholder="exemplo@exemplo.com">
+                </div>
+                <div class="campo" id="campo2_login">
+                    <label class="user-label">Telefone:</label>
+                    <input type="text" maxlength="9" id="ip_telefone" placeholder="123456789">
+                </div>
+            </div>
+
+
+            <div class="botoes " id="botao_login">
+                <button id="bt_entrar" >Enviar</button>
+            </div>
+
+            <div class="txt_2 " id="div_txt_cadastrar">
+                Já é cadastrado?
+                <a href="login.html">Faça Login</a>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    const inputs = document.querySelectorAll('input');
+    // QUANDO O USUARIO SAIR DO CAMPO SE ELE ESTIVER APENAS COM ESPAÇOS ELE LIMPA
+    inputs.forEach(function (input) {
+        input.addEventListener('blur', function () {
+            input.value = input.value.trim();
+        });
+    });
+
+</script>
