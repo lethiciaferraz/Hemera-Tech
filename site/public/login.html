@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Hemera Tech</title>
+    <title>Login</title>
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/contato.css">
     <link rel="stylesheet" href="./css/login.css">
 
     <!-- ICONE -->
@@ -15,185 +16,51 @@
     <!-- FONTE POPPINS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap"
+        rel="stylesheet">
 
-  
+
+    <!-- ALERTAS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+
 </head>
 
 <body>
 
-
-    <header>
-
-        <div id="div_header">
-
-            <div id="div_img_logo">
-                <img src="./assets/HEMERA.png" alt="" width=150vw>
-            </div>
-
-            <div id="navbar_conteudo">
-                <nav>
-                    <ul>
-                        <a href="index.html#quem_somos" id="quem_somos_selecao">
-                            <li>Sobre nós</li>
-                        </a>
-
-                        <li>|</li>
-                        <a href="index.html#imagem_fundo1" id="servicos_selecao">
-                            <li>Serviços</li>
-                        </a>
-
-                        <li>|</li>
-
-                        <a href="index.html#div_contato" id="contato_selecao">
-                            <li>Contato</li>
-                        </a>
-                    </ul>
-                </nav>
-            </div>
-
-
-            <div id="navbar_botoes">
-                <ul>
-                    <a href="login.html">
-                        <li id="btn-nav-login">Login</li>
-                    </a>
-
-                    <a href="" class="modal">
-                        <li id="btn-nav-cadastro">Entrar em contato</li>
-                    </a>
-                </ul>
-
-            </div>
-
-            <!-- -------------MOBILE MENU ------>
-            <div id="navbar_botao_mobile">
-                <span onclick="MostrarMenu()">
-                    <img src="assets/icone_menu.png">
-                </span>
-
-            </div>
-        </div>
-
-        <div class="mobile-menu" id="navbar_conteudo_mobile">
-            <nav>
-                <ul>
-                    <a href="index.html#quem_somos">
-                        <li>
-                                Sobre nós
-                            </li>
-                        </a>
-    
-                        <a href="index.html#imagem-fundo1">
-                        <li>
-                                Serviços
-                            </li>
-                        </a>
-    
-                        <a href="index.html#div_contato">
-                        <li>
-                                Contato
-                            </li>
-                        </a>
-                </ul>
-            </nav>
-
-            <div id="navbar_botoes_mobile">
-                <ul>
-                    <a href="login.html"><li id="btn-nav-login_mobile"> Login</li></a>
-
-                    <a href="" class="modal"><li id="btn-nav-cadastro_mobile">Cadastrar-se</li></a>
-                </ul>
-
-            </div>
-        </div>
-
-    </header>
-     <!-- ------MODAL CONTATO-------- -->
-
-     <div class="modal_contatar" style="display: none;">
-        <div id="modal_caixa">
-            <div class="fechar">X</div>
-            <div class="texto_principal">
-                <h3>Entrar em contato</h3>
-            </div>
-
-            <div class="caixa_informacoes">
-                <p>Preencha os campos abaixo e dentro de alguns minutos um dos nossos atendentes entrará em contato com
-                    você.</p>
-
-                <div id="caixa_campos">
-                    <div class="campos">
-
-                        <div class="campo">
-                            <label class="user-label">Empresa: </label>
-                            <input type="text" placeholder="Nome da Empresa">
-                        </div>
-
-                        <div class="campo">
-                            <label class="user-label">Responsável:</label>
-                            <input type="text" placeholder="Nome do Responsável">
-                        </div>
-
-                        <div class="campo">
-                            <label class="user-label">Email:</label>
-                            <input type="email" placeholder="email@exemplo.com">
-                        </div>
-
-                        <div class="campo">
-                            <label class="user-label">Telefone:</label>
-                            <input type="tel" placeholder="9 99999999">
-                        </div>
-
-                       <div class="botao">
-                           <button>Enviar</button>
-                        </div>
-                    </div>
-
-                    <div id="imagem_campos">
-                        <img src="./assets/contato.png" width="380vh">
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div id="login" style="margin-top: 16vh;"></div>
-
     <!-- LOGIN -->
-    <div class="corpo" id="div_principal_login">
+    <div class="corpo" id="div_principal_contato">
 
-        <!-- CARD DA API -->
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
-            </div>
-        </div>
-        <!--  -->
 
 
         <div class="moldura" id="div_moldura_login">
+
+            <a href="index.html">
+                <div id="voltar">
+                    Voltar
+                </div>
+            </a>
 
             <div class="destaque_txt" id="div_destaque_txt_login">
                 <b>Login</b>
             </div>
 
-            <p style="text-align: center; margin-top: 0.5rem;">Insira seus dados para ter acesso a plataforma</p>
+            <!-- <p style="text-align: center; margin-top: 0.5rem;">Insira seus dados para ter acesso a plataforma</p> -->
 
             <div id="div_campos">
                 <div class="campo" id="campo1_login">
                     <label class="user-label">Email: </label>
-                    <input type="text" id="ip_email" placeholder="email@email.com">
+                    <input type="text" id="ip_email" placeholder="exemplo@exemplo.com">
                 </div>
-                
+
                 <div class="campo" id="campo2_login">
                     <label class="user-label">Senha:</label>
-                    <input type="password" id="ip_senha" placeholder="**********">
+                    <input type="password" id="ip_senha" placeholder="*********">
                 </div>
+
             </div>
 
 
@@ -201,34 +68,44 @@
                 <button id="bt_entrar" onclick="entrar()">Entrar</button>
             </div>
 
-            <div class="txt_2" onclick="esq_senha()" id="div_esq_senha">
-                <a href=" ">Esqueceu a senha?</a>
-            </div>
-
             <div class="txt_2 " id="div_txt_cadastrar">
+                <div>
                 Ainda não é cadastrado?
-                <a href="" class="modal">Entre em contato</a>
+                </div>
+                <a href="contato.html">Entrar em Contato</a>
             </div>
 
         </div>
 
-        <!-- CARD API-->
-        <div id="div_erros_login"></div>
-        <!-- --------------- -->
+        <div class="cadastrado">
+            <div>
+                <p>Bem vindo de Volta!!</p>
+                <img src="./assets/Login-amico (1).png" alt="" width="350px">
+
+
+            </div>
+        </div>
 
     </div>
-    <footer>
-        <p>© Hemera Tech, 2023</p>
-    </footer>
 </body>
 
 </html>
-   <!--  função menu-->
-   <script src="js/funcoes.js"></script>
+<!--  função menu-->
+<script src="js/funcoes.js"></script>
 
 <script>
 
     function esq_senha() {
         alert('Página em construção...')
     }
+
+
+    const inputs = document.querySelectorAll('input');
+    // QUANDO O USUARIO SAIR DO CAMPO SE ELE ESTIVER APENAS COM ESPAÇOS ELE LIMPA
+    inputs.forEach(function (input) {
+        input.addEventListener('blur', function () {
+            input.value = input.value.trim();
+        });
+    });
+
 </script>

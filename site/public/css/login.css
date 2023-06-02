@@ -1,180 +1,115 @@
-/* .header {} */
-
-:root {
-    --bordaCurva: 5px;
-    --roxoEscuro: #812FCD;
-    --roxoClarinho: #D8C4EC;
-    --roxoClaroFundo: #EEDDFD;
-    --tamanhoLetraDestaque: min(32px, 19vh);
-    
-    /* para usar no font-weigth */
-    --letraLight: 300;
-    --letraRegular: 400;
-    --letraMedia: 500;
-    --letraSemiBold: 600;
-}
-
-#div_principal_login {
+#div_principal_contato {
     display: flex;
-    /* talvez precise mudar */
-    padding: 3rem 0 0 0;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    margin: 0px 13vw 0px 13vw;
+    margin: 90px 13vw 0px 13vw;
+    min-height: 77vh;
 }
 
-#div_img_login img {
-    width: min(600px, 75vh);
+.cadastrado {
+    border-radius: 0px 10px 10px 0px;
+    display: flex;
+    align-items: center;
+    min-width: 25.7vw;
+}
+
+
+
+.cadastrado #lateral {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
 
 .moldura {
-    background-color: #d8c4ec;
-    padding: 2rem;
+    background-color: #ffffff;
+    padding: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: var(--bordaCurva);
-    /* box-shadow: 2px 2px 10px#ab8ccf; */
-    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
-    min-width: 23vw;
-    /* justify-content: center; */
+    justify-content: center;
+    border-radius: 10px 0px 0px 10px;
+    min-height: 23vw;
 }
 
-.moldura a {
-    color: #812FCD;
-}
-
-.destaque_txt {
-    font-size: var(--tamanhoLetraDestaque);
-    font-weight: 100;
-}
-
-#campo1_login {
-    margin-bottom: 1rem;
-}
-
-.campo{
-    display: flex;
-    flex-direction: column;
-}
-
-#div_campos .campo input {
-    padding: 5px;
-    border-radius: 1vh;
-    border: 1px solid black;
-    width: 25vw;
-    font-family: "Poppins", sans-serif;
-    background-color: #EEDDFD;
-}
-
-#div_campos .campo label {
-    font-family: "Poppins", sans-serif;
-    margin-bottom: 6px;
-    font-size: 14px;
-    font-weight: var(--letraMedia);
-}
-
-#botao_login {
-    margin: 1.5rem 0 0.75rem 0;
-}
-
-#botao_login button {
-    background-color: #812FCD;
-    color: #fff;
-    min-width: 7vw;
+#voltar {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    padding: 10px;
     border-radius: 5px;
-    border: 2px;
-    border-style: groove;
-    border-color: #812FCD;
-    text-align: center;
-    font-family: "Poppins", sans-serif;
-    padding: 4px;
-    font-size: min(16px, 32vh);
-    font-weight: 550;
-    cursor: pointer;
+    color: #000000;
+    transition: .5s ease;
+    font-weight: 500;
+
 }
 
-#botao_login button:hover {
-    background-color: #812fcd00;
-    color: #812FCD;
-    transition: 0.8s;
+
+#voltar:hover {
+    position: absolute;
+    background-color: #ffffff;
+    padding: 10px;
+    /* width: 5vw; */
+    border-radius: 5px;
+}
+
+#voltar a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 4rem;
+    color: #ffffff;
+}
+
+.cadastrado p {
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .txt_2 {
-    font-size: min(15px, 28vh);
-    font-weight: 400;
+    /* font-size: 12px; */
+    text-align: center;
 }
+@media only screen and (max-width: 992px) {
 
-#div_esq_senha {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-#div_esq_senha a {
-    text-decoration: none;
-}
-
-#div_txt_cadastrar {
-    min-width: 20vw;
-    font-weight: 400;
-}
-#div_moldura_login p {
-    font-size: (15px, 30vh);
-}
-
-footer {
-    background-color: #D8C4EC;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    position: fixed;
-}
-
-
-.alerta_erro{
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .card_erro {
-    display: none;
-    background-color: #d8c4ec;
-    color: rgb(0, 0, 0);
-    width: 250px;
-    height: 200px;
-    position: fixed;
-    border-radius: 1vw;
-    /* border: #111011 3px solid; */
-    padding: 10px; 
-    margin-right: 20px;
-    /* margin-top: 5px; */
-  }
-  
-  .card_erro #mensagem_erro{
-    font-weight: 500;
-    font-size: 20px;
-  }
-
-
-@media only screen and (max-width: 1100px) {
-    #div_img_login img {
-        width: min(400px, 70vw);
+    .campo label.user-label {
+        /* font-size: 0.3rem; */
+        color: #020202;
+        font-weight: 500;
+        position: relative;
+        top: 0.9rem;
+        margin: 0 0 0 7px;
+        padding: 0 3px;
+        background: #ffffff;
+        width: fit-content;
+        z-index: 1;
+        border-radius: 1px;
     }
-    #div_principal_login {
-        justify-content: center;
-    }
-}
 
-@media only screen and (max-width: 976px) {
-    .destaque_txt {
-        font-size: 25px;
+ 
+
+    input[type=text]:focus,
+    input[type=password]:focus {
+        border-color: #812FCD;
+        outline: none;
     }
+
+    .cadastrado {
+        display: none;
+    }
+
+    #div_moldura_login {
+        box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+        border-radius: 10px 10px 10px 10px;
+
+    }
+
     #botao_login {
         font-size: 11px;
     }
-    .txt_2 {
-        font-size: 12px;
-    }
+
+
+
     #div_moldura_login p {
         font-size: 14px;
     }
@@ -182,12 +117,49 @@ footer {
     #div_img_login {
         display: none;
     }
+
     #div_campos .campo input {
         width: 50vw;
     }
+
     #botao_login button {
         min-width: 30vw;
         font-size: 11px;
     }
+    #div_principal_contato {
+   
+        margin: 90px 13vw 0px 13vw;
+        min-height: auto;
+    }
+
+    #campo1_login{
+        margin-bottom: auto;
+    }
 }
 
+
+
+@media only screen and (max-width: 526px) {
+
+    .campo input[type=text],
+    input[type=password] {
+        padding: 8px 7px;
+        font-size: 0.7rem;
+        border: 2px #000000 solid;
+        border-radius: 2px;
+        background: #ffffff;
+        width: 25vw;
+        margin: 5px 0px;
+    }
+
+    .moldura {
+        padding: 2rem;
+        min-height: 0;
+    }
+
+    #div_principal_contato {
+   
+        margin: 90px 1vw 0px 1vw;
+        min-height: auto;
+    }
+}

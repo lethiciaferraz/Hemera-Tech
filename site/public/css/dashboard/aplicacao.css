@@ -47,7 +47,7 @@
     padding: 1vh 1vw 1vh 1vw;
     background-color: #E4CBFD;
     border-radius: 0.4vw;
-    height: 120px;
+    min-height: 120px;
 }
 
 .passos {
@@ -71,19 +71,27 @@
     background-color: #812FCD;
     color: #fff;
     min-width: 1vw;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     border: 2px;
     border-style: groove;
     border-color: #812FCD;
     text-align: center;
     font-family: "Poppins", sans-serif;
-    padding: 3px;
+    padding: 1vh;
     font-size: min(15px, 15vh);
     font-weight: 400;
     cursor: pointer;
     /* display: flex; */
     text-align: right;
     /* margin-bottom: 40vh; */
+
+    border: none;
+    border-radius: 0.625em;
+
+    /* cursor: pointer; */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
 
 }
 
@@ -149,4 +157,24 @@
 #div_texto_passo p {
     font-weight: 400;
     font-size: min(15px, 30vh);
+}
+
+
+.botao_download button:after {
+    content: "";
+    background: #fbfafc;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+}
+
+.botao_download button:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
 }
