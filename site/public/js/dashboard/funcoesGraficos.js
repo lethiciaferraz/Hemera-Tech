@@ -1,4 +1,5 @@
 window.addEventListener('load', () => {
+    obterDadosGraficos()
     document.querySelectorAll('.abas nav a').forEach((a) => {
         a.addEventListener('click', () => {
 
@@ -26,8 +27,10 @@ window.addEventListener('load', () => {
             let selecionado = a.getAttribute('data-target');
             if (selecionado) {
                 if (selecionado === 'abaProcessadorERede') {
+
                     MostrarGraficosProcessadorERede();
                 } else if (selecionado === 'abaDiscoEMemoria') {
+
                     MostrarGraficosDiscoEMemoria();
                 }
             }
@@ -41,27 +44,29 @@ window.addEventListener('load', () => {
 })
 
 // -------------GRÁFICOS --------------------------
-// function obterDadosGraficoCPU() {
-//     console.log('Obter dados graficos USO Cpu')
+var listaDeDados
 
-//     fetch(`/graficos/ultimosUsoCPU`, { cache: 'no-store' }).then(function (response) {
-//       if (response.ok) {
+function obterDadosGraficos() {
+    console.log('Obter dados graficos')
 
-//         response.json().then(function (resposta) {
+    fetch(`/graficos/obterDados/${sessionStorage.ID_COMPUTADOR}`, { cache: 'no-store' }).then(function(response) {
+            if (response.ok) {
 
-//           console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-//           resposta.reverse();
+                response.json().then(function(response) {
 
-//           plotarGraficoUsoCPU(resposta);
-//         });
-//       } else {
-//         console.error('Nenhum dado encontrado ou erro na API');
-//       }
-//     })
-//       .catch(function (error) {
-//         console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-//       });
-//   }
+                    console.log(`Dados recebidos: ${JSON.stringify(response)}`);
+                    listaDeDados = response
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function(error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+}
+
 
 
 function MostrarGraficosProcessadorERede() {
@@ -71,10 +76,10 @@ function MostrarGraficosProcessadorERede() {
     new Chart(ctx1, {
         type: 'line',
         data: {
-            labels: ['18:00:00', '18:01:00', '18:02:00', '18:03:00', '18:04:00', '18:05:00'],
+            labels: [listaDeDados[5].horario, listaDeDados[4].horario, listaDeDados[3].horario, listaDeDados[2].horario, listaDeDados[1].horario, listaDeDados[0].horario],
             datasets: [{
                 label: 'Uso em %',
-                data: [40, 45, 35, 50, 65, 70],
+                data: [listaDeDados[5].uso_cpu, listaDeDados[4].uso_cpu, listaDeDados[3].uso_cpu, listaDeDados[2].uso_cpu, listaDeDados[1].uso_cpu, listaDeDados[0].uso_cpu],
                 borderWidth: 1
             }]
         },
@@ -92,17 +97,18 @@ function MostrarGraficosProcessadorERede() {
     new Chart(ctx6, {
         type: 'line',
         data: {
-            labels: ['18:04:40', '18:04:45', '18:04:50', '18:04:55', '18:05:00', '18:05:05'],
+            labels: [listaDeDados[5].horario, listaDeDados[4].horario, listaDeDados[3].horario, listaDeDados[2].horario, listaDeDados[1].horario, listaDeDados[0].horario],
             datasets: [{
-                label: 'Dowload',
-                data: [12, 19, 15, 31, 29, 29],
-                borderWidth: 1
-            },
-            {
-                label: 'Upload',
-                data: [15, 22, 10, 13, 6, 20],
-                borderWidth: 1
-            }]
+                    label: 'Dowload',
+                    data: [listaDeDados[5].download_rede, listaDeDados[4].download_rede, listaDeDados[3].download_rede, listaDeDados[2].download_rede, listaDeDados[1].download_rede, listaDeDados[0].download_rede],
+                    borderWidth: 1
+                },
+                {
+                    label: 'Upload',
+                    data: [listaDeDados[5].upload_rede, listaDeDados[4].upload_rede, listaDeDados[3].upload_rede, listaDeDados[2].dupload_rede, listaDeDados[1].upload_rede, listaDeDados[0].upload_rede],
+                    borderWidth: 1
+                }
+            ]
         },
         options: {
             scales: {
@@ -121,10 +127,10 @@ function MostrarGraficosDiscoEMemoria() {
     new Chart(ctx4, {
         type: 'line',
         data: {
-            labels: ['18:04:40', '18:04:45', '18:04:50', '18:04:55', '18:05:00', '18:05:05'],
+            labels: [listaDeDados[5].horario, listaDeDados[4].horario, listaDeDados[3].horario, listaDeDados[2].horario, listaDeDados[1].horario, listaDeDados[0].horario],
             datasets: [{
                 label: 'Uso em %',
-                data: [20, 22, 20, 18, 17, 20],
+                data: [listaDeDados[5].utilizado_memoria, listaDeDados[4].utilizado_memoria, listaDeDados[3].utilizado_memoria, listaDeDados[2].utilizado_memoria, listaDeDados[1].utilizado_memoria, listaDeDados[0].utilizado_memoria],
                 borderWidth: 1
             }]
         },
@@ -146,7 +152,7 @@ function MostrarGraficosDiscoEMemoria() {
             labels: ['Espaço livre', 'Em uso'],
             datasets: [{
                 label: 'em %',
-                data: [60, 40],
+                data: [(100 - listaDeDados[0].utilizado_armazenamento), listaDeDados[0].utilizado_armazenamento],
                 borderWidth: 1
             }]
         },

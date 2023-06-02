@@ -35,7 +35,7 @@ function MostrarRelatorioComputadores() {
         </div>
 
         <div id = "ver_dashboard">
-            <a href = "dashboardDetalhes.html#aba1">ver dashboard</a>
+            <buuton onclick="salvarCumputador(${response[i].idComputador})">ver dashboard</button>
         </div>
     </div >
 
@@ -55,3 +55,8 @@ function MostrarRelatorioComputadores() {
 }
 
 MostrarRelatorioComputadores();
+
+function salvarCumputador(idComputador) {
+    sessionStorage.ID_COMPUTADOR = 29
+    window.location = "dashboardDetalhes.html#aba1"
+}
