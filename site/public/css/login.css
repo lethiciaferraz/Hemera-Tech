@@ -1,8 +1,15 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #b9abc5;
+    margin: 0%;
+    height: 100%;
+}
+
 #div_principal_contato {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 90px 13vw 0px 13vw;
+    /* margin: 90px 13vw 2vw 13vw; */
     min-height: 77vh;
 }
 
@@ -33,33 +40,6 @@
     min-height: 23vw;
 }
 
-#voltar {
-    position: absolute;
-    top: 10px;
-    left: 15px;
-    padding: 10px;
-    border-radius: 5px;
-    color: #000000;
-    transition: .5s ease;
-    font-weight: 500;
-
-}
-
-
-#voltar:hover {
-    position: absolute;
-    background-color: #ffffff;
-    padding: 10px;
-    /* width: 5vw; */
-    border-radius: 5px;
-}
-
-#voltar a {
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 4rem;
-    color: #ffffff;
-}
 
 .cadastrado p {
     font-size: 1.5rem;
@@ -70,6 +50,11 @@
     /* font-size: 12px; */
     text-align: center;
 }
+
+#botao_login {
+    margin: 1.5rem 0 2rem 0;
+}
+
 @media only screen and (max-width: 992px) {
 
     .campo label.user-label {
