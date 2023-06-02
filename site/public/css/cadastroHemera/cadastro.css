@@ -1,0 +1,83 @@
+.corpo {
+    display: flex;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    align-items: center;
+    margin: 50px 10vw 0px 10vw;
+}
+
+:root {
+    --bordaCurva: 5px;
+    --roxoEscuro: #812FCD;
+    --roxoClarinho: #D8C4EC;
+    --roxoClaroFundo: #EEDDFD;
+    --tamanhoLetraDestaque: min(32px, 19vh);
+    --letraMedia: min(16px, 30vh);
+}
+
+.linha {
+    display: flex;
+    flex-direction: row;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px ;
+}
+
+.campo input {
+    padding: 10px;
+    border-radius: 1vh;
+    outline: 0 solid transparent;
+    border: 0;
+    width: 20vw;
+    background-color: var(--roxoClaroFundo);
+}
+
+
+#div_moldura_login{
+    border-radius: 10px 10px 10px 10px;
+}
+
+@media only screen and (max-width: 992px) {
+    .linha {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+    }
+
+    #logradouro_empresa {
+        width: auto;
+    }
+    /* ------------------------------------------------------ */
+    .destaque_txt {
+        font-size: 25px;
+    }
+    .container p {
+        margin-left: 0px;
+        font-size: 14px;
+    }
+    #dados_principais b {
+        font-size: 13px;
+    }
+    #endereco b {
+        font-size: 13px;
+    }
+    #div_tem_conta {
+        font-size: 12px;
+    }
+    /* ------------------------------------------------------ */
+    .campo input {
+        padding: 10px;
+        border-radius: 1vh;
+        border: 0;
+        width: 60vw;
+    }
+    
+    #bt_cadastrar {
+        min-width: 30vw;
+        font-size: 11px;
+    }
+}

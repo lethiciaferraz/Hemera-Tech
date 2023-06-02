@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Funcionário</title>
+
+    <link rel="stylesheet" href="../css/contato.css">
+    <link rel="stylesheet" href="../css/cadastroHemera/cadastro.css">
+
+    <!-- ICONE -->
+    <link rel="shortcut icon" href="../assets/artificial-intelligence (1).png" type="image/x-icon">
+
+    <!-- FONTE POPPINS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap"
+        rel="stylesheet">
+
+    <!-- função menu -->
+    <script src="js/funcoes.js"></script>
+</head>
+
+<body>
+
+    <!-- Cadastro Funcionário -->
+
+
+        <div class="corpo" id="div_principal_contato">
+
+
+            <div class="moldura" id="div_moldura_login">
+
+
+                <div class="destaque_txt" id="div_destaque_txt_login">
+                    <b>Cadastro de Funcionário</b>
+                </div>
+
+
+                <p style="text-align: center; margin-top: 0.5rem;">Agora cadastre um funcionário administrador da
+                    empresa</p>
+
+                <div id="div_campos">
+
+                    <div class="linha">
+                        <div class="campo" id="campo1_contato">
+                            <label class="user-label">Nome: <span style="color: red; font-size: 13px;">*</span> </label>
+                            <input type="text" id="nome_funcionario" placeholder="nome">
+                        </div>
+
+                        <div class="campo" id="campo1_contato">
+                            <label class="user-label">Sobrenome:
+                                <span style="color: red; font-size: 13px;">*</span>
+                            </label>
+                            <input type="text" id="sobrenome_funcionario" placeholder="sobrenome">
+                        </div>
+                    </div>
+
+                    <div class="linha">
+
+                        <div class="campo" id="campo2_login">
+                            <label class="user-label">CPF:
+                                <span style="color: red; font-size: 13px;">*</span>
+
+                            </label>
+                            <input type="text" id="cpf_funcionario" placeholder="exemplo@exemplo.com">
+                        </div>
+                        <div class="campo" id="campo2_login">
+                            <label class="user-label">Email:
+                                <span style="color: red; font-size: 13px;">*</span>
+
+                            </label>
+                            <input type="text" maxlength="9" id="email_funcionario" placeholder="123456789">
+                        </div>
+                    </div>
+
+                    <div class="linha">
+
+                        <div class="campo" id="campo2_login">
+                            <label class="user-label">Telefone:
+                                <span style="color: red; font-size: 13px;">*</span>
+
+                            </label>
+                            <input type="text" id="telefone_funcionario" placeholder="rua exemplo ">
+                        </div>
+
+                        <div class="campo" id="campo2_login">
+                            <label class="user-label">Cargo:
+                                <span style="color: red; font-size: 13px;">*</span>
+
+                            </label>
+                            <input type="text" id="funcao_funcionario" placeholder="XXXXX-XXX">
+                        </div>
+                    </div>
+
+
+
+                    <div class="select_tipo">
+                        <label class="user-label">Tipo de Usuário:
+                            <span style="color: red; font-size: 13px;">*</span>
+
+                        </label>
+                        <select name="" id="sel_tipo_usuario">
+                            <option value="">Escolha o tipo de usuário</option>
+                            <option value="colaborador">Colaborador</option>
+                            <option value="administrador">Administrador</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="botoes " id="botao_login">
+                    <button id="bt_entrar" onclick="CadastrarFuncionario()">Cadastrar</button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+</body>
+
+</html>
+
+<script>
+    // Coloquei pra desativar a função do scrool nesta pag (gambiarra :))
+    window.onscroll = function () { };
+
+    var nomeUsuario = nome_funcionario.value;
+    sessionStorage.NOME = nomeUsuario
+</script>
