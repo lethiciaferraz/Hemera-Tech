@@ -22,6 +22,15 @@
 
     <!-- função menu -->
     <script src="js/funcoes.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+
+
+        <!-- ALERTAS -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script src="sweetalert2.min.js"></script>
+        <link rel="stylesheet" href="sweetalert2.min.css">
 </head>
 
 <body>
@@ -66,14 +75,14 @@
                                 <span style="color: red; font-size: 13px;">*</span>
 
                             </label>
-                            <input type="text" id="cpf_funcionario" placeholder="exemplo@exemplo.com">
+                            <input type="text" id="cpf_funcionario" placeholder="xxx.xxx.xxx-xx">
                         </div>
                         <div class="campo" id="campo2_login">
                             <label class="user-label">Email:
                                 <span style="color: red; font-size: 13px;">*</span>
 
                             </label>
-                            <input type="text" maxlength="9" id="email_funcionario" placeholder="123456789">
+                            <input type="text" maxlength="9" id="email_funcionario" placeholder="email@email.cm">
                         </div>
                     </div>
 
@@ -84,7 +93,7 @@
                                 <span style="color: red; font-size: 13px;">*</span>
 
                             </label>
-                            <input type="text" id="telefone_funcionario" placeholder="rua exemplo ">
+                            <input type="text" id="telefone_funcionario" placeholder="(xx)xxxxx-xxxx">
                         </div>
 
                         <div class="campo" id="campo2_login">
@@ -92,10 +101,9 @@
                                 <span style="color: red; font-size: 13px;">*</span>
 
                             </label>
-                            <input type="text" id="funcao_funcionario" placeholder="XXXXX-XXX">
+                            <input type="text" id="funcao_funcionario" placeholder="cargo">
                         </div>
                     </div>
-
 
 
                     <div class="select_tipo">
@@ -127,9 +135,17 @@
 </html>
 
 <script>
-    // Coloquei pra desativar a função do scrool nesta pag (gambiarra :))
-    window.onscroll = function () { };
 
-    var nomeUsuario = nome_funcionario.value;
-    sessionStorage.NOME = nomeUsuario
+    var cleaveCpf= new Cleave('#cpf_funcionario', {
+        delimiters: ['.','.','-'],
+        blocks: [3, 3,3,2],
+        uppercase: true
+    });
+       
+    var cleaveTelefoneFuncionario = new Cleave('#telefone_funcionario', {
+        delimiters: ['(',')' , '-'],
+        blocks: [ 0,2,5,4],
+        uppercase: true
+    });
+
 </script>

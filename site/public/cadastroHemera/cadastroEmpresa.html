@@ -23,6 +23,14 @@
     <!-- função Cadastro -->
     <script src="../js/funcoes.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+
+        <!-- ALERTAS -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script src="sweetalert2.min.js"></script>
+        <link rel="stylesheet" href="sweetalert2.min.css">
+
 </head>
 
 <body>
@@ -70,7 +78,7 @@
                             <span style="color: red; font-size: 13px;">*</span>
 
                         </label>
-                        <input type="text" maxlength="9" id="telefone_empresa" placeholder="123456789">
+                        <input type="text" maxlength="14" id="telefone_empresa" placeholder="123456789">
                     </div>
                 </div>
 
@@ -98,7 +106,7 @@
                         <span style="color: red; font-size: 13px;">*</span>
 
                     </label>
-                    <input type="text" maxlength="9" id="complemento_empresa" placeholder="bloco / apt">
+                    <input type="text" id="complemento_empresa" placeholder="bloco / apt">
                 </div>
             </div>
 
@@ -121,6 +129,26 @@
         input.addEventListener('blur', function () {
             input.value = input.value.trim();
         });
+    });
+
+
+    var cleaveCep = new Cleave('#cep_empresa', {
+        delimiters: ['-'],
+        blocks: [5, 3],
+        uppercase: true
+    });
+
+    
+    var cleaveCnpj = new Cleave('#cnpj_empresa', {
+        delimiters: ['.','.','/','-'],
+        blocks: [2, 3,3,4,2],
+        uppercase: true
+    });
+       
+    var cleaveTelefone = new Cleave('#telefone_empresa', {
+        delimiters: ['(',')' , '-'],
+        blocks: [ 0,2,5,4],
+        uppercase: true
     });
 
 </script>

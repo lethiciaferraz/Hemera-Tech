@@ -32,6 +32,7 @@
 </head>
 
 <body>
+
     <div class="menu-lateral">
 
         <nav class="navbar">
@@ -49,7 +50,7 @@
                         <span class="item-menu">
                             <b>Olá,
                                 <span id="usuario_atual">usuario </span>
-                                </b>
+                            </b>
                         </span>
                     </li>
                 </a>
@@ -90,13 +91,21 @@
     </div>
 
     <div class="conteudo">
+        <div class="alerta" id="alerta">
+            <span class="fechar" onclick="fechraAlerta()">&times;</span>
+            <h2>ALERTA</h2>
+            <p id="alertaMensagem">exemplo uso da cpu acima do recomendado</p>
+            <p id="textinho">Cheque seus parâmetros</p>
+        </div>
+
+
         <div class="menu-sanduiche">
             <div class="abre-fecha-menu">
                 <i class="fa-sharp fa-solid fa-bars fa-xs"></i>
             </div>
 
         </div>
-        
+
         <div class="titulo_pagina">
             <h3>Relatório > Dashboard</h3>
         </div>
@@ -119,14 +128,14 @@
                     <div id="dado_hostName">guiche1</div>
                 </div>
 
-                
+
                 <div id="caixa">
                     <p>Sistema Operacional</p>
                     <div id="tracinho" style="margin-top: 0px; margin-bottom: 3px;"></div>
                     <div id="dado_sistema_operacional">Windows</div>
                 </div>
 
-                
+
                 <div id="caixa">
                     <p>Processador</p>
                     <div id="tracinho" style="margin-top: 0px; margin-bottom: 3px;"></div>
@@ -141,13 +150,13 @@
                     <nav>
                         <a href="#aba1" data-target="abaProcessadorERede">
                             <div id="dado_status_componente_1">
-                                <i class="fa-solid fa-circle" style="color: #DEE148; margin-right: 5px;"></i>
+                                <!-- <i class="fa-solid fa-circle" style="color: #DEE148; margin-right: 5px;"></i> -->
                             </div>
                             Processador e Rede
                         </a>
                         <a href="#aba2" data-target="abaDiscoEMemoria">
                             <div id="dado_status_componente_2">
-                                <i class="fa-solid fa-circle" style="color: #77D33E; margin-right: 5px;"></i>
+                                <!-- <i class="fa-solid fa-circle" style="color: #77D33E; margin-right: 5px;"></i> -->
                             </div>
                             Disco e Memória
                         </a>
@@ -223,9 +232,9 @@
                                         <div id="caixinha_dados_parametros">
                                             <span>
                                                 < </span>
-                                            <span>10</span>
-                                            <span>45</span>
-                                            <span>></span>
+                                                    <span>10</span>
+                                                    <span>45</span>
+                                                    <span>></span>
                                         </div>
 
                                     </div>
@@ -354,3 +363,17 @@
 
 <script src="../js/dashboard/funcoesGraficos.js"></script>
 <script src="../js/funcoesPlataforma.js"></script>
+
+<script>
+    function fechraAlerta() {
+  document.getElementById("alerta").style.display = "none";
+}
+
+function exibirAlerta() {
+    document.getElementById("alertaMensagem").textContent = "mensagem";
+    document.getElementById("alerta").style.display = "block";
+    document.getElementById("alerta").style.backgroundColor = "#f8d7da"; 
+
+}
+
+</script>

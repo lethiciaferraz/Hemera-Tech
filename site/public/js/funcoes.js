@@ -34,15 +34,18 @@ function MostrarMenu() {
 function CadastrarEmpresa() {
     var nomeVar = nome_empresa.value
     var emailVar = email_empresa.value
-    var cnpjVar = cnpj_empresa.value
+    var cnpjVar = cnpj_empresa.value.replace(/\D/g, '');
     var dddVar = 11
-    var telefoneVar = Number(telefone_empresa.value)
+    var telefoneSemMascara = telefone_empresa.value.replace(/\D/g, '');
+    //removendo os primeiros dois digitos do numero
+    telefoneSemMascara = telefoneSemMascara.substring(2);
+    var telefoneVar = Number(telefoneSemMascara)
+    var cepVar = cep_empresa.value.replace(/\D/g, '');
     var logradouroVar = logradouro_empresa.value
-    var cepVar = cep_empresa.value
     var complementoVar = complemento_empresa.value
 
     if (nomeVar == "" || emailVar == "" ||
-        cnpjVar == "" || dddVar == null || telefoneVar == null || logradouroVar == '' || cepVar == "" || complementoVar == "") {
+        cnpjVar == "" || dddVar == null || telefoneVar == null || cepVar == '' || logradouroVar == "" || complementoVar == "") {
         alert("Por favor, preencha todos os campos!")
         return false;
 
@@ -85,12 +88,36 @@ function CadastrarEmpresa() {
                 })
 
                 // AINDA NAO COLEI O CSS DOS CARD
-                cardErro.style.display = "block";
-                mensagem_erro.innerHTML = "Cadastro da empresa feito com sucesso. Redirecionando para o cadastro de funcionário...";
+                // cardErro.style.display = "block";
+                // mensagem_erro.innerHTML = "Cadastro da empresa feito com sucesso. Redirecionando para o cadastro de funcionário...";
 
-                setTimeout(() => {
-                    window.location = "cadastroFuncionario.html";
-                }, "2000")
+                let timerInterval
+                Swal.fire({
+                    title: 'Cadastro da empresa feito com sucesso!',
+                    icon: 'success',
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: () => {
+                        Swal.showLoading()
+                        const b = Swal.getHtmlContainer().querySelector('b')
+                        timerInterval = setInterval(() => {
+                            b.textContent = Swal.getTimerLeft()
+                        }, 100)
+                    },
+                    willClose: () => {
+                        clearInterval(timerInterval)
+                    }
+                }).then((result) => {
+                    /* Read more about handling dismissals below */
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                        console.log('I was closed by the timer')
+                        // window.location = "/dashboard/relatorio.html";
+                    window.location = "../cadastroHemera/cadastroFuncionario.html";
+
+                    }
+                })
+
+          
 
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
@@ -108,8 +135,12 @@ function CadastrarFuncionario() {
     var nomeVar = nome_funcionario.value
     var sobrenomeVar = sobrenome_funcionario.value
     var emailVar = email_funcionario.value
-    var cpfVar = cpf_funcionario.value
-    var telefoneVar = Number(telefone_funcionario.value)
+    var cpfVar = cpf_funcionario.value.replace(/\D/g, '');
+
+    var telefoneFSemMascara = telefone_empresa.value.replace(/\D/g, '');
+    //removendo os primeiros dois digitos do numero
+    telefoneFSemMascara = telefoneSemMascara.substring(2);
+    var telefoneVar = Number(telefoneFSemMascara)
     var senhaVar = senha_funcionario.value
     var confSenha = confirmar_senha_funcionario.value
     var funcaoVar = funcao_funcionario.value
@@ -154,14 +185,39 @@ function CadastrarFuncionario() {
                         AdicionarFuncao(funcaoVar, flagadmVar);
 
                         // AINDA NAO COLEI O CSS DOS CARD
-                        cardErro.style.display = "block";
-                        mensagem_erro.innerHTML = "Cadastro do funcionário feito com sucesso <br>Redirecionando para a tela de Login";
+                        // cardErro.style.display = "block";
+                        // mensagem_erro.innerHTML = "Cadastro do funcionário feito com sucesso <br>Redirecionando para a tela de Login";
 
                         setTimeout(() => {
                             window.location = "login.html";
                         }, "2000")
                     })
 
+ 
+                    let timerInterval
+                    Swal.fire({
+                        title: 'Cadastro do funcionário feito com sucesso!',
+                        icon: 'success',
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: () => {
+                            Swal.showLoading()
+                            const b = Swal.getHtmlContainer().querySelector('b')
+                            timerInterval = setInterval(() => {
+                                b.textContent = Swal.getTimerLeft()
+                            }, 100)
+                        },
+                        willClose: () => {
+                            clearInterval(timerInterval)
+                        }
+                    }).then((result) => {
+                        /* Read more about handling dismissals below */
+                        if (result.dismiss === Swal.DismissReason.timer) {
+                            console.log('I was closed by the timer')
+                            // window.location = "/dashboard/relatorio.html";
+                            
+                        }
+                    })
 
                 } else {
                     throw ("Houve um erro ao tentar realizar o cadastro!");
@@ -275,7 +331,6 @@ function entrar() {
   
 
             } else {
-
                 console.log("Houve um erro ao tentar realizar o login!");
 
                 resposta.text().then(texto => {

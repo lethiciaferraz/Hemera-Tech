@@ -188,4 +188,50 @@ justify-content: space-around;
     display: flex;
     justify-content: space-between;
 }
-/* ------------------------------------------------------------- */
+/* -----ALERTA-------------------------------------------------------- */
+.alerta {
+    position: fixed;
+    top: 10px;
+    right: 18px;
+    background-color: #ce7878; 
+    color: #000000;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+
+    /* min-height: 15vh; */
+    width: 20vw;
+    overflow-x: hidden;
+  }
+  
+  .fechar {
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 25px;
+  }
+  
+  .fechar:hover {
+    color: #ffffff;
+  }
+  
+  h2 {
+    margin: 0;
+    font-size: 22px;
+  }
+  
+  p {
+    margin: 5px 2px;
+  }
+
+  #alertaMensagem{
+    font-size: 20px;
+    margin-top: 1vh;
+    /* margin: 1px 3px 1px 3px; */
+
+  }
+
+  #textinho{
+    font-size: 14px;
+  }
