@@ -12,7 +12,7 @@ function MostrarRelatorioComputadores() {
                 console.log("Dados recebidos: ", JSON.stringify(response));
 
                 for (let i = 0; i < response.length; i++) {
-                    var cor = '#D95F58'
+                    var cor = '#77D33E'
 
                     console.log(i);
 
@@ -58,5 +58,6 @@ MostrarRelatorioComputadores();
 
 function salvarCumputador(idComputador) {
     sessionStorage.ID_COMPUTADOR = idComputador
+        // sessionStorage.ID_COMPUTADOR = 29
     window.location = "dashboardDetalhes.html#aba1"
 }
