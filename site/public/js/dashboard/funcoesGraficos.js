@@ -69,6 +69,9 @@ function obterDadosGraficos(graficos) {
                     }else{
                         MostrarGraficosProcessadorERede();
                     }
+                    setTimeout(function(){
+                        obterDadosGraficos(graficos);
+                    }, 10000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
