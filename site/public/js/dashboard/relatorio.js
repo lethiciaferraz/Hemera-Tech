@@ -12,14 +12,13 @@ function MostrarRelatorioComputadores() {
                 console.log("Dados recebidos: ", JSON.stringify(response));
 
                 for (let i = 0; i < response.length; i++) {
-                    var cor = '#77D33E'
-
+                    // <i class = "fa-solid fa-circle"style = "color: ${cor};" ></i>
                     console.log(i);
 
                     caixa_lista.innerHTML += `
-    <div id = "linha"> 
-        <div id = "dado_status">
-            <i class = "fa-solid fa-circle"style = "color: ${cor};" ></i>
+    <div id = "linha" > 
+        <div id = "dado_horario">
+            <p>${response[i].horario}</p>
         </div>
 
         <div id = "dado_idComputador">
@@ -35,7 +34,7 @@ function MostrarRelatorioComputadores() {
         </div>
 
         <div id = "ver_dashboard">
-            <buuton onclick="salvarCumputador(${response[i].idComputador})">ver dashboard</button>
+            <buuton onclick="salvarCumputador(${response[i].idComputador})" style="color: #812FCD; cursor: pointer; ">ver dashboard</button>
         </div>
     </div >
 

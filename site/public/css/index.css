@@ -1,4 +1,5 @@
 /*EDITANDO SCROOLLBAR*/
+
 ::-webkit-scrollbar {
     width: 10px;
     transition: all .2s linear;
@@ -21,7 +22,6 @@ html {
     --corPrincipal: #D8C4EC;
     --corSecundaria: #F3EBFA;
     --corForte: #812FCD;
-
     /* para usar no font-weigth */
     --letraLight: 300;
     --letraRegular: 400;
@@ -103,6 +103,7 @@ header {
     transition: all 3s linear;
 }
 
+
 /* ---------------------------- */
 
 #div_header a {
@@ -171,48 +172,38 @@ header {
     #div_header {
         justify-content: space-between;
     }
-
     #navbar_conteudo {
         display: none;
     }
-
     #navbar_botoes {
         display: none;
     }
-
     #navbar_botao_mobile {
         display: block;
     }
-
     #navbar_conteudo_mobile {
         background-color: #d8c4ec;
         width: 100%;
         text-align: center;
     }
-
     ul {
         padding: 0;
     }
-
     #navbar_conteudo_mobile nav ul a li {
         list-style: none;
         margin-top: 2vh;
     }
-
     #navbar_botoes_mobile ul a li {
         list-style: none;
         /* height: 2px; */
     }
-
     #navbar_conteudo_mobile nav ul a {
         text-decoration: none;
         color: #6B0CC5;
     }
-
     #navbar_botoes_mobile ul a {
         text-decoration: none;
     }
-
     #btn-nav-login_mobile {
         color: #812FCD;
         padding: 5px;
@@ -223,7 +214,6 @@ header {
         border-style: groove;
         border-color: #812FCD;
     }
-
     #btn-nav-cadastro_mobile {
         color: #812FCD;
         padding: 5px;
@@ -234,11 +224,9 @@ header {
         border-style: groove;
         border-color: #812FCD;
     }
-
     .open {
         display: block;
     }
-
     #navbar_conteudo_mobile {
         z-index: 1000;
     }
@@ -321,7 +309,6 @@ header {
     border-style: groove;
     border-color: #812FCD;
     text-align: center;
-
 }
 
 #btn_fale a:hover {
@@ -329,7 +316,6 @@ header {
     background-color: #8e4fc9;
     color: aliceblue;
     transition: 0.8s;
-
 }
 
 
@@ -380,14 +366,12 @@ header {
     box-shadow: 2px 2px 10px #bdb0cc;
     background-color: #E9DEF4;
     transition: all 0.3s ease;
-
 }
 
 .card:hover {
     transform: translateY(-10px);
     cursor: pointer;
     box-shadow: 2px 2px 10px #918f92;
-
 }
 
 .img_card img {
@@ -546,7 +530,10 @@ footer p {
     margin: 0;
 }
 
+
 /* MODAL */
+
+
 /* .modal_contatar {
     position: fixed;
     background-color: #2c2a2a80;
@@ -605,7 +592,6 @@ footer p {
     justify-content: center;
     /* align-items: center; */
 
-
 .caixa_campos .campos {
     display: flex;
     flex-direction: column;
@@ -655,8 +641,7 @@ footer p {
     background-color: var(--corSecundaria);
     border: solid 1px var(--corForte);
     color: #000
-} 
-
+}
 
 @media only screen and (max-width: 1160px) {
     #div_quem_somos {
@@ -674,65 +659,51 @@ footer p {
     #div_destaque_txt_quem_somos b {
         font-size: 25px;
     }
-
     #div_txt_quem_somos p {
         line-height: 20px;
         font-size: 14px;
     }
-
     #div_botoes_quem_somos span {
         font-size: 10px;
     }
-
     #div_destaque_txt_servicos b {
         font-size: 25px;
     }
-
     #div_txt_servicos p {
         font-size: 14px;
         text-align: center;
         line-height: 25px;
         margin: 3vh 12vw 3vh 12vw;
     }
-
     #div_destaque_txt_funciona b {
         font-size: 25px;
     }
-
     #div_txt_funciona p {
         line-height: 20px;
         font-size: 14px
     }
-
     .destaque_txt_2 b {
         font-size: 15px
     }
-
     #div_texto_passo p {
         font-size: 13px
     }
-
     #div_img_numeros img {
         width: auto
     }
-
     #div_destaque_txt_suporte b {
         font-size: 25px
     }
-
     #div_txt_suporte p {
         line-height: 20px;
         font-size: 14px
     }
-
     #div_txt_cards b {
         font-size: 14px;
     }
-
     #div_txt_cards p {
         font-size: 13px;
     }
-
     footer p {
         font-size: 10px;
     }
@@ -744,7 +715,6 @@ footer p {
         flex-direction: column;
         justify-content: center;
     }
-
     .card {
         padding: 5vh;
         width: 50vw;
@@ -752,29 +722,24 @@ footer p {
         box-shadow: 2px 2px 10px #bdb0cc;
         background-color: #E9DEF4;
     }
-
     #div_funciona {
         flex-direction: column;
         margin: 0px 0px 19px 0px;
     }
-
     #div_img_funciona {
         display: none;
     }
-
     #div_bloco_funciona {
         flex-direction: column;
         justify-content: center;
         margin: 2vh 5vw 2vh 5vw;
     }
-
     .passo {
         margin-top: 1.6vh;
         padding: 2vh 4vw 2vh 4vw;
         background-color: #E4CBFD;
         border-radius: 0.4vw;
     }
-
     #div_img_suporte img {
         width: 10vw;
     }
@@ -789,33 +754,26 @@ footer p {
 }
 
 @media only screen and (max-width: 820px) {
-
-    .modal_contatar{
+    .modal_contatar {
         padding: 0px 2px 0px 2px;
     }
-
-    .fechar{
+    .fechar {
         font-size: 15px;
     }
-
     #imagem_campos {
         display: none;
     }
-
     #modal_caixa {
         padding: 1.5vh 2vh 5vh 2vh;
     }
-
     .campo input {
         min-width: 50vw;
         font-size: 13px;
     }
-
     .caixa_informacoes p {
         font-size: 14px;
     }
-
     .campos .botao button {
         min-width: 30vw;
     }
-    }
+}
