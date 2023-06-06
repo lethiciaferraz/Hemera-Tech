@@ -8,9 +8,9 @@ router.get("/obterDados/:idComputador", function(req, res) {
     graficoController.obterDados(req, res);
 });
 
-router.get("/obterUltimosDados/:idComputador", function(req, res) {
-    graficoController.obterUltimosDados(req, res);
-});
+// router.get("/obterUltimosDados/:idComputador", function(req, res) {
+//     graficoController.obterUltimosDados(req, res);
+// });
 
 
 module.exports = router;
