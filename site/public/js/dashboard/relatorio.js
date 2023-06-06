@@ -1,5 +1,5 @@
-// var idEmpresa = Number(sessionStorage.getItem('ID_EMPRESA'));
-var idEmpresa = 1;
+var idEmpresa = Number(sessionStorage.getItem('ID_EMPRESA'));
+// var idEmpresa = 1;
 
 function MostrarRelatorioComputadores() {
     fetch(`/computadores/relatorioComputadores/${idEmpresa}`).then(function(resposta) {
@@ -57,6 +57,6 @@ function MostrarRelatorioComputadores() {
 MostrarRelatorioComputadores();
 
 function salvarCumputador(idComputador) {
-    sessionStorage.ID_COMPUTADOR = 29
+    sessionStorage.ID_COMPUTADOR = idComputador
     window.location = "dashboardDetalhes.html#aba1"
 }

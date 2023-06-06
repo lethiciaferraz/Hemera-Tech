@@ -1,5 +1,5 @@
 // função da cor do menu
-window.onscroll = function () { scrollFunction() };
+window.onscroll = function() { scrollFunction() };
 
 function scrollFunction() {
     if (document.body.scrollTop > 1400 || document.documentElement.scrollTop > 1400) {
@@ -68,19 +68,19 @@ function CadastrarEmpresa() {
                 complementoServer: complementoVar
 
             })
-        }).then(function (resposta) {
+        }).then(function(resposta) {
             console.log();
             console.log("resposta: ", resposta);
             // console.log(recordset)
 
             if (resposta.ok) {
 
-                resposta.json().then(function (response) {
+                resposta.json().then(function(response) {
                     console.log(response);
                     // max_uso_cpu, max_utilizado_memoria, max_utilizado_armazenamento, max_download_rede, max_upload_rede, idEmpresa
                     sessionStorage.ID_EMPRESA = response[0].idEmpresa;
                     sessionStorage.PARAMETROS = response[0]
-                    // sessionStorage.ID_EMPRESA = 1
+                        // sessionStorage.ID_EMPRESA = 1
 
                     console.log('DEU BOM');
 
@@ -111,18 +111,18 @@ function CadastrarEmpresa() {
                     /* Read more about handling dismissals below */
                     if (result.dismiss === Swal.DismissReason.timer) {
                         console.log('I was closed by the timer')
-                        // window.location = "/dashboard/relatorio.html";
-                    window.location = "../cadastroHemera/cadastroFuncionario.html";
+                            // window.location = "/dashboard/relatorio.html";
+                        window.location = "../cadastroHemera/cadastroFuncionario.html";
 
                     }
                 })
 
-          
+
 
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
-        }).catch(function (resposta) {
+        }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
         });
 
@@ -170,13 +170,13 @@ function CadastrarFuncionario() {
                     telefoneServer: telefoneVar,
                     senhaServer: senhaVar
                 })
-            }).then(function (resposta) {
+            }).then(function(resposta) {
 
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
 
-                    resposta.json().then(function (response) {
+                    resposta.json().then(function(response) {
 
                         sessionStorage.ID_FUNCIONARIO_ADICIONADO = response[0].idFuncionario;
 
@@ -193,7 +193,7 @@ function CadastrarFuncionario() {
                         }, "2000")
                     })
 
- 
+
                     let timerInterval
                     Swal.fire({
                         title: 'Cadastro do funcionário feito com sucesso!',
@@ -214,15 +214,15 @@ function CadastrarFuncionario() {
                         /* Read more about handling dismissals below */
                         if (result.dismiss === Swal.DismissReason.timer) {
                             console.log('I was closed by the timer')
-                            // window.location = "/dashboard/relatorio.html";
-                            
+                                // window.location = "/dashboard/relatorio.html";
+
                         }
                     })
 
                 } else {
                     throw ("Houve um erro ao tentar realizar o cadastro!");
                 }
-            }).catch(function (resposta) {
+            }).catch(function(resposta) {
                 console.log(`#ERRO: ${resposta}`);
             });
 
@@ -247,7 +247,7 @@ function AdicionarFuncao(funcaoVar, flagadmVar) {
             idEmpresaServer: sessionStorage.ID_EMPRESA,
             idFuncionarioServer: sessionStorage.ID_FUNCIONARIO_ADICIONADO
         })
-    }).then(function (resposta) {
+    }).then(function(resposta) {
 
         console.log("resposta: ", resposta);
 
@@ -258,7 +258,7 @@ function AdicionarFuncao(funcaoVar, flagadmVar) {
         } else {
             throw ("Houve um erro ao tentar realizar o cadastro!");
         }
-    }).catch(function (resposta) {
+    }).catch(function(resposta) {
         console.log(`#ERRO: ${resposta}`);
     });
 
@@ -286,7 +286,7 @@ function entrar() {
                 emailServer: emailVar,
                 senhaServer: senhaVar
             })
-        }).then(function (resposta) {
+        }).then(function(resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
 
             if (resposta.ok) {
@@ -328,7 +328,7 @@ function entrar() {
                         window.location = "/dashboard/relatorio.html";
                     }
                 })
-  
+
 
             } else {
                 console.log("Houve um erro ao tentar realizar o login!");
@@ -339,7 +339,7 @@ function entrar() {
                 });
             }
 
-        }).catch(function (erro) {
+        }).catch(function(erro) {
             console.log(erro);
         })
 

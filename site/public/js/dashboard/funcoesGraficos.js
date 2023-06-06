@@ -1,5 +1,4 @@
 window.addEventListener('load', () => {
-    obterDadosGraficos()
     document.querySelectorAll('.abas nav a').forEach((a) => {
         a.addEventListener('click', () => {
 
@@ -56,6 +55,25 @@ function obterDadosGraficos() {
 
                     console.log(`Dados recebidos: ${JSON.stringify(response)}`);
                     listaDeDados = response
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function(error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+}
+
+function obterDadosComputador() {
+    fetch(`/computadores/obterDadosComp/${sessionStorage.ID_COMPUTADOR}`, { cache: 'no-store' }).then(function(response) {
+            if (response.ok) {
+
+                response.json().then(function(response) {
+
+                    console.log(`Dados recebidos: ${JSON.stringify(response)}`);
+                    // AQUI É O RESULTADO
 
                 });
             } else {
