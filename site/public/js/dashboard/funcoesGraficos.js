@@ -1,52 +1,59 @@
-window.addEventListener('load', () => {
-    document.querySelectorAll('.abas nav a').forEach((a) => {
-        a.addEventListener('click', () => {
+// window.addEventListener('load', () => {
+//     document.querySelectorAll('.abas nav a').forEach((a) => {
+//         a.addEventListener('click', () => {
 
-            let f = a.parentNode.querySelector('a.selecionado')
+//             let f = a.parentNode.querySelector('a.selecionado')
 
-            if (f) f.classList.remove('selecionado')
-            a.classList.add('selecionado')
+//             if (f) f.classList.remove('selecionado')
+//             a.classList.add('selecionado')
 
-            // ADICIONEI ISO 
-            // criar variavel para guardar o elemento que foi clicado(o data target varia)
-            let div = document.querySelector(`.abas .${a.getAttribute('data-target')}`)
+//             // ADICIONEI ISO 
+//             // criar variavel para guardar o elemento que foi clicado(o data target varia)
+//             let div = document.querySelector(`.abas .${a.getAttribute('data-target')}`)
 
-            // pega todas as section dentro da div de classe abas
-            document.querySelectorAll('.abas section').forEach((sectionAtual) => {
+//             // pega todas as section dentro da div de classe abas
+//             document.querySelectorAll('.abas section').forEach((sectionAtual) => {
 
-                // ele checa se é a mesma que foi clicada e some ou dá block nela
-                if (sectionAtual == div) {
-                    sectionAtual.style.display = 'block'
-                } else {
-                    sectionAtual.style.display = 'none'
-                }
-            })
+//                 // ele checa se é a mesma que foi clicada e some ou dá block nela
+//                 if (sectionAtual == div) {
+//                     sectionAtual.style.display = 'block'
+//                 } else {
+//                     sectionAtual.style.display = 'none'
+//                 }
+//             })
 
-            // AQUI É PRA CHAMAR A FUNÇÃO DO GRÁFICO CORRESONDENTE A ABA
-            let selecionado = a.getAttribute('data-target');
-            if (selecionado) {
-                if (selecionado === 'abaProcessadorERede') {
+//             // AQUI É PRA CHAMAR A FUNÇÃO DO GRÁFICO CORRESONDENTE A ABA
+//             let selecionado = a.getAttribute('data-target');
+//             if (selecionado) {
+//                 if (selecionado === 'abaProcessadorERede') {
+//                     obterDadosGraficos()
+//                     MostrarGraficosProcessadorERede();
 
-                    MostrarGraficosProcessadorERede();
-                } else if (selecionado === 'abaDiscoEMemoria') {
+//                     obterUltimosDados(idEmpresa, listaDeDados);
+//                     // Chamar a função obterUltimosDados a cada 5 segundos
+//                     setInterval(() => {
+//                         obterUltimosDados(idEmpresa, listaDeDados);
+//                     }, 5000);
+//                 } else if (selecionado === 'abaDiscoEMemoria') {
+//                     obterDadosGraficos()
+//                     MostrarGraficosDiscoEMemoria();
+//                 }
+//             }
+//             //   ---------------------------------------------
+//         })
 
-                    MostrarGraficosDiscoEMemoria();
-                }
-            }
-            //   ---------------------------------------------
-        })
-
-        if (location.hash) {
-            document.querySelector('a[href="' + location.hash + '"]').click()
-        }
-    })
-})
+//         if (location.hash) {
+//             document.querySelector('a[href="' + location.hash + '"]').click()
+//         }
+//     })
+// })
 
 // -------------GRÁFICOS --------------------------
 var listaDeDados
 
-function obterDadosGraficos() {
+function obterDadosGraficos(graficos) {
     console.log('Obter dados graficos')
+    console.log(graficos)
 
     fetch(`/graficos/obterDados/${sessionStorage.ID_COMPUTADOR}`, { cache: 'no-store' }).then(function(response) {
             if (response.ok) {
@@ -56,6 +63,12 @@ function obterDadosGraficos() {
                     console.log(`Dados recebidos: ${JSON.stringify(response)}`);
                     listaDeDados = response
 
+                    if(graficos = 1) {
+                        MostrarGraficosDiscoEMemoria();
+                        
+                    }else{
+                        MostrarGraficosProcessadorERede();
+                    }
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -86,7 +99,7 @@ function obterDadosComputador() {
 }
 
 
-
+//FAMOSO PLOTAR
 function MostrarGraficosProcessadorERede() {
 
     let ctx1 = document.getElementById('myChart1');
@@ -138,6 +151,50 @@ function MostrarGraficosProcessadorERede() {
     });
 
 }
+
+// function obterUltimosDados(idComputador, listaDeDados) {
+//     console.log('Obter ultimos dados gráficos')
+
+//     fetch(`/graficos/obterUltimosDados/${idComputador}`, { cache: 'no-store' })
+//         .then(function(response) {
+//             if (response.ok) {
+//                 response.json().then(function(response) {
+//                     console.log(`Dados recebidos: ${JSON.stringify(response)}`);
+//                     listaDeDados = response;
+
+//                     // Atualizar os dados do gráfico
+//                     let novoRegistro = listaDeDados[0];
+
+//                     // Processador e Rede
+//                     listaDeDados.datasets[0].data.shift(); // Remover o primeiro dado de uso de CPU
+//                     listaDeDados.datasets[0].data.push(novoRegistro.uso_cpu); // Adicionar novo dado de uso de CPU
+
+//                     listaDeDados.datasets[1].data.shift(); // Remover o primeiro dado de download de rede
+//                     listaDeDados.datasets[1].data.push(novoRegistro.download_rede); // Adicionar novo dado de download de rede
+
+//                     listaDeDados.datasets[2].data.shift(); // Remover o primeiro dado de upload de rede
+//                     listaDeDados.datasets[2].data.push(novoRegistro.upload_rede); // Adicionar novo dado de upload de rede
+
+//                     // Disco e Memória
+//                     listaDeDados.datasets[0].data.shift(); // Remover o primeiro dado de uso de memória
+//                     listaDeDados.datasets[0].data.push(novoRegistro.utilizado_memoria); // Adicionar novo dado de uso de memória
+
+//                     listaDeDados.datasets[1].data[0] = 100 - novoRegistro.utilizado_armazenamento; // Atualizar dado de espaço livre do disco
+//                     listaDeDados.datasets[1].data[1] = novoRegistro.utilizado_armazenamento; // Atualizar dado de espaço em uso do disco
+
+//                     // Plotar novamente os gráficos
+//                     MostrarGraficosProcessadorERede();
+//                     MostrarGraficosDiscoEMemoria();
+//                 });
+//             } else {
+//                 console.error('Nenhum dado encontrado ou erro na API');
+//             }
+//         })
+//         .catch(function(error) {
+//             console.error(`Erro na obtenção dos dados para gráfico: ${error.message}`);
+//         });
+// }
+
 
 // -------------------GRAFICOS DISCO E MEMÓRIA--------------
 function MostrarGraficosDiscoEMemoria() {

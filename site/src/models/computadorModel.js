@@ -11,10 +11,10 @@ function listarComputadores(idEmpresa) {
 
 function exibirRelatorio(idEmpresa) {
     console.log("ACESSEI O Computador MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function exibirRelatorio():", idEmpresa);
-    var instrucao = `SELECT f.nome, f. sobrenome, c.idComputador, c.MacAddress, c.modelo from Computador as c
+    var instrucao = `SELECT f.nome, f. sobrenome, c.idComputador, c.MacAddress from Computador as c
 join logAcesso as l on l.idComputador = c.idComputador 
 join Funcionario as f on f.idFuncionario = l.idFuncionario
-where c.idEmpresa = ${idEmpresa} group by c.idComputador order by horario_inicio desc;`;
+where c.idEmpresa = ${idEmpresa};`;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
