@@ -511,6 +511,7 @@ function EditarFuncionario(idFuncionario) {
                     if (result.dismiss === Swal.DismissReason.timer) {
                         console.log('salvo com sucesso')
                         exibirSection('abaFuncionarios')
+                        MostrarListaFuncionarios();
                     }
                 })
 
@@ -783,6 +784,7 @@ function EditarComputador(idComputador) {
                     if (result.dismiss === Swal.DismissReason.timer) {
                         console.log('salvo com sucesso')
                         exibirSection('abaComputadores')
+                        MostrarListaComputadores();
                     }
                 })
 

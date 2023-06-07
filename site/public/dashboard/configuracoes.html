@@ -30,6 +30,7 @@
     <script src="sweetalert2.min.js"></script>
     <link rel="stylesheet" href="sweetalert2.min.css">
 
+    <script src="../js/funcoes.js"></script>
 </head>
 
 <body>
@@ -409,8 +410,8 @@
                                                     style="color: red; font-size: 13px;">*</span> </label>
                                             <select name="" id="sel_tipo_usuario">
                                                 <option value="">Escolha o tipo de usuário</option>
-                                                <option value="false">Colaborador</option>
-                                                <option value="true">Administrador</option>
+                                                <option value="colaborador">Colaborador</option>
+                                                <option value="administrador">Administrador</option>
                                             </select>
                                         </div>
 
@@ -421,8 +422,7 @@
 
                             <div class="botoes" id="botao_cadastro_funcionario">
                                 <button onclick="exibirSection('abaFuncionarios')">Cancelar</button>
-                                <button id="bt_cadastrar_funcionario"
-                                    onclick="CadastrarFuncionario()">Cadastrar</button>
+                                <button id="bt_cadastrar_funcionario" onclick="CadastrarFuncionarioConfig()">Cadastrar</button>
                             </div>
 
                         </div>
@@ -739,7 +739,7 @@
                                             <div class="campo">
                                                 <label class="user-label">Telefone: <span
                                                         style="color: red; font-size: 13px;">*</span> </label>
-                                                <input type="text" id="telefone_funcionario" placeholder="123456789">
+                                                <input type="text" maxlength="11" id="telefone_funcionario" placeholder="123456789">
                                             </div>
 
                                             <div class="campo">
@@ -901,7 +901,7 @@
                             </div>
 
                             <div id="titulo_critico">
-                                <p>Acima de 70%</p>
+                                <p>Acima de 85%</p>
                             </div>
                            
                             <div id="titulo" style="width: 4vw;"></div>
@@ -926,11 +926,11 @@
                             </div> -->
 
                             <div id="titulo_atencao">
-                                <p>Abaixo acima </p>
+                                <p>Acima de 50 mpbs</p>
                             </div>
 
                             <div id="titulo_critico">
-                                <p>Abaixo acima?</p>
+                                <p>Abaixo de 15 mpbs</p>
                             </div>
                            
                             <div id="titulo" style="width: 4vw;"></div>
@@ -955,11 +955,11 @@
                             </div> -->
 
                             <div id="titulo_atencao">
-                                <p>abaixo acima</p>
+                                <p>Acima de 50 mpbs</p>
                             </div>
 
                             <div id="titulo_critico">
-                                <p>abaxixo acima?</p>
+                                <p>Abaixo de 5 mpbs </p>
                             </div>
                            
                             <div id="titulo" style="width: 4vw;"></div>

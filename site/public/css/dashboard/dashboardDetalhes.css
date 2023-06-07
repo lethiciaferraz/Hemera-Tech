@@ -225,6 +225,10 @@ justify-content: space-around;
     margin: 5px 2px;
   }
 
+  .alerta{
+    display: none;
+  }
+  
   #alertaMensagem{
     font-size: 20px;
     margin-top: 1vh;

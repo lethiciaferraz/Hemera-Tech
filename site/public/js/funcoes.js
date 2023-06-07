@@ -137,12 +137,12 @@ function CadastrarFuncionario() {
     var emailVar = email_funcionario.value
     var cpfVar = cpf_funcionario.value.replace(/\D/g, '');
 
-    var telefoneFSemMascara = telefone_empresa.value.replace(/\D/g, '');
+    var telefoneSemMascara = telefone_funcionario.value.replace(/\D/g, '');
     //removendo os primeiros dois digitos do numero
     telefoneFSemMascara = telefoneSemMascara.substring(2);
     var telefoneVar = Number(telefoneFSemMascara)
-    var senhaVar = senha_funcionario.value
-    var confSenha = confirmar_senha_funcionario.value
+    var senhaVar = 'senha123'
+    var confSenha = 'senha123'
     var funcaoVar = funcao_funcionario.value
     var flagadmVar = sel_tipo_usuario.value == "colaborador" ? 0 : 1
 
@@ -168,7 +168,10 @@ function CadastrarFuncionario() {
                     emailServer: emailVar,
                     cpfServer: cpfVar,
                     telefoneServer: telefoneVar,
-                    senhaServer: senhaVar
+                    senhaServer: senhaVar,
+                    funcaoServer: funcaoVar,
+                    flagAdmServer: flagadmVar,
+                    idEmpresaServer: sessionStorage.ID_EMPRESA,
                 })
             }).then(function(resposta) {
 
@@ -178,19 +181,19 @@ function CadastrarFuncionario() {
 
                     resposta.json().then(function(response) {
 
-                        sessionStorage.ID_FUNCIONARIO_ADICIONADO = response[0].idFuncionario;
+                        // sessionStorage.ID_FUNCIONARIO_ADICIONADO = response[0].idFuncionario;
 
-                        console.log('DEU BOM');
+                        console.log('DEU BOM CADASTRAR FUNCIONARIO');
 
-                        AdicionarFuncao(funcaoVar, flagadmVar);
+                        // AdicionarFuncao(funcaoVar, flagadmVar);
 
                         // AINDA NAO COLEI O CSS DOS CARD
                         // cardErro.style.display = "block";
                         // mensagem_erro.innerHTML = "Cadastro do funcionário feito com sucesso <br>Redirecionando para a tela de Login";
-
-                        setTimeout(() => {
-                            window.location = "login.html";
-                        }, "2000")
+                        alert('cadastramos');
+                        // setTimeout(() => {
+                        //     window.location = "login.html";
+                        // }, "2000")
                     })
 
 
@@ -233,37 +236,139 @@ function CadastrarFuncionario() {
     }
 }
 
-function AdicionarFuncao(funcaoVar, flagadmVar) {
-    fetch("/funcionarios/adicionarFuncao", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            // crie um atributo que recebe o valor recuperado aqui
-            // Agora vá para o arquivo routes/empresa.js
-            funcaoServer: funcaoVar,
-            flagAdmServer: flagadmVar,
-            idEmpresaServer: sessionStorage.ID_EMPRESA,
-            idFuncionarioServer: sessionStorage.ID_FUNCIONARIO_ADICIONADO
-        })
-    }).then(function(resposta) {
 
-        console.log("resposta: ", resposta);
+function CadastrarFuncionarioConfig() {
+    console.log(sessionStorage.ID_EMPRESA);
+    var nomeVar = nome_funcionario.value
+    var sobrenomeVar = sobrenome_funcionario.value
+    var emailVar = email_funcionario.value
+    var cpfVar = cpf_funcionario.value
+    var telefoneVar =  Number(telefone_funcionario.value);
+    //  telefoneVar = Number(telefoneFSemMascara)
+    var senhaVar = 'senha123'
+    var confSenha = 'senha123'
+    var funcaoVar = funcao_funcionario.value
+    var flagadmVar = sel_tipo_usuario.value == "colaborador" ? 0 : 1
 
-        if (resposta.ok) {
+    if (nomeVar == "" || emailVar == "" || cpfVar == '' || telefoneVar == null || senhaVar == '' || confSenha == "" || funcaoVar == "" || sel_tipo_usuario.value == "") {
+        alert("Por favor, preencha todos os campos!")
+        return false;
 
-            console.log('DEU BOM');
-
+    } else {
+        if (senhaVar != confSenha) {
+            alert('As senhas não combinam')
+            return false;
         } else {
-            throw ("Houve um erro ao tentar realizar o cadastro!");
-        }
-    }).catch(function(resposta) {
-        console.log(`#ERRO: ${resposta}`);
-    });
+            fetch("/funcionarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/empresa.js
+                    nomeServer: nomeVar,
+                    sobrenomeServer: sobrenomeVar,
+                    emailServer: emailVar,
+                    cpfServer: cpfVar,
+                    telefoneServer: telefoneVar,
+                    senhaServer: senhaVar,
+                    funcaoServer: funcaoVar,
+                    flagAdmServer: flagadmVar,
+                    idEmpresaServer: sessionStorage.ID_EMPRESA,
+                })
+            }).then(function(resposta) {
 
-    return false;
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+
+                    resposta.json().then(function(response) {
+
+                        // sessionStorage.ID_FUNCIONARIO_ADICIONADO = response[0].idFuncionario;
+
+                        console.log('DEU BOM CADASTRAR FUNCIONARIO');
+
+                        // AdicionarFuncao(funcaoVar, flagadmVar);
+
+                        // AINDA NAO COLEI O CSS DOS CARD
+                        // cardErro.style.display = "block";
+                        // mensagem_erro.innerHTML = "Cadastro do funcionário feito com sucesso <br>Redirecionando para a tela de Login";
+                        alert('cadastramos');
+                        // setTimeout(() => {
+                        //     window.location = "login.html";
+                        // }, "2000")
+                    })
+
+
+                    let timerInterval
+                    Swal.fire({
+                        title: 'Cadastro do funcionário feito com sucesso!',
+                        icon: 'success',
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: () => {
+                            Swal.showLoading()
+                            const b = Swal.getHtmlContainer().querySelector('b')
+                            timerInterval = setInterval(() => {
+                                b.textContent = Swal.getTimerLeft()
+                            }, 100)
+                        },
+                        willClose: () => {
+                            clearInterval(timerInterval)
+                        }
+                    }).then((result) => {
+                        /* Read more about handling dismissals below */
+                        if (result.dismiss === Swal.DismissReason.timer) {
+                            console.log('I was closed by the timer')
+                                // window.location = "/dashboard/relatorio.html";
+
+                        }
+                    })
+
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function(resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+
+            return false;
+
+        }
+
+    }
 }
+
+// function AdicionarFuncao(funcaoVar, flagadmVar) {
+//     fetch("/funcionarios/adicionarFuncao", {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify({
+//             funcaoServer: funcaoVar,
+//             flagAdmServer: flagadmVar,
+//             idEmpresaServer: sessionStorage.ID_EMPRESA,
+//             idFuncionarioServer: sessionStorage.ID_FUNCIONARIO_ADICIONADO
+//         })
+//     }).then(function(resposta) {
+
+//         console.log("resposta: ", resposta);
+
+//         if (resposta.ok) {
+
+//             console.log('DEU BOM');
+
+//         } else {
+//             throw ("Houve um erro ao tentar realizar o cadastro!");
+//         }
+//     }).catch(function(resposta) {
+//         console.log(`#ERRO: ${resposta}`);
+//     });
+
+//     return false;
+// }
 
 function entrar() {
 

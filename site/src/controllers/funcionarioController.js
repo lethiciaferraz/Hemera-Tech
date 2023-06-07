@@ -51,6 +51,9 @@ function cadastrar(req, res) {
     var cpf = req.body.cpfServer
     var telefone = req.body.telefoneServer
     var senha = req.body.senhaServer
+    var funcao = req.body.funcaoServer;
+    var flagAdm = req.body.flagAdmServer;
+    var idEmpresa = req.body.idEmpresaServer
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -65,142 +68,145 @@ function cadastrar(req, res) {
         res.status(400).send("Seu telefone está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
-    } else {
-
-        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        funcionarioModel.cadastrar(nome, sobrenome, email, cpf, telefone, senha)
-            .then(
-                function (resultado) {
-                    res.json(resultado);
-                }
-            ).catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
-                        erro.sqlMessage
-                    );
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
-    }
-}
-
-function adicionarFuncao(req, res) {
-    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var funcao = req.body.funcaoServer;
-    var flagAdm = req.body.flagAdmServer;
-    var idEmpresa = req.body.idEmpresaServer
-    var idFuncionario = req.body.idFuncionarioServer
-
-    // Faça as validações dos valores
-    if (funcao == undefined) {
+    } else if (funcao == undefined) {
         res.status(400).send("Sua função está undefined!");
     } else if (flagAdm == undefined) {
         res.status(400).send("Sua flag adm está undefined!");
     } else if (idEmpresa == undefined) {
         res.status(400).send("Seu idEmpresa está undefined!");
-    } else if (idFuncionario == undefined) {
-        res.status(400).send("Seu idFuncionario está undefined!");
     } else {
+        
+            // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+            funcionarioModel.cadastrar(nome, sobrenome, email, cpf, telefone, senha,funcao, flagAdm, idEmpresa,)
+                .then(
+                    function (resultado) {
+                        res.json(resultado);
+                    }
+                ).catch(
+                    function (erro) {
+                        console.log(erro);
+                        console.log(
+                            "\nHouve um erro ao realizar o cadastro! Erro: ",
+                            erro.sqlMessage
+                        );
+                        res.status(500).json(erro.sqlMessage);
+                    }
+                );
+        
+    }
+}
+    // function adicionarFuncao(req, res) {
+    //     var funcao = req.body.funcaoServer;
+    //     var flagAdm = req.body.flagAdmServer;
+    //     var idEmpresa = req.body.idEmpresaServer
+    //     var idFuncionario = req.body.idFuncionarioServer
 
-        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        funcionarioModel.adicionarFuncao(funcao, flagAdm, idEmpresa, idFuncionario)
-            .then(
-                function (resultado) {
-                    res.json(resultado);
-                }
-            ).catch(
+    //     // Faça as validações dos valores
+    //     if (funcao == undefined) {
+    //         res.status(400).send("Sua função está undefined!");
+    //     } else if (flagAdm == undefined) {
+    //         res.status(400).send("Sua flag adm está undefined!");
+    //     } else if (idEmpresa == undefined) {
+    //         res.status(400).send("Seu idEmpresa está undefined!");
+    //     } else if (idFuncionario == undefined) {
+    //         res.status(400).send("Seu idFuncionario está undefined!");
+    //     } else {
+
+    //         funcionarioModel.adicionarFuncao(funcao, flagAdm, idEmpresa, idFuncionario)
+    //             .then(
+    //                 function (resultado) {
+    //                     res.json(resultado);
+    //                 }
+    //             ).catch(
+    //                 function (erro) {
+    //                     console.log(erro);
+    //                     console.log(
+    //                         "\nHouve um erro ao realizar o cadastro! Erro: ",
+    //                         erro.sqlMessage
+    //                     );
+    //                     res.status(500).json(erro.sqlMessage);
+    //                 }
+    //             );
+    //     }
+    // }
+
+    function listarFuncionarios(req, res) {
+        var idEmpresa = req.params.idEmpresa;
+
+        funcionarioModel.listarFuncionarios(idEmpresa).then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!");
+            }
+        }
+        )
+            .catch(
                 function (erro) {
                     console.log(erro);
                     console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
-                        erro.sqlMessage
-                    );
+                        "Houve um erro ao buscar os funcionarios: ", erro.sqlMessage);
                     res.status(500).json(erro.sqlMessage);
                 }
             );
     }
-}
 
-    function listarFuncionarios(req, res) {
-        var idEmpresa = req.params.idEmpresa;
-    
-        funcionarioModel.listarFuncionarios(idEmpresa).then(function (resultado) {
-                    if (resultado.length > 0) {
-                        res.status(200).json(resultado);
-                    } else {
-                        res.status(204).send("Nenhum resultado encontrado!");
-                    }
+    function editarFuncionario(req, res) {
+        let novoNome = req.body.nome;
+        let novoSobrenome = req.body.sobrenome;
+        let novoCpf = req.body.cpf;
+        let novoEmail = req.body.email;
+        let novoTelefone = req.body.telefone;
+        let novaFuncao = req.body.funcao;
+        let novoflagAdministrador = req.body.flagAdministrador;
+        let idFuncionario = req.params.idFuncionario;
+
+        // FAZER LOGICA PARA ELE MUDAR O TIPO DE USUARIO
+        // if(flagAdministrador == 'Administrador'){
+
+
+        // }
+
+        funcionarioModel.editarFuncionario(novoNome, novoSobrenome, novoCpf, novoEmail, novoTelefone, novaFuncao, novoflagAdministrador, idFuncionario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
                 }
             )
             .catch(
                 function (erro) {
                     console.log(erro);
-                    console.log(
-                        "Houve um erro ao buscar os funcionarios: ",erro.sqlMessage);
+                    console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+
+    }
+
+
+    function deletarFuncionario(req, res) {
+        var idFuncionario = req.params.idFuncionario;
+
+        funcionarioModel.deletarFuncionario(idFuncionario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            )
+            .catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("Houve um erro ao deletar o post: ", erro.sqlMessage);
                     res.status(500).json(erro.sqlMessage);
                 }
             );
     }
-    
-function editarFuncionario(req, res) {
-    let novoNome = req.body.nome;
-    let novoSobrenome = req.body.sobrenome;
-    let novoCpf = req.body.cpf;
-    let novoEmail = req.body.email;
-    let novoTelefone = req.body.telefone;
-    let novaFuncao = req.body.funcao;
-    let novoflagAdministrador = req.body.flagAdministrador;
-    let idFuncionario = req.params.idFuncionario;
 
-    // FAZER LOGICA PARA ELE MUDAR O TIPO DE USUARIO
-    // if(flagAdministrador == 'Administrador'){
-        
-
-    // }
-
-    funcionarioModel.editarFuncionario(novoNome, novoSobrenome,novoCpf, novoEmail, novoTelefone, novaFuncao,novoflagAdministrador, idFuncionario)
-        .then(
-            function (resultado) {
-                res.json(resultado);
-            }
-        )
-        .catch(
-            function (erro) {
-                console.log(erro);
-                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
-                res.status(500).json(erro.sqlMessage);
-            }
-        );
-
-}
-
-
-function deletarFuncionario(req, res) {
-    var idFuncionario = req.params.idFuncionario;
-
-    funcionarioModel.deletarFuncionario(idFuncionario)
-        .then(
-            function (resultado) {
-                res.json(resultado);
-            }
-        )
-        .catch(
-            function (erro) {
-                console.log(erro);
-                console.log("Houve um erro ao deletar o post: ", erro.sqlMessage);
-                res.status(500).json(erro.sqlMessage);
-            }
-        );
-}
-
-module.exports = {
-    entrar,
-    cadastrar,
-    adicionarFuncao,
-    testar,
-    listarFuncionarios,
-    editarFuncionario,
-    deletarFuncionario
-}
+    module.exports = {
+        entrar,
+        cadastrar,
+        testar,
+        listarFuncionarios,
+        editarFuncionario,
+        deletarFuncionario
+    }
