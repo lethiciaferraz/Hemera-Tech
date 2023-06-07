@@ -174,7 +174,7 @@
                         <div class="caixa_grafico">
 
                             <div class="grafico_linha" style="width: 450px;">
-                                <p>Uso do Processador (em %)- a cada X segundos</p>
+                                <p>Uso do Processador (em %)- a cada 5 segundos</p>
                                 <canvas id="myChart1"> </canvas>
 
                                 <div id="legenda">
@@ -343,4 +343,6 @@
 
     //FUNCAO PRA CHAMAR E ATIVAR UM ALERTA
   //  exibirAlerta()
+
+  setTimeout(exibirAlerta, 20000)
 </script>

@@ -172,7 +172,7 @@
                     <section class="abaDiscoEMemoria" id="aba2">
                         <div class="caixa_grafico">
                             <div class="grafico_linha" style="width: 440px;">
-                                <p>Uso da Memória (em %)- a cada X segundos</p>
+                                <p>Uso da Memória (em %)- a cada 5 segundos</p>
                                 <canvas id="myChart4"
                                     style="display: inline-block;box-sizing: border-box;width: 230px;"> </canvas>
                                 <div id="legenda">
@@ -262,10 +262,13 @@
 }
 
 function exibirAlerta() {
-    document.getElementById("alertaMensagem").textContent = "mensagem";
-    document.getElementById("alerta").style.display = "block";
-    document.getElementById("alerta").style.backgroundColor = "#f8d7da"; 
+        document.getElementById("alertaMensagem").textContent = "Uso da CPU em estado de atenção";
+        document.getElementById("alerta").style.display = "block";
+        document.getElementById("alerta").style.backgroundColor = "#DEE148";
+    }
 
-}
+
+   exibirAlerta()
+
 
 </script>
