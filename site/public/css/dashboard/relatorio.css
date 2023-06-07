@@ -254,7 +254,7 @@ body {
 
 .relatorio .caixas .caixa_legenda_geral #caixinha{
  
-    margin: 8px 5px;
+    margin: 10px 5px;
     font-weight: var(--letraSemiBold);
     font-size: 20px;
     text-align: center;
@@ -264,7 +264,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 5px 5px;
+    margin: 15px 5px;
     font-weight: var(--letraSemiBold);
     font-size: 20px;
     text-align: center;
@@ -331,6 +331,8 @@ body {
 }
 
 .relatorio #caixa_lista #infos_principais{ 
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -387,6 +389,21 @@ body {
     flex-direction: row;
 }
 
+.relatorio #caixa_lista #linha #titulo:nth-child(1) { 
+    font-weight: var(--letraRegular);
+    width: 11vw;
+    text-align: center;
+    margin: 0px 5px
+}
+
+/* .relatorio #caixa_lista #linha #titulo:nth-child(2) { 
+    font-weight: var(--letraRegular);
+    width: 10vw;
+    text-align: center;
+    /* background-color: #812FCD; */
+    /* margin: 0px 5px */
+
+
 .relatorio #caixa_lista #linha #titulo { 
     font-weight: var(--letraRegular);
     width: 12vw;
@@ -396,6 +413,14 @@ body {
 }
 
 .relatorio #caixa_lista #linha #dado_status{ 
+    font-weight: var(--letraRegular);
+    width: 11vw;
+    text-align: center;
+    /* background-color: #812FCD; */
+    margin: 0px 5px
+}
+
+.relatorio #caixa_lista #linha #dado_horario{ 
     font-weight: var(--letraRegular);
     width: 12vw;
     text-align: center;

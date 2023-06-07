@@ -7,9 +7,13 @@ function obterDadosComputador() {
             if (response.ok) {
 
                 response.json().then(function(response) {
+                    resposta = response[0]
 
-                    console.log(`Dados recebidos: ${JSON.stringify(response)}`);
-                    // AQUI É O RESULTADO
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    document.getElementById("dado_idcomputador").innerText = resposta.idComputador;
+                    document.getElementById("dado_hostName").innerText = resposta.MacAddress;
+                    document.getElementById("dado_sistema_operacional").innerText = resposta.sistema_operacional;
+                    document.getElementById("dado_processador").innerText = resposta.modelo;
 
                 });
             } else {
@@ -20,6 +24,7 @@ function obterDadosComputador() {
             console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
         });
 }
+obterDadosComputador();
 
 function obterDadosGraficos(tipoGrafico) {
     console.log('Obter dados graficos')

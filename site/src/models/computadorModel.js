@@ -55,10 +55,20 @@ function deletarComputador(idComputador) {
     return database.executar(instrucao);
 }
 
+function dadosComputador(idComputador) {
+    console.log("ACESSEI O listar um computador  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarComputador()", idComputador);
+    var instrucao = `
+    select * from Computador where idComputador = ${idComputador};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     listarComputadores,
     exibirRelatorio,
     deletarComputador,
     editarComputador,
-    obterDadosComp
+    obterDadosComp,
+    dadosComputador
 }
