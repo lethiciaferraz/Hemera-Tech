@@ -62,7 +62,7 @@ function exibirGrafico(tipoGrafico) {
             destroyChart(chart6);
             MostrarGraficosProcessadorERede();
             obterDadosGraficos();
-        }, 20000); // atualiza a cada 10 segundos
+        }, 5000); // atualiza a cada 10 segundos
     } else if (tipoGrafico === 'memoriaEDisco') {
 
         MostrarGraficosDiscoEMemoria();
@@ -72,7 +72,7 @@ function exibirGrafico(tipoGrafico) {
             destroyChart(chart5);
             MostrarGraficosDiscoEMemoria();
             obterDadosGraficos();
-        }, 20000); // atualiza a cada 10 segundos
+        }, 5000); // atualiza a cada 10 segundos
     } else {
         console.error('Tipo de gráfico inválido');
     }

@@ -132,6 +132,7 @@ function CadastrarEmpresa() {
 }
 
 function CadastrarFuncionario() {
+    var idEmpresa = sessionStorage.ID_EMPRESA
     var nomeVar = nome_funcionario.value
     var sobrenomeVar = sobrenome_funcionario.value
     var emailVar = email_funcionario.value
@@ -146,7 +147,7 @@ function CadastrarFuncionario() {
     var funcaoVar = funcao_funcionario.value
     var flagadmVar = sel_tipo_usuario.value == "colaborador" ? 0 : 1
 
-    if (nomeVar == "" || emailVar == "" || cpfVar == null || telefoneVar == null || senhaVar == '' || confSenha == "" || funcaoVar == "" || sel_tipo_usuario.value == "") {
+    if (nomeVar == "" || emailVar == "" || cpfVar == null || telefoneVar == null || senhaVar == '' || confSenha == "" || funcaoVar == "" || sel_tipo_usuario.value == "" || idEmpresa == null) {
         alert("Por favor, preencha todos os campos!")
         return false;
 
@@ -171,7 +172,7 @@ function CadastrarFuncionario() {
                     senhaServer: senhaVar,
                     funcaoServer: funcaoVar,
                     flagAdmServer: flagadmVar,
-                    idEmpresaServer: sessionStorage.ID_EMPRESA,
+                    idEmpresaServer: idEmpresa,
                 })
             }).then(function(resposta) {
 
@@ -195,7 +196,6 @@ function CadastrarFuncionario() {
                         //     window.location = "login.html";
                         // }, "2000")
                     })
-
 
                     let timerInterval
                     Swal.fire({

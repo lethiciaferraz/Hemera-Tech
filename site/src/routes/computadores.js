@@ -27,4 +27,9 @@ router.get("/dadosComputador/:idComputador", function(req, res) {
     computadorController.dadosComputador(req, res);
 });
 
+
+router.get("/quantidadeComputadores/:idEmpresa", function(req, res) {
+    computadorController.quantidadeComputadores(req, res);
+});
+
 module.exports = router;

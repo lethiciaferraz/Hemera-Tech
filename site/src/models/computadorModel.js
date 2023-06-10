@@ -64,11 +64,21 @@ function dadosComputador(idComputador) {
     return database.executar(instrucao);
 }
 
+
+function quantidadeComputadores(idEmpresa) {
+    console.log("ACESSEI O listar um computador  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function qtdComputadores()", idEmpresa);
+    var instrucao = `
+    SELECT COUNT(MacAddress) AS quantidade FROM Computador where idEmpresa = ${idEmpresa};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
 module.exports = {
     listarComputadores,
     exibirRelatorio,
     deletarComputador,
     editarComputador,
     obterDadosComp,
-    dadosComputador
+    dadosComputador,
+    quantidadeComputadores
 }

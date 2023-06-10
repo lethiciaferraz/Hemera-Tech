@@ -124,11 +124,34 @@ function dadosComputador(req, res) {
         });
 }
 
+function quantidadeComputadores(req, res) {
+    var idEmpresa = req.params.idEmpresa;
+
+    computadorModel.quantidadeComputadores(idEmpresa)
+        .then(function(resultado) {
+            if (resultado.length > 0) {
+                var computador = resultado[0]; // Acessar o primeiro objeto do array
+
+                res.status(200).json(computador);
+                console.log('Dados do computador:', computador);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!");
+                console.log('Nenhum resultado encontrado');
+            }
+        })
+        .catch(function(erro) {
+            console.log(erro);
+            console.log("Houve um erro ao buscar o computador: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        });
+}
+
 module.exports = {
     exibirRelatorio,
     listarComputadores,
     deletarComputador,
     editarComputador,
     obterDadosComp,
-    dadosComputador
+    dadosComputador,
+    quantidadeComputadores
 }

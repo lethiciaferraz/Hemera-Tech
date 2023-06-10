@@ -824,10 +824,10 @@ function deletarComputador(idComputador) {
                     Swal.fire(
                         'Computador deletado'
                     )
+                    MostrarListaComputadores();
                 }
             })
 
-            MostrarListaComputadores();
             console.log("deletado com sucesso")
         } else if (resposta.status == 404) {
             window.alert("Deu 404!");

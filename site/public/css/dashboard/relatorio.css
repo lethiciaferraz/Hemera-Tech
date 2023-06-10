@@ -264,7 +264,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 15px 5px;
+    margin: 5px 5px;
     font-weight: var(--letraSemiBold);
     font-size: 20px;
     text-align: center;
